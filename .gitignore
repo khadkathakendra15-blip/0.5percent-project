@@ -26,5 +26,8 @@ vfy_design
 compare_extracted/
 vfy_extracted/
 
+# Large video files (too big for GitHub — host on cloud storage)
+public/MONTAGE.mp4
+
 # Claude internal
 .claude/
