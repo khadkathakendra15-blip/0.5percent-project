@@ -24,61 +24,110 @@ const COUNTRIES = [
   {
     code: 'NP', name: 'Nepal', pop: '30M',
     tourists: '1.1M', revenue: '$800M', gdp: '7%',
-    touristsPct: 18, revenuePct: 22, gdpPct: 47,
-    color: C.terra,
-    bg: C.cream,
-    highlight: true,
-    note: '0.5% target → 14.2M visitors',
-    badge: 'Nepal',
+    touristsPct: 18,  revenuePct: 22,  gdpPct: 47,
+    touristsNum: 1.1, revenueNum: 800, gdpNum: 7,
+    touristsFmt: (v: number) => `${v.toFixed(1)}M`,
+    revenueFmt:  (v: number) => `$${Math.round(v)}M`,
+    gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
+    color: C.terra, bg: C.cream, highlight: true,
+    note: '0.5% target → 14.2M visitors', badge: 'Nepal',
   },
   {
     code: 'BT', name: 'Bhutan', pop: '0.8M',
     tourists: '150K', revenue: '$350M', gdp: '12.5%',
-    touristsPct: 2.5, revenuePct: 10, gdpPct: 83,
-    color: '#7c6fcd',
-    bg: C.paper,
-    highlight: false,
-    note: '',
-    badge: '',
+    touristsPct: 2.5, revenuePct: 10,  gdpPct: 83,
+    touristsNum: 150, revenueNum: 350, gdpNum: 12.5,
+    touristsFmt: (v: number) => `${Math.round(v)}K`,
+    revenueFmt:  (v: number) => `$${Math.round(v)}M`,
+    gdpFmt:      (v: number) => `${v.toFixed(1)}%`,
+    color: '#7c6fcd', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'KH', name: 'Cambodia', pop: '17M',
     tourists: '6M', revenue: '$3.6B', gdp: '12%',
     touristsPct: 100, revenuePct: 100, gdpPct: 80,
-    color: '#2a8fa8',
-    bg: C.paper,
-    highlight: false,
-    note: '',
-    badge: '',
+    touristsNum: 6,   revenueNum: 3.6, gdpNum: 12,
+    touristsFmt: (v: number) => `${v.toFixed(0)}M`,
+    revenueFmt:  (v: number) => `$${v.toFixed(1)}B`,
+    gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
+    color: '#2a8fa8', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'LA', name: 'Laos', pop: '8M',
     tourists: '4M', revenue: '$1B', gdp: '9%',
     touristsPct: 67, revenuePct: 28, gdpPct: 60,
-    color: '#2a8f6a',
-    bg: C.paper,
-    highlight: false,
-    note: '',
-    badge: '',
+    touristsNum: 4,  revenueNum: 1,  gdpNum: 9,
+    touristsFmt: (v: number) => `${v.toFixed(0)}M`,
+    revenueFmt:  (v: number) => `$${v.toFixed(0)}B`,
+    gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
+    color: '#2a8f6a', bg: C.paper, highlight: false, note: '', badge: '',
   },
 ];
 
+/* ─── scroll-reveal hook ─────────────────────────────────────────────────── */
+function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.opacity = '0';
+    const tx = dir === 'left' ? '-36px' : dir === 'right' ? '36px' : '0px';
+    const ty = dir === 'up' ? '28px' : '0px';
+    el.style.transform = `translate(${tx}, ${ty})`;
+    el.style.transition = `opacity .85s cubic-bezier(.2,.6,.2,1) ${delay}s, transform .85s cubic-bezier(.2,.6,.2,1) ${delay}s`;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { el.style.opacity = '1'; el.style.transform = 'none'; obs.disconnect(); }
+    }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+    obs.observe(el);
+    const t = setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, 1500);
+    return () => { obs.disconnect(); clearTimeout(t); };
+  }, [delay, dir]);
+  return ref;
+}
+
+/* ─── count-up hook ──────────────────────────────────────────────────────── */
+function useCountUp(target: number, active: boolean, duration = 1.5) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    setValue(0);
+    const steps = 72;
+    const interval = (duration * 1000) / steps;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      // ease-out curve: starts fast, slows at end
+      const progress = 1 - Math.pow(1 - step / steps, 3);
+      const current = target * progress;
+      if (step >= steps) { setValue(target); clearInterval(timer); }
+      else setValue(current);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [active, target, duration]);
+  return value;
+}
+
 /* ─── animated bar ───────────────────────────────────────────────────────── */
-function Bar({ pct, color, label, value, animated }: {
-  pct: number; color: string; label: string; value: string; animated: boolean;
+function Bar({ pct, color, label, displayValue, animated, delay }: {
+  pct: number; color: string; label: string; displayValue: string;
+  animated: boolean; delay: number;
 }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
         <span style={{ fontFamily: MONO, fontSize: '9.5px', letterSpacing: '0.2em', textTransform: 'uppercase', color: C.inkFaint }}>{label}</span>
-        <span style={{ fontFamily: BEBAS, fontSize: '15px', letterSpacing: '0.03em', color: C.ink }}>{value}</span>
+        <span style={{
+          fontFamily: BEBAS, fontSize: '15px', letterSpacing: '0.03em', color: C.ink,
+          transition: 'opacity .3s',
+          opacity: animated ? 1 : 0.3,
+        }}>{displayValue}</span>
       </div>
       <div style={{ height: '3px', background: C.cream2, borderRadius: '100px', overflow: 'hidden' }}>
         <div style={{
           height: '100%', borderRadius: '100px',
           background: color,
           width: animated ? `${pct}%` : '0%',
-          transition: 'width 1.2s cubic-bezier(.2,.6,.2,1)',
+          transition: `width 1.4s cubic-bezier(.2,.6,.2,1) ${delay}s`,
         }} />
       </div>
     </div>
@@ -86,19 +135,31 @@ function Bar({ pct, color, label, value, animated }: {
 }
 
 /* ─── country card ───────────────────────────────────────────────────────── */
-function CountryCard({ country, animated }: { country: typeof COUNTRIES[0]; animated: boolean }) {
+function CountryCard({ country, animated, cardDelay }: {
+  country: typeof COUNTRIES[0]; animated: boolean; cardDelay: number;
+}) {
   const [hov, setHov] = useState(false);
+  const ref = useReveal(cardDelay);
+
+  // Incrementing counters
+  const tVal = useCountUp(country.touristsNum, animated, 1.5);
+  const rVal = useCountUp(country.revenueNum,  animated, 1.6);
+  const gVal = useCountUp(country.gdpNum,      animated, 1.4);
+
+  const displayTourists = animated ? country.touristsFmt(tVal) : country.tourists;
+  const displayRevenue  = animated ? country.revenueFmt(rVal)  : country.revenue;
+  const displayGdp      = animated ? country.gdpFmt(gVal)      : country.gdp;
 
   return (
-    <div
+    <div ref={ref}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
         display: 'flex', flexDirection: 'column',
-        borderRight: `1px solid ${C.line}`,
         background: hov && !country.highlight ? '#fff' : country.bg,
         position: 'relative',
         transition: 'background .3s',
+        height: '100%',
       }}
     >
       {/* accent top line */}
@@ -130,21 +191,25 @@ function CountryCard({ country, animated }: { country: typeof COUNTRIES[0]; anim
           </div>
         </div>
 
-        {/* big stat */}
+        {/* big animated tourist count */}
         <div style={{ marginBottom: '22px' }}>
-          <div style={{ fontFamily: BEBAS, fontSize: 'clamp(44px, 5vw, 64px)', lineHeight: 0.85, letterSpacing: '0.02em', color: country.color }}>
-            {country.tourists}
+          <div style={{
+            fontFamily: BEBAS, fontSize: 'clamp(44px, 5vw, 64px)',
+            lineHeight: 0.85, letterSpacing: '0.02em', color: country.color,
+            transition: 'opacity .2s',
+          }}>
+            {displayTourists}
           </div>
           <div style={{ fontFamily: MUKTA, fontSize: '12px', letterSpacing: '0.16em', textTransform: 'uppercase', color: C.inkFaint, marginTop: '3px' }}>
             tourists / yr
           </div>
         </div>
 
-        {/* bars */}
+        {/* animated bars */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: 1 }}>
-          <Bar pct={country.touristsPct} color={country.color} label="Tourists" value={country.tourists} animated={animated} />
-          <Bar pct={country.revenuePct}  color={country.color} label="Revenue"  value={country.revenue}  animated={animated} />
-          <Bar pct={country.gdpPct}      color={country.color} label="Tourism % of GDP" value={country.gdp} animated={animated} />
+          <Bar pct={country.touristsPct} color={country.color} label="Tourists"         displayValue={displayTourists} animated={animated} delay={0} />
+          <Bar pct={country.revenuePct}  color={country.color} label="Revenue"          displayValue={displayRevenue}  animated={animated} delay={0.1} />
+          <Bar pct={country.gdpPct}      color={country.color} label="Tourism % of GDP" displayValue={displayGdp}      animated={animated} delay={0.2} />
         </div>
 
         {/* note */}
@@ -169,25 +234,22 @@ function CountryCard({ country, animated }: { country: typeof COUNTRIES[0]; anim
 export function CountryComparisonSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [animated, setAnimated] = useState(false);
+  const rLeft   = useReveal(0, 'left');
+  const rRight  = useReveal(0.12, 'right');
+  const rInsight = useReveal(0.5);
 
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
-
-    const animate = () => { if (!animated) setAnimated(true); };
-
-    // check immediately
+    const trigger = () => { if (!animated) setAnimated(true); };
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) { animate(); return; }
-
+    if (rect.top < window.innerHeight * 0.85) { trigger(); return; }
     const io = new IntersectionObserver(
-      entries => { entries.forEach(e => { if (e.isIntersecting) animate(); }); },
-      { threshold: 0.15 }
+      entries => { entries.forEach(e => { if (e.isIntersecting) trigger(); }); },
+      { threshold: 0.12 }
     );
     io.observe(el);
-
-    // failsafe
-    const timer = setTimeout(animate, 1000);
+    const timer = setTimeout(trigger, 1200);
     return () => { io.disconnect(); clearTimeout(timer); };
   }, [animated]);
 
@@ -209,7 +271,7 @@ export function CountryComparisonSection() {
           alignItems: 'end', paddingBottom: '36px',
           borderBottom: `1px solid ${C.line}`, marginBottom: '40px',
         }}>
-          <div>
+          <div ref={rLeft}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '10px',
               fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase',
@@ -227,7 +289,7 @@ export function CountryComparisonSection() {
               <em style={{ fontStyle: 'italic', color: C.terra }}>Massive results.</em>
             </h2>
           </div>
-          <div style={{ paddingBottom: '4px' }}>
+          <div ref={rRight} style={{ paddingBottom: '4px' }}>
             <p style={{ fontSize: '14.5px', lineHeight: 1.75, color: C.inkSoft, maxWidth: '44ch', fontFamily: MUKTA, fontWeight: 300 }}>
               Countries far smaller than Nepal are unlocking extraordinary tourism potential. Nepal — with its Himalayas, spirituality and culture — has every advantage to lead.
             </p>
@@ -245,13 +307,13 @@ export function CountryComparisonSection() {
         }}>
           {COUNTRIES.map((country, i) => (
             <div key={i} style={{ borderRight: i < 3 ? `1px solid ${C.line}` : 'none' }}>
-              <CountryCard country={country} animated={animated} />
+              <CountryCard country={country} animated={animated} cardDelay={i * 0.09} />
             </div>
           ))}
         </div>
 
         {/* ── insight bar ── */}
-        <div style={{
+        <div ref={rInsight} style={{
           marginTop: '24px',
           display: 'grid', gridTemplateColumns: '1fr auto', gap: '32px', alignItems: 'center',
           background: C.ink, color: C.cream,
