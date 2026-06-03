@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 /* ─── design tokens ─────────────────────────────────────────────────────── */
@@ -48,6 +48,26 @@ const LOGOS = [
   { src: '/logo/KMG.jpg',                    alt: 'KMG' },
   { src: '/logo/Online Khaber.jpg',          alt: 'Online Khabar' },
 ];
+
+/* ─── count-up hook ──────────────────────────────────────────────────────── */
+function useCountUp(target: number, active: boolean, duration = 1.5) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    setValue(0);
+    const steps = 72;
+    const interval = (duration * 1000) / steps;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const progress = 1 - Math.pow(1 - step / steps, 3); // ease-out cubic
+      if (step >= steps) { setValue(target); clearInterval(timer); }
+      else setValue(target * progress);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [active, target, duration]);
+  return value;
+}
 
 /* ─── scroll-reveal hook ─────────────────────────────────────────────────── */
 function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
@@ -199,10 +219,56 @@ function VisionSection() {
 /* ══════════════════════════════════════════════════════════════════════════
    3. 0.5% PREMISE SECTION
 ══════════════════════════════════════════════════════════════════════════ */
+const PREMISE_STATS = [
+  { label: 'India',        target: 1.44,  fmt: (v: number) => `${v.toFixed(2)}B`, note: 'Population — our southern neighbour', accent: false, dur: 1.4 },
+  { label: 'China',        target: 1.40,  fmt: (v: number) => `${v.toFixed(2)}B`, note: 'Population — our northern neighbour', accent: false, dur: 1.4 },
+  { label: '0.5% of both', target: 14.2,  fmt: (v: number) => `${v.toFixed(1)}M`,  note: 'Visitors that could change Nepal forever', accent: true, dur: 1.6 },
+];
+
+function PremiseStat({ stat, active, padStyle, borderRight }: {
+  stat: typeof PREMISE_STATS[0]; active: boolean;
+  padStyle: string; borderRight: boolean;
+}) {
+  const val = useCountUp(stat.target, active, stat.dur);
+  return (
+    <div style={{
+      padding: padStyle,
+      borderRight: borderRight ? `1px solid ${C.lineS}` : 'none',
+    }}>
+      <div style={{ fontSize: '11px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.inkFaint, fontWeight: 500, marginBottom: '14px', fontFamily: MUKTA }}>
+        {stat.label}
+      </div>
+      <div style={{ fontFamily: BEBAS, fontSize: '64px', lineHeight: 0.9, color: stat.accent ? C.terra : C.ink, letterSpacing: '0.01em' }}>
+        {stat.fmt(val)}
+      </div>
+      <div style={{ fontSize: '13px', color: C.inkSoft, marginTop: '10px', lineHeight: 1.55, fontFamily: MUKTA }}>
+        {stat.note}
+      </div>
+    </div>
+  );
+}
+
 function PremiseSection() {
   const r1 = useReveal(0, 'left');
   const r2 = useReveal(0.12, 'right');
+  const stripRef = useRef<HTMLDivElement>(null);
+  const [statsActive, setStatsActive] = useState(false);
+
+  useEffect(() => {
+    const el = stripRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setStatsActive(true); obs.disconnect(); } },
+      { threshold: 0.2 }
+    );
+    obs.observe(el);
+    const t = setTimeout(() => setStatsActive(true), 2000);
+    return () => { obs.disconnect(); clearTimeout(t); };
+  }, []);
+
+  // reveal for the strip container (fade-up)
   const r3 = useReveal(0.22);
+
   return (
     <section id="vfy-premise" style={{
       background: C.paper, padding: '140px 0',
@@ -242,31 +308,24 @@ function PremiseSection() {
           </div>
         </div>
 
-        {/* stat strip */}
-        <div ref={r3} style={{
+        {/* stat strip — counts up on scroll */}
+        <div ref={(node) => {
+          // attach both the reveal ref and the intersection ref
+          (r3 as React.MutableRefObject<HTMLDivElement | null>).current = node;
+          (stripRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+        }} style={{
           marginTop: '60px', paddingTop: '36px',
           borderTop: `1px solid ${C.lineS}`,
           display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
         }}>
-          {[
-            { label: 'India',      num: '1.44B', note: 'Population — our southern neighbour', accent: false },
-            { label: 'China',      num: '1.40B', note: 'Population — our northern neighbour', accent: false },
-            { label: '0.5% of both', num: '14.2M', note: 'Visitors that could change Nepal forever', accent: true },
-          ].map((cell, i) => (
-            <div key={i} style={{
-              padding: i === 0 ? '0 28px 0 0' : i === 2 ? '0 0 0 28px' : '0 28px',
-              borderRight: i < 2 ? `1px solid ${C.lineS}` : 'none',
-            }}>
-              <div style={{ fontSize: '11px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.inkFaint, fontWeight: 500, marginBottom: '14px', fontFamily: MUKTA }}>
-                {cell.label}
-              </div>
-              <div style={{ fontFamily: BEBAS, fontSize: '64px', lineHeight: 0.9, color: cell.accent ? C.terra : C.ink, letterSpacing: '0.01em' }}>
-                {cell.num}
-              </div>
-              <div style={{ fontSize: '13px', color: C.inkSoft, marginTop: '10px', lineHeight: 1.55, fontFamily: MUKTA }}>
-                {cell.note}
-              </div>
-            </div>
+          {PREMISE_STATS.map((stat, i) => (
+            <PremiseStat
+              key={i}
+              stat={stat}
+              active={statsActive}
+              padStyle={i === 0 ? '0 28px 0 0' : i === 2 ? '0 0 0 28px' : '0 28px'}
+              borderRight={i < 2}
+            />
           ))}
         </div>
       </div>
