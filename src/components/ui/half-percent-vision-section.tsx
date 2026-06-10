@@ -41,7 +41,7 @@ const MONO  = "'JetBrains Mono', monospace";
 const PANELS = [
   { id: 1, label: 'Himalayas',   src: '/Himalayas Landscape.png' },
   { id: 2, label: 'Spiritual',   src: '/spirtual Distination.webp' },
-  { id: 3, label: 'Culture',     src: '/nepali art.jpg' },
+  { id: 3, label: 'Culture',     src: '/nepali art.jpeg' },
   { id: 4, label: 'Adventure',   src: '/sport tourism.png' },
   { id: 5, label: 'Cinema',      src: '/Cinema tourism.png' },
 ];

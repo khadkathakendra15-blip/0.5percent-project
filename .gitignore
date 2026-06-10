@@ -35,8 +35,8 @@ ai-guide-decompressed.html
 ai-guide-design.html
 ai-guide-real.html
 
-# Large video files (too big for GitHub — host on cloud storage)
-public/MONTAGE.mp4
+# Unused font folder in project root (not referenced in source)
+0001 ARAP  BK Regular/
 
 # Claude internal
 .claude/

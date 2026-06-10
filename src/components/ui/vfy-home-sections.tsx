@@ -24,7 +24,7 @@ const MUKTA  = "'Mukta', system-ui, sans-serif";
 /* ─── image paths ───────────────────────────────────────────────────────── */
 const IMG = {
   spiritual:            '/spirtual Distination.webp',
-  nepaliArt:            '/nepali art.jpg',
+  nepaliArt:            '/nepali art.jpeg',
   dashrath:             '/Dashrat Sunar - founder.jpg',
   vfyTalks:            '/Vfy Activities for this campaingn/Vfy Talks.jpeg',
   globalDiscourse:      '/Vfy Activities for this campaingn/Vfy global disscourse.jpeg',

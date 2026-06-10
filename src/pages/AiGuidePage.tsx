@@ -32,7 +32,7 @@ const A = {
   himalayas: '/Himalayas Landscape.png',
   spiritual: '/spirtual Distination.webp',
   buddhism:  '/Buddhism.webp',
-  nepaliArt: '/nepali art.jpg',
+  nepaliArt: '/nepali art.jpeg',
   logo:      '/o.5 logo.png',
 };
 

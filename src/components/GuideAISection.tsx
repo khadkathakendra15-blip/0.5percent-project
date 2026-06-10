@@ -30,7 +30,7 @@ const A = {
   himalayas: '/Himalayas Landscape.png',
   spiritual: '/spirtual Distination.webp',
   buddhism:  '/Buddhism.webp',
-  nepaliArt: '/nepali art.jpg',
+  nepaliArt: '/nepali art.jpeg',
 };
 
 // ─── AI Response engine (minimal, self-contained) ─────────────────────────

@@ -812,7 +812,7 @@ export const WhatWePromote = () => {
       icon: Palette,
       title: 'Arts & Creativity',
       description: 'Music, art, food, and creative industries',
-      image: '/nepali art.jpg',
+      image: '/nepali art.jpeg',
     },
   ];
 
