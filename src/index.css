@@ -44,25 +44,26 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --radius: 0.375rem;
+  /* ── VFY Brand palette ─────────────────────────────────────── */
+  /* paper  #faf5ea */ --background:          oklch(0.972 0.018 85);
+  /* ink    #181410 */ --foreground:          oklch(0.120 0.012 62);
+  /* paper  #faf5ea */ --card:                oklch(0.972 0.018 85);
+  /* ink    #181410 */ --card-foreground:     oklch(0.120 0.012 62);
+  /* paper  #faf5ea */ --popover:             oklch(0.972 0.018 85);
+  /* ink    #181410 */ --popover-foreground:  oklch(0.120 0.012 62);
+  /* saffron#1e77c1 */ --primary:             oklch(0.522 0.148 245);
+  /* cream  #f4ede0 */ --primary-foreground:  oklch(0.948 0.024 85);
+  /* cream2 #ebe2d1 */ --secondary:           oklch(0.913 0.028 82);
+  /* ink    #181410 */ --secondary-foreground:oklch(0.120 0.012 62);
+  /* cream2 #ebe2d1 */ --muted:               oklch(0.913 0.028 82);
+  /* inkSft #5a4f44 */ --muted-foreground:    oklch(0.382 0.022 52);
+  /* cream  #f4ede0 */ --accent:              oklch(0.948 0.024 85);
+  /* ink    #181410 */ --accent-foreground:   oklch(0.120 0.012 62);
+  /* terra  #ff0000 */ --destructive:         oklch(0.627 0.258 29.2);
+  /* lineS warm     */ --border:              oklch(0.920 0.012 75);
+  /* lineS warm     */ --input:               oklch(0.920 0.012 75);
+  /* saffron        */ --ring:                oklch(0.522 0.148 245);
   --brand: oklch(0.521 0.179 248.86);
   --brand-foreground: oklch(0.985 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -319,11 +320,406 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Mukta', system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.04em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE RESPONSIVENESS
+   All inline-style overrides use !important since inline styles
+   win the cascade without it.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Prevent horizontal overflow globally */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; }
+
+/* ── Hero: right-aligned desktop → centered on mobile ──────── */
+@media (max-width: 768px) {
+  .vfy-hero-text {
+    left: 0 !important;
+    right: 0 !important;
+    max-width: 100% !important;
+    padding: 0 22px !important;
+    text-align: center !important;
+  }
+  /* Tags flex row: right-align → center */
+  .vfy-hero-text [style*="justify-content: flex-end"] {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  /* Description paragraph: remove left auto margin */
+  .vfy-hero-text [style*="margin-left: auto"] {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── Floating About button: vertical strip → bottom pill ──── */
+@media (max-width: 768px) {
+  .vfy-fab {
+    top: auto !important;
+    bottom: 24px !important;
+    /* neutralize both Tailwind `translate` utility and framer-motion transform */
+    translate: 0 0 !important;
+    transform: none !important;
+    writing-mode: horizontal-tb !important;
+    padding: 10px 18px 10px 14px !important;
+    border-radius: 100px 0 0 100px !important;
+  }
+  .vfy-fab span {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    font-size: 11px !important;
+    letter-spacing: 0.16em !important;
+  }
+}
+
+/* ── Decorative huge numbers: scale down on mobile ──────────── */
+@media (max-width: 768px) {
+  .vfy-premise-num { font-size: clamp(80px, 26vw, 160px) !important; }
+  .about-0pt5      { font-size: clamp(68px, 24vw, 130px) !important; }
+}
+
+/* ── Pillar cards: portrait → landscape on mobile ───────────── */
+@media (max-width: 768px) {
+  .vfy-pillar-card { aspect-ratio: 4 / 2.8 !important; }
+}
+
+/* ── Premise stat strip: vertical stack on mobile ───────────── */
+@media (max-width: 768px) {
+  .vfy-stat-strip > * {
+    padding: 0 0 24px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(24,20,16,0.08) !important;
+    margin-bottom: 4px;
+  }
+  .vfy-stat-strip > *:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0;
+  }
+}
+
+/* ── Five-panel accordion: horizontal scroll row on mobile ───── */
+/* The panels-row IS the scroll container; its parent's overflow:hidden
+   does NOT block internal scrolling since the row fills the parent width. */
+@media (max-width: 768px) {
+  .vfy-panels-row {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    height: 220px !important;
+    gap: 6px !important;
+    /* flex-direction stays row — panels scroll horizontally */
+  }
+  .vfy-panels-row::-webkit-scrollbar { display: none; }
+  /* Reduce panel height; keep React-controlled widths (360px/58px) */
+  .vfy-panels-row > * {
+    height: 220px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ── Site footer: center-stack on small screens ─────────────── */
+@media (max-width: 640px) {
+  .vfy-footer-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 18px !important;
+  }
+}
+
+/* ── About page & FounderSection grid collapses ─────────────── */
+/* These grids use repeat(N,1fr) without spaces — attribute selectors
+   need to match the exact serialized string React writes to the DOM. */
+@media (max-width: 1024px) {
+  /* Founder portrait card (AboutPage) */
+  [style*="grid-template-columns: 0.92fr 1.08fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  /* FounderSection (vfy-home-sections) */
+  [style*="grid-template-columns: 0.9fr 1.1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+@media (max-width: 768px) {
+  [style*="grid-template-columns: 0.92fr 1.08fr"] {
+    gap: 24px !important;
+  }
+  [style*="grid-template-columns: 0.9fr 1.1fr"] {
+    gap: 24px !important;
+  }
+  /* AboutPage partners (4 cols, no spaces) → 2 cols */
+  [style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* AboutPage team grid (2 cols, no spaces) → 1 col */
+  [style*="grid-template-columns: repeat(2,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* CountryComparison insight bar */
+  [style*="grid-template-columns: 1fr auto"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+  /* About page founder portrait: reduce height */
+  [style*="grid-template-columns: 0.92fr 1.08fr"] + * [style*="height: 520"],
+  [style*="height: 520px"] { height: 280px !important; }
+}
+
+/* ── Section vertical padding: reduce on mobile ─────────────── */
+@media (max-width: 768px) {
+  /* padding: 110px 0 variants */
+  [style*="padding: 110px 0"] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+  /* padding: 80px 0 72px (CountryComparison) */
+  [style*="padding: 80px 0 72px"] {
+    padding-top: 52px !important;
+    padding-bottom: 40px !important;
+  }
+  /* padding: 140px 40px (CTA, etc.) — reduce both axes */
+  [style*="padding: 140px 40px"] {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* padding: 110px 40px (About sections) */
+  [style*="padding: 110px 40px"] {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* padding: 130px 40px (About team, partners) */
+  [style*="padding: 130px 40px"] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* wrapper divs: padding: 0 40px */
+  [style*="padding: 0 40px"],
+  [style*="padding: 0px 40px"] {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+/* ── MaxWidth containers: allow full bleed on small screens ─── */
+@media (max-width: 480px) {
+  [style*="max-width: 1320px"],
+  [style*="max-width: 1240px"],
+  [style*="max-width: 1180px"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ── Campaign approach ledger grid: 3col→2col on tablet ─────── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* The 3-col ledger still handled by global repeat(3,1fr) rule.
+     On tablet prefer 2 cols for better readability. */
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── Blog: featured article — image always full-width when stacked ──────── */
+@media (max-width: 768px) {
+  /* The ArticleCard with large=true renders flex-direction:row.
+     When the global rule collapses it to column, the image div
+     still has width:45% inline — force it to 100%. */
+  [style*="flex-direction: row"][style*="border-radius: 6px"] > div:first-child,
+  [style*="flex-direction: column"][style*="border-radius: 6px"] > div:first-child {
+    width: 100% !important;
+  }
+}
+
+/* ── Blog: newsletter subscribe row — stack on very small screens ─────────── */
+@media (max-width: 400px) {
+  .vfy-newsletter-row {
+    flex-direction: column !important;
+  }
+  .vfy-newsletter-row input {
+    border-radius: 2px !important;
+    border-right: 1px solid rgba(24,20,16,0.08) !important;
+    border-bottom: none !important;
+  }
+  .vfy-newsletter-row button {
+    border-radius: 2px !important;
+    width: 100% !important;
+  }
+}
+
+/* ── BookingPage guide tier cards: 3-col → 1-col on mobile ──────────────── */
+@media (max-width: 768px) {
+  [style*="grid-template-columns: repeat(3, 1fr)"][style*="gap: 24px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── BookingPage step numbers: reduce on mobile ─────────────────────────── */
+@media (max-width: 768px) {
+  [style*="grid-template-columns: repeat(3, 1fr)"][style*="gap: 20px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── DestinationsPage hero: reduce large font sizes on mobile ─────────────── */
+@media (max-width: 768px) {
+  /* px-10 (40px) → px-4 (16px) */
+  .container.px-10 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  /* ScrollZoomHero: ensure 3 panels still show (just shorter) */
+  section.h-screen { min-height: 55vh; }
+}
+
+/* ── Booking hero quick-facts 2×2 grid: stays 2-col even on mobile ───────── */
+/* Already covered by [style*="grid-template-columns: 1fr 1fr"] → 1-col rule.
+   Override it to keep the 2×2 compact look on small screens. */
+@media (max-width: 600px) {
+  [style*="grid-template-columns: 1fr 1fr"][style*="gap: 12px"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+/* ── Booking/Blog sections: reduce 100px vertical padding on mobile ─────── */
+@media (max-width: 768px) {
+  [style*="padding: 100px 0"] {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  [style*="padding: 96px 0"] {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+  /* Destinations hero stats grid: 4 cols → 2 cols */
+  [style*="grid-template-columns: repeat(4,1fr)"][style*="gap: 1px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── AboutPage: ensure portrait stays reasonably sized ─────────────────── */
+@media (max-width: 480px) {
+  [style*="height: 520px"] { height: 240px !important; }
+  [style*="height: 480px"] { height: 220px !important; }
+}
+
+/* ── Ensure flex-wrap for action button rows ─────────────────────────────── */
+@media (max-width: 480px) {
+  [style*="display: flex"][style*="gap: 12px"]:not(nav):not(header):not(.guide-wizard-options) {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* ── Tourism history stat cards: 4col → 2col → 1col ─────────── */
+@media (max-width: 768px) {
+  [style*="grid-template-columns: repeat(4, 1fr)"][style*="gap: 12px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  [style*="grid-template-columns: repeat(4, 1fr)"][style*="gap: 12px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Tourism history header grid: 2col → 1col ───────────────── */
+@media (max-width: 768px) {
+  [style*="grid-template-columns: 1fr 1.2fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ── Vision section flex children: full width when stacked ───── */
+/* The left "38% width" div stays narrow without this override    */
+@media (max-width: 768px) {
+  [style*="flex-direction: row"][style*="gap: 72px"] > * {
+    width: 100% !important;
+    flex-basis: auto !important;
+  }
+}
+
+/* ── Impact calculator: allow h2 to wrap on small screens ─────── */
+@media (max-width: 640px) {
+  [style*="white-space: nowrap"][style*="font-size: clamp"] {
+    white-space: normal !important;
+  }
+}
+
+/* ── NavBar: mobile hamburger + collapse desktop links ────────── */
+@media (max-width: 768px) {
+  .vfy-nav-links { display: none !important; }
+  .vfy-hamburger { display: block !important; }
+  .vfy-nav-cta   { gap: 8px !important; }
+}
+/* hide "Join the 0.5%" button text on very small screens, keep hamburger */
+@media (max-width: 480px) {
+  .vfy-nav-cta > a:first-child { display: none !important; }
+}
+
+/* ── New pages: responsive grids ─────────────────────────────── */
+@media (max-width: 768px) {
+  /* Destinations grid 3-col → 1-col */
+  [style*="grid-template-columns: repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Seasons 4-col → 2-col */
+  [style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+  /* Booking hero 2-col → 1-col */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  /* Blog featured article: row → column */
+  [style*="flex-direction: row"][style*="border-radius: 6px"] {
+    flex-direction: column !important;
+  }
+  /* New page inner padding */
+  [style*="padding: 100px 0"] {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  [style*="padding: 80px 40px"] {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  [style*="grid-template-columns: repeat(3,1fr)"] {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+
+/* ── Country comparison: 2-col at tablet (overrides the
+   global repeat(4,1fr)→1col rule to keep 2 cols at tablet) ──── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0 !important;
   }
 }
 

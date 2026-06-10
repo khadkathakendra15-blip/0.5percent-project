@@ -280,7 +280,7 @@ function PremiseSection() {
           {/* huge number */}
           <div ref={r1}>
             <Eyebrow>The premise</Eyebrow>
-            <div style={{
+            <div className="vfy-premise-num" style={{
               fontFamily: SERIF, fontWeight: 300,
               fontSize: 'clamp(180px, 28vw, 440px)',
               lineHeight: 0.78, color: C.terra,
@@ -309,7 +309,7 @@ function PremiseSection() {
         </div>
 
         {/* stat strip — counts up on scroll */}
-        <div ref={(node) => {
+        <div className="vfy-stat-strip" ref={(node) => {
           // attach both the reveal ref and the intersection ref
           (r3 as React.MutableRefObject<HTMLDivElement | null>).current = node;
           (stripRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
@@ -412,30 +412,18 @@ function PillarCard({ img, num, title, sub, delay }: { img: string; num: string;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   5. ACTIVITIES MOSAIC
+   5. ACTIVITIES — VIDEO SHOWCASE
 ══════════════════════════════════════════════════════════════════════════ */
-const ACTIVITIES = [
-  { img: IMG.vfyTalks,        tag: 'Podcast · Series', title: 'VFY Talks',           desc: 'Long-form conversations with the people moving Nepal — founders, monks, athletes, artists.', size: 'lg' },
-  { img: IMG.globalDiscourse,  tag: 'Global · Discourse', title: 'VFY Global Discourse', desc: '', size: 'md' },
-  { img: IMG.spiritualityDisc, tag: 'Dialogue',          title: 'Global Spirituality',  desc: '', size: 'sm' },
-  { img: IMG.expedition,       tag: 'Adventure',         title: 'Expedition',           desc: "Filming and documenting expeditions across Nepal's most legendary terrain.", size: 'tall' },
-  { img: IMG.nepalRara,        tag: 'Place',             title: 'Nepal Rara',           desc: '', size: 'sm' },
-  { img: IMG.nepalKoYatra,     tag: 'Travel · Film',     title: 'Nepal Ko Yatra',       desc: 'A cinematic journey across Nepal — peaks, valleys, and the quiet between.', size: 'wide' },
-  { img: IMG.nepaliCulture,    tag: 'Culture',           title: 'Nepali Culture',       desc: '', size: 'md' },
+const VIDEO_EMBEDS = [
+  'https://www.youtube.com/embed/M1IzzysN9m8?si=dvWUHVXb_2X5j4wI',
+  'https://www.youtube.com/embed/bM2CjlDVgs4?si=EuZYpCXn8P_4_AeF',
 ];
 
-const SIZE_STYLES: Record<string, React.CSSProperties> = {
-  lg:   { gridColumn: 'span 6', gridRow: 'span 3' },
-  md:   { gridColumn: 'span 4', gridRow: 'span 2' },
-  sm:   { gridColumn: 'span 3', gridRow: 'span 2' },
-  tall: { gridColumn: 'span 3', gridRow: 'span 3' },
-  wide: { gridColumn: 'span 6', gridRow: 'span 2' },
-};
-
 function ActivitiesSection() {
-  const rHead = useReveal(0, 'left');
+  const rHead    = useReveal(0, 'left');
   const rDisplay = useReveal(0.1, 'left');
-  const rDesc = useReveal(0.16, 'right');
+  const rDesc    = useReveal(0.16, 'right');
+  const rVideos  = useReveal(0.26);
 
   return (
     <section id="vfy-activities" style={{ background: C.paper, padding: '140px 0', position: 'relative', overflow: 'hidden' }}>
@@ -443,16 +431,16 @@ function ActivitiesSection() {
       <div style={{ position: 'absolute', top: 0, left: '40px', right: '40px', height: '1px', background: C.lineS }} />
 
       <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
-        {/* head — full-width editorial layout */}
+        {/* head */}
         <div ref={rHead} style={{ marginBottom: '20px' }}>
           <Eyebrow>Campaign initiatives</Eyebrow>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'flex-end', marginBottom: '64px' }}>
           <div ref={rDisplay}>
-          <Display>
-            How we carry the{' '}
-            <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>story</em>.
-          </Display>
+            <Display>
+              How we carry the{' '}
+              <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>story</em>.
+            </Display>
           </div>
           <div ref={rDesc}>
             <p style={{ maxWidth: '42ch', color: C.inkSoft, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, fontFamily: MUKTA, borderLeft: `2px solid ${C.terra}`, paddingLeft: '24px' }}>
@@ -461,60 +449,49 @@ function ActivitiesSection() {
           </div>
         </div>
 
-        {/* mosaic grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(12, 1fr)',
-          gridAutoRows: '170px',
-          gap: '12px',
-          borderRadius: '8px',
-          overflow: 'hidden',
-        }}>
-          {ACTIVITIES.map((act, i) => (
-            <ActivityCard key={i} {...act} delay={i * 0.07} />
-          ))}
+        {/* Our work so far — video row */}
+        <div ref={rVideos}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
+            <span style={{
+              fontFamily: MUKTA, fontSize: '11px', letterSpacing: '0.32em',
+              textTransform: 'uppercase', fontWeight: 600, color: C.inkFaint,
+              whiteSpace: 'nowrap',
+            }}>
+              Our work so far
+            </span>
+            <div style={{ flex: 1, height: '1px', background: C.lineS }} />
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+            {VIDEO_EMBEDS.map((src, i) => (
+              <div key={i} style={{
+                position: 'relative',
+                paddingBottom: '56.25%',
+                height: 0,
+                overflow: 'hidden',
+                borderRadius: '6px',
+                background: C.ink,
+                boxShadow: '0 8px 40px rgba(24,20,16,0.16)',
+              }}>
+                <iframe
+                  src={src}
+                  title={`VFY Campaign Video ${i + 1}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  style={{
+                    position: 'absolute',
+                    top: 0, left: 0,
+                    width: '100%', height: '100%',
+                    border: 'none',
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function ActivityCard({ img, tag, title, desc, size, delay }: { img: string; tag: string; title: string; desc: string; size: string; delay: number }) {
-  const ref = useReveal(delay);
-  return (
-    <div ref={ref} style={{
-      ...SIZE_STYLES[size],
-      position: 'relative', overflow: 'hidden', borderRadius: '3px',
-      background: C.cream2, cursor: 'pointer',
-      transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease',
-    }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLElement).style.transform = 'translateY(-5px)';
-        (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 50px rgba(0,0,0,0.28)';
-        (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)';
-        const descEl = e.currentTarget.querySelector('.act-desc') as HTMLElement;
-        if (descEl) descEl.style.opacity = '1';
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLElement).style.transform = 'none';
-        (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-        (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)';
-        const descEl = e.currentTarget.querySelector('.act-desc') as HTMLElement;
-        if (descEl) descEl.style.opacity = '0';
-      }}
-    >
-      <img src={img} alt={title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 1s ease', display: 'block' }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(8,6,4,0.85))', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', left: '22px', right: '22px', bottom: '20px', color: '#fff', zIndex: 2 }}>
-        <div style={{ fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', color: C.saffronBright, fontWeight: 600, fontFamily: MUKTA }}>{tag}</div>
-        <h4 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: '26px', lineHeight: 1.1, marginTop: '6px' }}>{title}</h4>
-        {desc && (
-          <div className="act-desc" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.78)', marginTop: '8px', lineHeight: 1.5, fontWeight: 300, fontFamily: MUKTA, opacity: 0, transition: 'opacity .4s ease' }}>
-            {desc}
-          </div>
-        )}
-      </div>
-    </div>
   );
 }
 
@@ -762,7 +739,7 @@ function SiteFooter() {
   const navigate = useNavigate();
   return (
     <footer style={{ background: '#0f0c08', color: 'rgba(244,237,224,0.65)', padding: '60px 0 40px' }}>
-      <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '30px', flexWrap: 'wrap' }}>
+      <div className="vfy-footer-inner" style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '30px', flexWrap: 'wrap' }}>
         {/* brand */}
         <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>

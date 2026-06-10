@@ -52,6 +52,7 @@ function Panel({ item, isActive, onEnter }: {
   return (
     <div
       onMouseEnter={onEnter}
+      onClick={onEnter}
       style={{
         position: 'relative',
         height: '480px',
@@ -173,7 +174,7 @@ export function HalfPercentVisionSection() {
 
           {/* ── right accordion ── */}
           <div ref={rRight} style={{ flex: 1, overflow: 'hidden' }}>
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '8px', alignItems: 'stretch' }}>
+            <div className="vfy-panels-row" style={{ display: 'flex', flexDirection: 'row', gap: '8px', alignItems: 'stretch' }}>
               {PANELS.map((item, i) => (
                 <Panel key={item.id} item={item} isActive={i === active} onEnter={() => setActive(i)} />
               ))}

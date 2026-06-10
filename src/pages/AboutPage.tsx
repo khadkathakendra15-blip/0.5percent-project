@@ -1,19 +1,20 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { NavBar } from '@/components/ui/nav-bar';
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const C = {
-  cream:    '#f8f7f5',
-  paper:    '#ffffff',
-  paper2:   '#f3f0ec',
-  ink:      '#1c1917',
-  inkSoft:  '#57534e',
-  inkFaint: '#a8a29e',
-  terra:    '#e63329',
+  cream:    '#f4ede0',
+  paper:    '#faf5ea',
+  paper2:   '#ebe2d1',
+  ink:      '#181410',
+  inkSoft:  '#5a4f44',
+  inkFaint: '#9b8f80',
+  terra:    '#ff0000',
   saffron:  '#1e77c1',
-  line:     'rgba(28,25,23,0.12)',
-  lineSoft: 'rgba(28,25,23,0.06)',
+  line:     'rgba(24,20,16,0.10)',
+  lineSoft: 'rgba(24,20,16,0.06)',
 };
 
 const serif = "'Cormorant Garamond', Georgia, serif";
@@ -140,22 +141,12 @@ export default function AboutPage() {
   const wrap: React.CSSProperties = { maxWidth: 1180, margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 };
 
   return (
-    <div style={{ margin: 0, background: C.cream, color: C.ink, fontFamily: sans, fontWeight: 300, lineHeight: 1.7, WebkitFontSmoothing: 'antialiased', overflowX: 'hidden', minHeight: '100vh' }}>
+    <div style={{ margin: 0, background: C.paper, color: C.ink, fontFamily: sans, fontWeight: 300, lineHeight: 1.7, WebkitFontSmoothing: 'antialiased', overflowX: 'hidden', minHeight: '100vh' }}>
 
-      {/* Background glow */}
-      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0,
-        background: `radial-gradient(120% 80% at 50% -10%, rgba(30,119,193,0.07), transparent 55%),
-                     radial-gradient(90% 60% at 90% 110%, rgba(255,0,0,0.04), transparent 60%)` }} />
+      <NavBar />
 
-      {/* ── Header ── */}
-      <header style={{ position: 'relative', zIndex: 3, padding: '34px 0 6px', textAlign: 'center' }}>
-        <div onClick={() => navigate('/')} title="Back to home">
-          <BrandMark />
-        </div>
-      </header>
-
-      {/* ── Vision (moved from home) ── */}
-      <section style={{ padding: '110px 40px 100px', maxWidth: 1180, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      {/* ── Vision ── */}
+      <section style={{ padding: '130px 40px 100px', maxWidth: 1180, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '80px', alignItems: 'start' }}>
           {/* left */}
           <Reveal>
@@ -204,7 +195,7 @@ export default function AboutPage() {
       <section style={{ textAlign: 'center', padding: '140px 40px 130px', maxWidth: 1180, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <Reveal><Kicker center>The premise</Kicker></Reveal>
         <Reveal delay={0.08}>
-          <div style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(140px, 26vw, 360px)', lineHeight: 0.82, color: C.terra, letterSpacing: '-0.02em', display: 'inline-block' }}>
+          <div className="about-0pt5" style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(140px, 26vw, 360px)', lineHeight: 0.82, color: C.terra, letterSpacing: '-0.02em', display: 'inline-block' }}>
             0.5<span style={{ fontSize: '0.42em', verticalAlign: 'super', fontWeight: 400, color: C.saffron }}>%</span>
           </div>
         </Reveal>
@@ -298,7 +289,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Partners ── */}
-      <section style={{ background: C.paper, borderTop: `1px solid ${C.lineSoft}`, borderBottom: `1px solid ${C.lineSoft}`, padding: '130px 40px' }}>
+      <section style={{ background: C.cream, borderTop: `1px solid ${C.lineSoft}`, borderBottom: `1px solid ${C.lineSoft}`, padding: '130px 40px' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <Reveal>
             <div style={{ textAlign: 'center', maxWidth: '62ch', margin: '0 auto 56px' }}>
@@ -345,12 +336,12 @@ export default function AboutPage() {
           onClick={() => navigate('/')}
           style={{
             fontFamily: sans, fontSize: 12, letterSpacing: '0.26em', textTransform: 'uppercase',
-            fontWeight: 500, color: C.terra, background: 'none', border: `1px solid ${C.terra}`,
+            fontWeight: 500, color: C.inkSoft, background: 'none', border: `1px solid ${C.line}`,
             padding: '12px 32px', borderRadius: 100, cursor: 'pointer',
             transition: 'background .2s, color .2s',
           }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = C.terra; (e.currentTarget as HTMLElement).style.color = '#fff'; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'none'; (e.currentTarget as HTMLElement).style.color = C.terra; }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = C.ink; (e.currentTarget as HTMLElement).style.color = C.cream; }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'none'; (e.currentTarget as HTMLElement).style.color = C.inkSoft; }}
         >
           ← Back to Home
         </button>

@@ -26,6 +26,15 @@ vfy_design
 compare_extracted/
 vfy_extracted/
 
+# Design bundles extracted from Claude Design (not source code)
+design-extract/
+design-extract-v2/
+
+# Temp HTML files from design export process
+ai-guide-decompressed.html
+ai-guide-design.html
+ai-guide-real.html
+
 # Large video files (too big for GitHub — host on cloud storage)
 public/MONTAGE.mp4
 

@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ProvincePartnership } from '@/components/ProvincePartnership';
 import { HalfPercentVisionSection } from '@/components/ui/half-percent-vision-section';
 import { VFYHomeSections, PremiseSection, ActivitiesSection, ThreePillarsSection, MarqueeStrip } from '@/components/ui/vfy-home-sections';
 import { CampaignApproachSection } from '@/components/ui/campaign-approach-section';
 import { ImpactCalculatorSection } from '@/components/ui/impact-calculator-section';
 import { CountryComparisonSection } from '@/components/ui/country-comparison-section';
+import { TourismHistorySection } from '@/components/ui/tourism-history-section';
 import { FloatingAboutButton } from '@/components/ui/about-us';
-import ScrollExpandMedia from '@/components/ui/scroll-expansion-hero';
+import { NavBar } from '@/components/ui/nav-bar';
 import {
   Mountain,
   Sparkles,
@@ -29,45 +31,144 @@ import {
   Compass,
 } from 'lucide-react';
 
-/* ── Hero overlay: editorial full-bleed layout ─────────────────────────── */
+/* ─── design tokens (hero) ───────────────────────────────────────────────── */
+const SERIF  = "'Cormorant Garamond', Georgia, serif";
+const BEBAS  = "'Bebas Neue', sans-serif";
+const MUKTA  = "'Mukta', system-ui, sans-serif";
 
-/* ── Campaign Hero — scroll-to-expand MONTAGE video ──────────────────────────
-   "0.5"      → sits where the demo's "Immersive" word was (title, slides left)
-   "campaign" → sits where the demo's "Video Experience" was (subtitle, slides right)
-   The MONTAGE.mp4 video expands from a centered card as you scroll. */
+/* ── Campaign Hero — full-screen video, dark fade, project text ──────────── */
 const CampaignHero = () => (
-  <ScrollExpandMedia
-    mediaType="video"
-    mediaSrc="/MONTAGE.mp4"
-    bgImageSrc="/Himalayas Landscape.png"
-    scrollToExpand="Scroll to Explore"
-    heroOverlay={
-      /* CAMPAIGN + 0.5 — both PNGs share ONE 1536×517 canvas, overlaid so
-         "CAMPAIGN" (top-left) and "0.5" (lower-left) land in their designed spots.
-         mix-blend-multiply drops the white canvas, leaving only the blue lettering. */
-      <div
+  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#0a0705' }}>
+
+    {/* Video — full bleed */}
+    <video
+      autoPlay muted loop playsInline
+      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.82 }}
+    >
+      <source src="/MONTAGE.mp4" type="video/mp4" />
+    </video>
+
+    {/* Dark gradient overlays */}
+    <div style={{
+      position: 'absolute', inset: 0,
+      background: 'linear-gradient(105deg, rgba(10,7,5,0.18) 0%, rgba(10,7,5,0.55) 55%, rgba(10,7,5,0.88) 100%)',
+    }} />
+
+    {/* ── Text content — right-aligned, vertically centred ── */}
+    <div className="vfy-hero-text" style={{
+      position: 'absolute',
+      right: 'clamp(32px, 7vw, 120px)',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      textAlign: 'right',
+      color: '#fff',
+      maxWidth: '620px',
+    }}>
+
+      {/* Main title */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.45 }}
+      >
+        <div style={{
+          fontFamily: BEBAS,
+          fontSize: 'clamp(72px, 13vw, 180px)',
+          lineHeight: 0.88,
+          letterSpacing: '0.02em',
+          color: '#fff',
+        }}>
+          0.5<span style={{ color: '#1e77c1' }}>%</span>
+        </div>
+        <div style={{
+          fontFamily: BEBAS,
+          fontSize: 'clamp(28px, 4.8vw, 64px)',
+          lineHeight: 1,
+          letterSpacing: '0.12em',
+          color: 'rgba(255,255,255,0.88)',
+          marginTop: '6px',
+        }}>
+          Campaign
+        </div>
+      </motion.div>
+
+      {/* Divider + tags */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.75 }}
         style={{
-          position: 'absolute',
-          left: '1.5vw',
-          top: '2.5vh',
-          width: 'clamp(240px, 34vw, 500px)',
-          aspectRatio: '1536 / 517',
-          mixBlendMode: 'multiply',
+          display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
+          gap: '14px', margin: '22px 0 20px',
+          fontFamily: MUKTA, fontSize: '11px', letterSpacing: '0.28em',
+          textTransform: 'uppercase', color: 'rgba(255,255,255,0.42)',
         }}
       >
-        <img
-          src="/Campaign text.png"
-          alt="Campaign"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }}
-        />
-        <img
-          src="/0.5 text.png"
-          alt="0.5"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }}
-        />
-      </div>
-    }
-  />
+        {['Tourism', 'Spirituality', 'Culture', 'Media'].map((tag, i) => (
+          <span key={tag} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#1e77c1', display: 'inline-block' }} />}
+            {tag}
+          </span>
+        ))}
+      </motion.div>
+
+      {/* Italic tagline */}
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        style={{
+          fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
+          fontSize: 'clamp(18px, 2.2vw, 30px)', lineHeight: 1.3,
+          color: '#ff0000',
+          marginBottom: '36px',
+        }}
+      >
+        From the Himalayas, to the world.
+      </motion.p>
+
+      {/* Description */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.05 }}
+        style={{
+          fontFamily: MUKTA, fontWeight: 300,
+          fontSize: 'clamp(13px, 1.2vw, 16px)', lineHeight: 1.85,
+          color: 'rgba(255,255,255,0.52)',
+          maxWidth: '44ch', marginLeft: 'auto',
+        }}
+      >
+        A movement to bring 0.5% of India and China's travellers to Nepal —
+        transforming the nation's economy, identity and global story.
+      </motion.p>
+
+      {/* Scroll hint */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+        style={{
+          marginTop: '48px',
+          display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '10px',
+          fontFamily: MUKTA, fontSize: '10px', letterSpacing: '0.3em',
+          textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)',
+        }}
+      >
+        Scroll to explore
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ animation: 'heroScrollBounce 1.6s ease-in-out infinite' }}>
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </motion.div>
+    </div>
+
+    <style>{`
+      @keyframes heroScrollBounce {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(5px); }
+      }
+    `}</style>
+  </section>
 );
 
 const ImpactCalculator = () => {
@@ -940,6 +1041,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
+      <NavBar />
       <FloatingAboutButton />
       <CampaignHero />
       <MarqueeStrip />
@@ -948,9 +1050,55 @@ export default function App() {
         <ThreePillarsSection />
         <HalfPercentVisionSection />
         <ActivitiesSection />
+        <TourismHistorySection />
         <CountryComparisonSection />
         <ImpactCalculatorSection />
         <CampaignApproachSection />
+
+        {/* ── 7 Province Partnership ── */}
+        <section className="relative py-24 px-4 bg-background border-t border-border">
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-14">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-4 py-2 mb-6"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wider">7 Provinces</span>
+              </motion.div>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-b from-foreground to-muted-foreground bg-clip-text text-transparent"
+              >
+                In partnership with<br />
+                <span className="italic text-brand">all of Nepal.</span>
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-lg text-muted-foreground max-w-2xl mx-auto"
+              >
+                The 0.5% Campaign operates across every province — from the eastern Koshi hills to the far-western Sudurpashchim plains.
+              </motion.p>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <ProvincePartnership defaultSelected={0} />
+            </motion.div>
+          </div>
+        </section>
+
         <VFYHomeSections />
       </div>
     </div>
