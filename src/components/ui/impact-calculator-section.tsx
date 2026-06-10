@@ -53,7 +53,7 @@ function useFlash(value: string) {
 }
 
 /* ─── slider ─────────────────────────────────────────────────────────────── */
-function Slider({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+export function Slider({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   const pct = ((value - 1) / (30 - 1)) * 100;
   const bg = `linear-gradient(to right, ${C.saffron} 0%, ${C.saffron} ${pct}%, ${C.cream2} ${pct}%, ${C.cream2} 100%)`;
 

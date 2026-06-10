@@ -31,14 +31,6 @@ const W = {
   mono:  "'JetBrains Mono', ui-monospace, monospace",
 };
 
-// ─── AI data ───────────────────────────────────────────────────────────────
-const A = {
-  himalayas: '/Himalayas Landscape.png',
-  spiritual: '/spirtual Distination.webp',
-  buddhism:  '/Buddhism.webp',
-  nepaliArt: '/nepali art.jpg',
-};
-
 type Chip = string;
 type AiMsg = { text: string; chips?: Chip[]; options?: { label: string; value: string }[] };
 

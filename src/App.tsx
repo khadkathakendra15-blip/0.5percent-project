@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ProvincePartnership } from '@/components/ProvincePartnership';
 import { HalfPercentVisionSection } from '@/components/ui/half-percent-vision-section';
@@ -171,7 +171,7 @@ const CampaignHero = () => (
   </section>
 );
 
-const ImpactCalculator = () => {
+export const ImpactCalculator = () => {
   const [indiaRate, setIndiaRate] = useState(5);
   const [chinaRate, setChinaRate] = useState(5);
 
@@ -439,7 +439,7 @@ const ImpactCalculator = () => {
   );
 };
 
-const HeroStats = () => {
+export const HeroStats = () => {
   const stats = [
     {
       value: '12×',
@@ -542,7 +542,7 @@ const HeroStats = () => {
   );
 };
 
-const ThreePillars = () => {
+export const ThreePillars = () => {
   const pillars = [
     {
       title: 'Land of Peace',
@@ -657,7 +657,7 @@ const ThreePillars = () => {
   );
 };
 
-const CampaignApproach = () => {
+export const CampaignApproach = () => {
   const approaches = [
     {
       icon: Mic,
@@ -776,7 +776,7 @@ const CampaignApproach = () => {
   );
 };
 
-const WhatWePromote = () => {
+export const WhatWePromote = () => {
   const features = [
     {
       icon: Mountain,
@@ -882,7 +882,7 @@ const WhatWePromote = () => {
   );
 };
 
-const CoreMessage = () => {
+export const CoreMessage = () => {
   return (
     <section className="relative py-40 px-4 bg-gradient-to-b from-muted/20 via-brand/5 to-background overflow-hidden">
       <div className="absolute inset-0">
@@ -931,7 +931,7 @@ const CoreMessage = () => {
   );
 };
 
-const Introduction = () => {
+export const Introduction = () => {
   const paragraphs = [
     {
       text: 'Nepal is one of the world\'s most beautiful and spiritually significant countries. From the Himalayas to ancient heritage sites, from the birthplace of Buddha to diverse cultures and traditions, Nepal possesses extraordinary tourism potential.',

@@ -1,14 +1,7 @@
 import * as React from "react"
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
 import { Mountain, Compass, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import { NavBar } from "@/components/ui/nav-bar"
-
-function cn(...classes: (string | undefined | null | false)[]) {
-  return classes.filter(Boolean).join(" ")
-}
 
 /* ──────────────────────────────────────────────────────────────
    ScrollZoomHero — 3 portrait images that zoom in/out on scroll

@@ -167,7 +167,7 @@ export function MarqueeStrip() {
 /* ══════════════════════════════════════════════════════════════════════════
    2. VISION SECTION
 ══════════════════════════════════════════════════════════════════════════ */
-function VisionSection() {
+export function VisionSection() {
   const r1 = useReveal(0, 'left');
   const r2 = useReveal(0.14, 'right');
   return (
@@ -498,7 +498,7 @@ function ActivitiesSection() {
 /* ══════════════════════════════════════════════════════════════════════════
    6. FOUNDER STRIP
 ══════════════════════════════════════════════════════════════════════════ */
-function FounderSection() {
+export function FounderSection() {
   const navigate = useNavigate();
   const r1 = useReveal(0, 'left');
   const r2 = useReveal(0.14, 'right');
@@ -658,7 +658,6 @@ function CTASection() {
   const r2 = useReveal(0.1);
   const r3 = useReveal(0.2);
   const r4 = useReveal(0.3);
-  const navigate = useNavigate();
 
   return (
     <section id="vfy-join" style={{ background: C.cream, position: 'relative', overflow: 'hidden', borderTop: `1px solid ${C.lineS}` }}>
@@ -735,7 +734,7 @@ function CTASection() {
 /* ══════════════════════════════════════════════════════════════════════════
    9. SITE FOOTER
 ══════════════════════════════════════════════════════════════════════════ */
-function SiteFooter() {
+export function SiteFooter() {
   const navigate = useNavigate();
   return (
     <footer style={{ background: '#0f0c08', color: 'rgba(244,237,224,0.65)', padding: '60px 0 40px' }}>

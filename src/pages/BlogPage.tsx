@@ -8,7 +8,6 @@ const C = {
   saffron: '#1e77c1', terra: '#ff0000', lineS: 'rgba(24,20,16,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
-const BEBAS = "'Bebas Neue', sans-serif";
 const MUKTA = "'Mukta', system-ui, sans-serif";
 const MONO  = "'JetBrains Mono', ui-monospace, monospace";
 

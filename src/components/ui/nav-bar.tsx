@@ -6,7 +6,6 @@ const INK     = '#181410';
 const CREAM   = '#f4ede0';
 const SAFFRON = '#1e77c1';
 const TERRA   = '#ff0000';
-const BEBAS   = "'Bebas Neue', sans-serif";
 const MUKTA   = "'Mukta', system-ui, sans-serif";
 const MONO    = "'JetBrains Mono', ui-monospace, monospace";
 

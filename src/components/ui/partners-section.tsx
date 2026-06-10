@@ -1,5 +1,3 @@
-import React from "react";
-
 // ─── Partner data with logo paths ─────────────────────────────────────────────
 const ROW1 = [
   { name: "Nepal Airlines",  logo: "/logo/Nepal Airlines.jpg",        color: "#DC2626", bg: "#FEF2F2" },

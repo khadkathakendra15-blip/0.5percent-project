@@ -200,7 +200,7 @@ function TourismChart() {
               borderWidth:1, padding:12,
               titleFont:{family:BEBAS,size:15,weight:'normal'} as never,
               bodyFont: {family:MUKTA, size:12} as never,
-              callbacks:{label:(item)=>`  ${item.parsed.y.toLocaleString()}K visitors`},
+              callbacks:{label:(item)=>`  ${(item.parsed.y ?? 0).toLocaleString()}K visitors`},
             },
           },
           scales:{

@@ -66,7 +66,7 @@ const MAX_REVENUE = 3.6;
 const MAX_GDP = 15;
 
 // Animated counter hook
-function useCountUp(target: number, inView: boolean, duration = 1.4) {
+export function useCountUp(target: number, inView: boolean, duration = 1.4) {
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (!inView) return;

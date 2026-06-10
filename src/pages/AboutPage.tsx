@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { NavBar } from '@/components/ui/nav-bar';
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
@@ -101,7 +100,7 @@ function Kicker({ children, center = false }: { children: React.ReactNode; cente
 }
 
 // ─── Brand mark ──────────────────────────────────────────────────────────────
-function BrandMark() {
+export function BrandMark() {
   return (
     <div style={{ textAlign: 'center', cursor: 'pointer' }}>
       <div style={{
@@ -138,7 +137,6 @@ function PhPortrait({ height, label }: { height: number | string; label: string 
 // ─── Page ────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   const navigate = useNavigate();
-  const wrap: React.CSSProperties = { maxWidth: 1180, margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 };
 
   return (
     <div style={{ margin: 0, background: C.paper, color: C.ink, fontFamily: sans, fontWeight: 300, lineHeight: 1.7, WebkitFontSmoothing: 'antialiased', overflowX: 'hidden', minHeight: '100vh' }}>

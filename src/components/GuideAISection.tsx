@@ -195,7 +195,7 @@ function Chips({ chips, onPick }: { chips: string[]; onPick:(c:string)=>void }) 
 }
 
 // ─── Media card ────────────────────────────────────────────────────────────
-function MediaCard({ item }: { item: MediaItem }) {
+export function MediaCard({ item }: { item: MediaItem }) {
   return (
     <div style={{ borderRadius:G.radius, overflow:'hidden', border:`1px solid ${G.border}`, background:G.surface, flexShrink:0 }}>
       <img src={item.image} alt={item.title} style={{ width:'100%', height:'110px', objectFit:'cover', display:'block' }} />
@@ -218,12 +218,12 @@ const QUICK_DEST = [
 ];
 
 // ─── Main chat widget ──────────────────────────────────────────────────────
-function ChatWidget({ onFullPageClick }: { onFullPageClick: ()=>void }) {
+function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()=>void }) {
   const [msgs, setMsgs] = useState<{ role:string; text:string; ts:number }[]>([]);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
   const [chips, setChips] = useState<string[]>([]);
-  const [media, setMedia] = useState<MediaItem[]>([]);
+  const [_media, setMedia] = useState<MediaItem[]>([]);
   const [listening, setListening] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
