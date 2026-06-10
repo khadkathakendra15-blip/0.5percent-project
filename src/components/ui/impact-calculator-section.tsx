@@ -125,7 +125,7 @@ export function ImpactCalculatorSection() {
   const reset = useCallback(() => { setIndiaRate(5); setChinaRate(5); }, []);
 
   return (
-    <section style={{ background: C.cream, padding: '0 40px' }}>
+    <section className="calc-section" style={{ background: C.cream, padding: '0 40px' }}>
       <style>{`
         @keyframes calcFlash { 0%{opacity:1} 40%{opacity:.4} 100%{opacity:1} }
         .calc-slider::-webkit-slider-thumb {
@@ -139,12 +139,25 @@ export function ImpactCalculatorSection() {
           background: ${C.saffron}; border: 3px solid ${C.cream};
           box-shadow: 0 0 0 1.5px ${C.saffron}; cursor: pointer;
         }
+        @media (max-width: 768px) {
+          .calc-section { padding: 0 18px !important; }
+          .calc-top-bar { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; padding: 20px 0 16px !important; }
+          .calc-title { white-space: normal !important; font-size: clamp(18px,4.5vw,24px) !important; }
+          .calc-grid { grid-template-columns: 1fr !important; }
+          .calc-divider-v { display: none !important; }
+          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(24,20,16,0.12); }
+          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(24,20,16,0.12); }
+          .calc-col-r { padding-left: 0 !important; padding-top: 20px !important; }
+          .calc-big-num { font-size: clamp(64px,16vw,96px) !important; }
+          .calc-ledger-val { font-size: 22px !important; }
+          .calc-outcome-grid { min-height: 0 !important; }
+        }
       `}</style>
 
       <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
 
         {/* ── top bar ── */}
-        <div style={{
+        <div className="calc-top-bar" style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           gap: '32px', padding: '28px 0 22px',
           borderBottom: `1px solid ${C.line}`, flexWrap: 'wrap',
@@ -158,7 +171,7 @@ export function ImpactCalculatorSection() {
             Interactive calculator
           </div>
 
-          <h2 style={{
+          <h2 className="calc-title" style={{
             fontFamily: SERIF, fontWeight: 300,
             fontSize: 'clamp(22px, 2.4vw, 36px)', lineHeight: 1, letterSpacing: '-0.01em',
             whiteSpace: 'nowrap', color: C.ink,
@@ -193,7 +206,7 @@ export function ImpactCalculatorSection() {
         </div>
 
         {/* ── three columns ── */}
-        <div style={{
+        <div className="calc-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1px 1fr 1px 1fr',
           padding: '28px 0 24px',
@@ -201,13 +214,13 @@ export function ImpactCalculatorSection() {
         }}>
 
           {/* LEFT — hero + ledger */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingRight: '36px', gap: '32px' }}>
+          <div className="calc-col-l" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingRight: '36px', gap: '32px' }}>
             {/* big number */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.inkFaint }}>
                 Combined visitors · India + China
               </div>
-              <div ref={totalRef} style={{ fontFamily: BEBAS, fontSize: 'clamp(80px, 11vw, 160px)', lineHeight: 0.85, letterSpacing: '0.01em', color: C.terra }}>
+              <div ref={totalRef} className="calc-big-num" style={{ fontFamily: BEBAS, fontSize: 'clamp(80px, 11vw, 160px)', lineHeight: 0.85, letterSpacing: '0.01em', color: C.terra }}>
                 {totalStr}
               </div>
               <div style={{ fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400, fontSize: 'clamp(16px, 1.5vw, 22px)', color: C.inkSoft, marginTop: '6px' }}>
@@ -236,7 +249,7 @@ export function ImpactCalculatorSection() {
                     {row.label}
                     {row.pop && <span style={{ color: C.inkFaint, fontSize: '11px' }}>· {row.pop}</span>}
                   </div>
-                  <div style={{ fontFamily: BEBAS, fontSize: '26px', letterSpacing: '0.02em', lineHeight: 1, color: row.hi ? C.saffronB : C.ink }}>
+                  <div className="calc-ledger-val" style={{ fontFamily: BEBAS, fontSize: '26px', letterSpacing: '0.02em', lineHeight: 1, color: row.hi ? C.saffronB : C.ink }}>
                     {row.val}
                   </div>
                 </div>
@@ -245,10 +258,10 @@ export function ImpactCalculatorSection() {
           </div>
 
           {/* divider */}
-          <div style={{ background: C.line }} />
+          <div className="calc-divider-v" style={{ background: C.line }} />
 
           {/* MIDDLE — sliders */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '0 36px', gap: '0' }}>
+          <div className="calc-col-m" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '0 36px', gap: '0' }}>
             {/* India slider */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '10px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '10px' }}>
@@ -309,10 +322,10 @@ export function ImpactCalculatorSection() {
           </div>
 
           {/* divider */}
-          <div style={{ background: C.line }} />
+          <div className="calc-divider-v" style={{ background: C.line }} />
 
           {/* RIGHT — multiplier + outcomes */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingLeft: '36px', gap: '16px' }}>
+          <div className="calc-col-r" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingLeft: '36px', gap: '16px' }}>
             {/* multiplier box */}
             <div style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',

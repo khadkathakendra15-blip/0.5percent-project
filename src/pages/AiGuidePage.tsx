@@ -990,6 +990,8 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
 
         {/* Messages */}
         <div className="guide-chat-messages" style={{ flex:1, overflowY:'auto', padding:'18px 22px', display:'flex', flexDirection:'column', gap:'7px', background:VFY.paper }}>
+          {/* spacer pushes content to bottom like a real chat app */}
+          <div style={{ flex:1, minHeight:'8px' }} />
           {msgs.map(m => <MessageBubble key={m.id} msg={m} />)}
           {isTyping && <TypingDots />}
           <QuickChips chips={chips} onSelect={send} />
@@ -1105,16 +1107,15 @@ const STYLES = `
   @media (max-width: 900px) {
     .guide-chat-layout {
       flex-direction: column !important;
-      height: auto !important;
-      min-height: calc(100vh - 64px) !important;
+      height: calc(100vh - 64px) !important;
+      overflow: hidden !important;
     }
     .guide-chat-media { display: none !important; }
-    .guide-chat-col   { min-width: 0 !important; }
-  }
-  /* Chat messages area: needs height on mobile when layout is column */
-  @media (max-width: 900px) {
+    .guide-chat-col   { min-width: 0 !important; flex: 1 !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; }
     .guide-chat-messages {
-      max-height: 55vh !important;
+      flex: 1 !important;
+      overflow-y: auto !important;
+      max-height: none !important;
     }
   }
 

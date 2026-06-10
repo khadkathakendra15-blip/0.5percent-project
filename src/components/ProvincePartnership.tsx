@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SERIF = "'Cormorant Garamond', Georgia, serif";
@@ -39,10 +39,19 @@ const provinces: Province[] = [
 
 export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?: number }) {
   const [selected, setSelected] = useState(defaultSelected);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   const prov = provinces[selected];
+  const orbitRadius = isMobile ? 105 : 170;
+  const orbitMinH   = isMobile ? '290px' : '440px';
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '20px', alignItems: 'stretch', width: '100%', maxWidth: '960px', margin: '0 auto' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 340px', gap: '16px', alignItems: 'stretch', width: '100%', maxWidth: '960px', margin: '0 auto' }}>
 
       {/* ── LEFT: Radial orbit ── */}
       <div style={{
@@ -62,11 +71,11 @@ export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?:
         </AnimatePresence>
 
         {/* Orbit */}
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '440px', padding: '32px' }}>
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: orbitMinH, padding: isMobile ? '16px' : '32px' }}>
 
           {/* Centre hub */}
           <motion.div
-            style={{ position: 'absolute', width: 136, height: 136, borderRadius: '50%', border: '3px solid', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ position: 'absolute', width: isMobile ? 96 : 136, height: isMobile ? 96 : 136, borderRadius: '50%', border: '3px solid', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             animate={{ borderColor: prov.color, background: `linear-gradient(135deg, ${prov.color}20, ${prov.color}08)`, boxShadow: `0 0 36px ${prov.color}38` }}
             transition={{ duration: 0.3 }}
           >
@@ -80,7 +89,7 @@ export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?:
           {/* Province circles */}
           {provinces.map((province, index) => {
             const angle  = (index / provinces.length) * 2 * Math.PI - Math.PI / 2;
-            const radius = 170;
+            const radius = orbitRadius;
             const x      = Math.cos(angle) * radius;
             const y      = Math.sin(angle) * radius;
             const isSel  = selected === index;
@@ -109,7 +118,7 @@ export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?:
                 </svg>
 
                 <motion.div
-                  style={{ width: 72, height: 72, borderRadius: '50%', border: `2px solid ${province.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ width: isMobile ? 52 : 72, height: isMobile ? 52 : 72, borderRadius: '50%', border: `2px solid ${province.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   animate={{
                     backgroundColor: isSel ? province.color : `${province.color}30`,
                     scale: isSel ? 1.14 : 1,
@@ -137,7 +146,7 @@ export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?:
       </div>
 
       {/* ── RIGHT: Portrait photo ── */}
-      <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', border: `2px solid ${prov.color}40`, minHeight: '440px' }}>
+      <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', border: `2px solid ${prov.color}40`, minHeight: isMobile ? '260px' : '440px' }}>
 
         {/* Photo cross-fade */}
         <AnimatePresence mode="sync">
