@@ -50,7 +50,12 @@ const CampaignHero = () => (
     {/* Dark gradient overlays */}
     <div style={{
       position: 'absolute', inset: 0,
-      background: 'linear-gradient(105deg, rgba(10,7,5,0.18) 0%, rgba(10,7,5,0.55) 55%, rgba(10,7,5,0.88) 100%)',
+      background: 'linear-gradient(105deg, rgba(10,7,5,0.28) 0%, rgba(10,7,5,0.65) 50%, rgba(10,7,5,0.92) 100%)',
+    }} />
+    {/* Extra mobile-friendly bottom-up scrim for legibility */}
+    <div style={{
+      position: 'absolute', inset: 0,
+      background: 'linear-gradient(to top, rgba(10,7,5,0.55) 0%, transparent 60%)',
     }} />
 
     {/* ── Text content — right-aligned, vertically centred ── */}
@@ -76,6 +81,7 @@ const CampaignHero = () => (
           lineHeight: 0.88,
           letterSpacing: '0.02em',
           color: '#fff',
+          textShadow: '0 2px 24px rgba(0,0,0,0.55)',
         }}>
           0.5<span style={{ color: '#1e77c1' }}>%</span>
         </div>
@@ -84,8 +90,9 @@ const CampaignHero = () => (
           fontSize: 'clamp(28px, 4.8vw, 64px)',
           lineHeight: 1,
           letterSpacing: '0.12em',
-          color: 'rgba(255,255,255,0.88)',
+          color: '#ffffff',
           marginTop: '6px',
+          textShadow: '0 2px 16px rgba(0,0,0,0.50)',
         }}>
           Campaign
         </div>
@@ -100,7 +107,8 @@ const CampaignHero = () => (
           display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
           gap: '14px', margin: '22px 0 20px',
           fontFamily: MUKTA, fontSize: '11px', letterSpacing: '0.28em',
-          textTransform: 'uppercase', color: 'rgba(255,255,255,0.42)',
+          textTransform: 'uppercase', color: 'rgba(255,255,255,0.78)',
+          textShadow: '0 1px 8px rgba(0,0,0,0.50)',
         }}
       >
         {['Tourism', 'Spirituality', 'Culture', 'Media'].map((tag, i) => (
@@ -119,8 +127,9 @@ const CampaignHero = () => (
         style={{
           fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
           fontSize: 'clamp(18px, 2.2vw, 30px)', lineHeight: 1.3,
-          color: '#ff0000',
+          color: '#1e77c1',
           marginBottom: '36px',
+          textShadow: '0 2px 12px rgba(0,0,0,0.45)',
         }}
       >
         From the Himalayas, to the world.
@@ -132,10 +141,11 @@ const CampaignHero = () => (
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.05 }}
         style={{
-          fontFamily: MUKTA, fontWeight: 300,
+          fontFamily: MUKTA, fontWeight: 400,
           fontSize: 'clamp(13px, 1.2vw, 16px)', lineHeight: 1.85,
-          color: 'rgba(255,255,255,0.52)',
+          color: 'rgba(255,255,255,0.88)',
           maxWidth: '44ch', marginLeft: 'auto',
+          textShadow: '0 1px 10px rgba(0,0,0,0.55)',
         }}
       >
         A movement to bring 0.5% of India and China's travellers to Nepal —
@@ -151,7 +161,7 @@ const CampaignHero = () => (
           marginTop: '48px',
           display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '10px',
           fontFamily: MUKTA, fontSize: '10px', letterSpacing: '0.3em',
-          textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)',
+          textTransform: 'uppercase', color: 'rgba(255,255,255,0.62)',
         }}
       >
         Scroll to explore
