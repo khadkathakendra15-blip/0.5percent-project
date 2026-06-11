@@ -36,17 +36,72 @@ const IMG = {
   meditation:           '/Buddhism.webp',
 };
 
-const LOGOS = [
-  { src: '/logo/Nepal Tourism Board.jpg',   alt: 'Nepal Tourism Board' },
-  { src: '/logo/Hotel Association nepal.jpg', alt: 'Hotel Association Nepal' },
-  { src: '/logo/Nepal Airlines.jpg',         alt: 'Nepal Airlines' },
-  { src: '/logo/Budhha Air.jpg',             alt: 'Buddha Air' },
-  { src: '/logo/Yeti Airlines.jpg',          alt: 'Yeti Airlines' },
-  { src: '/logo/Cg Corp Global.jpg',         alt: 'CG Corp Global' },
-  { src: '/logo/Cg Hospitality.jpg',         alt: 'CG Hospitality' },
-  { src: '/logo/The Soaltee.jpg',            alt: 'The Soaltee' },
-  { src: '/logo/KMG.jpg',                    alt: 'KMG' },
-  { src: '/logo/Online Khaber.jpg',          alt: 'Online Khabar' },
+/* ─── Partner categories ─────────────────────────────────────────────────── */
+const PARTNER_CATEGORIES = [
+  {
+    label: 'International Airlines',
+    logos: [
+      { src: '/logo/Nepal Airlines.jpg',  alt: 'Nepal Airlines' },
+      { src: '/logo/Himaya Jet.webp',     alt: 'Himalaya Airlines' },
+      { src: '/logo/Yeti Airlines.jpg',   alt: 'Yeti Airlines' },
+      { src: '/logo/Budhha Air.jpg',      alt: 'Buddha Air' },
+    ],
+  },
+  {
+    label: 'Tourism & Industry Organizations',
+    logos: [
+      { src: '/logo/Lumbini Development trust.png', alt: 'Lumbini Development Trust' },
+      { src: '/logo/Nepal Baudhha federation.webp', alt: 'Nepal Buddha Mahasangh' },
+      { src: '/logo/Nepal Mounternering.png',       alt: 'Nepal Mountaineering Association' },
+      { src: '/logo/Hotel Association nepal.jpg',   alt: 'Hotel Association Nepal' },
+      { src: '/logo/TAAN-LOGO.png',                 alt: 'Trekking Agencies Association' },
+    ],
+  },
+  {
+    label: 'Travel Agencies',
+    logos: [
+      { src: '/logo/Hollywood trip Nepal.jpeg', alt: 'Hollywood Trip Nepal' },
+    ],
+  },
+  {
+    label: 'Media',
+    logos: [
+      { src: '/logo/vfy talks logo.jpeg', alt: 'VFY Talks' },
+    ],
+  },
+  {
+    label: 'Government & Tourism Authorities',
+    logos: [
+      { src: '/logo/Nepal Tourism Board.jpg',             alt: 'Nepal Tourism Board' },
+      { src: '/logo/ministry-of-civil-aviation-logo.jpg', alt: 'Ministry of Culture, Tourism & Civil Aviation' },
+      { src: '/logo/Kathmandu-Metropolitan.png',          alt: 'Kathmandu Metropolitan City' },
+      { src: '/logo/Chagunarayan Municipality.webp',      alt: 'Changunarayan Municipality' },
+      { src: '/logo/Lalitpur Metropolitan city.jpg',      alt: 'Lalitpur Metropolitan City' },
+    ],
+  },
+  {
+    label: 'Monasteries',
+    logos: [
+      { src: '/logo/Tergar monestry.webp', alt: 'Tergar Monastery' },
+    ],
+  },
+  {
+    label: 'Embassies',
+    logos: [
+      { src: '/logo/Nepal-China embassy.jpg', alt: 'Embassy of China in Nepal' },
+      { src: '/logo/Indian Embassy.jpg',      alt: 'Embassy of India, Kathmandu' },
+    ],
+  },
+  {
+    label: 'Hotels',
+    logos: [
+      { src: '/logo/The Soaltee.jpg',    alt: 'The Soaltee Kathmandu' },
+      { src: '/logo/Radisson hotel.png', alt: 'Radisson Hotel Kathmandu' },
+      { src: '/logo/Dwarika Hotel.png',  alt: "Dwarika's Hotel" },
+      { src: '/logo/Yak and Yeti.png',   alt: 'Hotel Yak and Yeti' },
+      { src: '/logo/Marriott logo.jpg',  alt: 'Kathmandu Marriott Hotel' },
+    ],
+  },
 ];
 
 /* ─── count-up hook ──────────────────────────────────────────────────────── */
@@ -583,27 +638,27 @@ export function FounderSection() {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   7. PARTNERS — scrolling marquee
+   7. PARTNERS — categorised grid
 ══════════════════════════════════════════════════════════════════════════ */
 
-// Logo circle for the marquee (all inline styles — no Tailwind)
-function LogoBadge({ logo }: { logo: typeof LOGOS[0] }) {
+type LogoItem = { src: string; alt: string };
+
+function LogoBadge({ src, alt }: LogoItem) {
   return (
-    <div style={{
-      width: '80px', height: '80px', borderRadius: '50%', flexShrink: 0,
-      background: C.paper, border: `1.5px solid ${C.line}`,
+    <div title={alt} style={{
+      width: '72px', height: '72px', borderRadius: '12px', flexShrink: 0,
+      background: '#fff', border: `1px solid ${C.lineS}`,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      overflow: 'hidden', boxShadow: '0 1px 4px rgba(24,20,16,0.07)',
+      overflow: 'hidden', boxShadow: '0 1px 6px rgba(24,20,16,0.06)',
     }}>
       <img
-        src={logo.src} alt={logo.alt} loading="lazy"
-        style={{ width: '60px', height: '60px', objectFit: 'contain',
-          filter: 'grayscale(15%)', opacity: 0.88 }}
+        src={src} alt={alt} loading="lazy"
+        style={{ width: '56px', height: '56px', objectFit: 'contain', opacity: 0.90 }}
         onError={e => {
           (e.currentTarget as HTMLImageElement).style.display = 'none';
           const p = e.currentTarget.parentElement!;
           p.style.background = C.cream2;
-          p.innerHTML = `<span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:${C.inkFaint};letter-spacing:.1em">${logo.alt.slice(0,4).toUpperCase()}</span>`;
+          p.innerHTML = `<span style="font-family:'Bebas Neue',sans-serif;font-size:10px;color:${C.inkFaint};letter-spacing:.08em;text-align:center;padding:4px">${alt.slice(0, 5).toUpperCase()}</span>`;
         }}
       />
     </div>
@@ -612,44 +667,50 @@ function LogoBadge({ logo }: { logo: typeof LOGOS[0] }) {
 
 function PartnersGridSection() {
   const rHead = useReveal(0);
-  const rMarq = useReveal(0.14);
-
-  // Split LOGOS into two rows and repeat for seamless loop
-  const row1 = LOGOS.slice(0, 5);
-  const row2 = LOGOS.slice(5);
-  const rpt = <T,>(arr: T[], n = 5) => Array.from({ length: n }).flatMap(() => arr);
 
   return (
-    <section style={{ background: C.cream, padding: '100px 0', borderTop: `1px solid ${C.lineS}`, position: 'relative', overflow: 'hidden' }}>
-      <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
-        <div ref={rHead} style={{ textAlign: 'center', maxWidth: '62ch', margin: '0 auto 52px' }}>
-          <Eyebrow center>In good company</Eyebrow>
+    <section style={{ background: C.paper, padding: '100px 0', borderTop: `1px solid ${C.lineS}`, position: 'relative' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
+
+        {/* ── Header ── */}
+        <div ref={rHead} style={{ marginBottom: '56px' }}>
+          <Eyebrow>In good company</Eyebrow>
           <Display>
-            Partners carrying the{' '}
-            <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>voice</em>.
+            Partners &amp;{' '}
+            <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>Supporters</em>.
           </Display>
-          <p style={{ marginTop: '22px', color: C.inkSoft, fontSize: '16px', fontFamily: MUKTA, fontWeight: 300 }}>
-            Organisations, airlines, hotels and media houses helping carry Nepal's story to the world.
+          <p style={{ marginTop: '18px', color: C.inkSoft, fontSize: '16px', fontFamily: MUKTA, fontWeight: 300, maxWidth: '52ch' }}>
+            Airlines, embassies, hotels, government bodies and media organisations carrying Nepal's story to the world.
           </p>
         </div>
 
-        {/* ── Scrolling rows ── */}
-        <div ref={rMarq} style={{ overflow: 'hidden', position: 'relative' }}>
-          {/* Row 1 — left */}
-          <div style={{ marginBottom: '20px' }}>
-            <div className="animate-scroll-left" style={{ display: 'flex', gap: '20px', width: 'max-content' }}>
-              {rpt(row1).map((logo, i) => <LogoBadge key={i} logo={logo} />)}
+        {/* ── Category rows ── */}
+        <div>
+          {PARTNER_CATEGORIES.map((cat, ci) => (
+            <div key={ci} className="partner-cat-row" style={{
+              display: 'flex', alignItems: 'center', gap: '32px',
+              borderTop: `1px solid ${C.lineS}`,
+              padding: '24px 0',
+            }}>
+              {/* Category label */}
+              <div style={{
+                width: '210px', flexShrink: 0,
+                fontFamily: MUKTA, fontSize: '10px', letterSpacing: '0.22em',
+                textTransform: 'uppercase', color: C.inkFaint, fontWeight: 600,
+                lineHeight: 1.4,
+              }}>
+                {cat.label}
+              </div>
+              {/* Logos */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center', flex: 1 }}>
+                {cat.logos.map((logo, li) => (
+                  <LogoBadge key={li} src={logo.src} alt={logo.alt} />
+                ))}
+              </div>
             </div>
-          </div>
-          {/* Row 2 — right */}
-          <div>
-            <div className="animate-scroll-right" style={{ display: 'flex', gap: '20px', width: 'max-content' }}>
-              {rpt(row2).map((logo, i) => <LogoBadge key={i} logo={logo} />)}
-            </div>
-          </div>
-          {/* Edge fades — match section background */}
-          <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '80px', background: `linear-gradient(to right, ${C.cream}, transparent)`, pointerEvents: 'none', zIndex: 10 }} />
-          <div style={{ position: 'absolute', right: 0, top: 0, height: '100%', width: '80px', background: `linear-gradient(to left, ${C.cream}, transparent)`, pointerEvents: 'none', zIndex: 10 }} />
+          ))}
+          {/* bottom border */}
+          <div style={{ borderTop: `1px solid ${C.lineS}` }} />
         </div>
       </div>
     </section>

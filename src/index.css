@@ -780,24 +780,16 @@ body { overflow-x: hidden; }
   .campaign-item article { padding: 22px 14px 20px !important; }
 }
 
-/* ── Partners logo grid (vfy-home): 2-col on mobile ──────────── */
+/* ── Partners categorised rows: stack on mobile ───────────────── */
 @media (max-width: 768px) {
-  .partners-logo-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .partner-cat-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 20px 0 !important;
   }
-  /* Reset all inline borders, then re-apply cleanly */
-  .partners-logo-cell {
-    border-right:  none !important;
-    border-bottom: 1px solid rgba(24,20,16,0.08) !important;
-    aspect-ratio:  5 / 3 !important;
-  }
-  /* Left column (odd) gets a right divider */
-  .partners-logo-cell:nth-child(odd) {
-    border-right: 1px solid rgba(24,20,16,0.08) !important;
-  }
-  /* Last 2 items = bottom row — no bottom border */
-  .partners-logo-cell:nth-last-child(-n+2) {
-    border-bottom: none !important;
+  .partner-cat-row > div:first-child {
+    width: auto !important;
   }
 }
 
