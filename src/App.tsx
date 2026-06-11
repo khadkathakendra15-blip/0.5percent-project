@@ -7,7 +7,6 @@ import { CampaignApproachSection } from '@/components/ui/campaign-approach-secti
 import { ImpactCalculatorSection } from '@/components/ui/impact-calculator-section';
 import { CountryComparisonSection } from '@/components/ui/country-comparison-section';
 import { TourismHistorySection } from '@/components/ui/tourism-history-section';
-import { FloatingAboutButton } from '@/components/ui/about-us';
 import { NavBar } from '@/components/ui/nav-bar';
 import {
   Mountain,
@@ -1042,7 +1041,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background">
       <NavBar />
-      <FloatingAboutButton />
       <CampaignHero />
       <MarqueeStrip />
       <div>

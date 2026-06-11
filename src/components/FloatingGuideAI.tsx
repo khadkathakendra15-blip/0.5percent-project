@@ -5,26 +5,26 @@ import { useLocation } from 'react-router-dom';
 
 // ─── Tokens ────────────────────────────────────────────────────────────────
 const W = {
-  // widget window — dark theme (matches screenshot feel)
-  bg:      '#13100d',
-  surface: '#1e1a16',
-  card:    '#272219',
-  border:  'rgba(255,255,255,0.07)',
-  borderH: 'rgba(200,149,108,0.35)',
+  // widget window — brand light theme (cream/ink palette)
+  bg:      '#faf5ea',                      // paper
+  surface: '#f4ede0',                      // cream
+  card:    '#ebe2d1',                      // card
+  border:  'rgba(24,20,16,0.10)',
+  borderH: 'rgba(30,119,193,0.40)',        // saffron focus ring
 
-  // accent
-  gold:    '#c8956c',
-  goldD:   '#8a4e12',
-  goldF:   'rgba(200,149,108,0.10)',
+  // accent (saffron #1e77c1 replaces gold)
+  gold:    '#1e77c1',
+  goldD:   '#0e5a99',
+  goldF:   'rgba(30,119,193,0.10)',
 
-  // text
-  text:    '#ede6dc',
-  muted:   '#9b8f80',
-  faint:   '#5a4f44',
+  // text (ink palette)
+  text:    '#181410',                      // ink
+  muted:   '#5a4f44',
+  faint:   '#9b8f80',
 
-  // user bubble
-  userBg:  '#f4ede0',
-  userTxt: '#181410',
+  // user bubble — saffron bg, white text
+  userBg:  '#1e77c1',
+  userTxt: '#ffffff',
 
   serif: "'Cormorant Garamond', Georgia, serif",
   sans:  "'Mukta', system-ui, sans-serif",
@@ -127,12 +127,12 @@ function getAiResponse(msg: string): AiMsg {
 function Lotus({ size = 28 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" style={{ flexShrink: 0 }}>
-      <circle cx="20" cy="20" r="18" fill="rgba(200,149,108,0.15)" stroke={W.gold} strokeWidth="1"/>
+      <circle cx="20" cy="20" r="18" fill="rgba(30,119,193,0.12)" stroke={W.gold} strokeWidth="1"/>
       <circle cx="20" cy="20" r="6"  fill="none" stroke={W.gold} strokeWidth="0.6" opacity="0.6"/>
-      <path d="M20 6 Q25 14 20 20 Q15 14 20 6" fill="rgba(200,149,108,0.30)" stroke={W.gold} strokeWidth="0.5"/>
-      <path d="M34 20 Q26 25 20 20 Q26 15 34 20" fill="rgba(200,149,108,0.30)" stroke={W.gold} strokeWidth="0.5"/>
-      <path d="M20 34 Q15 26 20 20 Q25 26 20 34" fill="rgba(200,149,108,0.30)" stroke={W.gold} strokeWidth="0.5"/>
-      <path d="M6 20 Q14 15 20 20 Q14 25 6 20" fill="rgba(200,149,108,0.30)" stroke={W.gold} strokeWidth="0.5"/>
+      <path d="M20 6 Q25 14 20 20 Q15 14 20 6" fill="rgba(30,119,193,0.18)" stroke={W.gold} strokeWidth="0.5"/>
+      <path d="M34 20 Q26 25 20 20 Q26 15 34 20" fill="rgba(30,119,193,0.18)" stroke={W.gold} strokeWidth="0.5"/>
+      <path d="M20 34 Q15 26 20 20 Q25 26 20 34" fill="rgba(30,119,193,0.18)" stroke={W.gold} strokeWidth="0.5"/>
+      <path d="M6 20 Q14 15 20 20 Q14 25 6 20" fill="rgba(30,119,193,0.18)" stroke={W.gold} strokeWidth="0.5"/>
     </svg>
   );
 }
@@ -167,7 +167,7 @@ function BubbleRow({ msg, onOption }: { msg: Msg; onOption:(v:string)=>void }) {
           border: isAI ? `1px solid ${W.border}` : 'none',
           borderRadius: isAI ? '14px 14px 14px 3px' : '14px 14px 3px 14px',
           padding:'11px 14px',
-          borderLeft: isAI ? `2px solid rgba(200,149,108,0.22)` : 'none',
+          borderLeft: isAI ? `2px solid rgba(30,119,193,0.28)` : 'none',
         }}>
           {isAI && (
             <div style={{ fontFamily:W.mono, fontSize:'8px', letterSpacing:'0.12em', color:W.gold, marginBottom:'4px', textTransform:'uppercase' }}>
@@ -181,7 +181,7 @@ function BubbleRow({ msg, onOption }: { msg: Msg; onOption:(v:string)=>void }) {
                 : p
             )}
           </div>
-          <div style={{ fontFamily:W.mono, fontSize:'8px', color: isAI ? W.faint : 'rgba(24,20,16,0.35)', marginTop:'5px', letterSpacing:'0.03em' }}>
+          <div style={{ fontFamily:W.mono, fontSize:'8px', color: isAI ? W.faint : 'rgba(255,255,255,0.65)', marginTop:'5px', letterSpacing:'0.03em' }}>
             {new Date(msg.ts).toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' })}
           </div>
         </div>
@@ -210,11 +210,11 @@ function BubbleRow({ msg, onOption }: { msg: Msg; onOption:(v:string)=>void }) {
           {msg.chips.map(c => (
             <button key={c} onClick={() => onOption(c)} style={{
               fontFamily:W.sans, fontSize:'11px', color:W.gold,
-              background:'rgba(200,149,108,0.09)', border:`1px solid rgba(200,149,108,0.18)`,
+              background:'rgba(30,119,193,0.08)', border:`1px solid rgba(30,119,193,0.25)`,
               borderRadius:'14px', padding:'5px 12px', cursor:'pointer', transition:'all 0.18s', whiteSpace:'nowrap',
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(200,149,108,0.18)'; (e.currentTarget as HTMLButtonElement).style.borderColor = W.gold; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(200,149,108,0.09)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(200,149,108,0.18)'; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(30,119,193,0.15)'; (e.currentTarget as HTMLButtonElement).style.borderColor = W.gold; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(30,119,193,0.08)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(30,119,193,0.25)'; }}
             >{c}</button>
           ))}
         </div>
@@ -259,7 +259,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
       background:W.bg, border:`1px solid ${W.border}`,
       borderRadius:'18px', overflow:'hidden',
       display:'flex', flexDirection:'column',
-      boxShadow:'0 24px 64px rgba(0,0,0,0.45), 0 4px 16px rgba(0,0,0,0.3)',
+      boxShadow:'0 20px 60px rgba(24,20,16,0.18), 0 4px 16px rgba(24,20,16,0.10)',
       animation:'fab-slideUp 0.28s cubic-bezier(0.34,1.56,0.64,1)',
     }}>
 
@@ -296,7 +296,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
           onFocus={e => (e.currentTarget as HTMLDivElement).style.borderColor = W.borderH}
           onBlur={e => (e.currentTarget as HTMLDivElement).style.borderColor = W.border}
         >
-          <input ref={inputRef} type="text" value={input}
+          <input ref={inputRef} type="text" value={input} className="fab-chat-input"
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => { if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); send(input); } }}
             placeholder="Ask about Nepal…"
@@ -307,7 +307,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
             width:'32px', height:'32px', display:'flex', alignItems:'center', justifyContent:'center',
             cursor: input.trim() ? 'pointer' : 'default', transition:'all 0.18s', flexShrink:0,
           }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={input.trim() ? '#13100d' : W.faint} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={input.trim() ? '#ffffff' : W.faint} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
             </svg>
           </button>
@@ -323,18 +323,18 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
     <button onClick={onClick} style={{
       position:'fixed', bottom:'24px', right:'24px', zIndex:9999,
       width:'54px', height:'54px', borderRadius:'50%',
-      background: open ? '#272219' : '#181410',
-      border:`1.5px solid ${open ? W.gold : 'rgba(200,149,108,0.35)'}`,
+      background: open ? W.gold : '#181410',
+      border:`1.5px solid ${open ? W.gold : 'rgba(24,20,16,0.25)'}`,
       cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center',
-      boxShadow: open ? `0 0 0 4px rgba(200,149,108,0.12), 0 8px 24px rgba(0,0,0,0.35)` : '0 6px 20px rgba(0,0,0,0.30)',
+      boxShadow: open ? `0 0 0 4px rgba(30,119,193,0.15), 0 8px 24px rgba(24,20,16,0.25)` : '0 6px 20px rgba(24,20,16,0.25)',
       transition:'all 0.25s cubic-bezier(0.34,1.56,0.64,1)',
       transform: open ? 'scale(0.94)' : 'scale(1)',
     }}
     onMouseEnter={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.08)'; (e.currentTarget as HTMLButtonElement).style.borderColor = W.gold; } }}
-    onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(200,149,108,0.35)'; } }}
+    onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(24,20,16,0.25)'; } }}
     >
       {open ? (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={W.gold} strokeWidth="2" strokeLinecap="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round">
           <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       ) : (
@@ -342,7 +342,7 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
       )}
       {/* Unread dot */}
       {hasUnread && !open && (
-        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#4ade80', border:'2px solid #181410' }} />
+        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#22c55e', border:'2px solid #181410' }} />
       )}
     </button>
   );
@@ -375,7 +375,8 @@ export function FloatingGuideAI() {
         }
         .fab-chat-scroll::-webkit-scrollbar { width: 4px; }
         .fab-chat-scroll::-webkit-scrollbar-track { background: transparent; }
-        .fab-chat-scroll::-webkit-scrollbar-thumb { background: rgba(200,149,108,0.18); border-radius: 4px; }
+        .fab-chat-scroll::-webkit-scrollbar-thumb { background: rgba(30,119,193,0.22); border-radius: 4px; }
+        .fab-chat-input::placeholder { color: rgba(24,20,16,0.38); }
 
         /* Mobile: adapt window to viewport width */
         @media (max-width: 440px) {
