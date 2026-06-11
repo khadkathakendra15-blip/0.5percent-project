@@ -88,16 +88,6 @@ const DESTINATIONS = [
     highlights:['Poon Hill sunrise','Ghorepani village','Rhododendron forests'] },
 ];
 
-const DEALS = [
-  { id:'d1', title:'Spring Everest Trek',          dest:'ebc',         originalPrice:1400, price:1190, badge:'15% off',
-    desc:'Full 14-day guided EBC trek, tea house stays, permits included.' },
-  { id:'d2', title:'Lumbini Spiritual Retreat',     dest:'lumbini',     price:450,          badge:'New',
-    desc:'3-day guided pilgrimage with meditation sessions and monastery visits.' },
-  { id:'d3', title:'Annapurna + Chitwan Combo',     dest:'abc',         originalPrice:1800, price:1500, badge:'Save $300',
-    desc:'Trek the mountains then explore the jungle — the ultimate Nepal combo.' },
-  { id:'d4', title:'Kathmandu Heritage Walk',       dest:'ktm-heritage',price:85,           badge:'Best value',
-    desc:'Full-day guided walk across all 7 UNESCO World Heritage Sites.' },
-];
 
 const WIZARD_STEPS = [
   { id:'interest', question:'What calls you to Nepal?', sub:'Choose the experience that speaks to your soul.',
@@ -139,10 +129,9 @@ const WIZARD_STEPS = [
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 type Dest = typeof DESTINATIONS[0];
-type Deal = typeof DEALS[0];
 type Sels = Record<string, string>;
 type Media = { image: string; title: string; sub?: string };
-type AiResp = { text: string; media?: Media[]; deal?: Deal; chips?: string[] };
+type AiResp = { text: string; media?: Media[]; chips?: string[] };
 
 // ─── Recommendation engine ─────────────────────────────────────────────────
 function getRecommendations(sel: Sels): (Dest & { score: number })[] {
@@ -166,19 +155,19 @@ const AI_RESPONSES: Record<string, AiResp> = {
   everest: {
     text:"Ah, the great Sagarmatha — the forehead of the sky. The journey to Everest Base Camp is not merely a trek; it is a pilgrimage of body and spirit. The path takes you through Sherpa villages, ancient monasteries, and landscapes that humble even the most seasoned travelers.\n\nThe trek typically takes 12–14 days from Lukla. Spring and Autumn offer the clearest skies. Shall I help you plan this journey?",
     media:[{image:'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format',title:'Everest Base Camp',sub:'5,364 m · Solukhumbu'},{image:'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&auto=format',title:'The Himalayan Trail',sub:'Trekking through the clouds'}],
-    chips:['What permits do I need?','Best time to go?','How much does it cost?','Show me deals'], deal: DEALS[0] },
+    chips:['What permits do I need?','Best time to go?','How much does it cost?','Packing essentials'] },
   annapurna: {
     text:"The Annapurna Circuit — a journey that circles the mighty Annapurna massif, crossing the Thorong La Pass at 5,416 meters. Nepal's most diverse trek: subtropical forests, arid highland desert, and ancient Tibetan villages.\n\n14–21 days of transformation. Every step tells a different story.",
     media:[{image:'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&auto=format',title:'Annapurna Circuit',sub:'14–21 days · The Classic'},{image: A.himalayas,title:'Mountain Panorama',sub:'Views that change your perspective'}],
-    chips:['Compare with Everest','Packing list','Best season','Book this trek'], deal: DEALS[2] },
+    chips:['Compare with Everest','Packing list','Best season','Trekking permits'] },
   spiritual: {
     text:"Nepal is where heaven meets earth. The birthplace of Lord Buddha in Lumbini, the sacred Pashupatinath temple on the Bagmati River, the serene white dome of Boudhanath — each place carries centuries of devotion and wisdom.\n\nFor a spiritual journey, begin at Boudhanath Stupa in Kathmandu, then Pashupatinath, then journey south to Lumbini.",
     media:[{image: A.buddhism,title:'Buddhist Heritage',sub:'The path of enlightenment'},{image: A.spiritual,title:'Spiritual Nepal',sub:'Ancient temples & living traditions'}],
-    chips:['Tell me about Lumbini','Meditation retreats','Temple etiquette','Spiritual tour package'], deal: DEALS[1] },
+    chips:['Tell me about Lumbini','Meditation retreats','Temple etiquette','Cultural homestays'] },
   culture: {
     text:"Nepal's cultural tapestry is woven from over 120 ethnic groups, each with their own language, dress, and traditions. The Kathmandu Valley alone holds seven UNESCO World Heritage Sites.\n\nFrom Newari architecture to Tharu dances, from prayer flags to living goddesses — culture in Nepal is alive.",
     media:[{image: A.nepaliArt,title:'Nepali Artistry',sub:'Living cultural traditions'},{image:'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&auto=format',title:'Kathmandu Heritage',sub:'Seven UNESCO sites'}],
-    chips:['Heritage walk','Festival calendar','Traditional crafts','Cultural homestays'], deal: DEALS[3] },
+    chips:['Heritage walk','Festival calendar','Traditional crafts','Cultural homestays'] },
   trekking: {
     text:"In Nepal, we say the mountains do not merely stand — they call. Whether you seek a gentle 4-day Poon Hill sunrise trek or the legendary 14-day Everest Base Camp journey, the Himalayas offer paths for every soul.\n\nBest seasons: Spring (Mar–May) and Autumn (Sep–Nov). All treks require a TIMS card and national park permits.",
     media:[{image: A.himalayas,title:'Himalayan Trails',sub:'Paths for every soul'}],
@@ -190,11 +179,11 @@ const AI_RESPONSES: Record<string, AiResp> = {
   booking: {
     text:"Let me guide you through planning your Nepal trip:\n\n• **Visa**: On arrival at Tribhuvan Airport — $30 for 15 days\n• **Trekking permits**: TIMS card ($20) + park entry ($35–50)\n• **Guide options**: Self-guided, licensed guide ($45/day), or full package ($120/day)\n• **Accommodation**: Tea houses on treks, boutique hotels in cities",
     media:[{image:'https://images.unsplash.com/photo-1558799401-1dcba79834c2?w=800&auto=format',title:'Plan Your Journey',sub:'We handle the details'}],
-    chips:['Guide options','Visa process','Book accommodation','Full package deals'] },
+    chips:['Guide options','Visa process','Book accommodation','Trekking permits'] },
   budget: {
     text:"Nepal is one of Asia's most affordable destinations:\n\n• **Budget**: $30–60/day — tea houses, local food\n• **Mid-range**: $60–120/day — boutique hotels, guides\n• **Premium**: $120–250/day — luxury lodges, internal flights\n• **Luxury**: $250+/day — bespoke itineraries, helicopter tours\n\nA 14-day Everest Base Camp trek: $1,200–2,500 all-in.",
     media:[{image: A.himalayas,title:'Budget Planning',sub:'Value at every level'}],
-    chips:['Show cheapest treks','Premium packages','How to save money'] },
+    chips:['Show cheapest treks','Best value treks','How to save money'] },
   visa: {
     text:"Tourist visa on arrival at Tribhuvan International Airport:\n\n• **15 days** — $30 USD\n• **30 days** — $50 USD\n• **90 days** — $125 USD\n• **Indian citizens** — No visa required\n\nFor trekking: TIMS card ($20) + national park entry ($35–50). Upper Mustang requires a special permit ($500 for 10 days).",
     media:[{image:'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&auto=format',title:'Entry Requirements',sub:'Visa & permits made simple'}],
@@ -217,7 +206,7 @@ const AI_RESPONSES: Record<string, AiResp> = {
   default: {
     text:"Namaste, traveler. I am Guide AI — your Nepal companion from the peaks that touch the sky to the temples that touch the soul.\n\nAsk me anything: trekking routes, spiritual journeys, cultural experiences, permits and visas, seasonal planning, or booking help. The path is yours to choose.",
     media:[{image: A.himalayas,title:'Discover Nepal',sub:'Where every path leads to wonder'}],
-    chips:['Plan a trek','Spiritual journey','Best time to visit','Budget guide','Show deals','About 0.5%'] },
+    chips:['Plan a trek','Spiritual journey','Best time to visit','Budget guide','About 0.5%'] },
 };
 
 function generateAIResponse(msg: string): AiResp {
@@ -330,8 +319,8 @@ function QuickChips({ chips, onSelect }: { chips: string[]; onSelect: (c:string)
 }
 
 // ─── Media Panel ───────────────────────────────────────────────────────────
-function MediaPanel({ media, deal }: { media: Media[] | null; deal: Deal | null }) {
-  if (!media?.length && !deal) {
+function MediaPanel({ media }: { media: Media[] | null }) {
+  if (!media?.length) {
     return (
       <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%', padding:'40px', opacity:0.5 }}>
         <LotusAvatar size={50} />
@@ -355,23 +344,6 @@ function MediaPanel({ media, deal }: { media: Media[] | null; deal: Deal | null 
           </div>
         </div>
       ))}
-      {deal && (
-        <div style={{ background:`linear-gradient(135deg, rgba(138,78,18,0.07), rgba(201,75,16,0.04))`, border:`1px solid ${VFY.borderH}`, borderRadius:VFY.radius, padding:'16px 18px' }}>
-          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'6px' }}>
-            <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.14em', textTransform:'uppercase', color:VFY.gold }}>Featured Deal</div>
-            <span style={{ fontFamily:VFY.mono, fontSize:'8px', background:VFY.orange, color:'#fff', padding:'2px 7px', borderRadius:'2px' }}>{deal.badge}</span>
-          </div>
-          <div style={{ fontFamily:VFY.serif, fontSize:'17px', fontWeight:500, color:VFY.text, marginBottom:'5px' }}>{deal.title}</div>
-          <p style={{ fontFamily:VFY.sans, fontSize:'12px', color:VFY.muted, margin:'0 0 10px', lineHeight:1.6 }}>{deal.desc}</p>
-          <div style={{ display:'flex', alignItems:'baseline', gap:'8px' }}>
-            <span style={{ fontFamily:VFY.bebas, fontSize:'22px', color:VFY.gold }}>${deal.price}</span>
-            {deal.originalPrice && <span style={{ fontFamily:VFY.mono, fontSize:'10px', color:VFY.faint, textDecoration:'line-through' }}>${deal.originalPrice}</span>}
-          </div>
-          <button style={{ marginTop:'10px', width:'100%', fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.14em', textTransform:'uppercase', background:VFY.ink, color:VFY.cream, border:'none', borderRadius:'3px', padding:'9px 0', cursor:'pointer' }}>
-            Book This Deal →
-          </button>
-        </div>
-      )}
     </div>
   );
 }
@@ -582,7 +554,7 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
           {[
             { icon:'🧭', num:'01', title:'Destination Wizard', desc:'A 5-step quiz that matches your interests, fitness level, budget and season to the perfect Nepal experience — from high-altitude treks to spiritual retreats.', cta:'Start Wizard', target:'wizard' },
             { icon:'💬', num:'02', title:'Live Chat Guide',    desc:'Ask anything, anytime. Guide AI responds with calm wisdom — trekking routes, visa requirements, cultural guidance, booking help and seasonal advice.', cta:'Open Chat', target:'chat' },
-            { icon:'🎁', num:'03', title:'Deals & Bookings',  desc:'Personalised packages surface as you chat. From budget tea-house treks to premium lodge experiences — curated deals matched to your preferences.', cta:'See Deals', target:'chat' },
+            { icon:'🗺', num:'03', title:'Expert Insights',   desc:'Seasonal tips, cultural etiquette, packing guides, visa requirements and expert knowledge from our Nepal specialists — everything you need for a perfect trip.', cta:'Ask Guide AI', target:'chat' },
           ].map(f => (
             <div key={f.title} style={{ background:VFY.paper, padding:'36px 32px', display:'flex', flexDirection:'column', gap:'16px', transition:'background 0.25s' }}
               onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.background = VFY.cream}
@@ -631,47 +603,6 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
               >{q}</button>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* ── DEALS ── */}
-      <div className="guide-inner-pad guide-section-pad" style={{ maxWidth:'1320px', margin:'0 auto', padding:'80px 40px' }}>
-        <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:'36px', flexWrap:'wrap', gap:'16px' }}>
-          <div>
-            <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'12px' }}>
-              <span style={{ fontFamily:VFY.mono, fontSize:'10px', letterSpacing:'0.22em', textTransform:'uppercase', color:VFY.gold }}>Guide AI Deals</span>
-            </div>
-            <h2 style={{ fontFamily:VFY.serif, fontSize:'clamp(28px,3.5vw,46px)', fontWeight:400, color:VFY.ink, margin:0, lineHeight:1.1 }}>
-              Top Packages, Curated for You
-            </h2>
-          </div>
-          <button onClick={() => onNavigate('chat')} style={{
-            fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.16em', textTransform:'uppercase',
-            color:VFY.saffron, background:'transparent', border:`1px solid rgba(30,119,193,0.3)`,
-            borderRadius:'3px', padding:'8px 18px', cursor:'pointer',
-          }}>
-            Get personalised deals via chat →
-          </button>
-        </div>
-
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:'1px', background:VFY.border, border:`1px solid ${VFY.border}`, borderRadius:VFY.radius, overflow:'hidden' }}>
-          {DEALS.map(deal => (
-            <div key={deal.id} style={{ background:VFY.paper, padding:'28px 26px', display:'flex', flexDirection:'column', gap:'10px', cursor:'pointer', transition:'background 0.25s' }}
-              onClick={() => onNavigate('chat')}
-              onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.background = VFY.cream}
-              onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.background = VFY.paper}
-            >
-              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
-                <span style={{ fontFamily:VFY.serif, fontSize:'19px', fontWeight:500, color:VFY.text, lineHeight:1.2, flex:1, paddingRight:'10px' }}>{deal.title}</span>
-                <span style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', background:VFY.orange, color:'#fff', padding:'3px 7px', borderRadius:'2px', whiteSpace:'nowrap', flexShrink:0 }}>{deal.badge}</span>
-              </div>
-              <p style={{ fontFamily:VFY.sans, fontSize:'13px', color:VFY.muted, margin:0, lineHeight:1.65, flex:1 }}>{deal.desc}</p>
-              <div style={{ display:'flex', alignItems:'baseline', gap:'8px', paddingTop:'6px', borderTop:`1px solid ${VFY.border}` }}>
-                <span style={{ fontFamily:VFY.bebas, fontSize:'26px', color:VFY.gold }}>${deal.price}</span>
-                {deal.originalPrice && <span style={{ fontFamily:VFY.mono, fontSize:'10px', color:VFY.faint, textDecoration:'line-through' }}>${deal.originalPrice}</span>}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 
@@ -806,7 +737,6 @@ function WizardFlow({ onNavigate }: { onNavigate: (p:string)=>void }) {
   }
 
   const recs = showResult ? getRecommendations(sel) : [];
-  const relDeals = showResult ? DEALS.filter(d => recs.some(r => r.id === d.dest)) : [];
 
   return (
     <div style={{ minHeight:'calc(100vh - 64px)', background:VFY.paper, display:'flex', flexDirection:'column' }}>
@@ -883,28 +813,6 @@ function WizardFlow({ onNavigate }: { onNavigate: (p:string)=>void }) {
               </button>
             </div>
 
-            {relDeals.length > 0 && (
-              <div style={{ marginTop:'44px', width:'100%' }}>
-                <div style={{ fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.2em', textTransform:'uppercase', color:VFY.gold, marginBottom:'14px', display:'flex', alignItems:'center', gap:'10px' }}>
-                  Featured Deals for Your Trip
-                </div>
-                <div className="guide-deals-related" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))', gap:'12px' }}>
-                  {relDeals.map(deal => (
-                    <div key={deal.id} style={{ background:VFY.cream, border:`1px solid ${VFY.border}`, borderRadius:VFY.radius, padding:'16px 18px' }}>
-                      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'6px' }}>
-                        <span style={{ fontFamily:VFY.serif, fontSize:'17px', fontWeight:500, color:VFY.text, flex:1, paddingRight:'8px', lineHeight:1.2 }}>{deal.title}</span>
-                        <span style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', background:VFY.orange, color:'#fff', padding:'3px 7px', borderRadius:'2px', whiteSpace:'nowrap', flexShrink:0 }}>{deal.badge}</span>
-                      </div>
-                      <p style={{ fontFamily:VFY.sans, fontSize:'12px', color:VFY.muted, margin:'0 0 10px', lineHeight:1.6 }}>{deal.desc}</p>
-                      <div style={{ display:'flex', alignItems:'baseline', gap:'7px' }}>
-                        <span style={{ fontFamily:VFY.bebas, fontSize:'22px', color:VFY.gold }}>${deal.price}</span>
-                        {deal.originalPrice && <span style={{ fontFamily:VFY.mono, fontSize:'10px', color:VFY.faint, textDecoration:'line-through' }}>${deal.originalPrice}</span>}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </>
         )}
       </div>
@@ -918,7 +826,6 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [media, setMedia] = useState<Media[] | null>(null);
-  const [deal, setDeal] = useState<Deal | null>(null);
   const [chips, setChips] = useState<string[]>([]);
   const [listening, setListening] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
@@ -926,7 +833,7 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
 
   useEffect(() => {
     setMsgs([{ id:'g', role:'ai', ts: Date.now(), text:'Namaste, traveler. I am Guide AI — your companion through the lands of Nepal, from the peaks that touch the sky to the temples that touch the soul.\n\nWhat would you like to explore today?' }]);
-    setChips(['Plan a trek','Spiritual journey','Best time to visit','Budget guide','Show deals','About 0.5%']);
+    setChips(['Plan a trek','Spiritual journey','Best time to visit','Budget guide','About 0.5%']);
     setMedia([{ image: A.himalayas, title:'Discover Nepal', sub:'Where every path leads to wonder' }]);
   }, []);
 
@@ -942,7 +849,6 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
       const r = generateAIResponse(text);
       setMsgs(p => [...p, { id: (Date.now()+1)+'', role:'ai', ts: Date.now(), text: r.text }]);
       setMedia(r.media || null);
-      setDeal(r.deal || null);
       setChips(r.chips || []);
       setIsTyping(false);
     }, 900 + Math.random() * 1000);
@@ -1010,7 +916,7 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
             <input ref={inputRef} type="text" value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => { if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); send(input); } }}
-              placeholder={listening ? 'Listening…' : 'Ask about Nepal — treks, culture, visa, deals…'}
+              placeholder={listening ? 'Listening…' : 'Ask about Nepal — treks, culture, visa, permits…'}
               style={{ flex:1, background:'none', border:'none', outline:'none', color:VFY.text, fontFamily:VFY.sans, fontSize:'13px', padding:'7px 0', caretColor:VFY.gold }}
             />
             <button onClick={() => send(input)} disabled={!input.trim()} style={{
@@ -1036,7 +942,7 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
         <div style={{ fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.16em', textTransform:'uppercase', color:VFY.gold, marginBottom:'14px', display:'flex', alignItems:'center', gap:'8px' }}>
           Related
         </div>
-        <MediaPanel media={media} deal={deal} />
+        <MediaPanel media={media} />
       </div>
     </div>
   );
@@ -1125,9 +1031,6 @@ const STYLES = `
       grid-template-columns: 1fr 1fr !important;
     }
     .guide-result-grid {
-      grid-template-columns: 1fr !important;
-    }
-    .guide-deals-related {
       grid-template-columns: 1fr !important;
     }
   }

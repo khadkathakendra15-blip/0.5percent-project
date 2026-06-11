@@ -66,7 +66,7 @@ const RESPONSES: Record<string, AiResponse> = {
   budget: {
     text: "Nepal at every level:\n• Budget $30–60/day — tea houses, local food\n• Mid-range $60–120/day — boutique hotels, guides\n• Premium $120–250/day — luxury lodges, internal flights\n\nA full EBC trek: $1,200–2,500 all-in.",
     media: [{ image: A.himalayas, title:'Budget Planning', sub:'Value at every level' }],
-    chips: ['Cheapest treks','Premium packages','Save money tips'],
+    chips: ['Cheapest treks','Best value treks','Save money tips'],
   },
   visa: {
     text: "Tourist visa on arrival at Tribhuvan Airport:\n• 15 days — $30 USD\n• 30 days — $50 USD\n• 90 days — $125 USD\n• Indian citizens — no visa required\n\nAlso needed: TIMS card ($20) + park entry fees.",
@@ -313,7 +313,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           <input ref={inputRef} type="text" value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => { if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); send(input); } }}
-            placeholder={listening ? 'Listening…' : 'Ask about Nepal — treks, culture, visa, deals…'}
+            placeholder={listening ? 'Listening…' : 'Ask about Nepal — treks, culture, visa, permits…'}
             style={{ flex:1, background:'none', border:'none', outline:'none', color:G.text, fontFamily:G.sans, fontSize:'13px', padding:'6px 0', caretColor:G.gold }}
           />
           <button onClick={() => send(input)} disabled={!input.trim()} style={{
@@ -411,7 +411,7 @@ export function GuideAISection() {
                 {[
                   { icon:'🧭', title:'Destination Wizard', desc:'5-step quiz matches you to your perfect Nepal experience — trekking, spiritual, cultural, wildlife.' },
                   { icon:'💬', title:'Live Chat Guide',    desc:'Ask anything in English, नेपाली or हिंदी. Spiritual mentor tone, calm and wise.' },
-                  { icon:'📦', title:'Deals & Bookings',  desc:'Personalized packages, permit info, visa requirements, and seasonal recommendations.' },
+                  { icon:'🗺', title:'Expert Insights',   desc:'Seasonal tips, cultural etiquette, packing guides, visa requirements and expert knowledge — everything for a perfect trip.' },
                 ].map(f => (
                   <div key={f.title} style={{ display:'flex', alignItems:'flex-start', gap:'14px', padding:'16px', background:G.surface, borderRadius:'10px', border:`1px solid ${G.border}` }}>
                     <span style={{ fontSize:'22px', lineHeight:1, marginTop:'2px' }}>{f.icon}</span>

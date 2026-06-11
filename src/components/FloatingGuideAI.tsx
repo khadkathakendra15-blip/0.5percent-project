@@ -62,7 +62,7 @@ const RESPONSES: Record<string, AiMsg> = {
   },
   budget: {
     text: "Nepal at every level 💰\n\n• Budget: $30–60/day (tea houses, local food)\n• Mid: $60–120/day (guides, boutique hotels)\n• Premium: $120–250/day (lodges, flights)\n\nFull EBC trek: $1,200–2,500 all-in.",
-    chips: ['Cheapest routes', 'Premium packages', 'How to save'],
+    chips: ['Cheapest routes', 'Best value treks', 'How to save'],
   },
   visa: {
     text: "Visa on arrival 📋\n\n• 15 days — $30\n• 30 days — $50\n• 90 days — $125\n• 🇮🇳 Indians — no visa!\n\nAlso needed: TIMS card ($20) + park fees.",
