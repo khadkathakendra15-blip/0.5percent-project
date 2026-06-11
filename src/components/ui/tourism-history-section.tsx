@@ -278,7 +278,6 @@ export function TourismHistorySection() {
               fontSize:'12px',letterSpacing:'0.32em',textTransform:'uppercase',
               fontWeight:500,fontFamily:MUKTA,color:C.terra,
             }}>
-              <span style={{width:'28px',height:'1px',background:C.terra,opacity:0.7,flexShrink:0}}/>
               Tourism history
             </div>
 

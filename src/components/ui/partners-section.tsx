@@ -103,7 +103,6 @@ export function PartnersSection() {
           fontSize:      '12px', letterSpacing: '0.32em', textTransform: 'uppercase',
           fontWeight:    500, fontFamily: MUKTA_F, color: '#ff0000',
         }}>
-          <span style={{ width: '28px', height: '1px', background: '#ff0000', opacity: 0.7, display: 'inline-block' }} />
           In good company
         </div>
 

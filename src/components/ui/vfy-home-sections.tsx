@@ -115,7 +115,6 @@ function Eyebrow({ children, light = false, center = false }: { children: React.
       color: light ? C.saffronBright : C.terra,
       justifyContent: center ? 'center' : undefined,
     }}>
-      <span style={{ width: '28px', height: '1px', background: light ? C.saffronBright : C.terra, opacity: 0.7, flexShrink: 0 }} />
       {children}
     </div>
   );

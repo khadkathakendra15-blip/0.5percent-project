@@ -491,7 +491,6 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
           {/* Left: Editorial copy */}
           <div>
             <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'20px' }}>
-              <div style={{ width:'24px', height:'1px', background:VFY.gold, opacity:0.6 }}/>
               <span style={{ fontFamily:VFY.mono, fontSize:'10px', letterSpacing:'0.24em', textTransform:'uppercase', color:VFY.gold }}>
                 Powered by AI · 0.5% Campaign
               </span>
@@ -571,7 +570,6 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
       <div className="guide-inner-pad guide-section-pad" style={{ maxWidth:'1320px', margin:'0 auto', padding:'90px 40px 80px' }}>
         <div style={{ marginBottom:'48px' }}>
           <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'14px' }}>
-            <div style={{ width:'24px', height:'1px', background:VFY.gold, opacity:0.6 }}/>
             <span style={{ fontFamily:VFY.mono, fontSize:'10px', letterSpacing:'0.22em', textTransform:'uppercase', color:VFY.gold }}>What Guide AI Does</span>
           </div>
           <h2 style={{ fontFamily:VFY.serif, fontSize:'clamp(34px,4.5vw,58px)', fontWeight:400, color:VFY.ink, lineHeight:1.05, margin:0 }}>
@@ -641,7 +639,6 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
         <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:'36px', flexWrap:'wrap', gap:'16px' }}>
           <div>
             <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'12px' }}>
-              <div style={{ width:'24px', height:'1px', background:VFY.gold, opacity:0.6 }}/>
               <span style={{ fontFamily:VFY.mono, fontSize:'10px', letterSpacing:'0.22em', textTransform:'uppercase', color:VFY.gold }}>Guide AI Deals</span>
             </div>
             <h2 style={{ fontFamily:VFY.serif, fontSize:'clamp(28px,3.5vw,46px)', fontWeight:400, color:VFY.ink, margin:0, lineHeight:1.1 }}>
@@ -889,7 +886,6 @@ function WizardFlow({ onNavigate }: { onNavigate: (p:string)=>void }) {
             {relDeals.length > 0 && (
               <div style={{ marginTop:'44px', width:'100%' }}>
                 <div style={{ fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.2em', textTransform:'uppercase', color:VFY.gold, marginBottom:'14px', display:'flex', alignItems:'center', gap:'10px' }}>
-                  <span style={{ width:'20px', height:'1px', background:VFY.gold, display:'inline-block', opacity:0.5 }}/>
                   Featured Deals for Your Trip
                 </div>
                 <div className="guide-deals-related" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))', gap:'12px' }}>
@@ -1038,7 +1034,6 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
       {/* Media panel */}
       <div className="guide-chat-media" style={{ width:'310px', flexShrink:0, borderLeft:`1px solid ${VFY.border}`, background:VFY.cream, overflowY:'auto', padding:'18px' }}>
         <div style={{ fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.16em', textTransform:'uppercase', color:VFY.gold, marginBottom:'14px', display:'flex', alignItems:'center', gap:'8px' }}>
-          <span style={{ width:'16px', height:'1px', background:VFY.gold, display:'inline-block', opacity:0.5 }}/>
           Related
         </div>
         <MediaPanel media={media} deal={deal} />

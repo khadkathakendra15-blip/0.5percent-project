@@ -177,7 +177,6 @@ export function ImpactCalculatorSection() {
             fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase',
             fontWeight: 500, fontFamily: MUKTA, color: C.terra, whiteSpace: 'nowrap',
           }}>
-            <span style={{ width: '22px', height: '1px', background: C.terra, display: 'inline-block' }} />
             Interactive calculator
           </div>
 

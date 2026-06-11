@@ -135,7 +135,6 @@ export function HalfPercentVisionSection() {
               fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase',
               fontWeight: 500, fontFamily: MUKTA, color: C.terra, marginBottom: '20px',
             }}>
-              <span style={{ width: '22px', height: '1px', background: C.terra, display: 'inline-block' }} />
               Nepal · Five Facets
             </div>
 

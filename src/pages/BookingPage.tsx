@@ -134,7 +134,6 @@ export default function BookingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
-                <span style={{ width: '28px', height: '1px', background: C.inkFaint, opacity: 0.7 }} />
                 <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.inkFaint }}>Plan your trip</span>
               </div>
               <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(44px,5.5vw,88px)', lineHeight: 0.92, letterSpacing: '-0.02em', color: C.ink, marginBottom: '28px' }}>
@@ -168,7 +167,6 @@ export default function BookingPage() {
         <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{ marginBottom: '52px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span style={{ width: '28px', height: '1px', background: C.saffron, opacity: 0.7 }} />
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.saffron }}>When to visit</span>
             </div>
             <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Four seasons, four Nepal's.</h2>
@@ -207,7 +205,6 @@ export default function BookingPage() {
         <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{ marginBottom: '52px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span style={{ width: '28px', height: '1px', background: C.terra, opacity: 0.7 }} />
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra }}>Guiding options</span>
             </div>
             <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Choose how you travel.</h2>
@@ -259,7 +256,6 @@ export default function BookingPage() {
         <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{ marginBottom: '60px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span style={{ width: '28px', height: '1px', background: C.inkFaint, opacity: 0.7 }} />
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.inkFaint }}>The process</span>
             </div>
             <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>
@@ -286,7 +282,6 @@ export default function BookingPage() {
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 40px' }}>
           <div style={{ marginBottom: '52px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span style={{ width: '28px', height: '1px', background: C.terra, opacity: 0.7 }} />
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra }}>FAQ</span>
             </div>
             <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Common questions.</h2>

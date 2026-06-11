@@ -362,7 +362,6 @@ export function GuideAISection() {
             style={{ marginBottom:'48px' }}
           >
             <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'14px' }}>
-              <div style={{ width:'28px', height:'1px', background:G.gold, opacity:0.7 }} />
               <span style={{ fontFamily:G.mono, fontSize:'10px', letterSpacing:'0.22em', textTransform:'uppercase', color:G.gold }}>
                 Powered by AI
               </span>

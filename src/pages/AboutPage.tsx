@@ -92,9 +92,7 @@ function Kicker({ children, center = false }: { children: React.ReactNode; cente
       display: 'inline-flex', alignItems: 'center', gap: 12,
       ...(center ? { justifyContent: 'center' } : {}),
     }}>
-      <span style={{ width: 26, height: 1, background: C.terra, opacity: 0.6, display: 'inline-block', flexShrink: 0 }} />
       {children}
-      {center && <span style={{ width: 26, height: 1, background: C.terra, opacity: 0.6, display: 'inline-block', flexShrink: 0 }} />}
     </div>
   );
 }
@@ -149,7 +147,6 @@ export default function AboutPage() {
           {/* left */}
           <Reveal>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', fontSize: '12px', letterSpacing: '0.32em', textTransform: 'uppercase', fontWeight: 500, fontFamily: sans, color: C.terra, marginBottom: '22px' }}>
-              <span style={{ width: '28px', height: '1px', background: C.terra, opacity: 0.6, flexShrink: 0, display: 'inline-block' }} />
               Our vision
             </div>
             <h2 style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(40px, 6vw, 82px)', lineHeight: 1, letterSpacing: '-0.015em', color: C.ink, marginTop: '0' }}>

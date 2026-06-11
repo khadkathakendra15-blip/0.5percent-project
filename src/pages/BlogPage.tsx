@@ -203,7 +203,6 @@ export default function BlogPage() {
       }}>
         <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '72px 40px', position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-            <span style={{ width: '28px', height: '1px', background: C.inkFaint, opacity: 0.6 }} />
             <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.inkFaint }}>Stories from Nepal</span>
           </div>
           <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(48px,6vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', color: C.ink }}>
