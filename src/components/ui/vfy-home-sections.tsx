@@ -584,16 +584,46 @@ export function FounderSection() {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   7. PARTNERS GRID
+   7. PARTNERS — scrolling marquee
 ══════════════════════════════════════════════════════════════════════════ */
+
+// Logo circle for the marquee (all inline styles — no Tailwind)
+function LogoBadge({ logo }: { logo: typeof LOGOS[0] }) {
+  return (
+    <div style={{
+      width: '80px', height: '80px', borderRadius: '50%', flexShrink: 0,
+      background: C.paper, border: `1.5px solid ${C.line}`,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      overflow: 'hidden', boxShadow: '0 1px 4px rgba(24,20,16,0.07)',
+    }}>
+      <img
+        src={logo.src} alt={logo.alt} loading="lazy"
+        style={{ width: '60px', height: '60px', objectFit: 'contain',
+          filter: 'grayscale(15%)', opacity: 0.88 }}
+        onError={e => {
+          (e.currentTarget as HTMLImageElement).style.display = 'none';
+          const p = e.currentTarget.parentElement!;
+          p.style.background = C.cream2;
+          p.innerHTML = `<span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:${C.inkFaint};letter-spacing:.1em">${logo.alt.slice(0,4).toUpperCase()}</span>`;
+        }}
+      />
+    </div>
+  );
+}
+
 function PartnersGridSection() {
   const rHead = useReveal(0);
-  const rGrid = useReveal(0.12);
+  const rMarq = useReveal(0.14);
+
+  // Split LOGOS into two rows and repeat for seamless loop
+  const row1 = LOGOS.slice(0, 5);
+  const row2 = LOGOS.slice(5);
+  const rpt = <T,>(arr: T[], n = 5) => Array.from({ length: n }).flatMap(() => arr);
 
   return (
-    <section style={{ background: C.cream, padding: '140px 0', borderTop: `1px solid ${C.lineS}`, position: 'relative' }}>
+    <section style={{ background: C.cream, padding: '100px 0', borderTop: `1px solid ${C.lineS}`, position: 'relative', overflow: 'hidden' }}>
       <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
-        <div ref={rHead} style={{ textAlign: 'center', maxWidth: '62ch', margin: '0 auto 60px' }}>
+        <div ref={rHead} style={{ textAlign: 'center', maxWidth: '62ch', margin: '0 auto 52px' }}>
           <Eyebrow center>In good company</Eyebrow>
           <Display>
             Partners carrying the{' '}
@@ -604,46 +634,23 @@ function PartnersGridSection() {
           </p>
         </div>
 
-        <div ref={rGrid} className="partners-logo-grid" style={{
-          border: `1px solid ${C.line}`, borderRadius: '6px', overflow: 'hidden',
-          background: C.paper,
-          display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
-        }}>
-          {LOGOS.map((logo, i) => (
-            <div key={i} className="partners-logo-cell" style={{
-              aspectRatio: '5/3', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              padding: '22px',
-              borderRight: (i + 1) % 5 !== 0 ? `1px solid ${C.lineS}` : 'none',
-              borderBottom: i < 5 ? `1px solid ${C.lineS}` : 'none',
-              transition: 'background .25s',
-              cursor: 'pointer',
-            }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = '#fff';
-                const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                img.style.filter = 'none';
-                img.style.opacity = '1';
-                img.style.transform = 'scale(1.04)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = 'transparent';
-                const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                img.style.filter = 'grayscale(100%) contrast(0.9)';
-                img.style.opacity = '0.78';
-                img.style.transform = 'scale(1)';
-              }}
-            >
-              <img
-                src={logo.src} alt={logo.alt} loading="lazy"
-                style={{
-                  maxWidth: '90%', maxHeight: '80%', objectFit: 'contain',
-                  filter: 'grayscale(100%) contrast(0.9)', opacity: 0.78,
-                  transition: 'filter .3s, opacity .3s, transform .3s',
-                  display: 'block',
-                }}
-              />
+        {/* ── Scrolling rows ── */}
+        <div ref={rMarq} style={{ overflow: 'hidden', position: 'relative' }}>
+          {/* Row 1 — left */}
+          <div style={{ marginBottom: '20px' }}>
+            <div className="animate-scroll-left" style={{ display: 'flex', gap: '20px', width: 'max-content' }}>
+              {rpt(row1).map((logo, i) => <LogoBadge key={i} logo={logo} />)}
             </div>
-          ))}
+          </div>
+          {/* Row 2 — right */}
+          <div>
+            <div className="animate-scroll-right" style={{ display: 'flex', gap: '20px', width: 'max-content' }}>
+              {rpt(row2).map((logo, i) => <LogoBadge key={i} logo={logo} />)}
+            </div>
+          </div>
+          {/* Edge fades — match section background */}
+          <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '80px', background: `linear-gradient(to right, ${C.cream}, transparent)`, pointerEvents: 'none', zIndex: 10 }} />
+          <div style={{ position: 'absolute', right: 0, top: 0, height: '100%', width: '80px', background: `linear-gradient(to left, ${C.cream}, transparent)`, pointerEvents: 'none', zIndex: 10 }} />
         </div>
       </div>
     </section>

@@ -243,6 +243,14 @@ export function TourismHistorySection() {
   const rChart=useReveal(0.22);
   const rCards=useReveal(0.36);
 
+  // isMobile state — used to set inline grid styles that can't be overridden
+  const [isMobile, setIsMobile] = useState(()=> typeof window!=='undefined' && window.innerWidth<=768);
+  useEffect(()=>{
+    const check=()=>setIsMobile(window.innerWidth<=768);
+    window.addEventListener('resize',check);
+    return ()=>window.removeEventListener('resize',check);
+  },[]);
+
   return (
     <section style={{
       background: C.cream,          /* matches CountryComparisonSection */
@@ -318,15 +326,19 @@ export function TourismHistorySection() {
         </div>
 
         {/* ── chart ── */}
-        <div ref={rChart} style={{
+        <div ref={rChart} className="tourism-chart-box" style={{
           background:C.paper, border:`1px solid ${C.lineS}`,
           borderRadius:'4px', padding:'28px 24px 20px', marginBottom:'20px',
         }}>
           <TourismChart/>
         </div>
 
-        {/* ── stat cards ── */}
-        <div ref={rCards} className="tourism-stat-grid" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'12px'}}>
+        {/* ── stat cards: 4-col row — use minmax so CSS attribute selectors can't override ── */}
+        <div ref={rCards} className="tourism-stat-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? 'repeat(4, minmax(0, 1fr))' : 'repeat(4,1fr)',
+          gap: isMobile ? '6px' : '12px',
+        }}>
           <StatCard label="Worst single drop"         value="−80%"   sub="COVID-19 (2019→2020)"       accent="crisis"/>
           <StatCard label="Longest disruption"        value="10 yrs" sub="Maoist conflict (1996–2006)" accent="crisis"/>
           <StatCard label="Peak arrivals"             value="1.17M"  sub="2019 — all-time high"         accent="growth"/>

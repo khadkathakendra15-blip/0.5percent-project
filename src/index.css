@@ -810,3 +810,31 @@ body { overflow-x: hidden; }
   }
 }
 
+/* ── Tourism chart: reduce horizontal padding on mobile ───────── */
+@media (max-width: 768px) {
+  .tourism-chart-box {
+    padding: 16px 6px 12px !important;
+  }
+}
+
+/* ── Doubled-class overrides: beat ALL [style*=] attribute rules
+   regardless of declaration order (higher specificity wins)    ── */
+@media (max-width: 768px) {
+  /* Tourism stat grid: JS sets minmax so attr-selectors won't match,
+     but this class rule acts as safety net too */
+  .tourism-stat-grid.tourism-stat-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+  /* Premise stat strip stays 3-col */
+  .vfy-stat-strip.vfy-stat-strip {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 640px) {
+  /* Campaign grid stays 2-col */
+  .campaign-grid.campaign-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
