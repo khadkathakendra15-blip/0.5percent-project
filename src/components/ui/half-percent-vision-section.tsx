@@ -150,7 +150,7 @@ export function HalfPercentVisionSection() {
 
             <p style={{ fontSize: '16px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 300, fontFamily: MUKTA, marginBottom: '32px', maxWidth: '38ch' }}>
               From Himalayan peaks to ancient temples, from spiritual retreats to adrenaline trails
-              — Nepal offers the world a depth no single journey can exhaust.
+              Nepal offers the world a depth no single journey can exhaust.
             </p>
 
             {/* stat row */}
@@ -160,7 +160,7 @@ export function HalfPercentVisionSection() {
             }}>
               {[
                 { num: '5', label: 'Distinct\nexperiences' },
-                { num: '8,849', label: 'Metres —\nEverest summit' },
+                { num: '8,849', label: 'Metres\nEverest summit' },
                 { num: '10+', label: 'UNESCO\nWorld Heritage' },
               ].map((s, i) => (
                 <div key={i} style={{ flex: 1, paddingRight: i < 2 ? '20px' : '0', borderRight: i < 2 ? `1px solid ${C.line}` : 'none', paddingLeft: i > 0 ? '20px' : '0' }}>

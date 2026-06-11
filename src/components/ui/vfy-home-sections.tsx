@@ -342,21 +342,21 @@ function ThreePillarsSection() {
   const pillars = [
     {
       img: IMG.spiritual,
-      num: '01 — PEACE',
+      num: '01  PEACE',
       title: 'Land of Peace',
       sub: 'Where ancient wisdom meets pristine nature, and quiet is felt in every breath.',
       delay: 0,
     },
     {
       img: IMG.nepaliArt,
-      num: '02 — DHARMA',
+      num: '02  DHARMA',
       title: 'Hinduism',
       sub: 'Pashupatinath, the rituals, the rivers — Nepal as a living seat of devotion.',
       delay: 0.1,
     },
     {
       img: IMG.meditation,
-      num: '03 — BODHI',
+      num: '03  BODHI',
       title: 'Buddhism',
       sub: 'In Lumbini, the light of enlightenment first touched the world. The path still walks.',
       delay: 0.2,

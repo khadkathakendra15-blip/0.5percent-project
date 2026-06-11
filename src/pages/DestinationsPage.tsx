@@ -337,7 +337,7 @@ function ExploreNepal() {
             style={{ maxWidth: '680px', margin: '0 auto 64px', textAlign: 'center' }}>
             <SectionPill color={B.inkFaint}>Global Recognition</SectionPill>
             <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,64px)', lineHeight: 1, color: B.ink, marginBottom: '18px' }}>
-              Nepal — A Global<br /><em style={{ fontStyle: 'italic', color: B.inkSoft }}>Peace Destination</em>
+              Nepal: A Global<br /><em style={{ fontStyle: 'italic', color: B.inkSoft }}>Peace Destination</em>
             </h2>
             <p style={{ fontFamily: F.mukta, fontSize: '16px', lineHeight: 1.85, color: B.inkSoft }}>
               Long before tourism existed, Nepal was a sanctuary. The birthplace of the Buddha, a land that conquered no neighbour, and a crossroads of faiths — Nepal's gift to the world has always been peace.
