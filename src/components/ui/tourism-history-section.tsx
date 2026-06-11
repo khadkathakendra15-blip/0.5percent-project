@@ -132,11 +132,11 @@ function StatCard({label,value,sub,accent}:
   {label:string;value:string;sub:string;accent:'crisis'|'growth'}) {
   const color=accent==='crisis'?C.terra:C.saffron;
   return (
-    <div style={{padding:'16px 20px', background:C.paper,
+    <div className="tourism-stat-card" style={{padding:'16px 20px', background:C.paper,
       border:`1px solid ${C.lineS}`, borderRadius:'4px'}}>
-      <div style={{fontFamily:MONO,fontSize:'10px',letterSpacing:'0.24em',
+      <div className="tourism-stat-label" style={{fontFamily:MONO,fontSize:'10px',letterSpacing:'0.24em',
         textTransform:'uppercase',color:C.inkFaint,marginBottom:'6px'}}>{label}</div>
-      <div style={{fontFamily:BEBAS,fontSize:'40px',lineHeight:0.9,color}}>{value}</div>
+      <div className="tourism-stat-val" style={{fontFamily:BEBAS,fontSize:'40px',lineHeight:0.9,color}}>{value}</div>
       <div style={{fontFamily:MUKTA,fontSize:'12px',color:C.inkSoft,
         marginTop:'6px',lineHeight:1.4}}>{sub}</div>
     </div>
@@ -257,7 +257,7 @@ export function TourismHistorySection() {
         background:`linear-gradient(90deg,${C.terra} 0%,transparent 45%,${C.saffron} 100%)`,
       }}/>
 
-      <div style={{maxWidth:'1320px',margin:'0 auto',padding:'0 40px',position:'relative',zIndex:1}}>
+      <div className="tourism-section-inner" style={{maxWidth:'1320px',margin:'0 auto',padding:'0 40px',position:'relative',zIndex:1}}>
 
         {/* ── header ── */}
         <div style={{
@@ -326,7 +326,7 @@ export function TourismHistorySection() {
         </div>
 
         {/* ── stat cards ── */}
-        <div ref={rCards} style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'12px'}}>
+        <div ref={rCards} className="tourism-stat-grid" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'12px'}}>
           <StatCard label="Worst single drop"         value="−80%"   sub="COVID-19 (2019→2020)"       accent="crisis"/>
           <StatCard label="Longest disruption"        value="10 yrs" sub="Maoist conflict (1996–2006)" accent="crisis"/>
           <StatCard label="Peak arrivals"             value="1.17M"  sub="2019 — all-time high"         accent="growth"/>

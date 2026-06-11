@@ -238,7 +238,7 @@ function PremiseStat({ stat, active, padStyle, borderRight }: {
       <div style={{ fontSize: '11px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.inkFaint, fontWeight: 500, marginBottom: '14px', fontFamily: MUKTA }}>
         {stat.label}
       </div>
-      <div style={{ fontFamily: BEBAS, fontSize: '64px', lineHeight: 0.9, color: stat.accent ? C.terra : C.ink, letterSpacing: '0.01em' }}>
+      <div className="premise-stat-val" style={{ fontFamily: BEBAS, fontSize: '64px', lineHeight: 0.9, color: stat.accent ? C.terra : C.ink, letterSpacing: '0.01em' }}>
         {stat.fmt(val)}
       </div>
       <div style={{ fontSize: '13px', color: C.inkSoft, marginTop: '10px', lineHeight: 1.55, fontFamily: MUKTA }}>
@@ -604,13 +604,13 @@ function PartnersGridSection() {
           </p>
         </div>
 
-        <div ref={rGrid} style={{
+        <div ref={rGrid} className="partners-logo-grid" style={{
           border: `1px solid ${C.line}`, borderRadius: '6px', overflow: 'hidden',
           background: C.paper,
           display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
         }}>
           {LOGOS.map((logo, i) => (
-            <div key={i} style={{
+            <div key={i} className="partners-logo-cell" style={{
               aspectRatio: '5/3', display: 'flex', alignItems: 'center', justifyContent: 'center',
               padding: '22px',
               borderRight: (i + 1) % 5 !== 0 ? `1px solid ${C.lineS}` : 'none',

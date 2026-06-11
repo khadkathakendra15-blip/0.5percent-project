@@ -150,7 +150,7 @@ export function ImpactCalculatorSection() {
           .calc-col-r { padding-left: 0 !important; padding-top: 20px !important; }
           .calc-big-num { font-size: clamp(64px,16vw,96px) !important; }
           .calc-ledger-val { font-size: 22px !important; }
-          .calc-outcome-grid { min-height: 0 !important; }
+          .calc-outcome-grid { flex: none !important; min-height: 0 !important; height: auto !important; }
         }
       `}</style>
 
@@ -352,7 +352,7 @@ export function ImpactCalculatorSection() {
             </div>
 
             {/* 2×2 outcomes grid */}
-            <div style={{
+            <div className="calc-outcome-grid" style={{
               display: 'grid', gridTemplateColumns: '1fr 1fr',
               border: `1px solid ${C.line}`, borderRadius: '3px',
               flex: 1, overflow: 'hidden',

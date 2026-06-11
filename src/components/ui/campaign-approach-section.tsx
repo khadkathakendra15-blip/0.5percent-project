@@ -253,7 +253,7 @@ export function CampaignApproachSection() {
         </div>
 
         {/* ── ledger grid ── */}
-        <div ref={rGrid} style={{
+        <div ref={rGrid} className="campaign-grid" style={{
           display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
           borderBottom: `1px solid ${C.line}`,
         }}>
@@ -261,7 +261,7 @@ export function CampaignApproachSection() {
             const col = (i % 3) + 1;
             const row = Math.floor(i / 3);
             return (
-              <div key={i} style={{ borderTop: row > 0 ? `1px solid ${C.line}` : 'none' }}>
+              <div key={i} className="campaign-item" style={{ borderTop: row > 0 ? `1px solid ${C.line}` : 'none' }}>
                 <LedgerCard item={item} col={col} />
               </div>
             );

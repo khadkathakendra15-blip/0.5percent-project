@@ -21,24 +21,42 @@ const ROW2 = [
 
 type Partner = (typeof ROW1)[0];
 
-const repeat = (arr: Partner[], times = 5): Partner[] =>
+// Duplicate each row (2 identical copies) so translateX(-50%) creates a seamless loop
+const repeat = (arr: Partner[], times = 4): Partner[] =>
   Array.from({ length: times }).flatMap(() => arr);
 
-// ─── Logo badge ───────────────────────────────────────────────────────────────
+const BADGE_SIZE = 72;
+const GAP        = 20;
+
+const SERIF_F = "'Cormorant Garamond', Georgia, serif";
+const MUKTA_F = "'Mukta', system-ui, sans-serif";
+
+// ─── Logo badge (all inline styles — no Tailwind) ─────────────────────────────
 function PartnerBadge({ partner }: { partner: Partner }) {
   return (
     <div
       title={partner.name}
-      className="h-16 w-16 flex-shrink-0 rounded-full shadow-sm flex items-center justify-center border hover:scale-110 transition-transform duration-200 cursor-default overflow-hidden"
-      style={{ background: "#fff", borderColor: partner.color + "25" }}
+      style={{
+        width:        `${BADGE_SIZE}px`,
+        height:       `${BADGE_SIZE}px`,
+        borderRadius: '50%',
+        flexShrink:   0,
+        border:       `1.5px solid ${partner.color}28`,
+        background:   '#fff',
+        boxShadow:    '0 1px 4px rgba(0,0,0,0.07)',
+        display:      'flex',
+        alignItems:   'center',
+        justifyContent: 'center',
+        overflow:     'hidden',
+        cursor:       'default',
+      }}
     >
       <img
         src={partner.logo}
         alt={partner.name}
-        className="h-11 w-11 object-contain"
+        style={{ width: '52px', height: '52px', objectFit: 'contain' }}
         onError={(e) => {
-          // fallback: show colored circle with first letters
-          (e.currentTarget as HTMLImageElement).style.display = "none";
+          (e.currentTarget as HTMLImageElement).style.display = 'none';
           const parent = e.currentTarget.parentElement!;
           parent.style.background = partner.bg;
           parent.innerHTML = `<span style="color:${partner.color};font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:900;letter-spacing:0.05em">${partner.name.slice(0, 3).toUpperCase()}</span>`;
@@ -50,50 +68,97 @@ function PartnerBadge({ partner }: { partner: Partner }) {
 
 // ─── Main section ─────────────────────────────────────────────────────────────
 export function PartnersSection() {
+  const row1 = repeat(ROW1, 4);
+  const row2 = repeat(ROW2, 4);
+
   return (
-    <section className="relative py-28 overflow-hidden bg-white">
-      {/* Dot-grid background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.045)_1px,transparent_1px)] [background-size:24px_24px]" />
+    <section style={{
+      position:   'relative',
+      padding:    '80px 0',
+      overflow:   'hidden',
+      background: '#fff',
+    }}>
+      {/* Dot-grid texture */}
+      <div style={{
+        position:            'absolute', inset: 0, pointerEvents: 'none',
+        backgroundImage:     'radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px)',
+        backgroundSize:      '24px 24px',
+      }} />
 
-      {/* Amber glow */}
-      <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse, rgba(245,158,11,0.07) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
+      {/* Amber glow centred */}
+      <div style={{
+        position:   'absolute', left: '50%', top: '50%',
+        transform:  'translate(-50%, -50%)',
+        width:      '700px', height: '300px', borderRadius: '50%',
+        background: 'radial-gradient(ellipse, rgba(245,158,11,0.07) 0%, transparent 70%)',
+        filter:     'blur(60px)', pointerEvents: 'none',
+      }} />
 
-      <div className="relative max-w-7xl mx-auto px-6 text-center">
-        {/* Heading */}
-        <h2
-          className="text-4xl md:text-5xl font-black text-gray-900 mb-12"
-          style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.05em" }}
-        >
-          Partners &amp; Supporters
-        </h2>
+      {/* ── Content ── */}
+      <div style={{ position: 'relative', maxWidth: '1320px', margin: '0 auto', padding: '0 40px', textAlign: 'center' }}>
 
-        {/* ── Scrolling rows ── */}
-        <div className="overflow-hidden relative pb-2 space-y-5">
-          {/* Row 1 — left */}
-          <div className="flex gap-6 whitespace-nowrap animate-scroll-left">
-            {repeat(ROW1, 5).map((p, i) => (
-              <PartnerBadge key={i} partner={p} />
-            ))}
-          </div>
-
-          {/* Row 2 — right */}
-          <div className="flex gap-6 whitespace-nowrap animate-scroll-right">
-            {repeat(ROW2, 5).map((p, i) => (
-              <PartnerBadge key={i} partner={p} />
-            ))}
-          </div>
-
-          {/* Fade edges */}
-          <div className="absolute left-0 top-0 h-full w-28 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 h-full w-28 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+        {/* Eyebrow */}
+        <div style={{
+          display:       'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '18px',
+          fontSize:      '12px', letterSpacing: '0.32em', textTransform: 'uppercase',
+          fontWeight:    500, fontFamily: MUKTA_F, color: '#ff0000',
+        }}>
+          <span style={{ width: '28px', height: '1px', background: '#ff0000', opacity: 0.7, display: 'inline-block' }} />
+          In good company
         </div>
 
+        {/* Heading */}
+        <h2 style={{
+          fontFamily:     SERIF_F, fontWeight: 300,
+          fontSize:       'clamp(36px, 5vw, 62px)', lineHeight: 1.05,
+          letterSpacing:  '-0.015em', color: '#181410', marginBottom: '12px',
+        }}>
+          Partners &amp;{' '}
+          <em style={{ fontStyle: 'italic', color: '#ff0000' }}>Supporters</em>.
+        </h2>
+
+        <p style={{
+          fontFamily: MUKTA_F, fontSize: '15px', color: '#5a4f44',
+          fontWeight: 300, maxWidth: '44ch', margin: '0 auto 48px', lineHeight: 1.8,
+        }}>
+          Organisations, airlines, hotels and media houses helping carry Nepal's story to the world.
+        </p>
+
+        {/* ── Scrolling marquee ── */}
+        <div style={{ overflow: 'hidden', position: 'relative' }}>
+
+          {/* Row 1 — scrolls left */}
+          <div style={{ marginBottom: `${GAP}px` }}>
+            <div
+              className="animate-scroll-left"
+              style={{ display: 'flex', gap: `${GAP}px`, width: 'max-content' }}
+            >
+              {row1.map((p, i) => <PartnerBadge key={i} partner={p} />)}
+            </div>
+          </div>
+
+          {/* Row 2 — scrolls right */}
+          <div>
+            <div
+              className="animate-scroll-right"
+              style={{ display: 'flex', gap: `${GAP}px`, width: 'max-content' }}
+            >
+              {row2.map((p, i) => <PartnerBadge key={i} partner={p} />)}
+            </div>
+          </div>
+
+          {/* Fade-out edges */}
+          <div style={{
+            position: 'absolute', left: 0, top: 0, height: '100%', width: '80px',
+            background: 'linear-gradient(to right, white, transparent)',
+            pointerEvents: 'none', zIndex: 10,
+          }} />
+          <div style={{
+            position: 'absolute', right: 0, top: 0, height: '100%', width: '80px',
+            background: 'linear-gradient(to left, white, transparent)',
+            pointerEvents: 'none', zIndex: 10,
+          }} />
+        </div>
       </div>
     </section>
   );

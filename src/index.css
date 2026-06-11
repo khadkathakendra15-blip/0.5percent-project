@@ -392,18 +392,34 @@ body { overflow-x: hidden; }
   .vfy-pillar-card { aspect-ratio: 4 / 2.8 !important; }
 }
 
-/* ── Premise stat strip: vertical stack on mobile ───────────── */
+/* ── Premise stat strip: compact 3-col horizontal row on mobile ─ */
 @media (max-width: 768px) {
+  /* Override the global repeat(3,1fr)→1fr rule */
+  .vfy-stat-strip {
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin-top: 28px !important;
+    padding-top: 18px !important;
+  }
   .vfy-stat-strip > * {
-    padding: 0 0 24px !important;
+    padding: 0 8px !important;
     border-right: none !important;
-    border-bottom: 1px solid rgba(24,20,16,0.08) !important;
-    margin-bottom: 4px;
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+  }
+  .vfy-stat-strip > *:first-child {
+    padding-left: 0 !important;
+    border-right: 1px solid rgba(24,20,16,0.08) !important;
+  }
+  .vfy-stat-strip > *:nth-child(2) {
+    border-right: 1px solid rgba(24,20,16,0.08) !important;
   }
   .vfy-stat-strip > *:last-child {
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 0;
+    padding-right: 0 !important;
+  }
+  /* Shrink BEBAS big numbers to fit 3 narrow columns */
+  .premise-stat-val {
+    font-size: 30px !important;
+    line-height: 0.9 !important;
   }
 }
 
@@ -711,6 +727,77 @@ body { overflow-x: hidden; }
 @media (max-width: 1024px) and (min-width: 769px) {
   [style*="grid-template-columns: repeat(3,1fr)"] {
     grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ROUND-2 MOBILE FIXES — override global collapse rules above
+   (same specificity as [style*=] selectors; placed last = wins)
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Tourism: wider inner padding, force 4-col stat row ───────── */
+@media (max-width: 768px) {
+  .tourism-section-inner {
+    padding-left:  14px !important;
+    padding-right: 14px !important;
+  }
+  /* Override any 4-col → 2-col rules for this grid specifically */
+  .tourism-stat-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+  .tourism-stat-card  { padding: 10px 6px !important; }
+  .tourism-stat-label {
+    font-size:      8px !important;
+    letter-spacing: 0.05em !important;
+    white-space:    nowrap !important;
+    overflow:       hidden !important;
+    text-overflow:  ellipsis !important;
+    margin-bottom:  4px !important;
+  }
+  .tourism-stat-val { font-size: 22px !important; line-height: 0.9 !important; }
+}
+
+/* ── Campaign: 2-column grid on mobile (pairs 1+2, 3+4, 5+6) ─── */
+@media (max-width: 640px) {
+  .campaign-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Right-column items (even): remove border-right */
+  .campaign-item:nth-child(2n) article {
+    border-right: none !important;
+  }
+  /* Left-column items (odd): ensure border-right exists */
+  .campaign-item:nth-child(2n-1) article {
+    border-right: 1px solid rgba(24,20,16,0.14) !important;
+  }
+  /* Row 2+ items (3rd onward): add top border */
+  .campaign-item:nth-child(n+3) {
+    border-top: 1px solid rgba(24,20,16,0.14) !important;
+  }
+  /* Tighten card padding on narrow screens */
+  .campaign-item article { padding: 22px 14px 20px !important; }
+}
+
+/* ── Partners logo grid (vfy-home): 2-col on mobile ──────────── */
+@media (max-width: 768px) {
+  .partners-logo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Reset all inline borders, then re-apply cleanly */
+  .partners-logo-cell {
+    border-right:  none !important;
+    border-bottom: 1px solid rgba(24,20,16,0.08) !important;
+    aspect-ratio:  5 / 3 !important;
+  }
+  /* Left column (odd) gets a right divider */
+  .partners-logo-cell:nth-child(odd) {
+    border-right: 1px solid rgba(24,20,16,0.08) !important;
+  }
+  /* Last 2 items = bottom row — no bottom border */
+  .partners-logo-cell:nth-last-child(-n+2) {
+    border-bottom: none !important;
   }
 }
 
