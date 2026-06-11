@@ -223,11 +223,11 @@ export default function AboutPage() {
         <Reveal>
           <div style={{ display: 'grid', gridTemplateColumns: '0.92fr 1.08fr', gap: 64, alignItems: 'center', background: C.paper, border: `1px solid ${C.lineSoft}`, borderRadius: 4, padding: 44 }}>
             {/* Portrait */}
-            <div style={{ height: 520, borderRadius: 3, overflow: 'hidden' }}>
+            <div className="about-founder-portrait" style={{ height: 520, borderRadius: 3, overflow: 'hidden' }}>
               <img
                 src="/Dashrat Sunar - founder.jpeg"
                 alt="Dashrath Sunar"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
               />
             </div>
             {/* Meta */}
@@ -349,6 +349,11 @@ export default function AboutPage() {
           .about-founder { grid-template-columns: 1fr !important; gap: 36px !important; padding: 28px !important; }
           .about-team-grid { grid-template-columns: 1fr 1fr !important; gap: 26px !important; }
           .about-logo-grid { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media (max-width: 768px) {
+          /* Show full founder photo — no cropping */
+          .about-founder-portrait { height: auto !important; overflow: visible !important; }
+          .about-founder-portrait img { height: auto !important; object-fit: contain !important; object-position: center top !important; border-radius: 3px; }
         }
         @media (max-width: 560px) {
           .about-team-grid { grid-template-columns: 1fr !important; }
