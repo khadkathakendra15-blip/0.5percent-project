@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavBar } from '@/components/ui/nav-bar';
-import { CheckCircle, Calendar, FileText, Users, Bed, DollarSign, ChevronDown, ChevronUp, Mountain, Compass, Star } from 'lucide-react';
+import { CheckCircle, Calendar, FileText, Users, Bed, DollarSign, ChevronDown, ChevronUp, Mountain, Star } from 'lucide-react';
 
 const C = {
   ink: '#181410', ink2: '#2a231c', inkSoft: '#5a4f44', inkFaint: '#9b8f80',
@@ -51,39 +51,12 @@ const SEASONS = [
   },
 ];
 
-const GUIDE_TIERS = [
-  {
-    name: 'Self-Guided',
-    price: 'From $30/day',
-    icon: <Compass size={28} color={C.saffron} strokeWidth={1.5} />,
-    desc: 'Use our digital trail guides, permit portal, and vetted accommodation list. Ideal for experienced trekkers with a sense of adventure.',
-    includes: ['Digital trail maps','Permit assistance','Accommodation booking list','24/7 emergency contacts'],
-    color: C.saffron,
-  },
-  {
-    name: 'Licensed Guide',
-    price: 'From $45/day',
-    icon: <Users size={28} color={C.terra} strokeWidth={1.5} />,
-    desc: 'A certified Nepali guide joins your trek or tour. Deep local knowledge, language support, cultural insight, and safety assurance.',
-    includes: ['NTB-certified guide','Cultural briefings','Language support','Equipment check','Emergency first aid'],
-    color: C.terra,
-    recommended: true,
-  },
-  {
-    name: 'Full Package',
-    price: 'From $120/day',
-    icon: <Star size={28} color="#D4A017" strokeWidth={1.5} />,
-    desc: 'Everything handled — flights, permits, accommodation, guide, meals, porter. You arrive; we take care of the rest.',
-    includes: ['Guide + porter','All permits & fees','Accommodation (tea house or hotel)','Meals (breakfast & dinner)','Airport transfers','24/7 trip manager'],
-    color: '#C68B2C',
-  },
-];
 
 const STEPS = [
   { n: '01', icon: <Mountain size={20} color={C.saffron} strokeWidth={1.5} />,  title: 'Choose your destination',  desc: 'Browse our Destinations page. Filter by region, activity type, or difficulty. Not sure? Take our 2-minute trip matcher quiz.' },
   { n: '02', icon: <Calendar size={20} color={C.saffron} strokeWidth={1.5} />,  title: 'Pick your dates',            desc: 'Spring (Mar–May) and Autumn (Sep–Nov) are peak seasons. Book at least 6 weeks ahead. Some restricted areas need 3-month lead time.' },
   { n: '03', icon: <FileText size={20} color={C.saffron} strokeWidth={1.5} />,  title: 'Sort permits & visa',        desc: 'Most nationalities get a visa on arrival (USD $30 for 15 days). Trekking permits (TIMS card + national park fees) are arranged for you.' },
-  { n: '04', icon: <Users size={20} color={C.saffron} strokeWidth={1.5} />,    title: 'Book your guide',            desc: 'Choose from self-guided, licensed guide, or full-package options above. All guides are NTB-certified and background-checked.' },
+  { n: '04', icon: <Users size={20} color={C.saffron} strokeWidth={1.5} />,    title: 'Book your guide',            desc: 'Choose from self-guided, licensed guide, or full-package options. All guides are NTB-certified and background-checked.' },
   { n: '05', icon: <Bed size={20} color={C.saffron} strokeWidth={1.5} />,      title: 'Arrange accommodation',      desc: 'Tea houses along treks, boutique hotels in cities, or luxury lodges — we have options at every budget, all pre-vetted for quality and safety.' },
   { n: '06', icon: <DollarSign size={20} color={C.saffron} strokeWidth={1.5} />, title: 'Budget & insurance',       desc: 'Budget $60–$120/day for mid-range trekking. Travel insurance with helicopter evacuation cover is mandatory for all trekking permits.' },
 ];
@@ -192,57 +165,6 @@ export default function BookingPage() {
                         <span style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.12em', color: C.inkFaint }}>{b}</span>
                       </div>
                     ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── GUIDE TIERS ── */}
-      <section style={{ background: C.paper, padding: '100px 0', borderTop: `1px solid ${C.lineS}` }}>
-        <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
-          <div style={{ marginBottom: '52px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra }}>Guiding options</span>
-            </div>
-            <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Choose how you travel.</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }}>
-            {GUIDE_TIERS.map(g => (
-              <div key={g.name} style={{
-                border: g.recommended ? `2px solid ${C.terra}` : `1px solid ${C.lineS}`,
-                borderRadius: '6px', overflow: 'hidden',
-                position: 'relative',
-              }}>
-                {g.recommended && (
-                  <div style={{
-                    position: 'absolute', top: '14px', right: '14px',
-                    background: C.terra, color: C.cream,
-                    fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase',
-                    padding: '4px 10px', borderRadius: '2px',
-                  }}>Recommended</div>
-                )}
-                <div style={{ padding: '32px 28px', background: C.paper }}>
-                  <div style={{ marginBottom: '14px' }}>{g.icon}</div>
-                  <div style={{ fontFamily: SERIF, fontSize: '28px', fontWeight: 400, color: C.ink, marginBottom: '4px' }}>{g.name}</div>
-                  <div style={{ fontFamily: BEBAS, fontSize: '22px', color: g.color, letterSpacing: '0.04em', marginBottom: '16px' }}>{g.price}</div>
-                  <p style={{ fontFamily: MUKTA, fontSize: '14px', lineHeight: 1.8, color: C.inkSoft, marginBottom: '20px' }}>{g.desc}</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    {g.includes.map(item => (
-                      <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                        <CheckCircle size={14} color={g.color} strokeWidth={2} style={{ flexShrink: 0, marginTop: '2px' }} />
-                        <span style={{ fontFamily: MUKTA, fontSize: '13px', color: C.inkSoft }}>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div style={{
-                    marginTop: '24px', padding: '12px 0', textAlign: 'center',
-                    background: g.color, borderRadius: '2px', cursor: 'pointer',
-                    fontFamily: MONO, fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: C.cream,
-                  }}>
-                    Book this option →
                   </div>
                 </div>
               </div>
