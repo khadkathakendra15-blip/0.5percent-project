@@ -103,6 +103,14 @@ export function ImpactCalculatorSection() {
   const [indiaRate, setIndiaRate] = useState(5);
   const [chinaRate, setChinaRate] = useState(5);
 
+  // isMobile — drives inline grid styles that CSS attribute selectors can't override
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   const ip = indiaRate / 10;
   const cp = chinaRate / 10;
   const iv = INDIA * ip / 100;
@@ -151,6 +159,8 @@ export function ImpactCalculatorSection() {
           .calc-big-num { font-size: clamp(64px,16vw,96px) !important; }
           .calc-ledger-val { font-size: 22px !important; }
           .calc-outcome-grid { flex: none !important; min-height: 0 !important; height: auto !important; }
+          .calc-outcome-grid > div { padding: 10px 6px !important; gap: 4px !important; }
+          .calc-outcome-grid > div svg { width: 12px !important; height: 12px !important; }
         }
       `}</style>
 
@@ -351,11 +361,14 @@ export function ImpactCalculatorSection() {
               <span style={{ flex: 1, height: '1px', background: C.line, display: 'inline-block' }} />
             </div>
 
-            {/* 2×2 outcomes grid */}
+            {/* outcomes grid — 4-col single row on mobile, 2×2 on desktop */}
             <div className="calc-outcome-grid" style={{
-              display: 'grid', gridTemplateColumns: '1fr 1fr',
+              display: 'grid',
+              gridTemplateColumns: isMobile
+                ? 'repeat(4, minmax(0, 1fr))'   /* minmax bypasses CSS attribute-selector overrides */
+                : '1fr 1fr',
               border: `1px solid ${C.line}`, borderRadius: '3px',
-              flex: 1, overflow: 'hidden',
+              flex: isMobile ? 'none' : 1, overflow: 'hidden',
             }}>
               {[
                 {
