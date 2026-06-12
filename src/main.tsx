@@ -7,6 +7,7 @@ import DestinationsPage from './pages/DestinationsPage';
 import BlogPage from './pages/BlogPage';
 import BookingPage from './pages/BookingPage';
 import AiGuidePage from './pages/AiGuidePage';
+import YatraNepalkoPage from './pages/YatraNepalkoPage';
 import { FloatingGuideAI } from './components/FloatingGuideAI';
 import './index.css';
 
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/blog"         element={<BlogPage />}         />
         <Route path="/booking"      element={<BookingPage />}      />
         <Route path="/ai-guide"     element={<AiGuidePage />}      />
+        <Route path="/yatra"        element={<YatraNepalkoPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

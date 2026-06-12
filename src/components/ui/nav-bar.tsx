@@ -12,6 +12,7 @@ const MONO    = "'JetBrains Mono', ui-monospace, monospace";
 const LINKS = [
   { label: 'Destinations', to: '/destinations' },
   { label: 'Stories',      to: '/blog'          },
+  { label: 'Yatra',        to: '/yatra'          },
   { label: 'AI Guide',     to: '/ai-guide'      },
   { label: 'Plan Trip',    to: '/booking'        },
   { label: 'About',        to: '/about'          },
