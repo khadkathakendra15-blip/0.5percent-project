@@ -20,6 +20,7 @@ const C = {
 const SERIF  = "'Cormorant Garamond', Georgia, serif";
 const BEBAS  = "'Bebas Neue', sans-serif";
 const MUKTA  = "'Mukta', system-ui, sans-serif";
+const MONO   = "'JetBrains Mono', ui-monospace, monospace";
 
 /* ─── image paths ───────────────────────────────────────────────────────── */
 const IMG = {
@@ -801,53 +802,94 @@ function CTASection() {
 /* ══════════════════════════════════════════════════════════════════════════
    9. SITE FOOTER
 ══════════════════════════════════════════════════════════════════════════ */
+const FOOTER_NAV = [
+  { label: 'Destinations',  to: '/destinations' },
+  { label: 'Stories',       to: '/blog' },
+  { label: 'Yatra Nepalko', to: '/yatra' },
+  { label: 'AI Guide',      to: '/ai-guide' },
+  { label: 'Plan Trip',     to: '/booking' },
+  { label: 'About',         to: '/about' },
+];
+
 export function SiteFooter() {
   const navigate = useNavigate();
   return (
-    <footer style={{ background: '#0f0c08', color: 'rgba(244,237,224,0.65)', padding: '60px 0 40px' }}>
-      <div className="vfy-footer-inner" style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '30px', flexWrap: 'wrap' }}>
-        {/* brand */}
-        <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-          <span style={{
-            width: '30px', height: '30px', borderRadius: '50%',
-            border: `1.5px solid ${C.cream}`, display: 'inline-flex',
-            alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-          }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: C.saffron, display: 'block' }} />
-          </span>
-          <span style={{ fontFamily: SERIF, fontWeight: 600, fontSize: '22px', letterSpacing: '0.04em', lineHeight: 1, color: C.cream }}>
-            VFY <span style={{ color: C.saffronBright }}>Talks</span>
-          </span>
-        </button>
+    <footer style={{ background: '#0f0c08', color: 'rgba(244,237,224,0.65)' }}>
+      {/* upper */}
+      <div className="vfy-footer-upper" style={{
+        maxWidth: '1320px', margin: '0 auto', padding: '64px 40px 48px',
+        display: 'flex', justifyContent: 'space-between', gap: '48px', flexWrap: 'wrap',
+        borderBottom: '1px solid rgba(244,237,224,0.08)',
+      }}>
+        {/* brand block */}
+        <div style={{ maxWidth: '380px' }}>
+          <button onClick={() => navigate('/')}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: '18px', display: 'block' }}>
+            <img src="/o.5 logo.png" alt="0.5% Campaign" style={{ height: '44px', width: 'auto', display: 'block', objectFit: 'contain' }} />
+          </button>
+          <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(244,237,224,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
+            If just 0.5% of travelers from India and China choose Nepal — everything changes.
+          </p>
+          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.75, color: 'rgba(244,237,224,0.42)', margin: 0 }}>
+            A national tourism movement for Nepal's future. Travel with purpose.
+          </p>
+        </div>
 
-        {/* links */}
-        <div style={{ display: 'flex', gap: '30px', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', fontFamily: MUKTA }}>
-          {[
-            { label: 'Vision',    id: 'vfy-vision' },
-            { label: 'Campaign',  id: 'vfy-activities' },
-            { label: 'Partners',  id: 'vfy-join' },
-          ].map(({ label, id }) => (
-            <a key={label} href={`#${id}`} style={{ color: 'rgba(244,237,224,0.65)', textDecoration: 'none', opacity: 0.85, transition: 'opacity .2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '0.85'; }}
-            >
-              {label}
-            </a>
-          ))}
-          <button onClick={() => navigate('/about')}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', fontFamily: MUKTA, color: 'rgba(244,237,224,0.65)', opacity: 0.85, transition: 'opacity .2s', padding: 0 }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '0.85'; }}
+        {/* explore links */}
+        <div>
+          <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.saffronBright, marginBottom: '20px' }}>
+            Explore
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {FOOTER_NAV.map(l => (
+              <button key={l.to} onClick={() => navigate(l.to)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left',
+                  fontFamily: MUKTA, fontSize: '14px', fontWeight: 300, letterSpacing: '0.02em',
+                  color: 'rgba(244,237,224,0.62)', transition: 'color .2s',
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = C.cream; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(244,237,224,0.62)'; }}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* campaign block */}
+        <div style={{ maxWidth: '280px' }}>
+          <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.saffronBright, marginBottom: '20px' }}>
+            The Movement
+          </div>
+          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.8, color: 'rgba(244,237,224,0.42)', margin: '0 0 22px' }}>
+            14.2 million potential visitors. $4.2 billion in projected revenue. 820,000 new jobs.
+          </p>
+          <button onClick={() => navigate('/booking')}
+            style={{
+              fontFamily: MONO, fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase',
+              background: '#ff0000', color: C.cream, border: 'none', borderRadius: '2px',
+              padding: '12px 26px', cursor: 'pointer', transition: 'opacity .2s',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.85'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
           >
-            About
+            Join the 0.5%
           </button>
         </div>
+      </div>
 
-        {/* note */}
-        <div style={{ fontSize: '12px', letterSpacing: '0.04em', fontFamily: MUKTA }}>
-          © 2026 VFY Talks · The 0.5% Campaign
-        </div>
+      {/* lower */}
+      <div className="vfy-footer-lower" style={{
+        maxWidth: '1320px', margin: '0 auto', padding: '22px 40px',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '14px', flexWrap: 'wrap',
+      }}>
+        <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(244,237,224,0.30)' }}>
+          © 2026 The 0.5% Campaign · Nepal
+        </span>
+        <span style={{ fontFamily: SERIF, fontSize: '13px', fontStyle: 'italic', color: 'rgba(244,237,224,0.30)' }}>
+          From the peaks that touch the sky to the temples that touch the soul.
+        </span>
       </div>
     </footer>
   );

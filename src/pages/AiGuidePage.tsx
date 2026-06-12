@@ -638,15 +638,6 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
         </div>
       </div>
 
-      {/* ── Footer ── */}
-      <div style={{ background:VFY.ink, borderTop:'1px solid rgba(244,237,224,0.06)' }}>
-        <div className="guide-inner-pad" style={{ maxWidth:'1320px', margin:'0 auto', padding:'24px 40px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'12px' }}>
-          <img src={A.logo} alt="0.5% Campaign" style={{ height:'32px', objectFit:'contain', opacity:0.7 }} />
-          <span style={{ fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.12em', color:'rgba(244,237,224,0.3)' }}>
-            Guide AI · Part of the 0.5% Campaign · Nepal
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

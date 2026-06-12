@@ -515,22 +515,6 @@ function ExploreNepal() {
         </motion.div>
       </section>
 
-      {/* ── FOOTER ────────────────────────────────────────────────── */}
-      <footer style={{ background: B.cream2, borderTop: `1px solid ${B.lineS}`, padding: '36px 0' }}>
-        <div className="container mx-auto px-10">
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mountain size={13} color={B.inkFaint} strokeWidth={1.5} />
-              <span style={{ fontFamily: F.mono, fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: B.inkFaint }}>© 2024 Nepal Tourism Board · 0.5% Campaign</span>
-            </div>
-            <div style={{ display: 'flex', gap: '28px' }}>
-              {[['About','/about'],['Stories','/blog'],['Plan Trip','/booking']].map(([l,h]) => (
-                <a key={l} href={h} style={{ fontFamily: F.mono, fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', color: B.inkFaint, textDecoration: 'none' }}>{l}</a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
