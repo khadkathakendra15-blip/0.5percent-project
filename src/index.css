@@ -45,25 +45,25 @@
 
 :root {
   --radius: 0.375rem;
-  /* ── 0.5% Vision Brand palette — Blue + Red (Nepal flag) ──── */
-  /* paper  #f8fafd */ --background:          oklch(0.984 0.005 247);
-  /* ink    #0a1933 */ --foreground:          oklch(0.171 0.058 264);
-  /* paper  #f8fafd */ --card:                oklch(0.984 0.005 247);
-  /* ink    #0a1933 */ --card-foreground:     oklch(0.171 0.058 264);
-  /* paper  #f8fafd */ --popover:             oklch(0.984 0.005 247);
-  /* ink    #0a1933 */ --popover-foreground:  oklch(0.171 0.058 264);
-  /* saffron#1e77c1 */ --primary:             oklch(0.553 0.150 247);
-  /* cream  #eaf1fa */ --primary-foreground:  oklch(0.953 0.013 247);
-  /* cream2 #d8e4f3 */ --secondary:           oklch(0.901 0.022 244);
-  /* ink    #0a1933 */ --secondary-foreground:oklch(0.171 0.058 264);
-  /* cream2 #d8e4f3 */ --muted:               oklch(0.901 0.022 244);
-  /* inkSft #3d5778 */ --muted-foreground:    oklch(0.434 0.058 247);
-  /* cream  #eaf1fa */ --accent:              oklch(0.953 0.013 247);
-  /* ink    #0a1933 */ --accent-foreground:   oklch(0.171 0.058 264);
+  /* ── 0.5% Vision Brand palette — Green + Red ──────────────── */
+  /* paper  #fafdfa */ --background:          oklch(0.987 0.005 145);
+  /* ink    #0a2e1a */ --foreground:          oklch(0.215 0.055 152);
+  /* paper  #fafdfa */ --card:                oklch(0.987 0.005 145);
+  /* ink    #0a2e1a */ --card-foreground:     oklch(0.215 0.055 152);
+  /* paper  #fafdfa */ --popover:             oklch(0.987 0.005 145);
+  /* ink    #0a2e1a */ --popover-foreground:  oklch(0.215 0.055 152);
+  /* saffron#1f8a4d */ --primary:             oklch(0.541 0.150 148);
+  /* cream  #eaf7ee */ --primary-foreground:  oklch(0.965 0.018 148);
+  /* cream2 #d8f3e2 */ --secondary:           oklch(0.929 0.034 150);
+  /* ink    #0a2e1a */ --secondary-foreground:oklch(0.215 0.055 152);
+  /* cream2 #d8f3e2 */ --muted:               oklch(0.929 0.034 150);
+  /* inkSft #3d7855 */ --muted-foreground:    oklch(0.484 0.062 152);
+  /* cream  #eaf7ee */ --accent:              oklch(0.965 0.018 148);
+  /* ink    #0a2e1a */ --accent-foreground:   oklch(0.215 0.055 152);
   /* terra  #DC143C */ --destructive:         oklch(0.555 0.225 25);
-  /* lineS cool     */ --border:              oklch(0.920 0.012 250);
-  /* lineS cool     */ --input:               oklch(0.920 0.012 250);
-  /* saffron        */ --ring:                oklch(0.553 0.150 247);
+  /* lineS green    */ --border:              oklch(0.920 0.018 148);
+  /* lineS green    */ --input:               oklch(0.920 0.018 148);
+  /* saffron        */ --ring:                oklch(0.541 0.150 148);
   --brand: oklch(0.521 0.179 248.86);
   --brand-foreground: oklch(0.985 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -408,10 +408,10 @@ body { overflow-x: hidden; }
   }
   .vfy-stat-strip > *:first-child {
     padding-left: 0 !important;
-    border-right: 1px solid rgba(10,25,51,0.08) !important;
+    border-right: 1px solid rgba(10,46,26,0.08) !important;
   }
   .vfy-stat-strip > *:nth-child(2) {
-    border-right: 1px solid rgba(10,25,51,0.08) !important;
+    border-right: 1px solid rgba(10,46,26,0.08) !important;
   }
   .vfy-stat-strip > *:last-child {
     padding-right: 0 !important;
@@ -572,7 +572,7 @@ body { overflow-x: hidden; }
   }
   .vfy-newsletter-row input {
     border-radius: 2px !important;
-    border-right: 1px solid rgba(10,25,51,0.08) !important;
+    border-right: 1px solid rgba(10,46,26,0.08) !important;
     border-bottom: none !important;
   }
   .vfy-newsletter-row button {
@@ -770,11 +770,11 @@ body { overflow-x: hidden; }
   }
   /* Left-column items (odd): ensure border-right exists */
   .campaign-item:nth-child(2n-1) article {
-    border-right: 1px solid rgba(10,25,51,0.14) !important;
+    border-right: 1px solid rgba(10,46,26,0.14) !important;
   }
   /* Row 2+ items (3rd onward): add top border */
   .campaign-item:nth-child(n+3) {
-    border-top: 1px solid rgba(10,25,51,0.14) !important;
+    border-top: 1px solid rgba(10,46,26,0.14) !important;
   }
   /* Tighten card padding on narrow screens */
   .campaign-item article { padding: 22px 14px 20px !important; }
@@ -849,12 +849,12 @@ body {
 /* Branded text selection */
 ::selection {
   background: rgba(30, 119, 193, 0.22);
-  color: #0a1933;
+  color: #0a2e1a;
 }
 
 /* Keyboard focus rings — visible only for keyboard users */
 :focus-visible {
-  outline: 2px solid #1e77c1;
+  outline: 2px solid #1f8a4d;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -868,15 +868,15 @@ body {
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #d8e4f3;
+  background: #d8f3e2;
 }
 ::-webkit-scrollbar-thumb {
   background: #b5a78f;
   border-radius: 6px;
-  border: 2px solid #d8e4f3;
+  border: 2px solid #d8f3e2;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8295b3;
+  background: #82b395;
 }
 
 /* Images never overflow their container */

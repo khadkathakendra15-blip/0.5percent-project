@@ -37,7 +37,7 @@ const MUKTA  = "'Mukta', system-ui, sans-serif";
 
 /* ── Campaign Hero — full-screen video, dark fade, project text ──────────── */
 const CampaignHero = () => (
-  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#050b1a' }}>
+  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#051a0c' }}>
 
     {/* Video — full bleed */}
     <video
@@ -83,7 +83,7 @@ const CampaignHero = () => (
           color: '#fff',
           textShadow: '0 2px 24px rgba(0,0,0,0.55)',
         }}>
-          0.5<span style={{ color: '#1e77c1' }}>%</span>
+          0.5<span style={{ color: '#1f8a4d' }}>%</span>
         </div>
         <div style={{
           fontFamily: BEBAS,
@@ -113,7 +113,7 @@ const CampaignHero = () => (
       >
         {['Tourism', 'Spirituality', 'Culture', 'Media'].map((tag, i) => (
           <span key={tag} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#1e77c1', display: 'inline-block' }} />}
+            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#1f8a4d', display: 'inline-block' }} />}
             {tag}
           </span>
         ))}
@@ -127,7 +127,7 @@ const CampaignHero = () => (
         style={{
           fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
           fontSize: 'clamp(18px, 2.2vw, 30px)', lineHeight: 1.3,
-          color: '#1e77c1',
+          color: '#1f8a4d',
           marginBottom: '36px',
           textShadow: '0 2px 12px rgba(0,0,0,0.45)',
         }}

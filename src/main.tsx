@@ -36,18 +36,18 @@ function RouteEffects() {
 function PageLoader() {
   return (
     <div style={{
-      minHeight: '100vh', background: '#f8fafd',
+      minHeight: '100vh', background: '#fafdfa',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
     }}>
       <div style={{ textAlign: 'center' }}>
         <div style={{
           width: '34px', height: '34px', margin: '0 auto 16px',
-          border: '2px solid rgba(10,25,51,0.10)', borderTopColor: '#1e77c1',
+          border: '2px solid rgba(10,46,26,0.10)', borderTopColor: '#1f8a4d',
           borderRadius: '50%', animation: 'vfy-spin 0.8s linear infinite',
         }} />
         <div style={{
           fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: '9px',
-          letterSpacing: '0.28em', textTransform: 'uppercase', color: '#8295b3',
+          letterSpacing: '0.28em', textTransform: 'uppercase', color: '#82b395',
         }}>
           0.5% Vision
         </div>

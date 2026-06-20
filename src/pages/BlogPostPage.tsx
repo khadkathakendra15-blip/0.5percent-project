@@ -4,9 +4,9 @@ import { Clock, User, Calendar, ArrowLeft } from 'lucide-react';
 import { getPostBySlug } from '@/data/blogPosts';
 
 const C = {
-  ink: '#0a1933', inkSoft: '#3d5778', inkFaint: '#8295b3',
-  cream: '#eaf1fa', cream2: '#d8e4f3', paper: '#f8fafd',
-  terra: '#DC143C', lineS: 'rgba(10,25,51,0.08)',
+  ink: '#0a2e1a', inkSoft: '#3d7855', inkFaint: '#82b395',
+  cream: '#eaf7ee', cream2: '#d8f3e2', paper: '#fafdfa',
+  terra: '#DC143C', lineS: 'rgba(10,46,26,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const MUKTA = "'Mukta', system-ui, sans-serif";
@@ -63,14 +63,14 @@ export default function BlogPostPage() {
         {/* subtle color glows */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: 'radial-gradient(60% 60% at 80% 20%, rgba(255,0,0,0.14), transparent 60%), radial-gradient(40% 60% at 10% 90%, rgba(30,119,193,0.14), transparent 60%)',
+          background: 'radial-gradient(60% 60% at 80% 20%, rgba(255,0,0,0.14), transparent 60%), radial-gradient(40% 60% at 10% 90%, rgba(31,138,77,0.14), transparent 60%)',
         }} />
         <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', padding: '64px 40px 96px' }}>
           {/* Back link */}
           <Link to="/blog" style={{
             display: 'inline-flex', alignItems: 'center', gap: '6px',
             fontFamily: MONO, fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase',
-            color: 'rgba(234,241,250,0.7)', textDecoration: 'none', marginBottom: '32px',
+            color: 'rgba(234,247,238,0.7)', textDecoration: 'none', marginBottom: '32px',
           }}>
             <ArrowLeft size={12} /> All stories
           </Link>
@@ -79,24 +79,24 @@ export default function BlogPostPage() {
             <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', background: C.terra, color: '#fff', padding: '5px 12px', borderRadius: '2px' }}>
               {post.category}
             </span>
-            <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(234,241,250,0.6)' }}>
+            <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(234,247,238,0.6)' }}>
               Stories from Nepal
             </span>
           </div>
           <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(40px,5.4vw,80px)', lineHeight: 0.98, letterSpacing: '-0.02em', color: C.cream, margin: 0 }}>
             {post.title}
           </h1>
-          <p style={{ fontFamily: MUKTA, fontSize: '18px', lineHeight: 1.7, fontWeight: 300, color: 'rgba(234,241,250,0.78)', maxWidth: '58ch', marginTop: '28px' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '18px', lineHeight: 1.7, fontWeight: 300, color: 'rgba(234,247,238,0.78)', maxWidth: '58ch', marginTop: '28px' }}>
             {post.excerpt}
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginTop: '36px', flexWrap: 'wrap' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(234,241,250,0.7)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(234,247,238,0.7)' }}>
               <User size={12} strokeWidth={1.5} /> {post.author}
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(234,241,250,0.7)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(234,247,238,0.7)' }}>
               <Calendar size={12} strokeWidth={1.5} /> {post.date}
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(234,241,250,0.7)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(234,247,238,0.7)' }}>
               <Clock size={12} strokeWidth={1.5} /> {post.readTime}
             </span>
           </div>

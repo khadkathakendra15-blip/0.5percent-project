@@ -28,12 +28,12 @@ interface Province {
 }
 
 const provinces: Province[] = [
-  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#1e77c1", darkColor: "#082a4a", photo: P.a },
+  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#1f8a4d", darkColor: "#0a4a20", photo: P.a },
   { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#DC143C", darkColor: "#4d0814", photo: P.c },
-  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#0a3a6e", darkColor: "#03182d", photo: P.d },
-  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#3d96e0", darkColor: "#0c3a66", photo: P.b },
+  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#0a4a25", darkColor: "#03182d", photo: P.d },
+  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#2ec56b", darkColor: "#0c6628", photo: P.b },
   { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#b8324a", darkColor: "#3a0c18", photo: P.e },
-  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#6b9bd1", darkColor: "#1a2d44", photo: P.f },
+  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#6bcc96", darkColor: "#1a442d", photo: P.f },
   { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#f04860", darkColor: "#4a0e1c", photo: P.g },
 ];
 

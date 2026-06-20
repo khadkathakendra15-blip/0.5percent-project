@@ -21,16 +21,16 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:      '#0a1933',
-  inkSoft:  '#3d5778',
-  inkFaint: '#8295b3',
-  cream:    '#eaf1fa',
-  cream2:   '#d8e4f3',
-  paper:    '#f8fafd',
-  saffron:  '#1e77c1',
-  saffronB: '#3d96e0',
+  ink:      '#0a2e1a',
+  inkSoft:  '#3d7855',
+  inkFaint: '#82b395',
+  cream:    '#eaf7ee',
+  cream2:   '#d8f3e2',
+  paper:    '#fafdfa',
+  saffron:  '#1f8a4d',
+  saffronB: '#2ec56b',
   terra:    '#DC143C',
-  line:     'rgba(10,25,51,0.13)',
+  line:     'rgba(10,46,26,0.13)',
 };
 
 const SERIF = "'Cormorant Garamond', Georgia, serif";
@@ -62,7 +62,7 @@ function Panel({ item, isActive, onEnter }: {
         width: isActive ? '360px' : '58px',
         transition: 'width .7s cubic-bezier(.2,.6,.2,1)',
         cursor: 'pointer',
-        background: '#050b1a',
+        background: '#051a0c',
       }}
     >
       <img
@@ -122,7 +122,7 @@ export function HalfPercentVisionSection() {
       {/* subtle warm glow */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(70% 60% at 0% 50%, rgba(30,119,193,0.05), transparent 55%)',
+        background: 'radial-gradient(70% 60% at 0% 50%, rgba(31,138,77,0.05), transparent 55%)',
       }} />
 
       <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>

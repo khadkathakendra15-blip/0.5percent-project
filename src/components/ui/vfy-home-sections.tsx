@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom';
 
 /* ─── design tokens ─────────────────────────────────────────────────────── */
 const C = {
-  ink:         '#0a1933',
-  ink2:        '#142844',
-  inkSoft:     '#3d5778',
-  inkFaint:    '#8295b3',
-  cream:       '#eaf1fa',
-  cream2:      '#d8e4f3',
-  paper:       '#f8fafd',
-  saffron:     '#1e77c1',
-  saffronBright: '#3d96e0',
+  ink:         '#0a2e1a',
+  ink2:        '#144428',
+  inkSoft:     '#3d7855',
+  inkFaint:    '#82b395',
+  cream:       '#eaf7ee',
+  cream2:      '#d8f3e2',
+  paper:       '#fafdfa',
+  saffron:     '#1f8a4d',
+  saffronBright: '#2ec56b',
   terra:       '#DC143C',
-  line:        'rgba(10,25,51,0.14)',
-  lineS:       'rgba(10,25,51,0.08)',
+  line:        'rgba(10,46,26,0.14)',
+  lineS:       'rgba(10,46,26,0.08)',
 };
 
 const SERIF  = "'Cormorant Garamond', Georgia, serif";
@@ -450,7 +450,7 @@ function ThreePillarsSection() {
 function PillarCard({ img, num, title, sub, delay }: { img: string; num: string; title: string; sub: string; delay: number }) {
   const ref = useReveal(delay);
   return (
-    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', aspectRatio: '3/4.2', background: '#0a1933', cursor: 'pointer', transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease' }}
+    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', aspectRatio: '3/4.2', background: '#0a2e1a', cursor: 'pointer', transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease' }}
       onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 24px 60px rgba(0,0,0,0.35)'; }}
       onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLElement).style.transform = 'none'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}
       className="vfy-pillar-card"
@@ -526,7 +526,7 @@ function ActivitiesSection() {
                 overflow: 'hidden',
                 borderRadius: '6px',
                 background: C.ink,
-                boxShadow: '0 8px 40px rgba(10,25,51,0.16)',
+                boxShadow: '0 8px 40px rgba(10,46,26,0.16)',
               }}>
                 <iframe
                   src={src}
@@ -650,7 +650,7 @@ function LogoBadge({ src, alt }: LogoItem) {
       width: '72px', height: '72px', borderRadius: '12px', flexShrink: 0,
       background: '#fff', border: `1px solid ${C.lineS}`,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      overflow: 'hidden', boxShadow: '0 1px 6px rgba(10,25,51,0.06)',
+      overflow: 'hidden', boxShadow: '0 1px 6px rgba(10,46,26,0.06)',
     }}>
       <img
         src={src} alt={alt} loading="lazy"
@@ -763,7 +763,7 @@ function CTASection() {
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         background: `radial-gradient(55% 70% at 85% 10%, rgba(220,20,60,0.06), transparent 60%),
-                     radial-gradient(45% 60% at 15% 90%, rgba(30,119,193,0.05), transparent 60%)`,
+                     radial-gradient(45% 60% at 15% 90%, rgba(31,138,77,0.05), transparent 60%)`,
       }} />
       {/* Decorative large number */}
       <div className="vfy-cta-watermark" style={{
@@ -844,12 +844,12 @@ const FOOTER_NAV = [
 export function SiteFooter() {
   const navigate = useNavigate();
   return (
-    <footer style={{ background: '#050b1a', color: 'rgba(234,241,250,0.65)' }}>
+    <footer style={{ background: '#051a0c', color: 'rgba(234,247,238,0.65)' }}>
       {/* upper */}
       <div className="vfy-footer-upper" style={{
         maxWidth: '1320px', margin: '0 auto', padding: '64px 40px 48px',
         display: 'flex', justifyContent: 'space-between', gap: '48px', flexWrap: 'wrap',
-        borderBottom: '1px solid rgba(234,241,250,0.08)',
+        borderBottom: '1px solid rgba(234,247,238,0.08)',
       }}>
         {/* brand block */}
         <div style={{ maxWidth: '380px' }}>
@@ -857,10 +857,10 @@ export function SiteFooter() {
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: '18px', display: 'block' }}>
             <img src="/o.5 logo.png" alt="0.5% Campaign" style={{ height: '44px', width: 'auto', display: 'block', objectFit: 'contain' }} />
           </button>
-          <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(234,241,250,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
+          <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(234,247,238,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
             If just 0.5% of travelers from India and China choose Nepal — everything changes.
           </p>
-          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.75, color: 'rgba(234,241,250,0.42)', margin: 0 }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.75, color: 'rgba(234,247,238,0.42)', margin: 0 }}>
             A national tourism movement for Nepal's future. Travel with purpose.
           </p>
         </div>
@@ -876,10 +876,10 @@ export function SiteFooter() {
                 style={{
                   background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left',
                   fontFamily: MUKTA, fontSize: '14px', fontWeight: 300, letterSpacing: '0.02em',
-                  color: 'rgba(234,241,250,0.62)', transition: 'color .2s',
+                  color: 'rgba(234,247,238,0.62)', transition: 'color .2s',
                 }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = C.cream; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(234,241,250,0.62)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(234,247,238,0.62)'; }}
               >
                 {l.label}
               </button>
@@ -892,7 +892,7 @@ export function SiteFooter() {
           <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.saffronBright, marginBottom: '20px' }}>
             The Movement
           </div>
-          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.8, color: 'rgba(234,241,250,0.42)', margin: '0 0 22px' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.8, color: 'rgba(234,247,238,0.42)', margin: '0 0 22px' }}>
             14.2 million potential visitors. $4.2 billion in projected revenue. 820,000 new jobs.
           </p>
           <button onClick={() => navigate('/booking')}
@@ -914,10 +914,10 @@ export function SiteFooter() {
         maxWidth: '1320px', margin: '0 auto', padding: '22px 40px',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '14px', flexWrap: 'wrap',
       }}>
-        <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(234,241,250,0.30)' }}>
+        <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(234,247,238,0.30)' }}>
           © 2026 The 0.5% Campaign · Nepal
         </span>
-        <span style={{ fontFamily: SERIF, fontSize: '13px', fontStyle: 'italic', color: 'rgba(234,241,250,0.30)' }}>
+        <span style={{ fontFamily: SERIF, fontSize: '13px', fontStyle: 'italic', color: 'rgba(234,247,238,0.30)' }}>
           From the peaks that touch the sky to the temples that touch the soul.
         </span>
       </div>

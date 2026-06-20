@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const INK     = '#0a1933';
-const CREAM   = '#eaf1fa';
-const SAFFRON = '#1e77c1';
+const INK     = '#0a2e1a';
+const CREAM   = '#eaf7ee';
+const SAFFRON = '#1f8a4d';
 const TERRA   = '#DC143C';
 const MUKTA   = "'Mukta', system-ui, sans-serif";
 const MONO    = "'JetBrains Mono', ui-monospace, monospace";
@@ -40,7 +40,7 @@ export function NavBar() {
         height: '64px', display: 'flex', alignItems: 'center',
         background: solid ? INK : 'rgba(10,7,4,0.35)',
         backdropFilter: solid ? 'none' : 'blur(8px)',
-        borderBottom: solid ? '1px solid rgba(234,241,250,0.08)' : 'none',
+        borderBottom: solid ? '1px solid rgba(234,247,238,0.08)' : 'none',
         transition: 'background .35s ease, border-color .35s ease',
       }}>
         <div style={{
@@ -106,7 +106,7 @@ export function NavBar() {
       {mobileOpen && (
         <div style={{
           position: 'fixed', top: '64px', left: 0, right: 0, zIndex: 199,
-          background: INK, borderBottom: '1px solid rgba(234,241,250,0.1)',
+          background: INK, borderBottom: '1px solid rgba(234,247,238,0.1)',
           padding: '24px 28px 28px',
         }}>
           {LINKS.map(l => (
@@ -117,7 +117,7 @@ export function NavBar() {
                 display: 'block', textDecoration: 'none', fontFamily: MUKTA,
                 fontSize: '18px', letterSpacing: '0.02em',
                 color: pathname.startsWith(l.to) ? SAFFRON : CREAM,
-                padding: '14px 0', borderBottom: '1px solid rgba(234,241,250,0.07)',
+                padding: '14px 0', borderBottom: '1px solid rgba(234,247,238,0.07)',
               }}
             >
               {l.label}

@@ -2,17 +2,17 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 
 /* ─── tokens ─────────────────────────────────────────────────────────────── */
 const C = {
-  ink:      '#0a1933',
-  inkSoft:  '#3d5778',
-  inkFaint: '#8295b3',
-  cream:    '#eaf1fa',
-  cream2:   '#d8e4f3',
-  paper:    '#f8fafd',
-  saffron:  '#1e77c1',
-  saffronB: '#3d96e0',
+  ink:      '#0a2e1a',
+  inkSoft:  '#3d7855',
+  inkFaint: '#82b395',
+  cream:    '#eaf7ee',
+  cream2:   '#d8f3e2',
+  paper:    '#fafdfa',
+  saffron:  '#1f8a4d',
+  saffronB: '#2ec56b',
   terra:    '#DC143C',
-  line:     'rgba(10,25,51,0.13)',
-  lineS:    'rgba(10,25,51,0.07)',
+  line:     'rgba(10,46,26,0.13)',
+  lineS:    'rgba(10,46,26,0.07)',
 };
 const SERIF = "'Cormorant Garamond', serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -153,8 +153,8 @@ export function ImpactCalculatorSection() {
           .calc-title { white-space: normal !important; font-size: clamp(18px,4.5vw,24px) !important; }
           .calc-grid { grid-template-columns: 1fr !important; }
           .calc-divider-v { display: none !important; }
-          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(10,25,51,0.12); }
-          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(10,25,51,0.12); }
+          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(10,46,26,0.12); }
+          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(10,46,26,0.12); }
           .calc-col-r { padding-left: 0 !important; padding-top: 20px !important; }
           .calc-big-num { font-size: clamp(64px,16vw,96px) !important; }
           .calc-ledger-val { font-size: 22px !important; }
@@ -343,7 +343,7 @@ export function ImpactCalculatorSection() {
             }}>
               <div>
                 <div style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500, fontFamily: MUKTA }}>Multiplier vs. today</div>
-                <div style={{ fontSize: '10px', color: 'rgba(234,241,250,0.5)', letterSpacing: '0.16em', marginTop: '3px', fontFamily: MUKTA }}>Baseline: 1.167M visitors</div>
+                <div style={{ fontSize: '10px', color: 'rgba(234,247,238,0.5)', letterSpacing: '0.16em', marginTop: '3px', fontFamily: MUKTA }}>Baseline: 1.167M visitors</div>
               </div>
               <div ref={multiRef} style={{ fontFamily: BEBAS, fontSize: 'clamp(44px, 5vw, 72px)', lineHeight: 0.9, color: C.saffronB, letterSpacing: '0.02em' }}>
                 {multi.toFixed(1)}<span style={{ fontSize: '0.5em', opacity: 0.8 }}>×</span>

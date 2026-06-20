@@ -3,22 +3,22 @@ import { NavBar } from '@/components/ui/nav-bar';
 
 // ─── VFY Design tokens (exact match to v2 design) ─────────────────────────
 const VFY = {
-  paper:      '#f8fafd',
-  cream:      '#eaf1fa',
-  card:       '#d8e4f3',
-  ink:        '#0a1933',
-  gold:       '#1e77c1',
+  paper:      '#fafdfa',
+  cream:      '#eaf7ee',
+  card:       '#d8f3e2',
+  ink:        '#0a2e1a',
+  gold:       '#1f8a4d',
   goldFaint:  'rgba(138,78,18,0.09)',
   goldBorder: 'rgba(138,78,18,0.22)',
-  saffron:    '#1e77c1',
-  saffronF:   'rgba(30,119,193,0.08)',
+  saffron:    '#1f8a4d',
+  saffronF:   'rgba(31,138,77,0.08)',
   terra:      '#DC143C',
   orange:     '#DC143C',
-  text:       '#0a1933',
-  muted:      '#142844',
-  faint:      '#3d5778',
-  border:     'rgba(10,25,51,0.10)',
-  borderH:    'rgba(10,25,51,0.26)',
+  text:       '#0a2e1a',
+  muted:      '#144428',
+  faint:      '#3d7855',
+  border:     'rgba(10,46,26,0.10)',
+  borderH:    'rgba(10,46,26,0.26)',
   serif:  "'Cormorant Garamond', Georgia, serif",
   sans:   "'Mukta', system-ui, sans-serif",
   mono:   "'JetBrains Mono', ui-monospace, monospace",
@@ -92,10 +92,10 @@ const DESTINATIONS = [
 const WIZARD_STEPS = [
   { id:'interest', question:'What calls you to Nepal?', sub:'Choose the experience that speaks to your soul.',
     options:[
-      { value:'adventure', label:'Adventure & Trekking', icon:'⛰', accent:'#1e77c1' },
-      { value:'spiritual',  label:'Spiritual Journey',   icon:'🪷', accent:'#1e77c1' },
+      { value:'adventure', label:'Adventure & Trekking', icon:'⛰', accent:'#1f8a4d' },
+      { value:'spiritual',  label:'Spiritual Journey',   icon:'🪷', accent:'#1f8a4d' },
       { value:'culture',    label:'Cultural Immersion',  icon:'🎭', accent:'#DC143C' },
-      { value:'nature',     label:'Nature & Wildlife',   icon:'🌿', accent:'#142844' },
+      { value:'nature',     label:'Nature & Wildlife',   icon:'🌿', accent:'#144428' },
     ] },
   { id:'duration', question:'How long will your journey be?', sub:'Longer stays allow deeper exploration.',
     options:[
@@ -287,11 +287,11 @@ function MessageBubble({ msg }: { msg: Msg }) {
         <div style={{ fontFamily:VFY.sans, fontSize:'14px', lineHeight:1.75, whiteSpace:'pre-wrap', color: isAI ? VFY.text : VFY.cream }}>
           {msg.text.split(/(\*\*.*?\*\*)/g).map((p, i) =>
             p.startsWith('**') && p.endsWith('**')
-              ? <strong key={i} style={{ color: isAI ? VFY.gold : '#d8e4f3', fontWeight:600 }}>{p.slice(2,-2)}</strong>
+              ? <strong key={i} style={{ color: isAI ? VFY.gold : '#d8f3e2', fontWeight:600 }}>{p.slice(2,-2)}</strong>
               : p
           )}
         </div>
-        <div style={{ fontFamily:VFY.mono, fontSize:'8px', color: isAI ? VFY.faint : 'rgba(234,241,250,0.4)', marginTop:'6px', letterSpacing:'0.03em' }}>
+        <div style={{ fontFamily:VFY.mono, fontSize:'8px', color: isAI ? VFY.faint : 'rgba(234,247,238,0.4)', marginTop:'6px', letterSpacing:'0.03em' }}>
           {new Date(msg.ts).toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' })}
         </div>
       </div>
@@ -379,7 +379,7 @@ function MiniChatWidget({ onOpen }: { onOpen: ()=>void }) {
   }, []);
 
   return (
-    <div style={{ display:'flex', flexDirection:'column', height:'100%', background:VFY.paper, borderRadius:'12px', overflow:'hidden', border:`1px solid ${VFY.border}`, boxShadow:'0 4px 32px rgba(10,25,51,0.10)' }}>
+    <div style={{ display:'flex', flexDirection:'column', height:'100%', background:VFY.paper, borderRadius:'12px', overflow:'hidden', border:`1px solid ${VFY.border}`, boxShadow:'0 4px 32px rgba(10,46,26,0.10)' }}>
       {/* Header */}
       <div style={{ padding:'12px 16px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:`1px solid ${VFY.border}`, background:VFY.cream, flexShrink:0 }}>
         <div style={{ display:'flex', alignItems:'center', gap:'9px' }}>
@@ -387,7 +387,7 @@ function MiniChatWidget({ onOpen }: { onOpen: ()=>void }) {
           <div>
             <div style={{ fontFamily:VFY.serif, fontSize:'15px', fontWeight:500, color:VFY.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', color:VFY.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#3d96e0', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2ec56b', display:'inline-block' }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -518,7 +518,7 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
       {/* ── STATS BAND (ink) ── */}
       <div style={{ background:VFY.ink }}>
         <div style={{ maxWidth:'1320px', margin:'0 auto', padding:'0 40px' }}>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr', alignItems:'stretch', borderTop:'1px solid rgba(234,241,250,0.08)', borderBottom:'1px solid rgba(234,241,250,0.08)' }}>
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr', alignItems:'stretch', borderTop:'1px solid rgba(234,247,238,0.08)', borderBottom:'1px solid rgba(234,247,238,0.08)' }}>
             {[
               { num:'14.2M', label:'Potential Visitors',  sub:'From India & China combined' },
               null,
@@ -526,12 +526,12 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
               null,
               { num:'820K',  label:'New Jobs Created',    sub:'Direct & indirect employment' },
             ].map((stat, i) => stat === null ? (
-              <div key={i} className="guide-stats-divider" style={{ width:'1px', background:'rgba(234,241,250,0.08)' }} />
+              <div key={i} className="guide-stats-divider" style={{ width:'1px', background:'rgba(234,247,238,0.08)' }} />
             ) : (
               <div key={i} className="guide-stat-cell" style={{ padding:'44px 40px' }}>
                 <div style={{ fontFamily:VFY.bebas, fontSize:'clamp(44px,5vw,68px)', color:VFY.cream, letterSpacing:'0.02em', lineHeight:0.9, marginBottom:'10px' }}>{stat.num}</div>
                 <div style={{ fontFamily:VFY.mono, fontSize:'9px', letterSpacing:'0.18em', textTransform:'uppercase', color:VFY.saffron, marginBottom:'5px' }}>{stat.label}</div>
-                <div style={{ fontFamily:VFY.sans, fontSize:'12px', color:'rgba(234,241,250,0.45)', lineHeight:1.5 }}>{stat.sub}</div>
+                <div style={{ fontFamily:VFY.sans, fontSize:'12px', color:'rgba(234,247,238,0.45)', lineHeight:1.5 }}>{stat.sub}</div>
               </div>
             ))}
           </div>
@@ -613,7 +613,7 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
             <div style={{ fontFamily:VFY.serif, fontStyle:'italic', fontSize:'clamp(28px,3.5vw,48px)', fontWeight:400, color:VFY.cream, lineHeight:1.1, marginBottom:'12px' }}>
               Ready to plan your journey?
             </div>
-            <p style={{ fontFamily:VFY.sans, fontSize:'14px', color:'rgba(234,241,250,0.5)', margin:0, lineHeight:1.7 }}>
+            <p style={{ fontFamily:VFY.sans, fontSize:'14px', color:'rgba(234,247,238,0.5)', margin:0, lineHeight:1.7 }}>
               Guide AI is available 24/7. Start with the Destination Wizard or jump straight into chat.
             </p>
           </div>
@@ -628,11 +628,11 @@ function LandingPage({ onNavigate }: { onNavigate: (p:string)=>void }) {
             >Start Wizard →</button>
             <button onClick={() => onNavigate('chat')} style={{
               fontFamily:VFY.mono, fontSize:'10px', letterSpacing:'0.18em', textTransform:'uppercase',
-              background:'transparent', color:'rgba(234,241,250,0.6)', border:'1px solid rgba(234,241,250,0.18)',
+              background:'transparent', color:'rgba(234,247,238,0.6)', border:'1px solid rgba(234,247,238,0.18)',
               borderRadius:'3px', padding:'14px 28px', cursor:'pointer', transition:'all 0.2s',
             }}
-            onMouseEnter={e => { const b = e.currentTarget as HTMLButtonElement; b.style.color = VFY.cream; b.style.borderColor = 'rgba(234,241,250,0.4)'; }}
-            onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.color = 'rgba(234,241,250,0.6)'; b.style.borderColor = 'rgba(234,241,250,0.18)'; }}
+            onMouseEnter={e => { const b = e.currentTarget as HTMLButtonElement; b.style.color = VFY.cream; b.style.borderColor = 'rgba(234,247,238,0.4)'; }}
+            onMouseLeave={e => { const b = e.currentTarget as HTMLButtonElement; b.style.color = 'rgba(234,247,238,0.6)'; b.style.borderColor = 'rgba(234,247,238,0.18)'; }}
             >Open Chat</button>
           </div>
         </div>
@@ -664,7 +664,7 @@ function WizardOptionCard({ opt, selected, onSelect }: { opt: { value:string; la
       display:'flex', flexDirection:'column', alignItems:'flex-start',
       textAlign:'left', transition:'all 0.25s ease',
       transform: isSel ? 'translateY(-2px)' : 'translateY(0)',
-      boxShadow: isSel ? '0 4px 16px rgba(10,25,51,0.08)' : 'none',
+      boxShadow: isSel ? '0 4px 16px rgba(10,46,26,0.08)' : 'none',
       position:'relative',
     }}>
       <div style={{ fontSize:'26px', marginBottom:'10px', lineHeight:1 }}>{opt.icon}</div>
@@ -682,17 +682,17 @@ function WizardOptionCard({ opt, selected, onSelect }: { opt: { value:string; la
 function ResultDestCard({ dest, rank }: { dest: Dest & { score: number }; rank: number }) {
   return (
     <div style={{ background:VFY.paper, border:`1px solid ${VFY.border}`, borderRadius:VFY.radiusLg, overflow:'hidden', display:'flex', flexDirection:'column', transition:'all 0.3s ease' }}
-      onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = VFY.gold; d.style.transform = 'translateY(-4px)'; d.style.boxShadow = '0 8px 28px rgba(10,25,51,0.10)'; }}
+      onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = VFY.gold; d.style.transform = 'translateY(-4px)'; d.style.boxShadow = '0 8px 28px rgba(10,46,26,0.10)'; }}
       onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = VFY.border; d.style.transform = 'translateY(0)'; d.style.boxShadow = 'none'; }}
     >
       <div style={{ position:'relative', height:'160px', overflow:'hidden' }}>
         <img src={dest.image} alt={dest.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, transparent 30%, rgba(10,25,51,0.70) 100%)' }} />
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, transparent 30%, rgba(10,46,26,0.70) 100%)' }} />
         <div style={{ position:'absolute', top:'10px', left:'10px', background:VFY.gold, color:VFY.paper, fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.12em', fontWeight:700, padding:'3px 9px', borderRadius:'3px' }}>
           #{rank} MATCH
         </div>
         <div style={{ position:'absolute', bottom:'10px', left:'14px', right:'14px' }}>
-          <div style={{ fontFamily:VFY.serif, fontSize:'21px', fontWeight:500, color:'#f8fafd', lineHeight:1.1 }}>{dest.name}</div>
+          <div style={{ fontFamily:VFY.serif, fontSize:'21px', fontWeight:500, color:'#fafdfa', lineHeight:1.1 }}>{dest.name}</div>
           <div style={{ fontFamily:VFY.mono, fontSize:'9px', color:'rgba(250,245,234,0.70)', letterSpacing:'0.05em', marginTop:'3px' }}>{dest.region} · {dest.altitude}</div>
         </div>
       </div>
@@ -870,7 +870,7 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
             <div>
               <div style={{ fontFamily:VFY.serif, fontSize:'16px', fontWeight:500, color:VFY.text, lineHeight:1.1 }}>Guide AI</div>
               <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', color:VFY.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-                <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#3d96e0', display:'inline-block' }}/>
+                <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2ec56b', display:'inline-block' }}/>
                 Online · Nepal expert
               </div>
             </div>

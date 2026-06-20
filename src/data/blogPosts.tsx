@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
 const C = {
-  ink: '#0a1933', ink2: '#142844', inkSoft: '#3d5778', inkFaint: '#8295b3',
-  cream: '#eaf1fa', cream2: '#d8e4f3', paper: '#f8fafd',
-  saffron: '#1e77c1', terra: '#DC143C', lineS: 'rgba(10,25,51,0.08)',
+  ink: '#0a2e1a', ink2: '#144428', inkSoft: '#3d7855', inkFaint: '#82b395',
+  cream: '#eaf7ee', cream2: '#d8f3e2', paper: '#fafdfa',
+  saffron: '#1f8a4d', terra: '#DC143C', lineS: 'rgba(10,46,26,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const MUKTA = "'Mukta', system-ui, sans-serif";
@@ -229,7 +229,7 @@ function NepalTourismHubBody() {
             A place people come <em style={{ fontStyle: 'italic', color: '#f4a8b3' }}>not just to travel</em>,<br />
             but to live, build and become.
           </h2>
-          <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, color: 'rgba(234,241,250,0.7)', maxWidth: '60ch', margin: '28px auto 0' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, color: 'rgba(234,247,238,0.7)', maxWidth: '60ch', margin: '28px auto 0' }}>
             Nepal has the potential to become a destination where people arrive not only as
             tourists, but as participants in something larger:
           </p>
@@ -238,14 +238,14 @@ function NepalTourismHubBody() {
               <span key={i} style={{
                 fontFamily: SERIF, fontStyle: 'italic', fontSize: '22px', fontWeight: 400,
                 color: C.cream,
-                padding: '10px 22px', border: `1px solid rgba(234,241,250,0.18)`,
-                borderRadius: '100px', background: 'rgba(234,241,250,0.04)',
+                padding: '10px 22px', border: `1px solid rgba(234,247,238,0.18)`,
+                borderRadius: '100px', background: 'rgba(234,247,238,0.04)',
               }}>
                 {a}
               </span>
             ))}
           </div>
-          <p style={{ fontFamily: MUKTA, fontSize: '15.5px', lineHeight: 1.85, fontWeight: 300, color: 'rgba(234,241,250,0.6)', maxWidth: '60ch', margin: '52px auto 0' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '15.5px', lineHeight: 1.85, fontWeight: 300, color: 'rgba(234,247,238,0.6)', maxWidth: '60ch', margin: '52px auto 0' }}>
             A dedicated <strong style={{ color: C.cream, fontWeight: 500 }}>Tourism Investment Summit</strong> and a
             data-driven tourism strategy can help position Nepal as a leading global tourism hub for the future.
           </p>
@@ -300,7 +300,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Project 0.5%',
     date: 'June 2026',
     readTime: '14 min read',
-    cover: 'url("/Himalayas Landscape.png") center/cover no-repeat, #0b0f1a',
+    cover: 'url("/Himalayas Landscape.png") center/cover no-repeat, #0b1a0f',
     render: NepalTourismHubBody,
   },
 ];

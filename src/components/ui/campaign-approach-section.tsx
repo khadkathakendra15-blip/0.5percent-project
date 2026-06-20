@@ -21,16 +21,16 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:         '#0a1933',
-  inkSoft:     '#3d5778',
-  inkFaint:    '#8295b3',
-  cream:       '#eaf1fa',
-  paper:       '#f8fafd',
-  saffron:     '#1e77c1',
-  saffronBright: '#3d96e0',
+  ink:         '#0a2e1a',
+  inkSoft:     '#3d7855',
+  inkFaint:    '#82b395',
+  cream:       '#eaf7ee',
+  paper:       '#fafdfa',
+  saffron:     '#1f8a4d',
+  saffronBright: '#2ec56b',
   terra:       '#DC143C',
-  line:        'rgba(10,25,51,0.14)',
-  lineS:       'rgba(10,25,51,0.08)',
+  line:        'rgba(10,46,26,0.14)',
+  lineS:       'rgba(10,46,26,0.08)',
 };
 
 const SERIF = "'Cormorant Garamond', Georgia, serif";
@@ -202,7 +202,7 @@ export function CampaignApproachSection() {
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         background: `
-          radial-gradient(90% 70% at 100% 0%, rgba(30,119,193,0.06), transparent 55%),
+          radial-gradient(90% 70% at 100% 0%, rgba(31,138,77,0.06), transparent 55%),
           radial-gradient(70% 60% at 0% 100%, rgba(255,0,0,0.04), transparent 60%)`,
       }} />
 
