@@ -3,16 +3,16 @@ import { Chart, type ChartArea, type Plugin } from 'chart.js/auto';
 
 /* ─── main theme tokens — matches surrounding sections exactly ───────────── */
 const C = {
-  ink:      '#181410',
-  ink2:     '#2a231c',
-  inkSoft:  '#5a4f44',
-  inkFaint: '#9b8f80',
-  cream:    '#f4ede0',
-  cream2:   '#ebe2d1',
-  paper:    '#faf5ea',
+  ink:      '#0a1933',
+  ink2:     '#142844',
+  inkSoft:  '#3d5778',
+  inkFaint: '#8295b3',
+  cream:    '#eaf1fa',
+  cream2:   '#d8e4f3',
+  paper:    '#f8fafd',
   saffron:  '#1e77c1',
-  terra:    '#ff0000',
-  lineS:    'rgba(24,20,16,0.08)',
+  terra:    '#DC143C',
+  lineS:    'rgba(10,25,51,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -84,7 +84,7 @@ const annotationPlugin: Plugin<'line'> = {
 
     // vertical dashed lines + pill labels
     const vLines = [
-      { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#cc6600' },
+      { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#DC143C' },
       { year:'2025', lineColor:'rgba(255,0,0,0.38)',    label:'2025 unrest  −26%', labelColor:C.terra   },
       { year:'2026', lineColor:'rgba(30,119,193,0.50)', label:'New era  +41%',      labelColor:C.saffron },
     ];
@@ -97,7 +97,7 @@ const annotationPlugin: Plugin<'line'> = {
       const tw=ctx.measureText(vl.label).width;
       const pad=4, lx=x+6, ly=a.top+20;
       // pill bg — use ink for contrast on light chart
-      ctx.fillStyle='rgba(24,20,16,0.82)';
+      ctx.fillStyle='rgba(10,25,51,0.82)';
       ctx.beginPath(); ctx.roundRect(lx-pad,ly-9,tw+pad*2,16,3); ctx.fill();
       ctx.fillStyle=vl.labelColor; ctx.textAlign='left';
       ctx.fillText(vl.label,lx,ly);
@@ -195,8 +195,8 @@ function TourismChart() {
             tooltip:{
               backgroundColor:C.ink2,
               titleColor:C.cream2,
-              bodyColor:'rgba(244,237,224,0.55)',
-              borderColor:'rgba(24,20,16,0.15)',
+              bodyColor:'rgba(234,241,250,0.55)',
+              borderColor:'rgba(10,25,51,0.15)',
               borderWidth:1, padding:12,
               titleFont:{family:BEBAS,size:15,weight:'normal'} as never,
               bodyFont: {family:MUKTA, size:12} as never,
@@ -211,7 +211,7 @@ function TourismChart() {
             },
             y:{
               min:0,max:1350,
-              grid:{color:'rgba(24,20,16,0.07)',lineWidth:0.5},
+              grid:{color:'rgba(10,25,51,0.07)',lineWidth:0.5},
               border:{display:false},
               ticks:{
                 color:C.inkFaint,font:{size:11},

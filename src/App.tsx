@@ -37,7 +37,7 @@ const MUKTA  = "'Mukta', system-ui, sans-serif";
 
 /* ── Campaign Hero — full-screen video, dark fade, project text ──────────── */
 const CampaignHero = () => (
-  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#0a0705' }}>
+  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#050b1a' }}>
 
     {/* Video — full bleed */}
     <video

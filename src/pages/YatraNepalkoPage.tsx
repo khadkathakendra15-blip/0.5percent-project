@@ -1,16 +1,16 @@
 import { NavBar } from '@/components/ui/nav-bar';
 
 const C = {
-  ink:      '#181410',
-  inkSoft:  '#5a4f44',
-  inkFaint: '#9b8f80',
-  cream:    '#f4ede0',
-  cream2:   '#ebe2d1',
-  paper:    '#faf5ea',
+  ink:      '#0a1933',
+  inkSoft:  '#3d5778',
+  inkFaint: '#8295b3',
+  cream:    '#eaf1fa',
+  cream2:   '#d8e4f3',
+  paper:    '#f8fafd',
   saffron:  '#1e77c1',
-  terra:    '#ff0000',
-  line:     'rgba(24,20,16,0.08)',
-  lineM:    'rgba(24,20,16,0.13)',
+  terra:    '#DC143C',
+  line:     'rgba(10,25,51,0.08)',
+  lineM:    'rgba(10,25,51,0.13)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -41,7 +41,7 @@ function EpisodeCard({ id, ep, featured = false }: { id: string; ep: string; fea
         position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0,
         borderRadius: '6px', overflow: 'hidden', background: C.ink,
         border: `1px solid ${C.line}`,
-        boxShadow: featured ? '0 16px 48px rgba(24,20,16,0.14)' : '0 4px 20px rgba(24,20,16,0.08)',
+        boxShadow: featured ? '0 16px 48px rgba(10,25,51,0.14)' : '0 4px 20px rgba(10,25,51,0.08)',
       }}>
         <iframe
           src={`https://www.youtube.com/embed/${id}`}
@@ -153,7 +153,7 @@ export default function YatraNepalkoPage() {
               <div style={{
                 position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0,
                 borderRadius: '8px', overflow: 'hidden', background: C.ink,
-                boxShadow: '0 20px 60px rgba(24,20,16,0.18)',
+                boxShadow: '0 20px 60px rgba(10,25,51,0.18)',
                 border: `1px solid ${C.lineM}`,
               }}>
                 <iframe
@@ -172,14 +172,14 @@ export default function YatraNepalkoPage() {
       </section>
 
       {/* ── ABOUT STRIP ── */}
-      <section style={{ background: C.ink, borderBottom: `1px solid rgba(244,237,224,0.07)` }}>
+      <section style={{ background: C.ink, borderBottom: `1px solid rgba(234,241,250,0.07)` }}>
         <div className="yn-strip-pad" style={{ maxWidth: '1320px', margin: '0 auto', padding: '30px 40px', display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
-          <span style={{ fontFamily: SERIF, fontSize: '15px', fontStyle: 'italic', color: 'rgba(244,237,224,0.40)', flexShrink: 0 }}>
+          <span style={{ fontFamily: SERIF, fontSize: '15px', fontStyle: 'italic', color: 'rgba(234,241,250,0.40)', flexShrink: 0 }}>
             About the show
           </span>
-          <span style={{ width: '1px', height: '32px', background: 'rgba(244,237,224,0.12)', flexShrink: 0 }} className="yn-divider" />
-          <p style={{ fontFamily: MUKTA, fontSize: '14px', lineHeight: 1.8, color: 'rgba(244,237,224,0.62)', flex: 1, margin: 0 }}>
-            <em style={{ fontFamily: SERIF, fontSize: '16px', color: 'rgba(244,237,224,0.88)', fontStyle: 'italic' }}>Yatra Nepalko</em> is a travel talk show developed by the 0.5% Campaign Team —
+          <span style={{ width: '1px', height: '32px', background: 'rgba(234,241,250,0.12)', flexShrink: 0 }} className="yn-divider" />
+          <p style={{ fontFamily: MUKTA, fontSize: '14px', lineHeight: 1.8, color: 'rgba(234,241,250,0.62)', flex: 1, margin: 0 }}>
+            <em style={{ fontFamily: SERIF, fontSize: '16px', color: 'rgba(234,241,250,0.88)', fontStyle: 'italic' }}>Yatra Nepalko</em> is a travel talk show developed by the 0.5% Campaign Team —
             bringing the world's celebrated personalities to Nepal's most extraordinary places.
             Unscripted, authentic, unforgettable.
           </p>

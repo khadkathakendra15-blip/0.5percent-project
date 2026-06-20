@@ -45,25 +45,25 @@
 
 :root {
   --radius: 0.375rem;
-  /* ── VFY Brand palette ─────────────────────────────────────── */
-  /* paper  #faf5ea */ --background:          oklch(0.972 0.018 85);
-  /* ink    #181410 */ --foreground:          oklch(0.120 0.012 62);
-  /* paper  #faf5ea */ --card:                oklch(0.972 0.018 85);
-  /* ink    #181410 */ --card-foreground:     oklch(0.120 0.012 62);
-  /* paper  #faf5ea */ --popover:             oklch(0.972 0.018 85);
-  /* ink    #181410 */ --popover-foreground:  oklch(0.120 0.012 62);
-  /* saffron#1e77c1 */ --primary:             oklch(0.522 0.148 245);
-  /* cream  #f4ede0 */ --primary-foreground:  oklch(0.948 0.024 85);
-  /* cream2 #ebe2d1 */ --secondary:           oklch(0.913 0.028 82);
-  /* ink    #181410 */ --secondary-foreground:oklch(0.120 0.012 62);
-  /* cream2 #ebe2d1 */ --muted:               oklch(0.913 0.028 82);
-  /* inkSft #5a4f44 */ --muted-foreground:    oklch(0.382 0.022 52);
-  /* cream  #f4ede0 */ --accent:              oklch(0.948 0.024 85);
-  /* ink    #181410 */ --accent-foreground:   oklch(0.120 0.012 62);
-  /* terra  #ff0000 */ --destructive:         oklch(0.627 0.258 29.2);
-  /* lineS warm     */ --border:              oklch(0.920 0.012 75);
-  /* lineS warm     */ --input:               oklch(0.920 0.012 75);
-  /* saffron        */ --ring:                oklch(0.522 0.148 245);
+  /* ── 0.5% Vision Brand palette — Blue + Red (Nepal flag) ──── */
+  /* paper  #f8fafd */ --background:          oklch(0.984 0.005 247);
+  /* ink    #0a1933 */ --foreground:          oklch(0.171 0.058 264);
+  /* paper  #f8fafd */ --card:                oklch(0.984 0.005 247);
+  /* ink    #0a1933 */ --card-foreground:     oklch(0.171 0.058 264);
+  /* paper  #f8fafd */ --popover:             oklch(0.984 0.005 247);
+  /* ink    #0a1933 */ --popover-foreground:  oklch(0.171 0.058 264);
+  /* saffron#1e77c1 */ --primary:             oklch(0.553 0.150 247);
+  /* cream  #eaf1fa */ --primary-foreground:  oklch(0.953 0.013 247);
+  /* cream2 #d8e4f3 */ --secondary:           oklch(0.901 0.022 244);
+  /* ink    #0a1933 */ --secondary-foreground:oklch(0.171 0.058 264);
+  /* cream2 #d8e4f3 */ --muted:               oklch(0.901 0.022 244);
+  /* inkSft #3d5778 */ --muted-foreground:    oklch(0.434 0.058 247);
+  /* cream  #eaf1fa */ --accent:              oklch(0.953 0.013 247);
+  /* ink    #0a1933 */ --accent-foreground:   oklch(0.171 0.058 264);
+  /* terra  #DC143C */ --destructive:         oklch(0.555 0.225 25);
+  /* lineS cool     */ --border:              oklch(0.920 0.012 250);
+  /* lineS cool     */ --input:               oklch(0.920 0.012 250);
+  /* saffron        */ --ring:                oklch(0.553 0.150 247);
   --brand: oklch(0.521 0.179 248.86);
   --brand-foreground: oklch(0.985 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -408,10 +408,10 @@ body { overflow-x: hidden; }
   }
   .vfy-stat-strip > *:first-child {
     padding-left: 0 !important;
-    border-right: 1px solid rgba(24,20,16,0.08) !important;
+    border-right: 1px solid rgba(10,25,51,0.08) !important;
   }
   .vfy-stat-strip > *:nth-child(2) {
-    border-right: 1px solid rgba(24,20,16,0.08) !important;
+    border-right: 1px solid rgba(10,25,51,0.08) !important;
   }
   .vfy-stat-strip > *:last-child {
     padding-right: 0 !important;
@@ -572,7 +572,7 @@ body { overflow-x: hidden; }
   }
   .vfy-newsletter-row input {
     border-radius: 2px !important;
-    border-right: 1px solid rgba(24,20,16,0.08) !important;
+    border-right: 1px solid rgba(10,25,51,0.08) !important;
     border-bottom: none !important;
   }
   .vfy-newsletter-row button {
@@ -770,11 +770,11 @@ body { overflow-x: hidden; }
   }
   /* Left-column items (odd): ensure border-right exists */
   .campaign-item:nth-child(2n-1) article {
-    border-right: 1px solid rgba(24,20,16,0.14) !important;
+    border-right: 1px solid rgba(10,25,51,0.14) !important;
   }
   /* Row 2+ items (3rd onward): add top border */
   .campaign-item:nth-child(n+3) {
-    border-top: 1px solid rgba(24,20,16,0.14) !important;
+    border-top: 1px solid rgba(10,25,51,0.14) !important;
   }
   /* Tighten card padding on narrow screens */
   .campaign-item article { padding: 22px 14px 20px !important; }
@@ -849,7 +849,7 @@ body {
 /* Branded text selection */
 ::selection {
   background: rgba(30, 119, 193, 0.22);
-  color: #181410;
+  color: #0a1933;
 }
 
 /* Keyboard focus rings — visible only for keyboard users */
@@ -868,15 +868,15 @@ body {
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #ebe2d1;
+  background: #d8e4f3;
 }
 ::-webkit-scrollbar-thumb {
   background: #b5a78f;
   border-radius: 6px;
-  border: 2px solid #ebe2d1;
+  border: 2px solid #d8e4f3;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9b8f80;
+  background: #8295b3;
 }
 
 /* Images never overflow their container */

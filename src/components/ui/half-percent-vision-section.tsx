@@ -21,16 +21,16 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:      '#181410',
-  inkSoft:  '#5a4f44',
-  inkFaint: '#9b8f80',
-  cream:    '#f4ede0',
-  cream2:   '#ebe2d1',
-  paper:    '#faf5ea',
+  ink:      '#0a1933',
+  inkSoft:  '#3d5778',
+  inkFaint: '#8295b3',
+  cream:    '#eaf1fa',
+  cream2:   '#d8e4f3',
+  paper:    '#f8fafd',
   saffron:  '#1e77c1',
-  saffronB: '#2d8ed4',
-  terra:    '#ff0000',
-  line:     'rgba(24,20,16,0.13)',
+  saffronB: '#3d96e0',
+  terra:    '#DC143C',
+  line:     'rgba(10,25,51,0.13)',
 };
 
 const SERIF = "'Cormorant Garamond', Georgia, serif";
@@ -62,7 +62,7 @@ function Panel({ item, isActive, onEnter }: {
         width: isActive ? '360px' : '58px',
         transition: 'width .7s cubic-bezier(.2,.6,.2,1)',
         cursor: 'pointer',
-        background: '#0f0c08',
+        background: '#050b1a',
       }}
     >
       <img

@@ -3,9 +3,9 @@ import { NavBar } from '@/components/ui/nav-bar';
 import { CheckCircle, Calendar, FileText, Users, Bed, DollarSign, ChevronDown, ChevronUp, Mountain, Star } from 'lucide-react';
 
 const C = {
-  ink: '#181410', ink2: '#2a231c', inkSoft: '#5a4f44', inkFaint: '#9b8f80',
-  cream: '#f4ede0', cream2: '#ebe2d1', paper: '#faf5ea',
-  saffron: '#1e77c1', terra: '#ff0000', lineS: 'rgba(24,20,16,0.08)',
+  ink: '#0a1933', ink2: '#142844', inkSoft: '#3d5778', inkFaint: '#8295b3',
+  cream: '#eaf1fa', cream2: '#d8e4f3', paper: '#f8fafd',
+  saffron: '#1e77c1', terra: '#DC143C', lineS: 'rgba(10,25,51,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -17,8 +17,8 @@ const SEASONS = [
     name: 'Spring',
     months: 'Mar – May',
     rating: 5,
-    gradient: 'linear-gradient(145deg,#1A0A2E 0%,#5C2A8C 50%,#0F0520 100%)',
-    icon: <Star size={20} color="#D4A017" strokeWidth={1.5} fill="#D4A017" />,
+    gradient: 'linear-gradient(145deg,#1A0814 0%,#8C1E3D 50%,#1F0510 100%)',
+    icon: <Star size={20} color="#3d96e0" strokeWidth={1.5} fill="#3d96e0" />,
     desc: 'Peak trekking season. Rhododendrons bloom, skies are clear, and most high passes are open. The busiest — and most rewarding — time to visit.',
     best: ['Everest BC','Annapurna Circuit','Langtang','All treks'],
   },
@@ -26,7 +26,7 @@ const SEASONS = [
     name: 'Monsoon',
     months: 'Jun – Aug',
     rating: 2,
-    gradient: 'linear-gradient(145deg,#0A1F0A 0%,#1A5C1A 50%,#0A150A 100%)',
+    gradient: 'linear-gradient(145deg,#082040 0%,#1e77c1 50%,#08152e 100%)',
     icon: null,
     desc: 'Heavy rainfall across most of Nepal. Roads wash out. Best for rain-shadow areas: Mustang, Dolpo. Wildlife activity peaks in Chitwan.',
     best: ['Upper Mustang','Chitwan','Rafting'],
@@ -35,8 +35,8 @@ const SEASONS = [
     name: 'Autumn',
     months: 'Sep – Nov',
     rating: 5,
-    gradient: 'linear-gradient(145deg,#2E1A08 0%,#7A4518 50%,#201008 100%)',
-    icon: <Star size={20} color="#D4A017" strokeWidth={1.5} fill="#D4A017" />,
+    gradient: 'linear-gradient(145deg,#2E0810 0%,#7A1830 50%,#200810 100%)',
+    icon: <Star size={20} color="#3d96e0" strokeWidth={1.5} fill="#3d96e0" />,
     desc: 'Arguably the best season. Crystal-clear skies after monsoon, stable weather, spectacular mountain views. All major treks in perfect condition.',
     best: ['All treks','Climbing','Festivals (Dashain, Tihar)'],
   },
@@ -148,7 +148,7 @@ export default function BookingPage() {
             {SEASONS.map(s => (
               <div key={s.name} style={{ borderRadius: '6px', overflow: 'hidden', border: `1px solid ${C.lineS}` }}>
                 <div style={{ height: '100px', background: s.gradient, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '16px' }}>
-                  <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(244,237,224,0.5)' }}>{s.months}</div>
+                  <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(234,241,250,0.5)' }}>{s.months}</div>
                   <div style={{ fontFamily: SERIF, fontSize: '24px', color: C.cream, lineHeight: 1.1, marginTop: '2px' }}>{s.name}</div>
                 </div>
                 <div style={{ background: C.paper, padding: '18px 20px' }}>
@@ -188,7 +188,7 @@ export default function BookingPage() {
             {STEPS.map((s, i) => (
               <div key={s.n} style={{ background: i % 2 === 0 ? C.cream : C.cream2, padding: '32px 28px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                  <span style={{ fontFamily: BEBAS, fontSize: '36px', color: 'rgba(24,20,16,0.10)', lineHeight: 1 }}>{s.n}</span>
+                  <span style={{ fontFamily: BEBAS, fontSize: '36px', color: 'rgba(10,25,51,0.10)', lineHeight: 1 }}>{s.n}</span>
                   {s.icon}
                 </div>
                 <div style={{ fontFamily: SERIF, fontSize: '20px', fontWeight: 400, color: C.ink, marginBottom: '10px' }}>{s.title}</div>

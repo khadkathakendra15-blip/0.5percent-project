@@ -292,24 +292,24 @@ export function CountryComparison() {
           style={{
             background: '#f8f7f5',
             border: '1px solid rgba(28,25,23,0.10)',
-            borderLeft: '3px solid #e63329',
+            borderLeft: '3px solid #DC143C',
             borderRadius: '4px',
             padding: '32px 40px',
           }}
         >
           <div className="text-center md:text-left">
-            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#e63329', marginBottom: '10px', fontFamily: "'Mukta', sans-serif" }}>
+            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#DC143C', marginBottom: '10px', fontFamily: "'Mukta', sans-serif" }}>
               Key Insight
             </p>
             <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(20px, 2.2vw, 30px)', letterSpacing: '0.04em', color: '#1c1917', lineHeight: 1.2, fontWeight: 900 }}>
               Cambodia (17M people) gets{' '}
               <span style={{ color: '#1e77c1' }}>6× more tourists</span>{' '}
               than Nepal (30M people).{' '}
-              <span style={{ color: '#e63329' }}>The 0.5% Campaign changes this.</span>
+              <span style={{ color: '#DC143C' }}>The 0.5% Campaign changes this.</span>
             </h3>
           </div>
           <div className="flex-shrink-0 text-center" style={{ borderLeft: '1px solid rgba(28,25,23,0.10)', paddingLeft: '40px' }}>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '64px', lineHeight: 1, color: '#e63329', letterSpacing: '0.02em' }}>0.5%</div>
+            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '64px', lineHeight: 1, color: '#DC143C', letterSpacing: '0.02em' }}>0.5%</div>
             <p style={{ fontSize: '10px', color: '#57534e', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', marginTop: '6px', fontFamily: "'Mukta', sans-serif" }}>
               Can close this gap
             </p>

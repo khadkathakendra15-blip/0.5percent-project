@@ -6,10 +6,10 @@ import { useLocation } from 'react-router-dom';
 // ─── Tokens ────────────────────────────────────────────────────────────────
 const W = {
   // widget window — brand light theme (cream/ink palette)
-  bg:      '#faf5ea',                      // paper
-  surface: '#f4ede0',                      // cream
-  card:    '#ebe2d1',                      // card
-  border:  'rgba(24,20,16,0.10)',
+  bg:      '#f8fafd',                      // paper
+  surface: '#eaf1fa',                      // cream
+  card:    '#d8e4f3',                      // card
+  border:  'rgba(10,25,51,0.10)',
   borderH: 'rgba(30,119,193,0.40)',        // saffron focus ring
 
   // accent (saffron #1e77c1 replaces gold)
@@ -18,9 +18,9 @@ const W = {
   goldF:   'rgba(30,119,193,0.10)',
 
   // text (ink palette)
-  text:    '#181410',                      // ink
-  muted:   '#5a4f44',
-  faint:   '#9b8f80',
+  text:    '#0a1933',                      // ink
+  muted:   '#3d5778',
+  faint:   '#8295b3',
 
   // user bubble — saffron bg, white text
   userBg:  '#1e77c1',
@@ -259,7 +259,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
       background:W.bg, border:`1px solid ${W.border}`,
       borderRadius:'18px', overflow:'hidden',
       display:'flex', flexDirection:'column',
-      boxShadow:'0 20px 60px rgba(24,20,16,0.18), 0 4px 16px rgba(24,20,16,0.10)',
+      boxShadow:'0 20px 60px rgba(10,25,51,0.18), 0 4px 16px rgba(10,25,51,0.10)',
       animation:'fab-slideUp 0.28s cubic-bezier(0.34,1.56,0.64,1)',
     }}>
 
@@ -270,7 +270,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
           <div>
             <div style={{ fontFamily:W.sans, fontSize:'14px', fontWeight:600, color:W.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:W.mono, fontSize:'8px', letterSpacing:'0.08em', color:W.gold, display:'flex', alignItems:'center', gap:'4px', marginTop:'2px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#4ade80', display:'inline-block', flexShrink:0 }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#3d96e0', display:'inline-block', flexShrink:0 }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -323,15 +323,15 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
     <button onClick={onClick} style={{
       position:'fixed', bottom:'24px', right:'24px', zIndex:9999,
       width:'54px', height:'54px', borderRadius:'50%',
-      background: open ? W.gold : '#181410',
-      border:`1.5px solid ${open ? W.gold : 'rgba(24,20,16,0.25)'}`,
+      background: open ? W.gold : '#0a1933',
+      border:`1.5px solid ${open ? W.gold : 'rgba(10,25,51,0.25)'}`,
       cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center',
-      boxShadow: open ? `0 0 0 4px rgba(30,119,193,0.15), 0 8px 24px rgba(24,20,16,0.25)` : '0 6px 20px rgba(24,20,16,0.25)',
+      boxShadow: open ? `0 0 0 4px rgba(30,119,193,0.15), 0 8px 24px rgba(10,25,51,0.25)` : '0 6px 20px rgba(10,25,51,0.25)',
       transition:'all 0.25s cubic-bezier(0.34,1.56,0.64,1)',
       transform: open ? 'scale(0.94)' : 'scale(1)',
     }}
     onMouseEnter={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.08)'; (e.currentTarget as HTMLButtonElement).style.borderColor = W.gold; } }}
-    onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(24,20,16,0.25)'; } }}
+    onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(10,25,51,0.25)'; } }}
     >
       {open ? (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round">
@@ -342,7 +342,7 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
       )}
       {/* Unread dot */}
       {hasUnread && !open && (
-        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#22c55e', border:'2px solid #181410' }} />
+        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#3d96e0', border:'2px solid #0a1933' }} />
       )}
     </button>
   );
@@ -376,7 +376,7 @@ export function FloatingGuideAI() {
         .fab-chat-scroll::-webkit-scrollbar { width: 4px; }
         .fab-chat-scroll::-webkit-scrollbar-track { background: transparent; }
         .fab-chat-scroll::-webkit-scrollbar-thumb { background: rgba(30,119,193,0.22); border-radius: 4px; }
-        .fab-chat-input::placeholder { color: rgba(24,20,16,0.38); }
+        .fab-chat-input::placeholder { color: rgba(10,25,51,0.38); }
 
         /* Mobile: adapt window to viewport width */
         @media (max-width: 440px) {

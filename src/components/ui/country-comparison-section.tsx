@@ -2,17 +2,17 @@ import { useRef, useEffect, useState } from 'react';
 
 /* ─── tokens ─────────────────────────────────────────────────────────────── */
 const C = {
-  ink:      '#181410',
-  inkSoft:  '#5a4f44',
-  inkFaint: '#9b8f80',
-  cream:    '#f4ede0',
-  cream2:   '#ebe2d1',
-  paper:    '#faf5ea',
+  ink:      '#0a1933',
+  inkSoft:  '#3d5778',
+  inkFaint: '#8295b3',
+  cream:    '#eaf1fa',
+  cream2:   '#d8e4f3',
+  paper:    '#f8fafd',
   saffron:  '#1e77c1',
-  saffronB: '#2d8ed4',
-  terra:    '#ff0000',
-  line:     'rgba(24,20,16,0.13)',
-  lineS:    'rgba(24,20,16,0.07)',
+  saffronB: '#3d96e0',
+  terra:    '#DC143C',
+  line:     'rgba(10,25,51,0.13)',
+  lineS:    'rgba(10,25,51,0.07)',
 };
 const SERIF = "'Cormorant Garamond', serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -40,7 +40,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${Math.round(v)}K`,
     revenueFmt:  (v: number) => `$${Math.round(v)}M`,
     gdpFmt:      (v: number) => `${v.toFixed(1)}%`,
-    color: '#7c6fcd', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#4c6fc0', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'KH', name: 'Cambodia', pop: '17M',
@@ -50,7 +50,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(1)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#2a8fa8', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#2a73a8', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'LA', name: 'Laos', pop: '8M',
@@ -60,7 +60,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(0)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#2a8f6a', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#0e4d8e', bg: C.paper, highlight: false, note: '', badge: '',
   },
 ];
 
@@ -335,7 +335,7 @@ export function CountryComparisonSection() {
             <div style={{ fontFamily: BEBAS, fontSize: 'clamp(56px, 7vw, 96px)', lineHeight: 0.85, letterSpacing: '0.02em', color: C.saffronB }}>
               0.5%
             </div>
-            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(244,237,224,0.45)', marginTop: '6px' }}>
+            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(234,241,250,0.45)', marginTop: '6px' }}>
               Can close this gap
             </div>
           </div>

@@ -5,9 +5,9 @@ import { Clock, User, ArrowRight, BookOpen } from 'lucide-react';
 import { BLOG_POSTS, type BlogPost } from '@/data/blogPosts';
 
 const C = {
-  ink: '#181410', inkSoft: '#5a4f44', inkFaint: '#9b8f80',
-  cream: '#f4ede0', cream2: '#ebe2d1', paper: '#faf5ea',
-  saffron: '#1e77c1', terra: '#ff0000', lineS: 'rgba(24,20,16,0.08)',
+  ink: '#0a1933', inkSoft: '#3d5778', inkFaint: '#8295b3',
+  cream: '#eaf1fa', cream2: '#d8e4f3', paper: '#f8fafd',
+  saffron: '#1e77c1', terra: '#DC143C', lineS: 'rgba(10,25,51,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const MUKTA = "'Mukta', system-ui, sans-serif";
@@ -25,7 +25,7 @@ function ArticleCard({ post, large = false }: { post: BlogPost; large?: boolean 
         border: `1px solid ${C.lineS}`, textDecoration: 'none', color: 'inherit',
         transition: 'transform .3s ease, box-shadow .3s ease',
         transform: hov ? 'translateY(-5px)' : 'none',
-        boxShadow: hov ? '0 18px 44px rgba(24,20,16,0.14)' : '0 2px 8px rgba(24,20,16,0.05)',
+        boxShadow: hov ? '0 18px 44px rgba(10,25,51,0.14)' : '0 2px 8px rgba(10,25,51,0.05)',
         display: 'flex', flexDirection: large ? 'row' : 'column',
         background: C.paper,
       }}
@@ -46,7 +46,7 @@ function ArticleCard({ post, large = false }: { post: BlogPost; large?: boolean 
         </span>
         {large && (
           <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
-            <BookOpen size={22} color="rgba(244,237,224,0.55)" strokeWidth={1.5} />
+            <BookOpen size={22} color="rgba(234,241,250,0.55)" strokeWidth={1.5} />
           </div>
         )}
       </div>

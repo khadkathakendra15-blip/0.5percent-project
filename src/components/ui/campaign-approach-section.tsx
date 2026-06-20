@@ -21,16 +21,16 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:         '#181410',
-  inkSoft:     '#5a4f44',
-  inkFaint:    '#9b8f80',
-  cream:       '#f4ede0',
-  paper:       '#faf5ea',
+  ink:         '#0a1933',
+  inkSoft:     '#3d5778',
+  inkFaint:    '#8295b3',
+  cream:       '#eaf1fa',
+  paper:       '#f8fafd',
   saffron:     '#1e77c1',
-  saffronBright: '#2d8ed4',
-  terra:       '#ff0000',
-  line:        'rgba(24,20,16,0.14)',
-  lineS:       'rgba(24,20,16,0.08)',
+  saffronBright: '#3d96e0',
+  terra:       '#DC143C',
+  line:        'rgba(10,25,51,0.14)',
+  lineS:       'rgba(10,25,51,0.08)',
 };
 
 const SERIF = "'Cormorant Garamond', Georgia, serif";
