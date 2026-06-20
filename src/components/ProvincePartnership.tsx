@@ -8,13 +8,14 @@ const MONO  = "'JetBrains Mono', ui-monospace, monospace";
 const MUKTA = "'Mukta', system-ui, sans-serif";
 
 const P = {
-  a: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=900&fit=crop&q=80",
-  b: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600&h=900&fit=crop&q=80",
-  c: "https://images.unsplash.com/photo-1558799401-1dcba79834c2?w=600&h=900&fit=crop&q=80",
-  d: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&h=900&fit=crop&q=80",
-  e: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&h=900&fit=crop&q=80",
-  f: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600&h=900&fit=crop&q=80",
-  g: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=900&fit=crop&q=80",
+  koshi:         "/koshi province.jpg",
+  madhesh:       "/Madhesh Province.webp",
+  bagmati:       "/Bagmati Province photo.webp",
+  gandaki:       "/Gandaki Province.jpg",
+  lumbini:       "/lumbini province.webp",
+  karnali:       "/Karnali province.jpg",
+  // No dedicated Sudurpashchim photo yet — fall back to Karnali's far-western landscape
+  sudurpashchim: "/Karnali province.jpg",
 };
 
 interface Province {
@@ -28,13 +29,13 @@ interface Province {
 }
 
 const provinces: Province[] = [
-  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#1f8a4d", darkColor: "#0a4a20", photo: P.a },
-  { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#DC143C", darkColor: "#4d0814", photo: P.c },
-  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#0a4a25", darkColor: "#03182d", photo: P.d },
-  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#2ec56b", darkColor: "#0c6628", photo: P.b },
-  { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#b8324a", darkColor: "#3a0c18", photo: P.e },
-  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#6bcc96", darkColor: "#1a442d", photo: P.f },
-  { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#f04860", darkColor: "#4a0e1c", photo: P.g },
+  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#1f8a4d", darkColor: "#0a4a20", photo: P.koshi },
+  { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#DC143C", darkColor: "#4d0814", photo: P.madhesh },
+  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#0a4a25", darkColor: "#03182d", photo: P.bagmati },
+  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#2ec56b", darkColor: "#0c6628", photo: P.gandaki },
+  { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#b8324a", darkColor: "#3a0c18", photo: P.lumbini },
+  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#6bcc96", darkColor: "#1a442d", photo: P.karnali },
+  { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#f04860", darkColor: "#4a0e1c", photo: P.sudurpashchim },
 ];
 
 export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?: number }) {
@@ -194,10 +195,6 @@ export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?:
           </motion.div>
         </AnimatePresence>
 
-        {/* "Partnership Moments" tag */}
-        <div style={{ position: 'absolute', top: '14px', left: '14px', fontFamily: MONO, fontSize: '8px', letterSpacing: '0.16em', textTransform: 'uppercase', background: 'rgba(0,0,0,0.38)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.6)', padding: '4px 10px', borderRadius: '3px' }}>
-          Partnership Moments
-        </div>
       </div>
 
     </div>
