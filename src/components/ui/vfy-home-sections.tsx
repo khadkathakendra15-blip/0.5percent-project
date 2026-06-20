@@ -26,7 +26,7 @@ const MONO   = "'JetBrains Mono', ui-monospace, monospace";
 const IMG = {
   spiritual:            '/spirtual Distination.webp',
   nepaliArt:            '/nepali art.jpeg',
-  dashrath:             '/Dashrat Sunar - founder.jpg',
+  dashrath:             '/Thakendra Khadka.jpeg',
   vfyTalks:            '/Vfy Activities for this campaingn/Vfy Talks.jpeg',
   globalDiscourse:      '/Vfy Activities for this campaingn/Vfy global disscourse.jpeg',
   spiritualityDisc:     '/Vfy Activities for this campaingn/Global Disscourse about Sppirituality.jpeg',
@@ -566,14 +566,14 @@ export function FounderSection() {
           <div ref={r1} style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', borderRadius: '4px', background: C.cream2 }}>
             <img
               src={IMG.dashrath}
-              alt="Dashrath Sunar, Founder & CEO"
+              alt="Thakendra Khadka, Founder & CEO"
               loading="lazy"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(8,6,4,0.35))', pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', left: '24px', bottom: '24px', color: '#fff' }}>
               <div style={{ fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', color: C.saffronBright, fontWeight: 600, fontFamily: MUKTA }}>Founder &amp; CEO</div>
-              <div style={{ fontFamily: SERIF, fontSize: '30px', lineHeight: 1, marginTop: '6px' }}>Dashrath Sunar</div>
+              <div style={{ fontFamily: SERIF, fontSize: '30px', lineHeight: 1, marginTop: '6px' }}>Thakendra Khadka</div>
             </div>
           </div>
 
@@ -592,7 +592,7 @@ export function FounderSection() {
 
             <div>
               <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '18px', fontWeight: 300, fontFamily: MUKTA }}>
-                Dashrath Sunar is the visionary behind VFY Talks and the 0.5% Campaign — a movement dedicated to transforming Nepal's global tourism identity through powerful storytelling, media and cross-cultural conversations.
+                Thakendra Khadka is the visionary behind VFY Talks and the 0.5% Campaign — a movement dedicated to transforming Nepal's global tourism identity through powerful storytelling, media and cross-cultural conversations.
               </p>
               <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 300, fontFamily: MUKTA }}>
                 A media entrepreneur, traveller and storyteller.
