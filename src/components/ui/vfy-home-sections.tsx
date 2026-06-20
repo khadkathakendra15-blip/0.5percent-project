@@ -685,33 +685,63 @@ function PartnersGridSection() {
           </p>
         </div>
 
-        {/* ── Category rows ── */}
-        <div>
-          {PARTNER_CATEGORIES.map((cat, ci) => (
-            <div key={ci} className="partner-cat-row" style={{
-              display: 'flex', alignItems: 'center', gap: '32px',
-              borderTop: `1px solid ${C.lineS}`,
-              padding: '24px 0',
-            }}>
-              {/* Category label */}
-              <div style={{
-                width: '210px', flexShrink: 0,
-                fontFamily: MUKTA, fontSize: '10px', letterSpacing: '0.22em',
-                textTransform: 'uppercase', color: C.inkFaint, fontWeight: 600,
-                lineHeight: 1.4,
-              }}>
-                {cat.label}
+        {/* ── Single horizontal marquee with category dividers ── */}
+        <div style={{
+          position: 'relative', overflow: 'hidden',
+          borderTop: `1px solid ${C.lineS}`,
+          borderBottom: `1px solid ${C.lineS}`,
+          padding: '32px 0',
+        }}>
+          {(() => {
+            // Flatten all categories into a single track, with the category
+            // label rendered inline before each group as a moving divider.
+            type Item =
+              | { kind: 'label'; label: string }
+              | { kind: 'logo'; src: string; alt: string };
+
+            const oneRun: Item[] = PARTNER_CATEGORIES.flatMap(cat => [
+              { kind: 'label' as const, label: cat.label },
+              ...cat.logos.map(l => ({ kind: 'logo' as const, src: l.src, alt: l.alt })),
+            ]);
+            // Duplicate so translateX(-50%) loops seamlessly.
+            const tiles = [...oneRun, ...oneRun];
+
+            return (
+              <div
+                className="animate-scroll-left"
+                style={{ display: 'flex', gap: '18px', width: 'max-content', alignItems: 'center' }}
+              >
+                {tiles.map((item, i) =>
+                  item.kind === 'logo' ? (
+                    <LogoBadge key={i} src={item.src} alt={item.alt} />
+                  ) : (
+                    <div key={i} style={{
+                      flexShrink: 0,
+                      padding: '0 18px 0 6px',
+                      fontFamily: MUKTA, fontSize: '10px', letterSpacing: '0.22em',
+                      textTransform: 'uppercase', color: C.inkFaint, fontWeight: 600,
+                      lineHeight: 1.4, whiteSpace: 'nowrap',
+                      borderLeft: `1px solid ${C.lineS}`,
+                    }}>
+                      {item.label}
+                    </div>
+                  )
+                )}
               </div>
-              {/* Logos */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center', flex: 1 }}>
-                {cat.logos.map((logo, li) => (
-                  <LogoBadge key={li} src={logo.src} alt={logo.alt} />
-                ))}
-              </div>
-            </div>
-          ))}
-          {/* bottom border */}
-          <div style={{ borderTop: `1px solid ${C.lineS}` }} />
+            );
+          })()}
+
+          {/* Edge fades */}
+          <div style={{
+            position: 'absolute', left: 0, top: 0, bottom: 0, width: '64px',
+            background: `linear-gradient(to right, ${C.paper}, transparent)`,
+            pointerEvents: 'none',
+          }} />
+          <div style={{
+            position: 'absolute', right: 0, top: 0, bottom: 0, width: '64px',
+            background: `linear-gradient(to left, ${C.paper}, transparent)`,
+            pointerEvents: 'none',
+          }} />
         </div>
       </div>
     </section>
