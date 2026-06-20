@@ -9,6 +9,7 @@ import './index.css';
 const AboutPage        = lazy(() => import('./pages/AboutPage'));
 const DestinationsPage = lazy(() => import('./pages/DestinationsPage'));
 const BlogPage         = lazy(() => import('./pages/BlogPage'));
+const BlogPostPage     = lazy(() => import('./pages/BlogPostPage'));
 const BookingPage      = lazy(() => import('./pages/BookingPage'));
 const AiGuidePage      = lazy(() => import('./pages/AiGuidePage'));
 const YatraNepalkoPage = lazy(() => import('./pages/YatraNepalkoPage'));
@@ -67,6 +68,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/about"        element={<AboutPage />}        />
           <Route path="/destinations" element={<DestinationsPage />} />
           <Route path="/blog"         element={<BlogPage />}         />
+          <Route path="/blog/:slug"   element={<BlogPostPage />}     />
           <Route path="/booking"      element={<BookingPage />}      />
           <Route path="/ai-guide"     element={<AiGuidePage />}      />
           <Route path="/yatra"        element={<YatraNepalkoPage />} />
