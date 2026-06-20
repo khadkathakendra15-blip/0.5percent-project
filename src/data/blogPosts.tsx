@@ -300,7 +300,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Project 0.5%',
     date: 'June 2026',
     readTime: '14 min read',
-    cover: 'linear-gradient(145deg,#080C2E 0%,#1A2A8C 50%,#050820 100%)',
+    cover: 'url("/Himalayas Landscape.png") center/cover no-repeat, #0b0f1a',
     render: NepalTourismHubBody,
   },
 ];

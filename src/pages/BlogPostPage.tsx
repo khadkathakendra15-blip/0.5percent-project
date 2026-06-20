@@ -55,9 +55,15 @@ export default function BlogPostPage() {
         position: 'relative', overflow: 'hidden',
         borderBottom: `1px solid ${C.lineS}`, color: C.cream,
       }}>
+        {/* darkening scrim for text legibility */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: 'radial-gradient(60% 60% at 80% 20%, rgba(255,0,0,0.18), transparent 60%), radial-gradient(40% 60% at 10% 90%, rgba(30,119,193,0.18), transparent 60%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.7) 100%)',
+        }} />
+        {/* subtle color glows */}
+        <div style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none',
+          background: 'radial-gradient(60% 60% at 80% 20%, rgba(255,0,0,0.14), transparent 60%), radial-gradient(40% 60% at 10% 90%, rgba(30,119,193,0.14), transparent 60%)',
         }} />
         <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', padding: '64px 40px 96px' }}>
           {/* Back link */}

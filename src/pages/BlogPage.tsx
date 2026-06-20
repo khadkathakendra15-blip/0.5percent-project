@@ -93,29 +93,9 @@ export default function BlogPage() {
     <div style={{ background: C.paper, minHeight: '100vh' }}>
       <NavBar />
 
-      {/* ── HERO ── */}
-      <section style={{
-        background: C.cream2, paddingTop: '64px', minHeight: '40vh',
-        display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden',
-        borderBottom: `1px solid ${C.lineS}`,
-      }}>
-        <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '72px 40px', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-            <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.inkFaint }}>Stories from Nepal</span>
-          </div>
-          <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(48px,6vw,96px)', lineHeight: 0.92, letterSpacing: '-0.02em', color: C.ink, margin: 0 }}>
-            The Blog.
-          </h1>
-          <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, color: C.inkSoft, maxWidth: '54ch', marginTop: '28px' }}>
-            Long-form writing on Nepal's destinations, culture, economy and the 0.5% vision —
-            from the people building it.
-          </p>
-        </div>
-      </section>
-
       {/* ── FEATURED ── */}
       {featured && (
-        <section style={{ background: C.cream, padding: '80px 0', borderTop: `1px solid ${C.lineS}` }}>
+        <section style={{ background: C.cream, padding: '120px 0 80px', borderTop: `1px solid ${C.lineS}` }}>
           <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '28px' }}>
               <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.terra }}>Featured</span>
