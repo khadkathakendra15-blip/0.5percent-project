@@ -148,7 +148,7 @@ const DESTINATIONS = [
     title: "Living Museum",
     description: "Seven UNESCO World Heritage Sites in one valley. Durbar Squares, Boudhanath's golden dome, and the living goddess Kumari draw millions.",
     tags: ["Heritage", "Culture", "Temples"],
-    image: "https://images.unsplash.com/photo-1571898223382-8f4f9a0c2d4c?w=600&auto=format&fit=crop",
+    image: "/Kathmandu.jpg",
   },
   {
     name: "Pokhara",
@@ -156,7 +156,7 @@ const DESTINATIONS = [
     title: "Lakeside Paradise",
     description: "Phewa Lake mirrors Machhapuchhre and the Annapurna massif. World-class paragliding, kayaking, and the gateway to Nepal's greatest trek.",
     tags: ["Lakes", "Adventure", "Views"],
-    image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=600&auto=format&fit=crop",
+    image: "/Pokhara.jpg",
   },
   {
     name: "Everest Region",
@@ -164,7 +164,7 @@ const DESTINATIONS = [
     title: "Roof of the World",
     description: "The Khumbu valley — Namche Bazaar, Tengboche monastery, glacial lakes — leads to base camp of the world's highest summit.",
     tags: ["Trekking", "Climbing", "Sherpa"],
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&auto=format&fit=crop",
+    image: "/Mount-Everest.webp",
   },
   {
     name: "Annapurna",
@@ -172,7 +172,7 @@ const DESTINATIONS = [
     title: "The Great Circuit",
     description: "The world's most popular trekking circuit. From sub-tropical jungle to the 5,416 m Thorong La pass — all within one magnificent loop.",
     tags: ["Trekking", "Diversity", "Passes"],
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop",
+    image: "/Annapurna Mountain.webp",
   },
   {
     name: "Chitwan",
@@ -188,7 +188,7 @@ const DESTINATIONS = [
     title: "Sacred Garden",
     description: "The birthplace of Siddhartha Gautama. The Maya Devi Temple, sacred Bodhi trees, and pilgrims from 80 nations make this Nepal's spiritual heart.",
     tags: ["Spiritual", "UNESCO", "Pilgrimage"],
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop",
+    image: "/Lumbin photo.webp",
   },
 ]
 
