@@ -3,9 +3,9 @@ import { NavBar } from '@/components/ui/nav-bar';
 import { CheckCircle, Calendar, FileText, Users, Bed, DollarSign, ChevronDown, ChevronUp, Mountain, Star } from 'lucide-react';
 
 const C = {
-  ink: '#0a1a2e', ink2: '#144428', inkSoft: '#3d5578', inkFaint: '#82b395',
-  cream: '#eaf0f8', cream2: '#dce8f5', paper: '#fafdfa',
-  saffron: '#7599cb', terra: '#DC143C', lineS: 'rgba(10,26,46,0.08)',
+  ink: '#1A130C', ink2: '#241A10', inkSoft: '#52473E', inkFaint: '#A89A86',
+  cream: '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
+  saffron: '#BE1538', terra: '#BE1538', lineS: 'rgba(26,19,12,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -18,7 +18,7 @@ const SEASONS = [
     months: 'Mar – May',
     rating: 5,
     gradient: 'linear-gradient(145deg,#1A0814 0%,#8C1E3D 50%,#1F0510 100%)',
-    icon: <Star size={20} color="#7599cb" strokeWidth={1.5} fill="#7599cb" />,
+    icon: <Star size={20} color="#BE1538" strokeWidth={1.5} fill="#BE1538" />,
     desc: 'Peak trekking season. Rhododendrons bloom, skies are clear, and most high passes are open. The busiest — and most rewarding — time to visit.',
     best: ['Everest BC','Annapurna Circuit','Langtang','All treks'],
   },
@@ -26,7 +26,7 @@ const SEASONS = [
     name: 'Monsoon',
     months: 'Jun – Aug',
     rating: 2,
-    gradient: 'linear-gradient(145deg,#1a3a5c 0%,#7599cb 50%,#0d2240 100%)',
+    gradient: 'linear-gradient(145deg,#1a3a5c 0%,#BE1538 50%,#0d2240 100%)',
     icon: null,
     desc: 'Heavy rainfall across most of Nepal. Roads wash out. Best for rain-shadow areas: Mustang, Dolpo. Wildlife activity peaks in Chitwan.',
     best: ['Upper Mustang','Chitwan','Rafting'],
@@ -36,7 +36,7 @@ const SEASONS = [
     months: 'Sep – Nov',
     rating: 5,
     gradient: 'linear-gradient(145deg,#2E0810 0%,#7A1830 50%,#200810 100%)',
-    icon: <Star size={20} color="#7599cb" strokeWidth={1.5} fill="#7599cb" />,
+    icon: <Star size={20} color="#BE1538" strokeWidth={1.5} fill="#BE1538" />,
     desc: 'Arguably the best season. Crystal-clear skies after monsoon, stable weather, spectacular mountain views. All major treks in perfect condition.',
     best: ['All treks','Climbing','Festivals (Dashain, Tihar)'],
   },
@@ -44,7 +44,7 @@ const SEASONS = [
     name: 'Winter',
     months: 'Dec – Feb',
     rating: 3,
-    gradient: 'linear-gradient(145deg,#0A2810 0%,#1A5C30 40%,#2D8E5A 100%)',
+    gradient: 'linear-gradient(145deg,#0C1A32 0%,#1A3556 40%,#B8892A 100%)',
     icon: null,
     desc: 'Cold at altitude, but Kathmandu and Pokhara are pleasant. Low-altitude treks (Poon Hill, Ghorepani) are excellent. Fewer crowds, lower prices.',
     best: ['Poon Hill','Kathmandu','Lumbini','Chitwan'],
@@ -148,7 +148,7 @@ export default function BookingPage() {
             {SEASONS.map(s => (
               <div key={s.name} style={{ borderRadius: '6px', overflow: 'hidden', border: `1px solid ${C.lineS}` }}>
                 <div style={{ height: '100px', background: s.gradient, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '16px' }}>
-                  <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(234,247,238,0.5)' }}>{s.months}</div>
+                  <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.5)' }}>{s.months}</div>
                   <div style={{ fontFamily: SERIF, fontSize: '24px', color: C.cream, lineHeight: 1.1, marginTop: '2px' }}>{s.name}</div>
                 </div>
                 <div style={{ background: C.paper, padding: '18px 20px' }}>
@@ -188,7 +188,7 @@ export default function BookingPage() {
             {STEPS.map((s, i) => (
               <div key={s.n} style={{ background: i % 2 === 0 ? C.cream : C.cream2, padding: '32px 28px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                  <span style={{ fontFamily: BEBAS, fontSize: '36px', color: 'rgba(10,26,46,0.10)', lineHeight: 1 }}>{s.n}</span>
+                  <span style={{ fontFamily: BEBAS, fontSize: '36px', color: 'rgba(26,19,12,0.10)', lineHeight: 1 }}>{s.n}</span>
                   {s.icon}
                 </div>
                 <div style={{ fontFamily: SERIF, fontSize: '20px', fontWeight: 400, color: C.ink, marginBottom: '10px' }}>{s.title}</div>

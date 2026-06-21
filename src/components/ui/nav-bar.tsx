@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const INK     = '#0a1a2e';
-const CREAM   = '#eaf0f8';
-const SAFFRON = '#7599cb';
-const TERRA   = '#DC143C';
+const INK     = '#1A130C';
+const CREAM   = '#F6F0E6';
+const SAFFRON = '#BE1538';
+const TERRA   = '#BE1538';
+const GOLD    = '#C9A227';
 const MUKTA   = "'Mukta', system-ui, sans-serif";
 const MONO    = "'JetBrains Mono', ui-monospace, monospace";
 
@@ -38,9 +39,9 @@ export function NavBar() {
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         height: '64px', display: 'flex', alignItems: 'center',
-        background: solid ? INK : 'rgba(10,7,4,0.35)',
+        background: solid ? '#0C1A32' : 'rgba(10,7,4,0.35)',
         backdropFilter: solid ? 'none' : 'blur(8px)',
-        borderBottom: solid ? '1px solid rgba(234,247,238,0.08)' : 'none',
+        borderBottom: solid ? '1px solid rgba(246,240,230,0.08)' : 'none',
         transition: 'background .35s ease, border-color .35s ease',
       }}>
         <div style={{
@@ -65,11 +66,11 @@ export function NavBar() {
                 <Link key={l.to} to={l.to} style={{
                   textDecoration: 'none', fontFamily: MUKTA,
                   fontSize: '14px', letterSpacing: '0.03em',
-                  color: active ? SAFFRON : CREAM,
-                  opacity: active ? 1 : 0.75,
-                  borderBottom: active ? `1.5px solid ${SAFFRON}` : '1.5px solid transparent',
-                  paddingBottom: '2px',
-                  transition: 'color .2s, opacity .2s',
+                  color: active ? '#fff' : CREAM,
+                  opacity: active ? 1 : 0.72,
+                  borderBottom: active ? `1.5px solid ${GOLD}` : '1.5px solid transparent',
+                  paddingBottom: '3px',
+                  transition: 'color .25s, opacity .25s, border-color .25s',
                 }}>
                   {l.label}
                 </Link>
@@ -106,7 +107,7 @@ export function NavBar() {
       {mobileOpen && (
         <div style={{
           position: 'fixed', top: '64px', left: 0, right: 0, zIndex: 199,
-          background: INK, borderBottom: '1px solid rgba(234,247,238,0.1)',
+          background: '#0C1A32', borderBottom: '1px solid rgba(246,240,230,0.1)',
           padding: '24px 28px 28px',
         }}>
           {LINKS.map(l => (
@@ -116,8 +117,8 @@ export function NavBar() {
               style={{
                 display: 'block', textDecoration: 'none', fontFamily: MUKTA,
                 fontSize: '18px', letterSpacing: '0.02em',
-                color: pathname.startsWith(l.to) ? SAFFRON : CREAM,
-                padding: '14px 0', borderBottom: '1px solid rgba(234,247,238,0.07)',
+                color: pathname.startsWith(l.to) ? '#fff' : CREAM,
+                padding: '14px 0', borderBottom: '1px solid rgba(246,240,230,0.07)',
               }}
             >
               {l.label}

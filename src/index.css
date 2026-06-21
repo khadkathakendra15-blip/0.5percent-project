@@ -45,27 +45,27 @@
 
 :root {
   --radius: 0.375rem;
-  /* ── 0.5% Vision Brand palette — Blue + Red ───────────────── */
-  /* paper  #fafafd */ --background:          oklch(0.987 0.005 240);
-  /* ink    #0a1a2e */ --foreground:          oklch(0.215 0.055 240);
-  /* paper  #fafafd */ --card:                oklch(0.987 0.005 240);
-  /* ink    #0a1a2e */ --card-foreground:     oklch(0.215 0.055 240);
-  /* paper  #fafafd */ --popover:             oklch(0.987 0.005 240);
-  /* ink    #0a1a2e */ --popover-foreground:  oklch(0.215 0.055 240);
-  /* #7599cb        */ --primary:             oklch(0.648 0.085 245);
-  /* ice    #eaf0fa */ --primary-foreground:  oklch(0.970 0.015 245);
-  /* ice2   #dce8f5 */ --secondary:           oklch(0.935 0.028 245);
-  /* ink    #0a1a2e */ --secondary-foreground:oklch(0.215 0.055 240);
-  /* ice2   #dce8f5 */ --muted:               oklch(0.935 0.028 245);
-  /* inkSft #3d5578 */ --muted-foreground:    oklch(0.484 0.055 245);
-  /* ice    #eaf0fa */ --accent:              oklch(0.970 0.015 245);
-  /* ink    #0a1a2e */ --accent-foreground:   oklch(0.215 0.055 240);
-  /* terra  #DC143C */ --destructive:         oklch(0.555 0.225 25);
-  /* lineS         */ --border:              oklch(0.920 0.018 245);
-  /* lineS         */ --input:               oklch(0.920 0.018 245);
-  /* #7599cb        */ --ring:                oklch(0.648 0.085 245);
-  --brand: oklch(0.521 0.179 248.86);
-  --brand-foreground: oklch(0.985 0 0);
+  /* ── 0.5% Vision: Heritage Luxury — Warm Parchment + Deep Navy + Sacred Gold + Crimson ── */
+  /* parchment #FDFAF4 */ --background:          oklch(0.992 0.007 78);
+  /* warm ink  #140F0A */ --foreground:          oklch(0.135 0.020 54);
+  /* parchment #FDFAF4 */ --card:                oklch(0.992 0.007 78);
+  /* warm ink  #140F0A */ --card-foreground:     oklch(0.135 0.020 54);
+  /* parchment #FDFAF4 */ --popover:             oklch(0.992 0.007 78);
+  /* warm ink  #140F0A */ --popover-foreground:  oklch(0.135 0.020 54);
+  /* crimson   #BE1538 */ --primary:             oklch(0.438 0.195 19);
+  /* parchment #FDFAF4 */ --primary-foreground:  oklch(0.992 0.007 78);
+  /* warm sand #E8DECC */ --secondary:           oklch(0.912 0.022 76);
+  /* warm ink  #140F0A */ --secondary-foreground:oklch(0.135 0.020 54);
+  /* warm sand #E8DECC */ --muted:               oklch(0.912 0.022 76);
+  /* inkSoft   #52473E */ --muted-foreground:    oklch(0.396 0.028 58);
+  /* ivory     #F6F0E6 */ --accent:              oklch(0.965 0.016 78);
+  /* warm ink  #140F0A */ --accent-foreground:   oklch(0.135 0.020 54);
+  /* crimson   #BE1538 */ --destructive:         oklch(0.438 0.195 19);
+  /* warm line           */ --border:            oklch(0.905 0.018 78);
+  /* warm line           */ --input:             oklch(0.905 0.018 78);
+  /* sacred gold #B8892A */ --ring:              oklch(0.616 0.110 66);
+  /* navy #0C1A32 */       --brand:              oklch(0.215 0.068 248);
+  --brand-foreground: oklch(0.992 0.007 78);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -128,17 +128,42 @@
 }
 
 @keyframes vfy-slide { to { transform: translateX(-50%); } }
-.vfy-marquee-track { animation: vfy-slide 38s linear infinite; }
+.vfy-marquee-track { animation: vfy-slide 34s linear infinite; }
 
 @keyframes vfy-slowzoom { from { transform: scale(1.0); } to { transform: scale(1.10); } }
 @keyframes vfy-tap { 0%,100%{opacity:0.3;transform:scaleY(0.6);}50%{opacity:1;transform:scaleY(1);} }
 
-/* Gentle float for decorative elements */
-@keyframes vfy-float {
-  0%, 100% { transform: translateY(-50%) translateY(0px); }
-  50%       { transform: translateY(-50%) translateY(-18px); }
+/* Premium drift for CTA watermark */
+@keyframes vfy-drift {
+  0%, 100% { transform: translateY(-50%) translateY(0px) rotate(-1.5deg); }
+  50%       { transform: translateY(-50%) translateY(-24px) rotate(-1.5deg); }
 }
-.vfy-cta-watermark { animation: vfy-float 9s ease-in-out infinite; }
+.vfy-cta-watermark { animation: vfy-drift 11s ease-in-out infinite; }
+
+/* Sacred gold pulse — for eyebrow labels and special accents */
+@keyframes vfy-gold-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.72; }
+}
+
+/* Shimmer sweep — for the marquee strip gold stars */
+@keyframes vfy-shimmer {
+  0%   { opacity: 0.4; transform: scale(0.8); }
+  50%  { opacity: 1;   transform: scale(1.15); }
+  100% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Subtle reveal for section dividers */
+@keyframes vfy-line-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Stat number count — backdrop blur entrance */
+@keyframes vfy-stat-enter {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
 
 /* Smooth hover lift for pillar cards (JS sets the transform, CSS drives the easing) */
 .vfy-pillar-card { transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease; }
@@ -846,15 +871,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Branded text selection */
+/* Branded text selection — heritage crimson */
 ::selection {
-  background: rgba(30, 80, 193, 0.22);
-  color: #0a1a2e;
+  background: rgba(190, 21, 56, 0.20);
+  color: #1A130C;
 }
 
-/* Keyboard focus rings — visible only for keyboard users */
+/* Keyboard focus rings — sacred gold, visible only for keyboard users */
 :focus-visible {
-  outline: 2px solid #7599cb;
+  outline: 2px solid #B8892A;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -862,21 +887,21 @@ body {
   outline: none;
 }
 
-/* Warm-toned scrollbar to match the paper palette */
+/* Warm parchment scrollbar with gold hover */
 ::-webkit-scrollbar {
   width: 11px;
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #dce8f5;
+  background: #F0E8D8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8fa7b5;
+  background: #C9B89A;
   border-radius: 6px;
-  border: 2px solid #dce8f5;
+  border: 2px solid #F0E8D8;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8295b3;
+  background: #B8892A;
 }
 
 /* Images never overflow their container */

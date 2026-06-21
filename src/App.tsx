@@ -37,7 +37,7 @@ const MUKTA  = "'Mukta', system-ui, sans-serif";
 
 /* ── Campaign Hero — full-screen video, dark fade, project text ──────────── */
 const CampaignHero = () => (
-  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#051a0c' }}>
+  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#0C1A32' }}>
 
     {/* Video — full bleed */}
     <video
@@ -83,7 +83,7 @@ const CampaignHero = () => (
           color: '#fff',
           textShadow: '0 2px 24px rgba(0,0,0,0.55)',
         }}>
-          0.5<span style={{ color: '#7599cb' }}>%</span>
+          0.5<span style={{ color: '#BE1538' }}>%</span>
         </div>
         <div style={{
           fontFamily: BEBAS,
@@ -113,7 +113,7 @@ const CampaignHero = () => (
       >
         {['Tourism', 'Spirituality', 'Culture', 'Media'].map((tag, i) => (
           <span key={tag} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#7599cb', display: 'inline-block' }} />}
+            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#BE1538', display: 'inline-block' }} />}
             {tag}
           </span>
         ))}
@@ -127,7 +127,7 @@ const CampaignHero = () => (
         style={{
           fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
           fontSize: 'clamp(18px, 2.2vw, 30px)', lineHeight: 1.3,
-          color: '#7599cb',
+          color: '#BE1538',
           marginBottom: '36px',
           textShadow: '0 2px 12px rgba(0,0,0,0.45)',
         }}
@@ -475,7 +475,7 @@ export const HeroStats = () => {
         'New direct and indirect employment positions across hospitality, trekking, transport, and rural enterprises.',
       source: 'Modeled on regional tourism multiplier effects',
       icon: Users,
-      gradient: 'from-blue-500 to-indigo-500',
+      gradient: 'from-amber-500 to-orange-500',
     },
   ];
 
@@ -560,7 +560,7 @@ export const ThreePillars = () => {
         "Where ancient wisdom meets pristine nature. Nepal offers sanctuary from the chaos of modern life, a place where peace is not just found—it's felt in every breath.",
       image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80',
       icon: Cloud,
-      color: 'from-sky-400 to-blue-500',
+      color: 'from-amber-400 to-yellow-500',
     },
     {
       title: 'Hinduism',
@@ -678,7 +678,7 @@ export const CampaignApproach = () => {
       icon: Camera,
       title: 'Travel Vlogs',
       description: 'Visual storytelling through immersive travel content and creator partnerships',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-amber-500 to-orange-500',
     },
     {
       icon: Film,
@@ -690,7 +690,7 @@ export const CampaignApproach = () => {
       icon: Music,
       title: 'Cultural Festivals',
       description: 'Musical concerts and cultural celebrations connecting Nepal with the world',
-      color: 'from-blue-500 to-indigo-500',
+      color: 'from-orange-500 to-red-500',
     },
     {
       icon: Globe,

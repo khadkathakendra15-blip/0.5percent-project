@@ -265,10 +265,10 @@ const BEST_REASONS = [
 
 /* ── Brand tokens (kept as JS constants so every inline override is consistent) ── */
 const B = {
-  ink:     '#0a1a2e', ink2: '#142444', inkSoft: '#3d5578', inkFaint: '#8295b3',
-  cream:   '#eaf0f8', cream2: '#dce8f5', paper: '#fafafd',
-  saffron: '#7599cb', terra: '#DC143C', blue: '#7599cb',
-  lineS:   'rgba(10,26,46,0.08)', lineW: 'rgba(234,238,255,0.08)',
+  ink:     '#1A130C', ink2: '#0C1A32', inkSoft: '#52473E', inkFaint: '#A89A86',
+  cream:   '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
+  saffron: '#BE1538', terra: '#BE1538', blue: '#BE1538',
+  lineS:   'rgba(26,19,12,0.08)', lineW: 'rgba(234,238,255,0.08)',
 }
 const F = {
   serif: "'Cormorant Garamond', Georgia, serif",
@@ -301,9 +301,9 @@ function ExploreNepal() {
           </div>
           <h1 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(52px,8vw,112px)', lineHeight: 0.9, letterSpacing: '-0.02em', color: B.cream, marginBottom: '24px', filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.55))' }}>
             Three worlds.<br />
-            <em style={{ fontStyle: 'italic', color: 'rgba(234,247,238,0.7)' }}>One kingdom.</em>
+            <em style={{ fontStyle: 'italic', color: 'rgba(246,240,230,0.7)' }}>One kingdom.</em>
           </h1>
-          <p style={{ fontFamily: F.mukta, fontSize: 'clamp(14px,1.8vw,18px)', lineHeight: 1.85, fontWeight: 300, color: 'rgba(234,247,238,0.65)', maxWidth: '52ch', margin: '0 auto', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))' }}>
+          <p style={{ fontFamily: F.mukta, fontSize: 'clamp(14px,1.8vw,18px)', lineHeight: 1.85, fontWeight: 300, color: 'rgba(246,240,230,0.65)', maxWidth: '52ch', margin: '0 auto', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))' }}>
             Spanning 60 metres at its lowest to 8,848 metres at its peak, Nepal packs more geographic and cultural diversity into 147,516 km² than almost any nation on Earth.
           </p>
         </motion.div>
@@ -423,9 +423,9 @@ function ExploreNepal() {
                   <img src={dest.image} alt={dest.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,7,4,0.72) 0%, transparent 55%)' }} />
                   <div style={{ position: 'absolute', bottom: '14px', left: '16px', right: '16px' }}>
-                    <div style={{ fontFamily: F.mono, fontSize: '9px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(234,247,238,0.5)', marginBottom: '3px' }}>{dest.province}</div>
+                    <div style={{ fontFamily: F.mono, fontSize: '9px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.5)', marginBottom: '3px' }}>{dest.province}</div>
                     <h3 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: '26px', color: B.cream, lineHeight: 1 }}>{dest.name}</h3>
-                    <div style={{ fontFamily: F.mukta, fontSize: '12px', color: 'rgba(234,247,238,0.6)' }}>{dest.title}</div>
+                    <div style={{ fontFamily: F.mukta, fontSize: '12px', color: 'rgba(246,240,230,0.6)' }}>{dest.title}</div>
                   </div>
                 </div>
                 <div style={{ background: B.paper, padding: '18px 20px 20px' }}>
@@ -486,7 +486,7 @@ function ExploreNepal() {
             {BEST_REASONS.map((r, i) => (
               <motion.div key={i} variants={itemFadeIn} whileHover={{ background: B.paper }}
                 style={{ background: B.cream2, padding: '34px 28px', transition: 'background .25s' }}>
-                <div style={{ fontFamily: F.bebas, fontSize: '40px', color: 'rgba(10,26,46,0.12)', lineHeight: 1, marginBottom: '10px' }}>{r.n}</div>
+                <div style={{ fontFamily: F.bebas, fontSize: '40px', color: 'rgba(26,19,12,0.12)', lineHeight: 1, marginBottom: '10px' }}>{r.n}</div>
                 <h3 style={{ fontFamily: F.serif, fontWeight: 500, fontSize: '22px', color: B.ink, marginBottom: '10px' }}>{r.title}</h3>
                 <p style={{ fontFamily: F.mukta, fontSize: '14px', lineHeight: 1.8, color: B.inkSoft }}>{r.desc}</p>
               </motion.div>

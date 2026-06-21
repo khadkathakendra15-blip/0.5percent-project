@@ -2,17 +2,17 @@ import { useRef, useEffect, useState } from 'react';
 
 /* ─── tokens ─────────────────────────────────────────────────────────────── */
 const C = {
-  ink:      '#0a1a2e',
-  inkSoft:  '#3d5578',
-  inkFaint: '#82b395',
-  cream:    '#eaf0f8',
-  cream2:   '#dce8f5',
-  paper:    '#fafdfa',
-  saffron:  '#7599cb',
-  saffronB: '#7599cb',
-  terra:    '#DC143C',
-  line:     'rgba(10,26,46,0.13)',
-  lineS:    'rgba(10,26,46,0.07)',
+  ink:      '#1A130C',
+  inkSoft:  '#52473E',
+  inkFaint: '#A89A86',
+  cream:    '#F6F0E6',
+  cream2:   '#E8DECC',
+  paper:    '#FDFAF4',
+  saffron:  '#BE1538',
+  saffronB: '#BE1538',
+  terra:    '#BE1538',
+  line:     'rgba(26,19,12,0.13)',
+  lineS:    'rgba(26,19,12,0.07)',
 };
 const SERIF = "'Cormorant Garamond', serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -40,7 +40,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${Math.round(v)}K`,
     revenueFmt:  (v: number) => `$${Math.round(v)}M`,
     gdpFmt:      (v: number) => `${v.toFixed(1)}%`,
-    color: '#4cc080', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#BE1538', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'KH', name: 'Cambodia', pop: '17M',
@@ -50,7 +50,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(1)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#2aa873', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#BE1538', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'LA', name: 'Laos', pop: '8M',
@@ -60,7 +60,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(0)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#0e8e4d', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#BE1538', bg: C.paper, highlight: false, note: '', badge: '',
   },
 ];
 
@@ -259,7 +259,7 @@ export function CountryComparisonSection() {
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         background: `
-          radial-gradient(80% 60% at 20% 0%, rgba(31,77,138,0.06), transparent 55%),
+          radial-gradient(80% 60% at 20% 0%, rgba(12,26,50,0.06), transparent 55%),
           radial-gradient(60% 50% at 80% 100%, rgba(255,0,0,0.04), transparent 55%)`,
       }} />
 
@@ -335,7 +335,7 @@ export function CountryComparisonSection() {
             <div style={{ fontFamily: BEBAS, fontSize: 'clamp(56px, 7vw, 96px)', lineHeight: 0.85, letterSpacing: '0.02em', color: C.saffronB }}>
               0.5%
             </div>
-            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(234,247,238,0.45)', marginTop: '6px' }}>
+            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.45)', marginTop: '6px' }}>
               Can close this gap
             </div>
           </div>

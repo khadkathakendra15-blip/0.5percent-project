@@ -1,22 +1,22 @@
 // ─── Partner data with logo paths ─────────────────────────────────────────────
 const ROW1 = [
-  { name: "Nepal Airlines",  logo: "/logo/Nepal Airlines.jpg",        color: "#DC143C", bg: "#fdf2f4" },
-  { name: "Buddha Air",      logo: "/logo/Budhha Air.jpg",            color: "#DC143C", bg: "#fdf4f7" },
-  { name: "Yeti Airlines",   logo: "/logo/Yeti Airlines.jpg",         color: "#7599cb", bg: "#eaf0f8" },
-  { name: "The Soaltee",     logo: "/logo/The Soaltee.jpg",           color: "#0a4a25", bg: "#eaf0f8" },
-  { name: "CG Hospitality",  logo: "/logo/Cg Hospitality.jpg",        color: "#7599cb", bg: "#eaf0f8" },
-  { name: "Kantipur Media",  logo: "/logo/KMG.jpg",                   color: "#DC143C", bg: "#fdf2f4" },
-  { name: "Onlinekhabar",    logo: "/logo/Online Khaber.jpg",         color: "#7599cb", bg: "#eaf0f8" },
+  { name: "Nepal Airlines",  logo: "/logo/Nepal Airlines.jpg",        color: "#BE1538", bg: "#fdf2f4" },
+  { name: "Buddha Air",      logo: "/logo/Budhha Air.jpg",            color: "#BE1538", bg: "#fdf4f7" },
+  { name: "Yeti Airlines",   logo: "/logo/Yeti Airlines.jpg",         color: "#BE1538", bg: "#F6F0E6" },
+  { name: "The Soaltee",     logo: "/logo/The Soaltee.jpg",           color: "#0C1A32", bg: "#F6F0E6" },
+  { name: "CG Hospitality",  logo: "/logo/Cg Hospitality.jpg",        color: "#BE1538", bg: "#F6F0E6" },
+  { name: "Kantipur Media",  logo: "/logo/KMG.jpg",                   color: "#BE1538", bg: "#fdf2f4" },
+  { name: "Onlinekhabar",    logo: "/logo/Online Khaber.jpg",         color: "#BE1538", bg: "#F6F0E6" },
 ];
 
 const ROW2 = [
-  { name: "Nepal Tourism Board",  logo: "/logo/Nepal Tourism Board.jpg",    color: "#0a4a25", bg: "#eaf0f8" },
-  { name: "Hotel Assoc. Nepal",   logo: "/logo/Hotel Association nepal.jpg", color: "#7599cb", bg: "#eaf0f8" },
-  { name: "CG Corp Global",       logo: "/logo/Cg Corp Global.jpg",          color: "#7599cb", bg: "#eaf0f8" },
-  { name: "Buddha Air",           logo: "/logo/Budhha Air.jpg",              color: "#DC143C", bg: "#fdf4f7" },
-  { name: "Nepal Airlines",       logo: "/logo/Nepal Airlines.jpg",          color: "#DC143C", bg: "#fdf2f4" },
-  { name: "Yeti Airlines",        logo: "/logo/Yeti Airlines.jpg",           color: "#7599cb", bg: "#eaf0f8" },
-  { name: "Kantipur Media Group", logo: "/logo/KMG.jpg",                     color: "#DC143C", bg: "#fdf2f4" },
+  { name: "Nepal Tourism Board",  logo: "/logo/Nepal Tourism Board.jpg",    color: "#0C1A32", bg: "#F6F0E6" },
+  { name: "Hotel Assoc. Nepal",   logo: "/logo/Hotel Association nepal.jpg", color: "#BE1538", bg: "#F6F0E6" },
+  { name: "CG Corp Global",       logo: "/logo/Cg Corp Global.jpg",          color: "#BE1538", bg: "#F6F0E6" },
+  { name: "Buddha Air",           logo: "/logo/Budhha Air.jpg",              color: "#BE1538", bg: "#fdf4f7" },
+  { name: "Nepal Airlines",       logo: "/logo/Nepal Airlines.jpg",          color: "#BE1538", bg: "#fdf2f4" },
+  { name: "Yeti Airlines",        logo: "/logo/Yeti Airlines.jpg",           color: "#BE1538", bg: "#F6F0E6" },
+  { name: "Kantipur Media Group", logo: "/logo/KMG.jpg",                     color: "#BE1538", bg: "#fdf2f4" },
 ];
 
 type Partner = (typeof ROW1)[0];
@@ -101,7 +101,7 @@ export function PartnersSection() {
         <div style={{
           display:       'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '18px',
           fontSize:      '12px', letterSpacing: '0.32em', textTransform: 'uppercase',
-          fontWeight:    500, fontFamily: MUKTA_F, color: '#DC143C',
+          fontWeight:    500, fontFamily: MUKTA_F, color: '#BE1538',
         }}>
           In good company
         </div>
@@ -110,14 +110,14 @@ export function PartnersSection() {
         <h2 style={{
           fontFamily:     SERIF_F, fontWeight: 300,
           fontSize:       'clamp(36px, 5vw, 62px)', lineHeight: 1.05,
-          letterSpacing:  '-0.015em', color: '#0a1a2e', marginBottom: '12px',
+          letterSpacing:  '-0.015em', color: '#1A130C', marginBottom: '12px',
         }}>
           Partners &amp;{' '}
-          <em style={{ fontStyle: 'italic', color: '#DC143C' }}>Supporters</em>.
+          <em style={{ fontStyle: 'italic', color: '#BE1538' }}>Supporters</em>.
         </h2>
 
         <p style={{
-          fontFamily: MUKTA_F, fontSize: '15px', color: '#3d5578',
+          fontFamily: MUKTA_F, fontSize: '15px', color: '#52473E',
           fontWeight: 300, maxWidth: '44ch', margin: '0 auto 48px', lineHeight: 1.8,
         }}>
           Organisations, airlines, hotels and media houses helping carry Nepal's story to the world.

@@ -6,18 +6,18 @@ import { motion } from 'framer-motion';
 
 // ─── Brand tokens ──────────────────────────────────────────────────────────
 const G = {
-  bg:         '#fafdfa',
-  surface:    '#eaf0f8',
-  card:       '#dce8f5',
-  border:     'rgba(10,26,46,0.10)',
-  borderHover:'rgba(10,26,46,0.26)',
-  gold:       '#7599cb',
+  bg:         '#FDFAF4',
+  surface:    '#F6F0E6',
+  card:       '#E8DECC',
+  border:     'rgba(26,19,12,0.10)',
+  borderHover:'rgba(26,19,12,0.26)',
+  gold:       '#BE1538',
   goldFaint:  'rgba(138,78,18,0.09)',
-  text:       '#0a1a2e',
-  textMuted:  '#144428',
-  textFaint:  '#3d5578',
-  ink:        '#0a1a2e',
-  cream:      '#eaf0f8',
+  text:       '#1A130C',
+  textMuted:  '#241A10',
+  textFaint:  '#52473E',
+  ink:        '#1A130C',
+  cream:      '#F6F0E6',
   serif:  "'Cormorant Garamond', Georgia, serif",
   sans:   "'Mukta', system-ui, sans-serif",
   mono:   "'JetBrains Mono', ui-monospace, monospace",
@@ -163,11 +163,11 @@ function Bubble({ msg }: { msg: { role:string; text:string; ts:number } }) {
         <div style={{ fontFamily:G.sans, fontSize:'13px', lineHeight:1.75, whiteSpace:'pre-wrap', color: isAI ? G.text : G.cream }}>
           {msg.text.split(/(\*\*.*?\*\*)/g).map((p, i) =>
             p.startsWith('**') && p.endsWith('**')
-              ? <strong key={i} style={{ color: isAI ? G.gold : '#dce8f5', fontWeight:600 }}>{p.slice(2,-2)}</strong>
+              ? <strong key={i} style={{ color: isAI ? G.gold : '#E8DECC', fontWeight:600 }}>{p.slice(2,-2)}</strong>
               : p
           )}
         </div>
-        <div style={{ fontFamily:G.mono, fontSize:'8px', color: isAI ? G.textFaint : 'rgba(234,247,238,0.4)', marginTop:'6px', letterSpacing:'0.03em' }}>
+        <div style={{ fontFamily:G.mono, fontSize:'8px', color: isAI ? G.textFaint : 'rgba(246,240,230,0.4)', marginTop:'6px', letterSpacing:'0.03em' }}>
           {new Date(msg.ts).toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' })}
         </div>
       </div>
@@ -274,7 +274,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           <div>
             <div style={{ fontFamily:G.serif, fontSize:'15px', fontWeight:500, color:G.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:G.mono, fontSize:'8px', letterSpacing:'0.08em', color:G.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#7599cb', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#BE1538', display:'inline-block' }}/>
               Online · Nepal travel expert
             </div>
           </div>
@@ -303,7 +303,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           onFocus={e => (e.currentTarget as HTMLDivElement).style.borderColor = G.borderHover}
           onBlur={e => (e.currentTarget as HTMLDivElement).style.borderColor = G.border}
         >
-          <button onClick={handleVoice} disabled={listening} style={{ background:'none', border:'none', cursor:'pointer', color: listening ? '#DC143C' : G.textFaint, padding:'3px', display:'flex', flexShrink:0 }}>
+          <button onClick={handleVoice} disabled={listening} style={{ background:'none', border:'none', cursor:'pointer', color: listening ? '#BE1538' : G.textFaint, padding:'3px', display:'flex', flexShrink:0 }}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
               <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
@@ -327,7 +327,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           </button>
         </div>
         {listening && (
-          <div style={{ fontFamily:G.mono, fontSize:'9px', color:'#DC143C', textAlign:'center', marginTop:'5px', letterSpacing:'0.08em' }}>🎙 Listening…</div>
+          <div style={{ fontFamily:G.mono, fontSize:'9px', color:'#BE1538', textAlign:'center', marginTop:'5px', letterSpacing:'0.08em' }}>🎙 Listening…</div>
         )}
       </div>
     </div>
@@ -344,13 +344,13 @@ export function GuideAISection() {
           50%       { opacity: 1;    transform: scale(1); }
         }
         .guide-ai-dest-chip:hover {
-          border-color: #7599cb !important;
+          border-color: #BE1538 !important;
           background: rgba(138,78,18,0.08) !important;
           transform: translateY(-2px);
         }
       `}</style>
 
-      <section style={{ background:G.bg, borderTop:'1px solid rgba(10,26,46,0.08)', padding:'80px 0 72px' }}>
+      <section style={{ background:G.bg, borderTop:'1px solid rgba(26,19,12,0.08)', padding:'80px 0 72px' }}>
         <div style={{ maxWidth:'1200px', margin:'0 auto', padding:'0 40px' }}>
 
           {/* Section header */}
