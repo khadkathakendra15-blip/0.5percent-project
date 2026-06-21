@@ -225,8 +225,8 @@ export default function AboutPage() {
             {/* Portrait */}
             <div className="about-founder-portrait" style={{ height: 520, borderRadius: 3, overflow: 'hidden' }}>
               <img
-                src="/Thakendra Khadka.jpeg"
-                alt="Thakendra Khadka"
+                src="/Dashrat Sunar - founder.jpeg"
+                alt="Dashrath Sunar"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
               />
             </div>
@@ -234,10 +234,10 @@ export default function AboutPage() {
             <div>
               <div style={{ fontSize: 12, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.terra, fontWeight: 600 }}>Founder</div>
               <h3 style={{ fontFamily: serif, fontWeight: 400, fontSize: 'clamp(40px, 4.4vw, 60px)', lineHeight: 1, margin: '14px 0 0', letterSpacing: '-0.01em' }}>
-                Thakendra Khadka
+                Dashrath Sunar
               </h3>
               <p style={{ fontSize: 17.5, lineHeight: 1.85, color: C.inkSoft, margin: '26px 0 0', fontWeight: 300 }}>
-                Thakendra Khadka is the visionary behind VFY Talks and the 0.5% Campaign — a movement
+                Dashrath Sunar is the visionary behind VFY Talks and the 0.5% Campaign — a movement
                 dedicated to transforming Nepal's global tourism identity through powerful storytelling,
                 media and cross-cultural conversations.
               </p>
