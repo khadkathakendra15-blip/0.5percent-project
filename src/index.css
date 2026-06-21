@@ -408,10 +408,10 @@ body { overflow-x: hidden; }
   }
   .vfy-stat-strip > *:first-child {
     padding-left: 0 !important;
-    border-right: 1px solid rgba(10,46,26,0.08) !important;
+    border-right: 1px solid rgba(10,26,46,0.08) !important;
   }
   .vfy-stat-strip > *:nth-child(2) {
-    border-right: 1px solid rgba(10,46,26,0.08) !important;
+    border-right: 1px solid rgba(10,26,46,0.08) !important;
   }
   .vfy-stat-strip > *:last-child {
     padding-right: 0 !important;
@@ -572,7 +572,7 @@ body { overflow-x: hidden; }
   }
   .vfy-newsletter-row input {
     border-radius: 2px !important;
-    border-right: 1px solid rgba(10,46,26,0.08) !important;
+    border-right: 1px solid rgba(10,26,46,0.08) !important;
     border-bottom: none !important;
   }
   .vfy-newsletter-row button {
@@ -770,11 +770,11 @@ body { overflow-x: hidden; }
   }
   /* Left-column items (odd): ensure border-right exists */
   .campaign-item:nth-child(2n-1) article {
-    border-right: 1px solid rgba(10,46,26,0.14) !important;
+    border-right: 1px solid rgba(10,26,46,0.14) !important;
   }
   /* Row 2+ items (3rd onward): add top border */
   .campaign-item:nth-child(n+3) {
-    border-top: 1px solid rgba(10,46,26,0.14) !important;
+    border-top: 1px solid rgba(10,26,46,0.14) !important;
   }
   /* Tighten card padding on narrow screens */
   .campaign-item article { padding: 22px 14px 20px !important; }

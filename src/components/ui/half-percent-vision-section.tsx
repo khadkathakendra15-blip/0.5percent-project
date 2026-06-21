@@ -21,16 +21,16 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:      '#0a2e1a',
-  inkSoft:  '#3d7855',
+  ink:      '#0a1a2e',
+  inkSoft:  '#3d5578',
   inkFaint: '#82b395',
-  cream:    '#eaf7ee',
-  cream2:   '#d8f3e2',
+  cream:    '#eaeeff',
+  cream2:   '#d8e3f3',
   paper:    '#fafdfa',
-  saffron:  '#1f8a4d',
-  saffronB: '#2ec56b',
+  saffron:  '#1f4d8a',
+  saffronB: '#2e6bc5',
   terra:    '#DC143C',
-  line:     'rgba(10,46,26,0.13)',
+  line:     'rgba(10,26,46,0.13)',
 };
 
 const SERIF = "'Cormorant Garamond', Georgia, serif";
@@ -122,7 +122,7 @@ export function HalfPercentVisionSection() {
       {/* subtle warm glow */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(70% 60% at 0% 50%, rgba(31,138,77,0.05), transparent 55%)',
+        background: 'radial-gradient(70% 60% at 0% 50%, rgba(31,77,138,0.05), transparent 55%)',
       }} />
 
       <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>

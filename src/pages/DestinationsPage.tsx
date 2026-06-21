@@ -265,10 +265,10 @@ const BEST_REASONS = [
 
 /* ── Brand tokens (kept as JS constants so every inline override is consistent) ── */
 const B = {
-  ink:     '#0a2e1a', ink2: '#144428', inkSoft: '#3d7855', inkFaint: '#82b395',
-  cream:   '#eaf7ee', cream2: '#d8f3e2', paper: '#fafdfa',
-  saffron: '#1f8a4d', terra: '#DC143C', green: '#1f8a4d',
-  lineS:   'rgba(10,46,26,0.08)', lineW: 'rgba(234,247,238,0.08)',
+  ink:     '#0a1a2e', ink2: '#142444', inkSoft: '#3d5578', inkFaint: '#8295b3',
+  cream:   '#eaeeff', cream2: '#d8e3f3', paper: '#fafafd',
+  saffron: '#1f4d8a', terra: '#DC143C', blue: '#1f4d8a',
+  lineS:   'rgba(10,26,46,0.08)', lineW: 'rgba(234,238,255,0.08)',
 }
 const F = {
   serif: "'Cormorant Garamond', Georgia, serif",
@@ -486,7 +486,7 @@ function ExploreNepal() {
             {BEST_REASONS.map((r, i) => (
               <motion.div key={i} variants={itemFadeIn} whileHover={{ background: B.paper }}
                 style={{ background: B.cream2, padding: '34px 28px', transition: 'background .25s' }}>
-                <div style={{ fontFamily: F.bebas, fontSize: '40px', color: 'rgba(10,46,26,0.12)', lineHeight: 1, marginBottom: '10px' }}>{r.n}</div>
+                <div style={{ fontFamily: F.bebas, fontSize: '40px', color: 'rgba(10,26,46,0.12)', lineHeight: 1, marginBottom: '10px' }}>{r.n}</div>
                 <h3 style={{ fontFamily: F.serif, fontWeight: 500, fontSize: '22px', color: B.ink, marginBottom: '10px' }}>{r.title}</h3>
                 <p style={{ fontFamily: F.mukta, fontSize: '14px', lineHeight: 1.8, color: B.inkSoft }}>{r.desc}</p>
               </motion.div>

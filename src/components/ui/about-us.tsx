@@ -9,8 +9,8 @@ export function FloatingAboutButton() {
       onClick={() => navigate('/about')}
       className="vfy-fab fixed right-0 top-1/2 -translate-y-1/2 z-50 py-5 px-2.5 rounded-l-xl shadow-xl cursor-pointer"
       style={{
-        background: 'linear-gradient(180deg, #1f8a4d 0%, #DC143C 100%)',
-        boxShadow: '-4px 0 20px rgba(31,138,77,0.30)',
+        background: 'linear-gradient(180deg, #1f4d8a 0%, #DC143C 100%)',
+        boxShadow: '-4px 0 20px rgba(31,77,138,0.30)',
         writingMode: 'vertical-rl',
       }}
       whileHover={{ x: -4 }}

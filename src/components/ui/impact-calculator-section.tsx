@@ -2,17 +2,17 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 
 /* ─── tokens ─────────────────────────────────────────────────────────────── */
 const C = {
-  ink:      '#0a2e1a',
-  inkSoft:  '#3d7855',
+  ink:      '#0a1a2e',
+  inkSoft:  '#3d5578',
   inkFaint: '#82b395',
-  cream:    '#eaf7ee',
-  cream2:   '#d8f3e2',
+  cream:    '#eaeeff',
+  cream2:   '#d8e3f3',
   paper:    '#fafdfa',
-  saffron:  '#1f8a4d',
-  saffronB: '#2ec56b',
+  saffron:  '#1f4d8a',
+  saffronB: '#2e6bc5',
   terra:    '#DC143C',
-  line:     'rgba(10,46,26,0.13)',
-  lineS:    'rgba(10,46,26,0.07)',
+  line:     'rgba(10,26,46,0.13)',
+  lineS:    'rgba(10,26,46,0.07)',
 };
 const SERIF = "'Cormorant Garamond', serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -153,8 +153,8 @@ export function ImpactCalculatorSection() {
           .calc-title { white-space: normal !important; font-size: clamp(18px,4.5vw,24px) !important; }
           .calc-grid { grid-template-columns: 1fr !important; }
           .calc-divider-v { display: none !important; }
-          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(10,46,26,0.12); }
-          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(10,46,26,0.12); }
+          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(10,26,46,0.12); }
+          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(10,26,46,0.12); }
           .calc-col-r { padding-left: 0 !important; padding-top: 20px !important; }
           .calc-big-num { font-size: clamp(64px,16vw,96px) !important; }
           .calc-ledger-val { font-size: 22px !important; }

@@ -4,16 +4,16 @@ import { NavBar } from '@/components/ui/nav-bar';
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const C = {
-  cream:    '#eaf7ee',
+  cream:    '#eaeeff',
   paper:    '#fafdfa',
-  paper2:   '#d8f3e2',
-  ink:      '#0a2e1a',
-  inkSoft:  '#3d7855',
+  paper2:   '#d8e3f3',
+  ink:      '#0a1a2e',
+  inkSoft:  '#3d5578',
   inkFaint: '#82b395',
   terra:    '#DC143C',
-  saffron:  '#1f8a4d',
-  line:     'rgba(10,46,26,0.10)',
-  lineSoft: 'rgba(10,46,26,0.06)',
+  saffron:  '#1f4d8a',
+  line:     'rgba(10,26,46,0.10)',
+  lineSoft: 'rgba(10,26,46,0.06)',
 };
 
 const serif = "'Cormorant Garamond', Georgia, serif";

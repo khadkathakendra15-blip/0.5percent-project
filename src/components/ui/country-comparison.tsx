@@ -303,7 +303,7 @@ export function CountryComparison() {
             </p>
             <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(20px, 2.2vw, 30px)', letterSpacing: '0.04em', color: '#1c1917', lineHeight: 1.2, fontWeight: 900 }}>
               Cambodia (17M people) gets{' '}
-              <span style={{ color: '#1f8a4d' }}>6× more tourists</span>{' '}
+              <span style={{ color: '#1f4d8a' }}>6× more tourists</span>{' '}
               than Nepal (30M people).{' '}
               <span style={{ color: '#DC143C' }}>The 0.5% Campaign changes this.</span>
             </h3>

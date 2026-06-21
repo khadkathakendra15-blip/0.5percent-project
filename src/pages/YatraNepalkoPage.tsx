@@ -1,16 +1,16 @@
 import { NavBar } from '@/components/ui/nav-bar';
 
 const C = {
-  ink:      '#0a2e1a',
-  inkSoft:  '#3d7855',
+  ink:      '#0a1a2e',
+  inkSoft:  '#3d5578',
   inkFaint: '#82b395',
-  cream:    '#eaf7ee',
-  cream2:   '#d8f3e2',
+  cream:    '#eaeeff',
+  cream2:   '#d8e3f3',
   paper:    '#fafdfa',
-  saffron:  '#1f8a4d',
+  saffron:  '#1f4d8a',
   terra:    '#DC143C',
-  line:     'rgba(10,46,26,0.08)',
-  lineM:    'rgba(10,46,26,0.13)',
+  line:     'rgba(10,26,46,0.08)',
+  lineM:    'rgba(10,26,46,0.13)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -41,7 +41,7 @@ function EpisodeCard({ id, ep, featured = false }: { id: string; ep: string; fea
         position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0,
         borderRadius: '6px', overflow: 'hidden', background: C.ink,
         border: `1px solid ${C.line}`,
-        boxShadow: featured ? '0 16px 48px rgba(10,46,26,0.14)' : '0 4px 20px rgba(10,46,26,0.08)',
+        boxShadow: featured ? '0 16px 48px rgba(10,26,46,0.14)' : '0 4px 20px rgba(10,26,46,0.08)',
       }}>
         <iframe
           src={`https://www.youtube.com/embed/${id}`}
@@ -82,7 +82,7 @@ export default function YatraNepalkoPage() {
         {/* Subtle warm glow */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: 'radial-gradient(55% 70% at 100% 0%, rgba(31,138,77,0.06), transparent 60%)',
+          background: 'radial-gradient(55% 70% at 100% 0%, rgba(31,77,138,0.06), transparent 60%)',
         }} />
 
         <div className="yn-hero-pad" style={{ maxWidth: '1320px', margin: '0 auto', padding: '72px 40px 80px', position: 'relative', zIndex: 1 }}>
@@ -92,7 +92,7 @@ export default function YatraNepalkoPage() {
             <span style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.saffron }}>
               A Travel Talk Show
             </span>
-            <span style={{ width: '28px', height: '1px', background: `rgba(31,138,77,0.35)` }} />
+            <span style={{ width: '28px', height: '1px', background: `rgba(31,77,138,0.35)` }} />
             <span style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase', color: C.inkFaint }}>
               Developed by 0.5% Campaign Team
             </span>
@@ -153,7 +153,7 @@ export default function YatraNepalkoPage() {
               <div style={{
                 position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0,
                 borderRadius: '8px', overflow: 'hidden', background: C.ink,
-                boxShadow: '0 20px 60px rgba(10,46,26,0.18)',
+                boxShadow: '0 20px 60px rgba(10,26,46,0.18)',
                 border: `1px solid ${C.lineM}`,
               }}>
                 <iframe

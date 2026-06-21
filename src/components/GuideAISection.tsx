@@ -7,17 +7,17 @@ import { motion } from 'framer-motion';
 // ─── Brand tokens ──────────────────────────────────────────────────────────
 const G = {
   bg:         '#fafdfa',
-  surface:    '#eaf7ee',
-  card:       '#d8f3e2',
-  border:     'rgba(10,46,26,0.10)',
-  borderHover:'rgba(10,46,26,0.26)',
-  gold:       '#1f8a4d',
+  surface:    '#eaeeff',
+  card:       '#d8e3f3',
+  border:     'rgba(10,26,46,0.10)',
+  borderHover:'rgba(10,26,46,0.26)',
+  gold:       '#1f4d8a',
   goldFaint:  'rgba(138,78,18,0.09)',
-  text:       '#0a2e1a',
+  text:       '#0a1a2e',
   textMuted:  '#144428',
-  textFaint:  '#3d7855',
-  ink:        '#0a2e1a',
-  cream:      '#eaf7ee',
+  textFaint:  '#3d5578',
+  ink:        '#0a1a2e',
+  cream:      '#eaeeff',
   serif:  "'Cormorant Garamond', Georgia, serif",
   sans:   "'Mukta', system-ui, sans-serif",
   mono:   "'JetBrains Mono', ui-monospace, monospace",
@@ -163,7 +163,7 @@ function Bubble({ msg }: { msg: { role:string; text:string; ts:number } }) {
         <div style={{ fontFamily:G.sans, fontSize:'13px', lineHeight:1.75, whiteSpace:'pre-wrap', color: isAI ? G.text : G.cream }}>
           {msg.text.split(/(\*\*.*?\*\*)/g).map((p, i) =>
             p.startsWith('**') && p.endsWith('**')
-              ? <strong key={i} style={{ color: isAI ? G.gold : '#d8f3e2', fontWeight:600 }}>{p.slice(2,-2)}</strong>
+              ? <strong key={i} style={{ color: isAI ? G.gold : '#d8e3f3', fontWeight:600 }}>{p.slice(2,-2)}</strong>
               : p
           )}
         </div>
@@ -274,7 +274,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           <div>
             <div style={{ fontFamily:G.serif, fontSize:'15px', fontWeight:500, color:G.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:G.mono, fontSize:'8px', letterSpacing:'0.08em', color:G.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2ec56b', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2e6bc5', display:'inline-block' }}/>
               Online · Nepal travel expert
             </div>
           </div>
@@ -344,13 +344,13 @@ export function GuideAISection() {
           50%       { opacity: 1;    transform: scale(1); }
         }
         .guide-ai-dest-chip:hover {
-          border-color: #1f8a4d !important;
+          border-color: #1f4d8a !important;
           background: rgba(138,78,18,0.08) !important;
           transform: translateY(-2px);
         }
       `}</style>
 
-      <section style={{ background:G.bg, borderTop:'1px solid rgba(10,46,26,0.08)', padding:'80px 0 72px' }}>
+      <section style={{ background:G.bg, borderTop:'1px solid rgba(10,26,46,0.08)', padding:'80px 0 72px' }}>
         <div style={{ maxWidth:'1200px', margin:'0 auto', padding:'0 40px' }}>
 
           {/* Section header */}

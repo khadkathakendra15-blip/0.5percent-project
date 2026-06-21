@@ -3,16 +3,16 @@ import { Chart, type ChartArea, type Plugin } from 'chart.js/auto';
 
 /* ─── main theme tokens — matches surrounding sections exactly ───────────── */
 const C = {
-  ink:      '#0a2e1a',
+  ink:      '#0a1a2e',
   ink2:     '#144428',
-  inkSoft:  '#3d7855',
+  inkSoft:  '#3d5578',
   inkFaint: '#82b395',
-  cream:    '#eaf7ee',
-  cream2:   '#d8f3e2',
+  cream:    '#eaeeff',
+  cream2:   '#d8e3f3',
   paper:    '#fafdfa',
-  saffron:  '#1f8a4d',
+  saffron:  '#1f4d8a',
   terra:    '#DC143C',
-  lineS:    'rgba(10,46,26,0.08)',
+  lineS:    'rgba(10,26,46,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const BEBAS = "'Bebas Neue', sans-serif";
@@ -86,7 +86,7 @@ const annotationPlugin: Plugin<'line'> = {
     const vLines = [
       { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#DC143C' },
       { year:'2025', lineColor:'rgba(255,0,0,0.38)',    label:'2025 unrest  −26%', labelColor:C.terra   },
-      { year:'2026', lineColor:'rgba(31,138,77,0.50)', label:'New era  +41%',      labelColor:C.saffron },
+      { year:'2026', lineColor:'rgba(31,77,138,0.50)', label:'New era  +41%',      labelColor:C.saffron },
     ];
     ctx.font=`600 9.5px ${MONO}`;
     for (const vl of vLines) {
@@ -97,7 +97,7 @@ const annotationPlugin: Plugin<'line'> = {
       const tw=ctx.measureText(vl.label).width;
       const pad=4, lx=x+6, ly=a.top+20;
       // pill bg — use ink for contrast on light chart
-      ctx.fillStyle='rgba(10,46,26,0.82)';
+      ctx.fillStyle='rgba(10,26,46,0.82)';
       ctx.beginPath(); ctx.roundRect(lx-pad,ly-9,tw+pad*2,16,3); ctx.fill();
       ctx.fillStyle=vl.labelColor; ctx.textAlign='left';
       ctx.fillText(vl.label,lx,ly);
@@ -174,8 +174,8 @@ function TourismChart() {
               if(!chartArea) return 'transparent';
               const g=(c as CanvasRenderingContext2D).createLinearGradient(
                 0,(chartArea as ChartArea).top,0,(chartArea as ChartArea).bottom);
-              g.addColorStop(0,'rgba(31,138,77,0.12)');
-              g.addColorStop(1,'rgba(31,138,77,0.01)');
+              g.addColorStop(0,'rgba(31,77,138,0.12)');
+              g.addColorStop(1,'rgba(31,77,138,0.01)');
               return g;
             },
             pointBackgroundColor:ptBg,
@@ -196,7 +196,7 @@ function TourismChart() {
               backgroundColor:C.ink2,
               titleColor:C.cream2,
               bodyColor:'rgba(234,247,238,0.55)',
-              borderColor:'rgba(10,46,26,0.15)',
+              borderColor:'rgba(10,26,46,0.15)',
               borderWidth:1, padding:12,
               titleFont:{family:BEBAS,size:15,weight:'normal'} as never,
               bodyFont: {family:MUKTA, size:12} as never,
@@ -211,7 +211,7 @@ function TourismChart() {
             },
             y:{
               min:0,max:1350,
-              grid:{color:'rgba(10,46,26,0.07)',lineWidth:0.5},
+              grid:{color:'rgba(10,26,46,0.07)',lineWidth:0.5},
               border:{display:false},
               ticks:{
                 color:C.inkFaint,font:{size:11},

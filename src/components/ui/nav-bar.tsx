@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const INK     = '#0a2e1a';
-const CREAM   = '#eaf7ee';
-const SAFFRON = '#1f8a4d';
+const INK     = '#0a1a2e';
+const CREAM   = '#eaeeff';
+const SAFFRON = '#1f4d8a';
 const TERRA   = '#DC143C';
 const MUKTA   = "'Mukta', system-ui, sans-serif";
 const MONO    = "'JetBrains Mono', ui-monospace, monospace";

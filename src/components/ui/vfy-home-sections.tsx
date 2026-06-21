@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom';
 
 /* ─── design tokens ─────────────────────────────────────────────────────── */
 const C = {
-  ink:         '#0a2e1a',
+  ink:         '#0a1a2e',
   ink2:        '#144428',
-  inkSoft:     '#3d7855',
+  inkSoft:     '#3d5578',
   inkFaint:    '#82b395',
-  cream:       '#eaf7ee',
-  cream2:      '#d8f3e2',
+  cream:       '#eaeeff',
+  cream2:      '#d8e3f3',
   paper:       '#fafdfa',
-  saffron:     '#1f8a4d',
-  saffronBright: '#2ec56b',
+  saffron:     '#1f4d8a',
+  saffronBright: '#2e6bc5',
   terra:       '#DC143C',
-  line:        'rgba(10,46,26,0.14)',
-  lineS:       'rgba(10,46,26,0.08)',
+  line:        'rgba(10,26,46,0.14)',
+  lineS:       'rgba(10,26,46,0.08)',
 };
 
 const SERIF  = "'Cormorant Garamond', Georgia, serif";
@@ -450,7 +450,7 @@ function ThreePillarsSection() {
 function PillarCard({ img, num, title, sub, delay }: { img: string; num: string; title: string; sub: string; delay: number }) {
   const ref = useReveal(delay);
   return (
-    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', aspectRatio: '3/4.2', background: '#0a2e1a', cursor: 'pointer', transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease' }}
+    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', aspectRatio: '3/4.2', background: '#0a1a2e', cursor: 'pointer', transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease' }}
       onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 24px 60px rgba(0,0,0,0.35)'; }}
       onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLElement).style.transform = 'none'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}
       className="vfy-pillar-card"
@@ -526,7 +526,7 @@ function ActivitiesSection() {
                 overflow: 'hidden',
                 borderRadius: '6px',
                 background: C.ink,
-                boxShadow: '0 8px 40px rgba(10,46,26,0.16)',
+                boxShadow: '0 8px 40px rgba(10,26,46,0.16)',
               }}>
                 <iframe
                   src={src}
@@ -650,7 +650,7 @@ function LogoBadge({ src, alt }: LogoItem) {
       width: '72px', height: '72px', borderRadius: '12px', flexShrink: 0,
       background: '#fff', border: `1px solid ${C.lineS}`,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      overflow: 'hidden', boxShadow: '0 1px 6px rgba(10,46,26,0.06)',
+      overflow: 'hidden', boxShadow: '0 1px 6px rgba(10,26,46,0.06)',
     }}>
       <img
         src={src} alt={alt} loading="lazy"
@@ -763,7 +763,7 @@ function CTASection() {
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         background: `radial-gradient(55% 70% at 85% 10%, rgba(220,20,60,0.06), transparent 60%),
-                     radial-gradient(45% 60% at 15% 90%, rgba(31,138,77,0.05), transparent 60%)`,
+                     radial-gradient(45% 60% at 15% 90%, rgba(31,77,138,0.05), transparent 60%)`,
       }} />
       {/* Decorative large number */}
       <div className="vfy-cta-watermark" style={{

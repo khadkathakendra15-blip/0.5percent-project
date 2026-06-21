@@ -4,9 +4,9 @@ import { Clock, User, Calendar, ArrowLeft } from 'lucide-react';
 import { getPostBySlug } from '@/data/blogPosts';
 
 const C = {
-  ink: '#0a2e1a', inkSoft: '#3d7855', inkFaint: '#82b395',
-  cream: '#eaf7ee', cream2: '#d8f3e2', paper: '#fafdfa',
-  terra: '#DC143C', lineS: 'rgba(10,46,26,0.08)',
+  ink: '#0a1a2e', inkSoft: '#3d5578', inkFaint: '#82b395',
+  cream: '#eaeeff', cream2: '#d8e3f3', paper: '#fafdfa',
+  terra: '#DC143C', lineS: 'rgba(10,26,46,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const MUKTA = "'Mukta', system-ui, sans-serif";
@@ -63,7 +63,7 @@ export default function BlogPostPage() {
         {/* subtle color glows */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: 'radial-gradient(60% 60% at 80% 20%, rgba(255,0,0,0.14), transparent 60%), radial-gradient(40% 60% at 10% 90%, rgba(31,138,77,0.14), transparent 60%)',
+          background: 'radial-gradient(60% 60% at 80% 20%, rgba(255,0,0,0.14), transparent 60%), radial-gradient(40% 60% at 10% 90%, rgba(31,77,138,0.14), transparent 60%)',
         }} />
         <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', padding: '64px 40px 96px' }}>
           {/* Back link */}
