@@ -4,14 +4,14 @@ import { NavBar } from '@/components/ui/nav-bar';
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const C = {
-  cream:    '#eaeeff',
+  cream:    '#eaf0f8',
   paper:    '#fafdfa',
-  paper2:   '#d8e3f3',
+  paper2:   '#dce8f5',
   ink:      '#0a1a2e',
   inkSoft:  '#3d5578',
   inkFaint: '#82b395',
   terra:    '#DC143C',
-  saffron:  '#1f4d8a',
+  saffron:  '#7599cb',
   line:     'rgba(10,26,46,0.10)',
   lineSoft: 'rgba(10,26,46,0.06)',
 };

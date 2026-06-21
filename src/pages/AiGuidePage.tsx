@@ -4,13 +4,13 @@ import { NavBar } from '@/components/ui/nav-bar';
 // ─── VFY Design tokens (exact match to v2 design) ─────────────────────────
 const VFY = {
   paper:      '#fafdfa',
-  cream:      '#eaeeff',
-  card:       '#d8e3f3',
+  cream:      '#eaf0f8',
+  card:       '#dce8f5',
   ink:        '#0a1a2e',
-  gold:       '#1f4d8a',
+  gold:       '#7599cb',
   goldFaint:  'rgba(138,78,18,0.09)',
   goldBorder: 'rgba(138,78,18,0.22)',
-  saffron:    '#1f4d8a',
+  saffron:    '#7599cb',
   saffronF:   'rgba(31,77,138,0.08)',
   terra:      '#DC143C',
   orange:     '#DC143C',
@@ -92,8 +92,8 @@ const DESTINATIONS = [
 const WIZARD_STEPS = [
   { id:'interest', question:'What calls you to Nepal?', sub:'Choose the experience that speaks to your soul.',
     options:[
-      { value:'adventure', label:'Adventure & Trekking', icon:'⛰', accent:'#1f4d8a' },
-      { value:'spiritual',  label:'Spiritual Journey',   icon:'🪷', accent:'#1f4d8a' },
+      { value:'adventure', label:'Adventure & Trekking', icon:'⛰', accent:'#7599cb' },
+      { value:'spiritual',  label:'Spiritual Journey',   icon:'🪷', accent:'#7599cb' },
       { value:'culture',    label:'Cultural Immersion',  icon:'🎭', accent:'#DC143C' },
       { value:'nature',     label:'Nature & Wildlife',   icon:'🌿', accent:'#144428' },
     ] },
@@ -287,7 +287,7 @@ function MessageBubble({ msg }: { msg: Msg }) {
         <div style={{ fontFamily:VFY.sans, fontSize:'14px', lineHeight:1.75, whiteSpace:'pre-wrap', color: isAI ? VFY.text : VFY.cream }}>
           {msg.text.split(/(\*\*.*?\*\*)/g).map((p, i) =>
             p.startsWith('**') && p.endsWith('**')
-              ? <strong key={i} style={{ color: isAI ? VFY.gold : '#d8e3f3', fontWeight:600 }}>{p.slice(2,-2)}</strong>
+              ? <strong key={i} style={{ color: isAI ? VFY.gold : '#dce8f5', fontWeight:600 }}>{p.slice(2,-2)}</strong>
               : p
           )}
         </div>
@@ -387,7 +387,7 @@ function MiniChatWidget({ onOpen }: { onOpen: ()=>void }) {
           <div>
             <div style={{ fontFamily:VFY.serif, fontSize:'15px', fontWeight:500, color:VFY.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', color:VFY.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2e6bc5', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#7599cb', display:'inline-block' }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -870,7 +870,7 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
             <div>
               <div style={{ fontFamily:VFY.serif, fontSize:'16px', fontWeight:500, color:VFY.text, lineHeight:1.1 }}>Guide AI</div>
               <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', color:VFY.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-                <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2e6bc5', display:'inline-block' }}/>
+                <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#7599cb', display:'inline-block' }}/>
                 Online · Nepal expert
               </div>
             </div>

@@ -7,10 +7,10 @@ const C = {
   ink2:     '#144428',
   inkSoft:  '#3d5578',
   inkFaint: '#82b395',
-  cream:    '#eaeeff',
-  cream2:   '#d8e3f3',
+  cream:    '#eaf0f8',
+  cream2:   '#dce8f5',
   paper:    '#fafdfa',
-  saffron:  '#1f4d8a',
+  saffron:  '#7599cb',
   terra:    '#DC143C',
   lineS:    'rgba(10,26,46,0.08)',
 };

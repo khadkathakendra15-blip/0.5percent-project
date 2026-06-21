@@ -42,7 +42,7 @@ function PageLoader() {
       <div style={{ textAlign: 'center' }}>
         <div style={{
           width: '34px', height: '34px', margin: '0 auto 16px',
-          border: '2px solid rgba(10,26,46,0.10)', borderTopColor: '#1f4d8a',
+          border: '2px solid rgba(10,26,46,0.10)', borderTopColor: '#7599cb',
           borderRadius: '50%', animation: 'vfy-spin 0.8s linear infinite',
         }} />
         <div style={{

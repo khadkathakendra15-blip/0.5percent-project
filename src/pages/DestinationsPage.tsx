@@ -266,8 +266,8 @@ const BEST_REASONS = [
 /* ── Brand tokens (kept as JS constants so every inline override is consistent) ── */
 const B = {
   ink:     '#0a1a2e', ink2: '#142444', inkSoft: '#3d5578', inkFaint: '#8295b3',
-  cream:   '#eaeeff', cream2: '#d8e3f3', paper: '#fafafd',
-  saffron: '#1f4d8a', terra: '#DC143C', blue: '#1f4d8a',
+  cream:   '#eaf0f8', cream2: '#dce8f5', paper: '#fafafd',
+  saffron: '#7599cb', terra: '#DC143C', blue: '#7599cb',
   lineS:   'rgba(10,26,46,0.08)', lineW: 'rgba(234,238,255,0.08)',
 }
 const F = {

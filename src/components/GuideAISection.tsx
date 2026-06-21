@@ -7,17 +7,17 @@ import { motion } from 'framer-motion';
 // ─── Brand tokens ──────────────────────────────────────────────────────────
 const G = {
   bg:         '#fafdfa',
-  surface:    '#eaeeff',
-  card:       '#d8e3f3',
+  surface:    '#eaf0f8',
+  card:       '#dce8f5',
   border:     'rgba(10,26,46,0.10)',
   borderHover:'rgba(10,26,46,0.26)',
-  gold:       '#1f4d8a',
+  gold:       '#7599cb',
   goldFaint:  'rgba(138,78,18,0.09)',
   text:       '#0a1a2e',
   textMuted:  '#144428',
   textFaint:  '#3d5578',
   ink:        '#0a1a2e',
-  cream:      '#eaeeff',
+  cream:      '#eaf0f8',
   serif:  "'Cormorant Garamond', Georgia, serif",
   sans:   "'Mukta', system-ui, sans-serif",
   mono:   "'JetBrains Mono', ui-monospace, monospace",
@@ -163,7 +163,7 @@ function Bubble({ msg }: { msg: { role:string; text:string; ts:number } }) {
         <div style={{ fontFamily:G.sans, fontSize:'13px', lineHeight:1.75, whiteSpace:'pre-wrap', color: isAI ? G.text : G.cream }}>
           {msg.text.split(/(\*\*.*?\*\*)/g).map((p, i) =>
             p.startsWith('**') && p.endsWith('**')
-              ? <strong key={i} style={{ color: isAI ? G.gold : '#d8e3f3', fontWeight:600 }}>{p.slice(2,-2)}</strong>
+              ? <strong key={i} style={{ color: isAI ? G.gold : '#dce8f5', fontWeight:600 }}>{p.slice(2,-2)}</strong>
               : p
           )}
         </div>
@@ -274,7 +274,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           <div>
             <div style={{ fontFamily:G.serif, fontSize:'15px', fontWeight:500, color:G.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:G.mono, fontSize:'8px', letterSpacing:'0.08em', color:G.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2e6bc5', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#7599cb', display:'inline-block' }}/>
               Online · Nepal travel expert
             </div>
           </div>
@@ -344,7 +344,7 @@ export function GuideAISection() {
           50%       { opacity: 1;    transform: scale(1); }
         }
         .guide-ai-dest-chip:hover {
-          border-color: #1f4d8a !important;
+          border-color: #7599cb !important;
           background: rgba(138,78,18,0.08) !important;
           transform: translateY(-2px);
         }

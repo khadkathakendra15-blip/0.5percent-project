@@ -7,13 +7,13 @@ import { useLocation } from 'react-router-dom';
 const W = {
   // widget window — brand light theme (cream/ink palette)
   bg:      '#fafdfa',                      // paper
-  surface: '#eaeeff',                      // cream
-  card:    '#d8e3f3',                      // card
+  surface: '#eaf0f8',                      // cream
+  card:    '#dce8f5',                      // card
   border:  'rgba(10,26,46,0.10)',
   borderH: 'rgba(31,77,138,0.40)',        // saffron focus ring
 
-  // accent (saffron #1f4d8a replaces gold)
-  gold:    '#1f4d8a',
+  // accent (saffron #7599cb replaces gold)
+  gold:    '#7599cb',
   goldD:   '#0e995a',
   goldF:   'rgba(31,77,138,0.10)',
 
@@ -23,7 +23,7 @@ const W = {
   faint:   '#82b395',
 
   // user bubble — saffron bg, white text
-  userBg:  '#1f4d8a',
+  userBg:  '#7599cb',
   userTxt: '#ffffff',
 
   serif: "'Cormorant Garamond', Georgia, serif",
@@ -270,7 +270,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
           <div>
             <div style={{ fontFamily:W.sans, fontSize:'14px', fontWeight:600, color:W.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:W.mono, fontSize:'8px', letterSpacing:'0.08em', color:W.gold, display:'flex', alignItems:'center', gap:'4px', marginTop:'2px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#2e6bc5', display:'inline-block', flexShrink:0 }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#7599cb', display:'inline-block', flexShrink:0 }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -342,7 +342,7 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
       )}
       {/* Unread dot */}
       {hasUnread && !open && (
-        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#2e6bc5', border:'2px solid #0a1a2e' }} />
+        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#7599cb', border:'2px solid #0a1a2e' }} />
       )}
     </button>
   );

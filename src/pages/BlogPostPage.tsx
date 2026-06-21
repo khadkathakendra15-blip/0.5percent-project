@@ -5,7 +5,7 @@ import { getPostBySlug } from '@/data/blogPosts';
 
 const C = {
   ink: '#0a1a2e', inkSoft: '#3d5578', inkFaint: '#82b395',
-  cream: '#eaeeff', cream2: '#d8e3f3', paper: '#fafdfa',
+  cream: '#eaf0f8', cream2: '#dce8f5', paper: '#fafdfa',
   terra: '#DC143C', lineS: 'rgba(10,26,46,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";

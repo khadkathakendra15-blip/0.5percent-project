@@ -52,18 +52,18 @@
   /* ink    #0a1a2e */ --card-foreground:     oklch(0.215 0.055 240);
   /* paper  #fafafd */ --popover:             oklch(0.987 0.005 240);
   /* ink    #0a1a2e */ --popover-foreground:  oklch(0.215 0.055 240);
-  /* cobalt #1f4d8a */ --primary:             oklch(0.541 0.150 248);
-  /* ice    #eaeeff */ --primary-foreground:  oklch(0.965 0.018 240);
-  /* ice2   #d8e3f3 */ --secondary:           oklch(0.929 0.034 240);
+  /* #7599cb        */ --primary:             oklch(0.648 0.085 245);
+  /* ice    #eaf0fa */ --primary-foreground:  oklch(0.970 0.015 245);
+  /* ice2   #dce8f5 */ --secondary:           oklch(0.935 0.028 245);
   /* ink    #0a1a2e */ --secondary-foreground:oklch(0.215 0.055 240);
-  /* ice2   #d8e3f3 */ --muted:               oklch(0.929 0.034 240);
-  /* inkSft #3d5578 */ --muted-foreground:    oklch(0.484 0.062 240);
-  /* ice    #eaeeff */ --accent:              oklch(0.965 0.018 240);
+  /* ice2   #dce8f5 */ --muted:               oklch(0.935 0.028 245);
+  /* inkSft #3d5578 */ --muted-foreground:    oklch(0.484 0.055 245);
+  /* ice    #eaf0fa */ --accent:              oklch(0.970 0.015 245);
   /* ink    #0a1a2e */ --accent-foreground:   oklch(0.215 0.055 240);
   /* terra  #DC143C */ --destructive:         oklch(0.555 0.225 25);
-  /* lineS blue     */ --border:              oklch(0.920 0.018 240);
-  /* lineS blue     */ --input:               oklch(0.920 0.018 240);
-  /* cobalt         */ --ring:                oklch(0.541 0.150 248);
+  /* lineS         */ --border:              oklch(0.920 0.018 245);
+  /* lineS         */ --input:               oklch(0.920 0.018 245);
+  /* #7599cb        */ --ring:                oklch(0.648 0.085 245);
   --brand: oklch(0.521 0.179 248.86);
   --brand-foreground: oklch(0.985 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -854,7 +854,7 @@ body {
 
 /* Keyboard focus rings — visible only for keyboard users */
 :focus-visible {
-  outline: 2px solid #1f4d8a;
+  outline: 2px solid #7599cb;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -868,12 +868,12 @@ body {
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #d8e3f3;
+  background: #dce8f5;
 }
 ::-webkit-scrollbar-thumb {
   background: #8fa7b5;
   border-radius: 6px;
-  border: 2px solid #d8e3f3;
+  border: 2px solid #dce8f5;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #8295b3;

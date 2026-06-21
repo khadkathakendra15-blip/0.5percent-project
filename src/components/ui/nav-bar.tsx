@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const INK     = '#0a1a2e';
-const CREAM   = '#eaeeff';
-const SAFFRON = '#1f4d8a';
+const CREAM   = '#eaf0f8';
+const SAFFRON = '#7599cb';
 const TERRA   = '#DC143C';
 const MUKTA   = "'Mukta', system-ui, sans-serif";
 const MONO    = "'JetBrains Mono', ui-monospace, monospace";

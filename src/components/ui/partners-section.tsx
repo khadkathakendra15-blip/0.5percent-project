@@ -2,20 +2,20 @@
 const ROW1 = [
   { name: "Nepal Airlines",  logo: "/logo/Nepal Airlines.jpg",        color: "#DC143C", bg: "#fdf2f4" },
   { name: "Buddha Air",      logo: "/logo/Budhha Air.jpg",            color: "#DC143C", bg: "#fdf4f7" },
-  { name: "Yeti Airlines",   logo: "/logo/Yeti Airlines.jpg",         color: "#1f4d8a", bg: "#eaeeff" },
-  { name: "The Soaltee",     logo: "/logo/The Soaltee.jpg",           color: "#0a4a25", bg: "#eaeeff" },
-  { name: "CG Hospitality",  logo: "/logo/Cg Hospitality.jpg",        color: "#1f4d8a", bg: "#eaeeff" },
+  { name: "Yeti Airlines",   logo: "/logo/Yeti Airlines.jpg",         color: "#7599cb", bg: "#eaf0f8" },
+  { name: "The Soaltee",     logo: "/logo/The Soaltee.jpg",           color: "#0a4a25", bg: "#eaf0f8" },
+  { name: "CG Hospitality",  logo: "/logo/Cg Hospitality.jpg",        color: "#7599cb", bg: "#eaf0f8" },
   { name: "Kantipur Media",  logo: "/logo/KMG.jpg",                   color: "#DC143C", bg: "#fdf2f4" },
-  { name: "Onlinekhabar",    logo: "/logo/Online Khaber.jpg",         color: "#1f4d8a", bg: "#eaeeff" },
+  { name: "Onlinekhabar",    logo: "/logo/Online Khaber.jpg",         color: "#7599cb", bg: "#eaf0f8" },
 ];
 
 const ROW2 = [
-  { name: "Nepal Tourism Board",  logo: "/logo/Nepal Tourism Board.jpg",    color: "#0a4a25", bg: "#eaeeff" },
-  { name: "Hotel Assoc. Nepal",   logo: "/logo/Hotel Association nepal.jpg", color: "#1f4d8a", bg: "#eaeeff" },
-  { name: "CG Corp Global",       logo: "/logo/Cg Corp Global.jpg",          color: "#1f4d8a", bg: "#eaeeff" },
+  { name: "Nepal Tourism Board",  logo: "/logo/Nepal Tourism Board.jpg",    color: "#0a4a25", bg: "#eaf0f8" },
+  { name: "Hotel Assoc. Nepal",   logo: "/logo/Hotel Association nepal.jpg", color: "#7599cb", bg: "#eaf0f8" },
+  { name: "CG Corp Global",       logo: "/logo/Cg Corp Global.jpg",          color: "#7599cb", bg: "#eaf0f8" },
   { name: "Buddha Air",           logo: "/logo/Budhha Air.jpg",              color: "#DC143C", bg: "#fdf4f7" },
   { name: "Nepal Airlines",       logo: "/logo/Nepal Airlines.jpg",          color: "#DC143C", bg: "#fdf2f4" },
-  { name: "Yeti Airlines",        logo: "/logo/Yeti Airlines.jpg",           color: "#1f4d8a", bg: "#eaeeff" },
+  { name: "Yeti Airlines",        logo: "/logo/Yeti Airlines.jpg",           color: "#7599cb", bg: "#eaf0f8" },
   { name: "Kantipur Media Group", logo: "/logo/KMG.jpg",                     color: "#DC143C", bg: "#fdf2f4" },
 ];
 

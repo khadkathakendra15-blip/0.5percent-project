@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 const C = {
   ink: '#0a1a2e', ink2: '#144428', inkSoft: '#3d5578', inkFaint: '#82b395',
-  cream: '#eaeeff', cream2: '#d8e3f3', paper: '#fafdfa',
-  saffron: '#1f4d8a', terra: '#DC143C', lineS: 'rgba(10,26,46,0.08)',
+  cream: '#eaf0f8', cream2: '#dce8f5', paper: '#fafdfa',
+  saffron: '#7599cb', terra: '#DC143C', lineS: 'rgba(10,26,46,0.08)',
 };
 const SERIF = "'Cormorant Garamond', Georgia, serif";
 const MUKTA = "'Mukta', system-ui, sans-serif";
