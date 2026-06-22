@@ -936,6 +936,26 @@ export function SiteFooter() {
           From the peaks that touch the sky to the temples that touch the soul.
         </span>
       </div>
+
+      {/* developer credit */}
+      <div style={{
+        borderTop: '1px solid rgba(243,243,240,0.06)',
+        padding: '18px 40px', textAlign: 'center',
+      }}>
+        <span style={{ fontFamily: MONO, fontSize: '10.5px', letterSpacing: '0.12em', color: 'rgba(243,243,240,0.38)' }}>
+          Developed &amp; designed by{' '}
+          <a
+            href="https://thakendra.cloud"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#C9FF3D', textDecoration: 'none', fontWeight: 700, transition: 'opacity .2s' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.7'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
+          >
+            Thakendra Khadka &amp; his team
+          </a>
+        </span>
+      </div>
     </footer>
   );
 }
