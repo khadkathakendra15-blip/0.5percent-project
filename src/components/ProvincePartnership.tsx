@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
-const MUKTA = "'Mukta', system-ui, sans-serif";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
 
 const P = {
   koshi:         "/koshi province.jpg",
@@ -29,13 +29,13 @@ interface Province {
 }
 
 const provinces: Province[] = [
-  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#BE1538", darkColor: "#0a1a4a", photo: P.koshi },
-  { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#BE1538", darkColor: "#4d0814", photo: P.madhesh },
-  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#BE1538", darkColor: "#0d1f4a", photo: P.bagmati },
-  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#BE1538", darkColor: "#0c1a4a", photo: P.gandaki },
-  { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#b8324a", darkColor: "#3a0c18", photo: P.lumbini },
-  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#8aaed6", darkColor: "#1a2a44", photo: P.karnali },
-  { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#f04860", darkColor: "#4a0e1c", photo: P.sudurpashchim },
+  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#C9FF3D", darkColor: "#15171E", photo: P.koshi },
+  { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#C9FF3D", darkColor: "#15171E", photo: P.madhesh },
+  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#C9FF3D", darkColor: "#15171E", photo: P.bagmati },
+  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#C9FF3D", darkColor: "#15171E", photo: P.gandaki },
+  { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#C9FF3D", darkColor: "#15171E", photo: P.lumbini },
+  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#C9FF3D", darkColor: "#15171E", photo: P.karnali },
+  { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#C9FF3D", darkColor: "#15171E", photo: P.sudurpashchim },
 ];
 
 export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?: number }) {
@@ -186,7 +186,7 @@ export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?:
             <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase', color: prov.color, marginBottom: '5px' }}>
               {prov.nameNepali}
             </div>
-            <div style={{ fontFamily: SERIF, fontSize: '26px', fontWeight: 300, color: '#fff', lineHeight: 1, marginBottom: '4px' }}>
+            <div style={{ fontFamily: SERIF, fontSize: '26px', fontWeight: 400, color: '#fff', lineHeight: 1, marginBottom: '4px' }}>
               {prov.name}
             </div>
             <div style={{ fontFamily: MUKTA, fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>

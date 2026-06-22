@@ -265,16 +265,16 @@ const BEST_REASONS = [
 
 /* ── Brand tokens (kept as JS constants so every inline override is consistent) ── */
 const B = {
-  ink:     '#1A130C', ink2: '#0C1A32', inkSoft: '#52473E', inkFaint: '#A89A86',
-  cream:   '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
-  saffron: '#BE1538', terra: '#BE1538', blue: '#BE1538',
-  lineS:   'rgba(26,19,12,0.08)', lineW: 'rgba(234,238,255,0.08)',
+  ink:     '#F3F3F0', ink2: '#0A0B0F', inkSoft: '#9498A4', inkFaint: '#5C606C',
+  cream:   '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
+  saffron: '#C9FF3D', terra: '#C9FF3D', blue: '#C9FF3D',
+  lineS:   'rgba(255,255,255,0.08)', lineW: 'rgba(234,238,255,0.08)',
 }
 const F = {
-  serif: "'Cormorant Garamond', Georgia, serif",
-  bebas: "'Bebas Neue', sans-serif",
-  mukta: "'Mukta', system-ui, sans-serif",
-  mono:  "'JetBrains Mono', ui-monospace, monospace",
+  serif: "'Bricolage Grotesque', Georgia, serif",
+  bebas: "'Bricolage Grotesque', sans-serif",
+  mukta: "'Space Grotesk', system-ui, sans-serif",
+  mono:  "'Space Mono', ui-monospace, monospace",
 }
 
 /* Tiny re-usable label pill matching the rest of the site */
@@ -299,11 +299,11 @@ function ExploreNepal() {
             <Mountain size={13} color={B.cream} strokeWidth={2.2} />
             <span style={{ fontFamily: F.mono, fontSize: '10px', letterSpacing: '0.30em', textTransform: 'uppercase', color: B.cream }}>Explore Nepal</span>
           </div>
-          <h1 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(52px,8vw,112px)', lineHeight: 0.9, letterSpacing: '-0.02em', color: B.cream, marginBottom: '24px', filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.55))' }}>
+          <h1 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(52px,8vw,112px)', lineHeight: 0.9, letterSpacing: '-0.02em', color: B.cream, marginBottom: '24px', filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.55))' }}>
             Three worlds.<br />
-            <em style={{ fontStyle: 'italic', color: 'rgba(246,240,230,0.7)' }}>One kingdom.</em>
+            <em style={{ fontStyle: 'italic', color: 'rgba(243,243,240,0.7)' }}>One kingdom.</em>
           </h1>
-          <p style={{ fontFamily: F.mukta, fontSize: 'clamp(14px,1.8vw,18px)', lineHeight: 1.85, fontWeight: 300, color: 'rgba(246,240,230,0.65)', maxWidth: '52ch', margin: '0 auto', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))' }}>
+          <p style={{ fontFamily: F.mukta, fontSize: 'clamp(14px,1.8vw,18px)', lineHeight: 1.85, fontWeight: 400, color: 'rgba(243,243,240,0.65)', maxWidth: '52ch', margin: '0 auto', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))' }}>
             Spanning 60 metres at its lowest to 8,848 metres at its peak, Nepal packs more geographic and cultural diversity into 147,516 km² than almost any nation on Earth.
           </p>
         </motion.div>
@@ -336,7 +336,7 @@ function ExploreNepal() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             style={{ maxWidth: '680px', margin: '0 auto 64px', textAlign: 'center' }}>
             <SectionPill color={B.inkFaint}>Global Recognition</SectionPill>
-            <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,64px)', lineHeight: 1, color: B.ink, marginBottom: '18px' }}>
+            <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(34px,4vw,64px)', lineHeight: 1, color: B.ink, marginBottom: '18px' }}>
               Nepal: A Global<br /><em style={{ fontStyle: 'italic', color: B.inkSoft }}>Peace Destination</em>
             </h2>
             <p style={{ fontFamily: F.mukta, fontSize: '16px', lineHeight: 1.85, color: B.inkSoft }}>
@@ -362,7 +362,7 @@ function ExploreNepal() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             style={{ maxWidth: '680px', margin: '0 auto 64px', textAlign: 'center' }}>
             <SectionPill color={B.inkFaint}>Natural Climate</SectionPill>
-            <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,64px)', lineHeight: 1, color: B.ink, marginBottom: '18px' }}>
+            <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(34px,4vw,64px)', lineHeight: 1, color: B.ink, marginBottom: '18px' }}>
               Nepal: The World's<br /><em style={{ fontStyle: 'italic', color: B.inkSoft }}>Natural AC</em>
             </h2>
             <p style={{ fontFamily: F.mukta, fontSize: '16px', lineHeight: 1.85, color: B.inkSoft }}>
@@ -386,7 +386,7 @@ function ExploreNepal() {
         <div className="container mx-auto px-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} style={{ marginBottom: '52px' }}>
             <SectionPill color={B.inkFaint}>Geographic zones</SectionPill>
-            <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,60px)', color: B.ink, lineHeight: 1 }}>From jungle to glacier</h2>
+            <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(34px,4vw,60px)', color: B.ink, lineHeight: 1 }}>From jungle to glacier</h2>
           </motion.div>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid gap-5 md:grid-cols-3">
             {ZONES.map((zone, i) => (
@@ -411,7 +411,7 @@ function ExploreNepal() {
             style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px' }}>
             <div>
               <SectionPill color={B.inkFaint}>Must-visit</SectionPill>
-              <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,60px)', color: B.ink, lineHeight: 1 }}>Nine defining destinations</h2>
+              <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(34px,4vw,60px)', color: B.ink, lineHeight: 1 }}>Nine defining destinations</h2>
             </div>
             <span style={{ fontFamily: F.mono, fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: B.inkFaint }}>NTB · recommended</span>
           </motion.div>
@@ -423,9 +423,9 @@ function ExploreNepal() {
                   <img src={dest.image} alt={dest.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,7,4,0.72) 0%, transparent 55%)' }} />
                   <div style={{ position: 'absolute', bottom: '14px', left: '16px', right: '16px' }}>
-                    <div style={{ fontFamily: F.mono, fontSize: '9px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.5)', marginBottom: '3px' }}>{dest.province}</div>
-                    <h3 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: '26px', color: B.cream, lineHeight: 1 }}>{dest.name}</h3>
-                    <div style={{ fontFamily: F.mukta, fontSize: '12px', color: 'rgba(246,240,230,0.6)' }}>{dest.title}</div>
+                    <div style={{ fontFamily: F.mono, fontSize: '9px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(243,243,240,0.5)', marginBottom: '3px' }}>{dest.province}</div>
+                    <h3 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: '26px', color: B.cream, lineHeight: 1 }}>{dest.name}</h3>
+                    <div style={{ fontFamily: F.mukta, fontSize: '12px', color: 'rgba(243,243,240,0.6)' }}>{dest.title}</div>
                   </div>
                 </div>
                 <div style={{ background: B.paper, padding: '18px 20px 20px' }}>
@@ -448,7 +448,7 @@ function ExploreNepal() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             style={{ maxWidth: '600px', margin: '0 auto 60px', textAlign: 'center' }}>
             <SectionPill color={B.inkFaint}>Eight-thousanders</SectionPill>
-            <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,62px)', color: B.ink, lineHeight: 1, marginBottom: '16px' }}>
+            <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(34px,4vw,62px)', color: B.ink, lineHeight: 1, marginBottom: '16px' }}>
               Eight summits above <em style={{ color: B.inkSoft, fontStyle: 'italic' }}>8,000 m</em>.
             </h2>
             <p style={{ fontFamily: F.mukta, fontSize: '15px', lineHeight: 1.85, color: B.inkSoft }}>
@@ -474,7 +474,7 @@ function ExploreNepal() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             style={{ maxWidth: '680px', margin: '0 auto 64px', textAlign: 'center' }}>
             <SectionPill color={B.inkFaint}>The case for Nepal</SectionPill>
-            <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(34px,4vw,64px)', color: B.ink, lineHeight: 1, marginBottom: '18px' }}>
+            <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(34px,4vw,64px)', color: B.ink, lineHeight: 1, marginBottom: '18px' }}>
               Why Nepal is the<br /><em style={{ fontStyle: 'italic', color: B.inkSoft }}>best place on Earth</em>
             </h2>
             <p style={{ fontFamily: F.mukta, fontSize: '16px', lineHeight: 1.85, color: B.inkSoft }}>
@@ -486,7 +486,7 @@ function ExploreNepal() {
             {BEST_REASONS.map((r, i) => (
               <motion.div key={i} variants={itemFadeIn} whileHover={{ background: B.paper }}
                 style={{ background: B.cream2, padding: '34px 28px', transition: 'background .25s' }}>
-                <div style={{ fontFamily: F.bebas, fontSize: '40px', color: 'rgba(26,19,12,0.12)', lineHeight: 1, marginBottom: '10px' }}>{r.n}</div>
+                <div style={{ fontFamily: F.bebas, fontSize: '40px', color: 'rgba(255,255,255,0.12)', lineHeight: 1, marginBottom: '10px' }}>{r.n}</div>
                 <h3 style={{ fontFamily: F.serif, fontWeight: 500, fontSize: '22px', color: B.ink, marginBottom: '10px' }}>{r.title}</h3>
                 <p style={{ fontFamily: F.mukta, fontSize: '14px', lineHeight: 1.8, color: B.inkSoft }}>{r.desc}</p>
               </motion.div>
@@ -500,7 +500,7 @@ function ExploreNepal() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
           style={{ maxWidth: '640px', margin: '0 auto' }}>
           <Compass size={36} color={B.inkFaint} strokeWidth={1.3} style={{ margin: '0 auto 20px', display: 'block' }} />
-          <h2 style={{ fontFamily: F.serif, fontWeight: 300, fontSize: 'clamp(30px,4vw,54px)', color: B.ink, marginBottom: '14px', lineHeight: 1.05 }}>
+          <h2 style={{ fontFamily: F.serif, fontWeight: 400, fontSize: 'clamp(30px,4vw,54px)', color: B.ink, marginBottom: '14px', lineHeight: 1.05 }}>
             Ready to experience Nepal?
           </h2>
           <p style={{ fontFamily: F.mukta, fontSize: '16px', color: B.inkSoft, marginBottom: '34px', lineHeight: 1.75 }}>

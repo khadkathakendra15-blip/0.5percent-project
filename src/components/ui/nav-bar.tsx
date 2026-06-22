@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const INK     = '#1A130C';
-const CREAM   = '#F6F0E6';
-const SAFFRON = '#BE1538';
-const TERRA   = '#BE1538';
-const GOLD    = '#C9A227';
-const MUKTA   = "'Mukta', system-ui, sans-serif";
-const MONO    = "'JetBrains Mono', ui-monospace, monospace";
+const INK     = '#0A0B0F';
+const CREAM   = '#F3F3F0';
+const SAFFRON = '#C9FF3D';
+const TERRA   = '#C9FF3D';
+const GOLD    = '#C9FF3D';
+const MUKTA   = "'Space Grotesk', system-ui, sans-serif";
+const MONO    = "'Space Mono', ui-monospace, monospace";
 
 const LINKS = [
   { label: 'Destinations', to: '/destinations' },
@@ -39,9 +39,9 @@ export function NavBar() {
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         height: '64px', display: 'flex', alignItems: 'center',
-        background: solid ? '#0C1A32' : 'rgba(10,7,4,0.35)',
+        background: solid ? '#0A0B0F' : 'rgba(10,7,4,0.35)',
         backdropFilter: solid ? 'none' : 'blur(8px)',
-        borderBottom: solid ? '1px solid rgba(246,240,230,0.08)' : 'none',
+        borderBottom: solid ? '1px solid rgba(243,243,240,0.08)' : 'none',
         transition: 'background .35s ease, border-color .35s ease',
       }}>
         <div style={{
@@ -83,8 +83,8 @@ export function NavBar() {
             <Link to="/booking" style={{ textDecoration: 'none' }}>
               <div style={{
                 fontFamily: MONO, fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase',
-                background: TERRA, color: CREAM, padding: '9px 20px', borderRadius: '2px',
-                cursor: 'pointer', whiteSpace: 'nowrap',
+                background: TERRA, color: INK, padding: '9px 20px', borderRadius: '100px',
+                fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap',
               }}>
                 Join the 0.5%
               </div>
@@ -107,7 +107,7 @@ export function NavBar() {
       {mobileOpen && (
         <div style={{
           position: 'fixed', top: '64px', left: 0, right: 0, zIndex: 199,
-          background: '#0C1A32', borderBottom: '1px solid rgba(246,240,230,0.1)',
+          background: '#0A0B0F', borderBottom: '1px solid rgba(243,243,240,0.1)',
           padding: '24px 28px 28px',
         }}>
           {LINKS.map(l => (
@@ -118,7 +118,7 @@ export function NavBar() {
                 display: 'block', textDecoration: 'none', fontFamily: MUKTA,
                 fontSize: '18px', letterSpacing: '0.02em',
                 color: pathname.startsWith(l.to) ? '#fff' : CREAM,
-                padding: '14px 0', borderBottom: '1px solid rgba(246,240,230,0.07)',
+                padding: '14px 0', borderBottom: '1px solid rgba(243,243,240,0.07)',
               }}
             >
               {l.label}
@@ -127,8 +127,8 @@ export function NavBar() {
           <Link to="/booking" onClick={() => setMobileOpen(false)} style={{ textDecoration: 'none' }}>
             <div style={{
               marginTop: '20px', fontFamily: MONO, fontSize: '11px', letterSpacing: '0.2em',
-              textTransform: 'uppercase', background: TERRA, color: CREAM,
-              padding: '13px 20px', borderRadius: '2px', textAlign: 'center',
+              textTransform: 'uppercase', background: TERRA, color: INK, fontWeight: 700,
+              padding: '13px 20px', borderRadius: '100px', textAlign: 'center',
             }}>
               Join the 0.5%
             </div>

@@ -2,22 +2,22 @@ import { useRef, useEffect, useState } from 'react';
 
 /* ─── tokens ─────────────────────────────────────────────────────────────── */
 const C = {
-  ink:      '#1A130C',
-  inkSoft:  '#52473E',
-  inkFaint: '#A89A86',
-  cream:    '#F6F0E6',
-  cream2:   '#E8DECC',
-  paper:    '#FDFAF4',
-  saffron:  '#BE1538',
-  saffronB: '#BE1538',
-  terra:    '#BE1538',
-  line:     'rgba(26,19,12,0.13)',
-  lineS:    'rgba(26,19,12,0.07)',
+  ink:      '#F3F3F0',
+  inkSoft:  '#9498A4',
+  inkFaint: '#5C606C',
+  cream:    '#0E0F14',
+  cream2:   '#15171E',
+  paper:    '#0A0B0F',
+  saffron:  '#C9FF3D',
+  saffronB: '#C9FF3D',
+  terra:    '#C9FF3D',
+  line:     'rgba(255,255,255,0.13)',
+  lineS:    'rgba(255,255,255,0.07)',
 };
-const SERIF = "'Cormorant Garamond', serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', sans-serif";
-const MONO  = "'JetBrains Mono', monospace";
+const SERIF = "'Bricolage Grotesque', serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', sans-serif";
+const MONO  = "'Space Mono', monospace";
 
 /* ─── country data ───────────────────────────────────────────────────────── */
 const COUNTRIES = [
@@ -40,7 +40,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${Math.round(v)}K`,
     revenueFmt:  (v: number) => `$${Math.round(v)}M`,
     gdpFmt:      (v: number) => `${v.toFixed(1)}%`,
-    color: '#BE1538', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#C9FF3D', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'KH', name: 'Cambodia', pop: '17M',
@@ -50,7 +50,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(1)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#BE1538', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#C9FF3D', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'LA', name: 'Laos', pop: '8M',
@@ -60,7 +60,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(0)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#BE1538', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#C9FF3D', bg: C.paper, highlight: false, note: '', badge: '',
   },
 ];
 
@@ -280,7 +280,7 @@ export function CountryComparisonSection() {
               Tourism benchmark
             </div>
             <h2 style={{
-              fontFamily: SERIF, fontWeight: 300,
+              fontFamily: SERIF, fontWeight: 700,
               fontSize: 'clamp(34px, 4vw, 58px)', lineHeight: 1.0,
               letterSpacing: '-0.015em', color: C.ink,
             }}>
@@ -289,7 +289,7 @@ export function CountryComparisonSection() {
             </h2>
           </div>
           <div ref={rRight} style={{ paddingBottom: '4px' }}>
-            <p style={{ fontSize: '14.5px', lineHeight: 1.75, color: C.inkSoft, maxWidth: '44ch', fontFamily: MUKTA, fontWeight: 300 }}>
+            <p style={{ fontSize: '14.5px', lineHeight: 1.75, color: C.inkSoft, maxWidth: '44ch', fontFamily: MUKTA, fontWeight: 400 }}>
               Countries far smaller than Nepal are unlocking extraordinary tourism potential. Nepal — with its Himalayas, spirituality and culture — has every advantage to lead.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '16px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: C.inkFaint }}>
@@ -323,7 +323,7 @@ export function CountryComparisonSection() {
               Key insight
             </div>
             <h3 style={{
-              fontFamily: SERIF, fontWeight: 300,
+              fontFamily: SERIF, fontWeight: 700,
               fontSize: 'clamp(18px, 2vw, 26px)', lineHeight: 1.25, color: C.cream,
             }}>
               Cambodia (17M people) gets{' '}
@@ -335,7 +335,7 @@ export function CountryComparisonSection() {
             <div style={{ fontFamily: BEBAS, fontSize: 'clamp(56px, 7vw, 96px)', lineHeight: 0.85, letterSpacing: '0.02em', color: C.saffronB }}>
               0.5%
             </div>
-            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.45)', marginTop: '6px' }}>
+            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(243,243,240,0.45)', marginTop: '6px' }}>
               Can close this gap
             </div>
           </div>

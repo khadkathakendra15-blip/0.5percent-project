@@ -6,29 +6,29 @@ import { useLocation } from 'react-router-dom';
 // ─── Tokens ────────────────────────────────────────────────────────────────
 const W = {
   // widget window — brand light theme (cream/ink palette)
-  bg:      '#FDFAF4',                      // paper
-  surface: '#F6F0E6',                      // cream
-  card:    '#E8DECC',                      // card
-  border:  'rgba(26,19,12,0.10)',
+  bg:      '#0A0B0F',                      // paper
+  surface: '#0E0F14',                      // cream
+  card:    '#15171E',                      // card
+  border:  'rgba(255,255,255,0.10)',
   borderH: 'rgba(12,26,50,0.40)',        // saffron focus ring
 
-  // accent (saffron #BE1538 replaces gold)
-  gold:    '#BE1538',
-  goldD:   '#BE1538',
+  // accent (saffron #C9FF3D replaces gold)
+  gold:    '#C9FF3D',
+  goldD:   '#C9FF3D',
   goldF:   'rgba(12,26,50,0.10)',
 
   // text (ink palette)
-  text:    '#1A130C',                      // ink
-  muted:   '#52473E',
-  faint:   '#A89A86',
+  text:    '#F3F3F0',                      // ink
+  muted:   '#9498A4',
+  faint:   '#5C606C',
 
   // user bubble — saffron bg, white text
-  userBg:  '#BE1538',
+  userBg:  '#C9FF3D',
   userTxt: '#ffffff',
 
-  serif: "'Cormorant Garamond', Georgia, serif",
-  sans:  "'Mukta', system-ui, sans-serif",
-  mono:  "'JetBrains Mono', ui-monospace, monospace",
+  serif: "'Bricolage Grotesque', Georgia, serif",
+  sans:  "'Space Grotesk', system-ui, sans-serif",
+  mono:  "'Space Mono', ui-monospace, monospace",
 };
 
 type Chip = string;
@@ -259,7 +259,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
       background:W.bg, border:`1px solid ${W.border}`,
       borderRadius:'18px', overflow:'hidden',
       display:'flex', flexDirection:'column',
-      boxShadow:'0 20px 60px rgba(26,19,12,0.18), 0 4px 16px rgba(26,19,12,0.10)',
+      boxShadow:'0 20px 60px rgba(255,255,255,0.18), 0 4px 16px rgba(255,255,255,0.10)',
       animation:'fab-slideUp 0.28s cubic-bezier(0.34,1.56,0.64,1)',
     }}>
 
@@ -270,7 +270,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
           <div>
             <div style={{ fontFamily:W.sans, fontSize:'14px', fontWeight:600, color:W.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:W.mono, fontSize:'8px', letterSpacing:'0.08em', color:W.gold, display:'flex', alignItems:'center', gap:'4px', marginTop:'2px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#BE1538', display:'inline-block', flexShrink:0 }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#C9FF3D', display:'inline-block', flexShrink:0 }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -323,15 +323,15 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
     <button onClick={onClick} style={{
       position:'fixed', bottom:'24px', right:'24px', zIndex:9999,
       width:'54px', height:'54px', borderRadius:'50%',
-      background: open ? W.gold : '#1A130C',
-      border:`1.5px solid ${open ? W.gold : 'rgba(26,19,12,0.25)'}`,
+      background: open ? W.gold : '#F3F3F0',
+      border:`1.5px solid ${open ? W.gold : 'rgba(255,255,255,0.25)'}`,
       cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center',
-      boxShadow: open ? `0 0 0 4px rgba(12,26,50,0.15), 0 8px 24px rgba(26,19,12,0.25)` : '0 6px 20px rgba(26,19,12,0.25)',
+      boxShadow: open ? `0 0 0 4px rgba(12,26,50,0.15), 0 8px 24px rgba(255,255,255,0.25)` : '0 6px 20px rgba(255,255,255,0.25)',
       transition:'all 0.25s cubic-bezier(0.34,1.56,0.64,1)',
       transform: open ? 'scale(0.94)' : 'scale(1)',
     }}
     onMouseEnter={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.08)'; (e.currentTarget as HTMLButtonElement).style.borderColor = W.gold; } }}
-    onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(26,19,12,0.25)'; } }}
+    onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.25)'; } }}
     >
       {open ? (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round">
@@ -342,7 +342,7 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
       )}
       {/* Unread dot */}
       {hasUnread && !open && (
-        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#BE1538', border:'2px solid #1A130C' }} />
+        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#C9FF3D', border:'2px solid #F3F3F0' }} />
       )}
     </button>
   );
@@ -376,7 +376,7 @@ export function FloatingGuideAI() {
         .fab-chat-scroll::-webkit-scrollbar { width: 4px; }
         .fab-chat-scroll::-webkit-scrollbar-track { background: transparent; }
         .fab-chat-scroll::-webkit-scrollbar-thumb { background: rgba(12,26,50,0.22); border-radius: 4px; }
-        .fab-chat-input::placeholder { color: rgba(26,19,12,0.38); }
+        .fab-chat-input::placeholder { color: rgba(255,255,255,0.38); }
 
         /* Mobile: adapt window to viewport width */
         @media (max-width: 440px) {

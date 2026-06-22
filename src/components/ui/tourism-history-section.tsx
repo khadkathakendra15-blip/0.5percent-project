@@ -3,21 +3,21 @@ import { Chart, type ChartArea, type Plugin } from 'chart.js/auto';
 
 /* ─── main theme tokens — matches surrounding sections exactly ───────────── */
 const C = {
-  ink:      '#1A130C',
-  ink2:     '#241A10',
-  inkSoft:  '#52473E',
-  inkFaint: '#A89A86',
-  cream:    '#F6F0E6',
-  cream2:   '#E8DECC',
-  paper:    '#FDFAF4',
-  saffron:  '#BE1538',
-  terra:    '#BE1538',
-  lineS:    'rgba(26,19,12,0.08)',
+  ink:      '#F3F3F0',
+  ink2:     '#F3F3F0',
+  inkSoft:  '#9498A4',
+  inkFaint: '#5C606C',
+  cream:    '#0E0F14',
+  cream2:   '#15171E',
+  paper:    '#0A0B0F',
+  saffron:  '#C9FF3D',
+  terra:    '#C9FF3D',
+  lineS:    'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 /* ─── chart data ─────────────────────────────────────────────────────────── */
 const LABELS = [
@@ -84,7 +84,7 @@ const annotationPlugin: Plugin<'line'> = {
 
     // vertical dashed lines + pill labels
     const vLines = [
-      { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#BE1538' },
+      { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#C9FF3D' },
       { year:'2025', lineColor:'rgba(255,0,0,0.38)',    label:'2025 unrest  −26%', labelColor:C.terra   },
       { year:'2026', lineColor:'rgba(12,26,50,0.50)', label:'New era  +41%',      labelColor:C.saffron },
     ];
@@ -97,7 +97,7 @@ const annotationPlugin: Plugin<'line'> = {
       const tw=ctx.measureText(vl.label).width;
       const pad=4, lx=x+6, ly=a.top+20;
       // pill bg — use ink for contrast on light chart
-      ctx.fillStyle='rgba(26,19,12,0.82)';
+      ctx.fillStyle='rgba(255,255,255,0.82)';
       ctx.beginPath(); ctx.roundRect(lx-pad,ly-9,tw+pad*2,16,3); ctx.fill();
       ctx.fillStyle=vl.labelColor; ctx.textAlign='left';
       ctx.fillText(vl.label,lx,ly);
@@ -195,8 +195,8 @@ function TourismChart() {
             tooltip:{
               backgroundColor:C.ink2,
               titleColor:C.cream2,
-              bodyColor:'rgba(246,240,230,0.55)',
-              borderColor:'rgba(26,19,12,0.15)',
+              bodyColor:'rgba(243,243,240,0.55)',
+              borderColor:'rgba(255,255,255,0.15)',
               borderWidth:1, padding:12,
               titleFont:{family:BEBAS,size:15,weight:'normal'} as never,
               bodyFont: {family:MUKTA, size:12} as never,
@@ -211,7 +211,7 @@ function TourismChart() {
             },
             y:{
               min:0,max:1350,
-              grid:{color:'rgba(26,19,12,0.07)',lineWidth:0.5},
+              grid:{color:'rgba(255,255,255,0.07)',lineWidth:0.5},
               border:{display:false},
               ticks:{
                 color:C.inkFaint,font:{size:11},

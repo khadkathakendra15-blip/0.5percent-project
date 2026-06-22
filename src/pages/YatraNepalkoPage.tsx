@@ -1,21 +1,21 @@
 import { NavBar } from '@/components/ui/nav-bar';
 
 const C = {
-  ink:      '#1A130C',
-  inkSoft:  '#52473E',
-  inkFaint: '#A89A86',
-  cream:    '#F6F0E6',
-  cream2:   '#E8DECC',
-  paper:    '#FDFAF4',
-  saffron:  '#BE1538',
-  terra:    '#BE1538',
-  line:     'rgba(26,19,12,0.08)',
-  lineM:    'rgba(26,19,12,0.13)',
+  ink:      '#F3F3F0',
+  inkSoft:  '#9498A4',
+  inkFaint: '#5C606C',
+  cream:    '#0E0F14',
+  cream2:   '#15171E',
+  paper:    '#0A0B0F',
+  saffron:  '#C9FF3D',
+  terra:    '#C9FF3D',
+  line:     'rgba(255,255,255,0.08)',
+  lineM:    'rgba(255,255,255,0.13)',
 };
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 const EPISODES = [
   { id: 'gWmTicQNmH0', ep: '01' },
@@ -41,7 +41,7 @@ function EpisodeCard({ id, ep, featured = false }: { id: string; ep: string; fea
         position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0,
         borderRadius: '6px', overflow: 'hidden', background: C.ink,
         border: `1px solid ${C.line}`,
-        boxShadow: featured ? '0 16px 48px rgba(26,19,12,0.14)' : '0 4px 20px rgba(26,19,12,0.08)',
+        boxShadow: featured ? '0 16px 48px rgba(255,255,255,0.14)' : '0 4px 20px rgba(255,255,255,0.08)',
       }}>
         <iframe
           src={`https://www.youtube.com/embed/${id}`}
@@ -104,7 +104,7 @@ export default function YatraNepalkoPage() {
             {/* Left */}
             <div style={{ flex: 1, minWidth: 0 }}>
               <h1 style={{
-                fontFamily: SERIF, fontWeight: 300,
+                fontFamily: SERIF, fontWeight: 700,
                 fontSize: 'clamp(56px, 7.5vw, 110px)',
                 lineHeight: 0.88, letterSpacing: '-0.025em',
                 color: C.ink, margin: '0 0 6px',
@@ -112,7 +112,7 @@ export default function YatraNepalkoPage() {
                 Yatra
               </h1>
               <h1 style={{
-                fontFamily: SERIF, fontWeight: 300, fontStyle: 'italic',
+                fontFamily: SERIF, fontWeight: 700, fontStyle: 'italic',
                 fontSize: 'clamp(56px, 7.5vw, 110px)',
                 lineHeight: 0.88, letterSpacing: '-0.025em',
                 color: C.saffron, margin: '0 0 36px',
@@ -122,7 +122,7 @@ export default function YatraNepalkoPage() {
 
               <p style={{
                 fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85,
-                fontWeight: 300, color: C.inkSoft,
+                fontWeight: 400, color: C.inkSoft,
                 maxWidth: '46ch', margin: '0 0 32px',
               }}>
                 World's popular personalities journey through Nepal — its ancient temples,
@@ -153,7 +153,7 @@ export default function YatraNepalkoPage() {
               <div style={{
                 position: 'relative', width: '100%', paddingBottom: '56.25%', height: 0,
                 borderRadius: '8px', overflow: 'hidden', background: C.ink,
-                boxShadow: '0 20px 60px rgba(26,19,12,0.18)',
+                boxShadow: '0 20px 60px rgba(255,255,255,0.18)',
                 border: `1px solid ${C.lineM}`,
               }}>
                 <iframe
@@ -172,14 +172,14 @@ export default function YatraNepalkoPage() {
       </section>
 
       {/* ── ABOUT STRIP ── */}
-      <section style={{ background: C.ink, borderBottom: `1px solid rgba(246,240,230,0.07)` }}>
+      <section style={{ background: C.ink, borderBottom: `1px solid rgba(243,243,240,0.07)` }}>
         <div className="yn-strip-pad" style={{ maxWidth: '1320px', margin: '0 auto', padding: '30px 40px', display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
-          <span style={{ fontFamily: SERIF, fontSize: '15px', fontStyle: 'italic', color: 'rgba(246,240,230,0.40)', flexShrink: 0 }}>
+          <span style={{ fontFamily: SERIF, fontSize: '15px', fontStyle: 'italic', color: 'rgba(243,243,240,0.40)', flexShrink: 0 }}>
             About the show
           </span>
-          <span style={{ width: '1px', height: '32px', background: 'rgba(246,240,230,0.12)', flexShrink: 0 }} className="yn-divider" />
-          <p style={{ fontFamily: MUKTA, fontSize: '14px', lineHeight: 1.8, color: 'rgba(246,240,230,0.62)', flex: 1, margin: 0 }}>
-            <em style={{ fontFamily: SERIF, fontSize: '16px', color: 'rgba(246,240,230,0.88)', fontStyle: 'italic' }}>Yatra Nepalko</em> is a travel talk show developed by the 0.5% Campaign Team —
+          <span style={{ width: '1px', height: '32px', background: 'rgba(243,243,240,0.12)', flexShrink: 0 }} className="yn-divider" />
+          <p style={{ fontFamily: MUKTA, fontSize: '14px', lineHeight: 1.8, color: 'rgba(243,243,240,0.62)', flex: 1, margin: 0 }}>
+            <em style={{ fontFamily: SERIF, fontSize: '16px', color: 'rgba(243,243,240,0.88)', fontStyle: 'italic' }}>Yatra Nepalko</em> is a travel talk show developed by the 0.5% Campaign Team —
             bringing the world's celebrated personalities to Nepal's most extraordinary places.
             Unscripted, authentic, unforgettable.
           </p>
@@ -195,7 +195,7 @@ export default function YatraNepalkoPage() {
             <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.saffron, marginBottom: '16px' }}>
               All Episodes
             </div>
-            <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px, 4.5vw, 62px)', color: C.ink, lineHeight: 0.95, margin: 0 }}>
+            <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(36px, 4.5vw, 62px)', color: C.ink, lineHeight: 0.95, margin: 0 }}>
               Every journey,<br />
               <em style={{ fontStyle: 'italic', color: C.inkSoft }}>every story.</em>
             </h2>
@@ -217,7 +217,7 @@ export default function YatraNepalkoPage() {
           <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.saffron, marginBottom: '20px' }}>
             Be part of the journey
           </div>
-          <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(34px, 4vw, 56px)', color: C.ink, lineHeight: 1.0, marginBottom: '16px' }}>
+          <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(34px, 4vw, 56px)', color: C.ink, lineHeight: 1.0, marginBottom: '16px' }}>
             Nepal is waiting.<br />
             <em style={{ fontStyle: 'italic', color: C.inkSoft }}>Are you?</em>
           </h2>

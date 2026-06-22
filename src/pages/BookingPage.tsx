@@ -3,14 +3,14 @@ import { NavBar } from '@/components/ui/nav-bar';
 import { CheckCircle, Calendar, FileText, Users, Bed, DollarSign, ChevronDown, ChevronUp, Mountain, Star } from 'lucide-react';
 
 const C = {
-  ink: '#1A130C', ink2: '#241A10', inkSoft: '#52473E', inkFaint: '#A89A86',
-  cream: '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
-  saffron: '#BE1538', terra: '#BE1538', lineS: 'rgba(26,19,12,0.08)',
+  ink: '#F3F3F0', ink2: '#F3F3F0', inkSoft: '#9498A4', inkFaint: '#5C606C',
+  cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
+  saffron: '#C9FF3D', terra: '#C9FF3D', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 const SEASONS = [
   {
@@ -18,7 +18,7 @@ const SEASONS = [
     months: 'Mar – May',
     rating: 5,
     gradient: 'linear-gradient(145deg,#1A0814 0%,#8C1E3D 50%,#1F0510 100%)',
-    icon: <Star size={20} color="#BE1538" strokeWidth={1.5} fill="#BE1538" />,
+    icon: <Star size={20} color="#C9FF3D" strokeWidth={1.5} fill="#C9FF3D" />,
     desc: 'Peak trekking season. Rhododendrons bloom, skies are clear, and most high passes are open. The busiest — and most rewarding — time to visit.',
     best: ['Everest BC','Annapurna Circuit','Langtang','All treks'],
   },
@@ -26,7 +26,7 @@ const SEASONS = [
     name: 'Monsoon',
     months: 'Jun – Aug',
     rating: 2,
-    gradient: 'linear-gradient(145deg,#1a3a5c 0%,#BE1538 50%,#0d2240 100%)',
+    gradient: 'linear-gradient(145deg,#1a3a5c 0%,#C9FF3D 50%,#0d2240 100%)',
     icon: null,
     desc: 'Heavy rainfall across most of Nepal. Roads wash out. Best for rain-shadow areas: Mustang, Dolpo. Wildlife activity peaks in Chitwan.',
     best: ['Upper Mustang','Chitwan','Rafting'],
@@ -36,7 +36,7 @@ const SEASONS = [
     months: 'Sep – Nov',
     rating: 5,
     gradient: 'linear-gradient(145deg,#2E0810 0%,#7A1830 50%,#200810 100%)',
-    icon: <Star size={20} color="#BE1538" strokeWidth={1.5} fill="#BE1538" />,
+    icon: <Star size={20} color="#C9FF3D" strokeWidth={1.5} fill="#C9FF3D" />,
     desc: 'Arguably the best season. Crystal-clear skies after monsoon, stable weather, spectacular mountain views. All major treks in perfect condition.',
     best: ['All treks','Climbing','Festivals (Dashain, Tihar)'],
   },
@@ -44,7 +44,7 @@ const SEASONS = [
     name: 'Winter',
     months: 'Dec – Feb',
     rating: 3,
-    gradient: 'linear-gradient(145deg,#0C1A32 0%,#1A3556 40%,#B8892A 100%)',
+    gradient: 'linear-gradient(145deg,#0A0B0F 0%,#15171E 40%,#C9FF3D 100%)',
     icon: null,
     desc: 'Cold at altitude, but Kathmandu and Pokhara are pleasant. Low-altitude treks (Poon Hill, Ghorepani) are excellent. Fewer crowds, lower prices.',
     best: ['Poon Hill','Kathmandu','Lumbini','Chitwan'],
@@ -109,11 +109,11 @@ export default function BookingPage() {
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
                 <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.inkFaint }}>Plan your trip</span>
               </div>
-              <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(44px,5.5vw,88px)', lineHeight: 0.92, letterSpacing: '-0.02em', color: C.ink, marginBottom: '28px' }}>
+              <h1 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(44px,5.5vw,88px)', lineHeight: 0.92, letterSpacing: '-0.02em', color: C.ink, marginBottom: '28px' }}>
                 Your Nepal journey,<br />
                 <em style={{ color: C.inkSoft, fontStyle: 'italic' }}>perfectly planned</em>.
               </h1>
-              <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, color: C.inkSoft, maxWidth: '46ch' }}>
+              <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 400, color: C.inkSoft, maxWidth: '46ch' }}>
                 From permits to porters, tea houses to temples — our booking guide covers everything you need to plan a seamless Nepal experience.
               </p>
             </div>
@@ -142,13 +142,13 @@ export default function BookingPage() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.saffron }}>When to visit</span>
             </div>
-            <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Four seasons, four Nepal's.</h2>
+            <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Four seasons, four Nepal's.</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '16px' }}>
             {SEASONS.map(s => (
               <div key={s.name} style={{ borderRadius: '6px', overflow: 'hidden', border: `1px solid ${C.lineS}` }}>
                 <div style={{ height: '100px', background: s.gradient, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '16px' }}>
-                  <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.5)' }}>{s.months}</div>
+                  <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(243,243,240,0.5)' }}>{s.months}</div>
                   <div style={{ fontFamily: SERIF, fontSize: '24px', color: C.cream, lineHeight: 1.1, marginTop: '2px' }}>{s.name}</div>
                 </div>
                 <div style={{ background: C.paper, padding: '18px 20px' }}>
@@ -180,7 +180,7 @@ export default function BookingPage() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.inkFaint }}>The process</span>
             </div>
-            <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>
+            <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>
               Six steps to your perfect trip.
             </h2>
           </div>
@@ -188,7 +188,7 @@ export default function BookingPage() {
             {STEPS.map((s, i) => (
               <div key={s.n} style={{ background: i % 2 === 0 ? C.cream : C.cream2, padding: '32px 28px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                  <span style={{ fontFamily: BEBAS, fontSize: '36px', color: 'rgba(26,19,12,0.10)', lineHeight: 1 }}>{s.n}</span>
+                  <span style={{ fontFamily: BEBAS, fontSize: '36px', color: 'rgba(255,255,255,0.10)', lineHeight: 1 }}>{s.n}</span>
                   {s.icon}
                 </div>
                 <div style={{ fontFamily: SERIF, fontSize: '20px', fontWeight: 400, color: C.ink, marginBottom: '10px' }}>{s.title}</div>
@@ -206,7 +206,7 @@ export default function BookingPage() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontFamily: MONO, fontSize: '11px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra }}>FAQ</span>
             </div>
-            <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Common questions.</h2>
+            <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(36px,4vw,60px)', color: C.ink }}>Common questions.</h2>
           </div>
           {FAQS.map(f => <FAQ key={f.q} q={f.q} a={f.a} />)}
         </div>
@@ -214,7 +214,7 @@ export default function BookingPage() {
 
       {/* ── FINAL CTA ── */}
       <section style={{ background: C.paper, padding: '80px 40px', textAlign: 'center', borderTop: `1px solid ${C.lineS}` }}>
-        <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(32px,4vw,56px)', color: C.ink, marginBottom: '16px' }}>
+        <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(32px,4vw,56px)', color: C.ink, marginBottom: '16px' }}>
           Ready to be part of Nepal's 0.5% future?
         </h2>
         <p style={{ fontFamily: MUKTA, fontSize: '16px', color: C.inkSoft, marginBottom: '36px', maxWidth: '48ch', margin: '0 auto 36px' }}>

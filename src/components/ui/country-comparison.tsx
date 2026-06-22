@@ -12,7 +12,7 @@ const countries = [
     revenueLabel: '$800M',
     gdp: 7,
     gdpLabel: '7%',
-    color: '#f59e0b',
+    color: '#C9FF3D',
     glow: 'rgba(245,158,11,0.35)',
     highlight: true,
     note: '0.5% target → 14.2M visitors',
@@ -27,7 +27,7 @@ const countries = [
     revenueLabel: '$350M',
     gdp: 12.5,
     gdpLabel: '12.5%',
-    color: '#8b5cf6',
+    color: '#C9FF3D',
     glow: 'rgba(139,92,246,0.2)',
     highlight: false,
   },
@@ -41,7 +41,7 @@ const countries = [
     revenueLabel: '$3.6B',
     gdp: 12,
     gdpLabel: '12%',
-    color: '#06b6d4',
+    color: '#C9FF3D',
     glow: 'rgba(6,182,212,0.2)',
     highlight: false,
   },
@@ -55,7 +55,7 @@ const countries = [
     revenueLabel: '$1B',
     gdp: 9,
     gdpLabel: '9%',
-    color: '#10b981',
+    color: '#C9FF3D',
     glow: 'rgba(16,185,129,0.2)',
     highlight: false,
   },
@@ -149,7 +149,7 @@ function CountryCard({
         <div className="flex items-center gap-3">
           <span className="text-3xl">{c.flag}</span>
           <div>
-            <h3 className="text-lg font-black text-gray-900 leading-none" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.06em' }}>
+            <h3 className="text-lg font-black text-gray-900 leading-none" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '0.06em' }}>
               {c.name}
             </h3>
             <p className="text-[10px] text-gray-400 font-medium mt-0.5">Pop. {c.population}</p>
@@ -159,10 +159,10 @@ function CountryCard({
         {/* Big tourist number */}
         <div
           className="text-4xl font-black leading-none"
-          style={{ fontFamily: "'Bebas Neue', sans-serif", color: c.color }}
+          style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: c.color }}
         >
           {c.touristsLabel}
-          <span className="text-sm font-semibold text-gray-400 ml-1" style={{ fontFamily: "'Mukta', system-ui, sans-serif" }}>
+          <span className="text-sm font-semibold text-gray-400 ml-1" style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
             tourists/yr
           </span>
         </div>
@@ -257,10 +257,10 @@ export function CountryComparison() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-7xl font-black text-gray-900 mb-4"
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}
+            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '0.04em' }}
           >
             Small Nations.{' '}
-            <span style={{ background: 'linear-gradient(90deg, #f59e0b, #ea580c)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span style={{ background: 'linear-gradient(90deg, #C9FF3D, #C9FF3D)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Massive Results.
             </span>
           </motion.h2>
@@ -292,25 +292,25 @@ export function CountryComparison() {
           style={{
             background: '#f8f7f5',
             border: '1px solid rgba(28,25,23,0.10)',
-            borderLeft: '3px solid #BE1538',
+            borderLeft: '3px solid #C9FF3D',
             borderRadius: '4px',
             padding: '32px 40px',
           }}
         >
           <div className="text-center md:text-left">
-            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#BE1538', marginBottom: '10px', fontFamily: "'Mukta', sans-serif" }}>
+            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#C9FF3D', marginBottom: '10px', fontFamily: "'Space Grotesk', sans-serif" }}>
               Key Insight
             </p>
-            <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(20px, 2.2vw, 30px)', letterSpacing: '0.04em', color: '#1c1917', lineHeight: 1.2, fontWeight: 900 }}>
+            <h3 style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: 'clamp(20px, 2.2vw, 30px)', letterSpacing: '0.04em', color: '#1c1917', lineHeight: 1.2, fontWeight: 900 }}>
               Cambodia (17M people) gets{' '}
-              <span style={{ color: '#BE1538' }}>6× more tourists</span>{' '}
+              <span style={{ color: '#C9FF3D' }}>6× more tourists</span>{' '}
               than Nepal (30M people).{' '}
-              <span style={{ color: '#BE1538' }}>The 0.5% Campaign changes this.</span>
+              <span style={{ color: '#C9FF3D' }}>The 0.5% Campaign changes this.</span>
             </h3>
           </div>
           <div className="flex-shrink-0 text-center" style={{ borderLeft: '1px solid rgba(28,25,23,0.10)', paddingLeft: '40px' }}>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '64px', lineHeight: 1, color: '#BE1538', letterSpacing: '0.02em' }}>0.5%</div>
-            <p style={{ fontSize: '10px', color: '#57534e', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', marginTop: '6px', fontFamily: "'Mukta', sans-serif" }}>
+            <div style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: '64px', lineHeight: 1, color: '#C9FF3D', letterSpacing: '0.02em' }}>0.5%</div>
+            <p style={{ fontSize: '10px', color: '#57534e', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', marginTop: '6px', fontFamily: "'Space Grotesk', sans-serif" }}>
               Can close this gap
             </p>
           </div>

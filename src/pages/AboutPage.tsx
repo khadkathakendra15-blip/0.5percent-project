@@ -4,20 +4,20 @@ import { NavBar } from '@/components/ui/nav-bar';
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const C = {
-  cream:    '#F6F0E6',
-  paper:    '#FDFAF4',
-  paper2:   '#E8DECC',
-  ink:      '#1A130C',
-  inkSoft:  '#52473E',
-  inkFaint: '#A89A86',
-  terra:    '#BE1538',
-  saffron:  '#BE1538',
-  line:     'rgba(26,19,12,0.10)',
-  lineSoft: 'rgba(26,19,12,0.06)',
+  cream:    '#0E0F14',
+  paper:    '#0A0B0F',
+  paper2:   '#15171E',
+  ink:      '#F3F3F0',
+  inkSoft:  '#9498A4',
+  inkFaint: '#5C606C',
+  terra:    '#C9FF3D',
+  saffron:  '#C9FF3D',
+  line:     'rgba(255,255,255,0.10)',
+  lineSoft: 'rgba(255,255,255,0.06)',
 };
 
-const serif = "'Cormorant Garamond', Georgia, serif";
-const sans  = "'Mukta', system-ui, sans-serif";
+const serif = "'Bricolage Grotesque', Georgia, serif";
+const sans  = "'Space Grotesk', system-ui, sans-serif";
 
 // ─── Partner logos ────────────────────────────────────────────────────────────
 const partners = [
@@ -137,7 +137,7 @@ export default function AboutPage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ margin: 0, background: C.paper, color: C.ink, fontFamily: sans, fontWeight: 300, lineHeight: 1.7, WebkitFontSmoothing: 'antialiased', overflowX: 'hidden', minHeight: '100vh' }}>
+    <div style={{ margin: 0, background: C.paper, color: C.ink, fontFamily: sans, fontWeight: 400, lineHeight: 1.7, WebkitFontSmoothing: 'antialiased', overflowX: 'hidden', minHeight: '100vh' }}>
 
       <NavBar />
 
@@ -149,19 +149,19 @@ export default function AboutPage() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', fontSize: '12px', letterSpacing: '0.32em', textTransform: 'uppercase', fontWeight: 500, fontFamily: sans, color: C.terra, marginBottom: '22px' }}>
               Our vision
             </div>
-            <h2 style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(40px, 6vw, 82px)', lineHeight: 1, letterSpacing: '-0.015em', color: C.ink, marginTop: '0' }}>
+            <h2 style={{ fontFamily: serif, fontWeight: 700, fontSize: 'clamp(40px, 6vw, 82px)', lineHeight: 1, letterSpacing: '-0.015em', color: C.ink, marginTop: '0' }}>
               A movement built on{' '}
               <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>storytelling</em>.
             </h2>
           </Reveal>
           {/* right */}
           <Reveal delay={0.1} style={{ paddingTop: '18px' }}>
-            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '24px', fontWeight: 300, fontFamily: sans }}>
+            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '24px', fontWeight: 400, fontFamily: sans }}>
               Nepal is one of the world's most beautiful and spiritually significant countries — from the Himalayas to ancient heritage, from the birthplace of{' '}
               <strong style={{ color: C.ink, fontWeight: 500 }}>Buddha</strong>{' '}
               to a rich tapestry of cultures. And yet, Nepal remains underrepresented in global tourism.
             </p>
-            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '36px', fontWeight: 300, fontFamily: sans }}>
+            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '36px', fontWeight: 400, fontFamily: sans }}>
               VFY Talks exists to change that. Through honest media, cinematic storytelling and cross-cultural conversation, we share Nepal's voice with the world — and invite the world to listen.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -190,12 +190,12 @@ export default function AboutPage() {
       <section style={{ textAlign: 'center', padding: '140px 40px 130px', maxWidth: 1180, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <Reveal><Kicker center>The premise</Kicker></Reveal>
         <Reveal delay={0.08}>
-          <div className="about-0pt5" style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(140px, 26vw, 360px)', lineHeight: 0.82, color: C.terra, letterSpacing: '-0.02em', display: 'inline-block' }}>
+          <div className="about-0pt5" style={{ fontFamily: serif, fontWeight: 700, fontSize: 'clamp(140px, 26vw, 360px)', lineHeight: 0.82, color: C.terra, letterSpacing: '-0.02em', display: 'inline-block' }}>
             0.5<span style={{ fontSize: '0.42em', verticalAlign: 'super', fontWeight: 400, color: C.saffron }}>%</span>
           </div>
         </Reveal>
         <Reveal delay={0.16}>
-          <p style={{ margin: '36px auto 0', maxWidth: '48ch', fontSize: 19, lineHeight: 1.8, color: C.inkSoft, fontWeight: 300 }}>
+          <p style={{ margin: '36px auto 0', maxWidth: '48ch', fontSize: 19, lineHeight: 1.8, color: C.inkSoft, fontWeight: 400 }}>
             That's all it takes. Mobilising just <strong style={{ color: C.ink, fontWeight: 500 }}>half of one percent</strong> of travellers from
             neighbouring nations would transform Nepal's place on the world's map — a quiet number
             with a profound ripple.
@@ -210,10 +210,10 @@ export default function AboutPage() {
         <Reveal>
           <div style={{ textAlign: 'center', maxWidth: '62ch', margin: '0 auto 70px' }}>
             <Kicker center>The team</Kicker>
-            <h2 style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(40px, 5.4vw, 72px)', lineHeight: 1.02, margin: '20px 0 0', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontFamily: serif, fontWeight: 700, fontSize: 'clamp(40px, 5.4vw, 72px)', lineHeight: 1.02, margin: '20px 0 0', letterSpacing: '-0.01em' }}>
               The people behind the voice.
             </h2>
-            <p style={{ fontSize: 17, color: C.inkSoft, margin: '22px auto 0', fontWeight: 300, maxWidth: '48ch' }}>
+            <p style={{ fontSize: 17, color: C.inkSoft, margin: '22px auto 0', fontWeight: 400, maxWidth: '48ch' }}>
               A small team of storytellers, travellers and builders carrying Nepal's narrative forward.
             </p>
           </div>
@@ -236,7 +236,7 @@ export default function AboutPage() {
               <h3 style={{ fontFamily: serif, fontWeight: 400, fontSize: 'clamp(40px, 4.4vw, 60px)', lineHeight: 1, margin: '14px 0 0', letterSpacing: '-0.01em' }}>
                 Dashrath Sunar
               </h3>
-              <p style={{ fontSize: 17.5, lineHeight: 1.85, color: C.inkSoft, margin: '26px 0 0', fontWeight: 300 }}>
+              <p style={{ fontSize: 17.5, lineHeight: 1.85, color: C.inkSoft, margin: '26px 0 0', fontWeight: 400 }}>
                 Dashrath Sunar is the visionary behind VFY Talks and the 0.5% Campaign — a movement
                 dedicated to transforming Nepal's global tourism identity through powerful storytelling,
                 media and cross-cultural conversations.
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 <div style={{ marginTop: 22 }}>
                   <div style={{ fontSize: 11.5, letterSpacing: '0.26em', textTransform: 'uppercase', color: C.terra, fontWeight: 600 }}>{m.role}</div>
                   <h4 style={{ fontFamily: serif, fontWeight: 500, fontSize: 28, lineHeight: 1.05, margin: '9px 0 0' }}>{m.name}</h4>
-                  <p style={{ fontSize: 15, color: C.inkSoft, margin: '12px 0 0', fontWeight: 300, lineHeight: 1.7 }}>{m.bio}</p>
+                  <p style={{ fontSize: 15, color: C.inkSoft, margin: '12px 0 0', fontWeight: 400, lineHeight: 1.7 }}>{m.bio}</p>
                 </div>
               </div>
             </Reveal>
@@ -289,10 +289,10 @@ export default function AboutPage() {
           <Reveal>
             <div style={{ textAlign: 'center', maxWidth: '62ch', margin: '0 auto 56px' }}>
               <Kicker center>Partners</Kicker>
-              <h2 style={{ fontFamily: serif, fontWeight: 300, fontSize: 'clamp(34px, 4.4vw, 56px)', lineHeight: 1.02, margin: '20px 0 0', letterSpacing: '-0.01em' }}>
+              <h2 style={{ fontFamily: serif, fontWeight: 700, fontSize: 'clamp(34px, 4.4vw, 56px)', lineHeight: 1.02, margin: '20px 0 0', letterSpacing: '-0.01em' }}>
                 In good company.
               </h2>
-              <p style={{ fontSize: 17, color: C.inkSoft, margin: '22px auto 0', fontWeight: 300 }}>
+              <p style={{ fontSize: 17, color: C.inkSoft, margin: '22px auto 0', fontWeight: 400 }}>
                 Organisations and voices helping carry Nepal's story to the world.
               </p>
             </div>

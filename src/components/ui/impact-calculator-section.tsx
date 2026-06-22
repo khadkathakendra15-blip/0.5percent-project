@@ -2,22 +2,22 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 
 /* ─── tokens ─────────────────────────────────────────────────────────────── */
 const C = {
-  ink:      '#1A130C',
-  inkSoft:  '#52473E',
-  inkFaint: '#A89A86',
-  cream:    '#F6F0E6',
-  cream2:   '#E8DECC',
-  paper:    '#FDFAF4',
-  saffron:  '#BE1538',
-  saffronB: '#BE1538',
-  terra:    '#BE1538',
-  line:     'rgba(26,19,12,0.13)',
-  lineS:    'rgba(26,19,12,0.07)',
+  ink:      '#F3F3F0',
+  inkSoft:  '#9498A4',
+  inkFaint: '#5C606C',
+  cream:    '#0E0F14',
+  cream2:   '#15171E',
+  paper:    '#0A0B0F',
+  saffron:  '#C9FF3D',
+  saffronB: '#C9FF3D',
+  terra:    '#C9FF3D',
+  line:     'rgba(255,255,255,0.13)',
+  lineS:    'rgba(255,255,255,0.07)',
 };
-const SERIF = "'Cormorant Garamond', serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', sans-serif";
-const MONO  = "'JetBrains Mono', monospace";
+const SERIF = "'Bricolage Grotesque', serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', sans-serif";
+const MONO  = "'Space Mono', monospace";
 
 /* ─── constants ──────────────────────────────────────────────────────────── */
 const INDIA = 1_440_000_000;
@@ -153,8 +153,8 @@ export function ImpactCalculatorSection() {
           .calc-title { white-space: normal !important; font-size: clamp(18px,4.5vw,24px) !important; }
           .calc-grid { grid-template-columns: 1fr !important; }
           .calc-divider-v { display: none !important; }
-          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(26,19,12,0.12); }
-          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(26,19,12,0.12); }
+          .calc-col-l { padding-right: 0 !important; padding-bottom: 20px !important; border-bottom: 1px solid rgba(255,255,255,0.12); }
+          .calc-col-m { padding: 20px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.12); }
           .calc-col-r { padding-left: 0 !important; padding-top: 20px !important; }
           .calc-big-num { font-size: clamp(64px,16vw,96px) !important; }
           .calc-ledger-val { font-size: 22px !important; }
@@ -181,7 +181,7 @@ export function ImpactCalculatorSection() {
           </div>
 
           <h2 className="calc-title" style={{
-            fontFamily: SERIF, fontWeight: 300,
+            fontFamily: SERIF, fontWeight: 700,
             fontSize: 'clamp(22px, 2.4vw, 36px)', lineHeight: 1, letterSpacing: '-0.01em',
             whiteSpace: 'nowrap', color: C.ink,
           }}>
@@ -189,7 +189,7 @@ export function ImpactCalculatorSection() {
             <em style={{ fontStyle: 'italic', color: C.terra }}>Watch Nepal transform.</em>
           </h2>
 
-          <div style={{ fontSize: '12.5px', color: C.inkFaint, maxWidth: '30ch', lineHeight: 1.6, fontWeight: 300, fontFamily: MUKTA, textAlign: 'right' }}>
+          <div style={{ fontSize: '12.5px', color: C.inkFaint, maxWidth: '30ch', lineHeight: 1.6, fontWeight: 400, fontFamily: MUKTA, textAlign: 'right' }}>
             Slide to see economic &amp; employment impact at different penetration rates.
           </div>
 
@@ -343,7 +343,7 @@ export function ImpactCalculatorSection() {
             }}>
               <div>
                 <div style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500, fontFamily: MUKTA }}>Multiplier vs. today</div>
-                <div style={{ fontSize: '10px', color: 'rgba(246,240,230,0.5)', letterSpacing: '0.16em', marginTop: '3px', fontFamily: MUKTA }}>Baseline: 1.167M visitors</div>
+                <div style={{ fontSize: '10px', color: 'rgba(243,243,240,0.5)', letterSpacing: '0.16em', marginTop: '3px', fontFamily: MUKTA }}>Baseline: 1.167M visitors</div>
               </div>
               <div ref={multiRef} style={{ fontFamily: BEBAS, fontSize: 'clamp(44px, 5vw, 72px)', lineHeight: 0.9, color: C.saffronB, letterSpacing: '0.02em' }}>
                 {multi.toFixed(1)}<span style={{ fontSize: '0.5em', opacity: 0.8 }}>×</span>

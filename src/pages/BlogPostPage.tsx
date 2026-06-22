@@ -4,13 +4,13 @@ import { Clock, User, Calendar, ArrowLeft } from 'lucide-react';
 import { getPostBySlug } from '@/data/blogPosts';
 
 const C = {
-  ink: '#1A130C', inkSoft: '#52473E', inkFaint: '#A89A86',
-  cream: '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
-  terra: '#BE1538', lineS: 'rgba(26,19,12,0.08)',
+  ink: '#F3F3F0', inkSoft: '#9498A4', inkFaint: '#5C606C',
+  cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
+  terra: '#C9FF3D', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -24,7 +24,7 @@ export default function BlogPostPage() {
           <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra, marginBottom: '18px' }}>
             404
           </div>
-          <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(36px,4.5vw,64px)', color: C.ink, margin: 0, lineHeight: 1.05 }}>
+          <h1 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(36px,4.5vw,64px)', color: C.ink, margin: 0, lineHeight: 1.05 }}>
             We couldn't find that story.
           </h1>
           <p style={{ fontFamily: MUKTA, fontSize: '15px', color: C.inkSoft, marginTop: '20px' }}>
@@ -70,7 +70,7 @@ export default function BlogPostPage() {
           <Link to="/blog" style={{
             display: 'inline-flex', alignItems: 'center', gap: '6px',
             fontFamily: MONO, fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase',
-            color: 'rgba(246,240,230,0.7)', textDecoration: 'none', marginBottom: '32px',
+            color: 'rgba(243,243,240,0.7)', textDecoration: 'none', marginBottom: '32px',
           }}>
             <ArrowLeft size={12} /> All stories
           </Link>
@@ -79,24 +79,24 @@ export default function BlogPostPage() {
             <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', background: C.terra, color: '#fff', padding: '5px 12px', borderRadius: '2px' }}>
               {post.category}
             </span>
-            <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(246,240,230,0.6)' }}>
+            <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(243,243,240,0.6)' }}>
               Stories from Nepal
             </span>
           </div>
-          <h1 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(40px,5.4vw,80px)', lineHeight: 0.98, letterSpacing: '-0.02em', color: C.cream, margin: 0 }}>
+          <h1 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(40px,5.4vw,80px)', lineHeight: 0.98, letterSpacing: '-0.02em', color: C.cream, margin: 0 }}>
             {post.title}
           </h1>
-          <p style={{ fontFamily: MUKTA, fontSize: '18px', lineHeight: 1.7, fontWeight: 300, color: 'rgba(246,240,230,0.78)', maxWidth: '58ch', marginTop: '28px' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '18px', lineHeight: 1.7, fontWeight: 400, color: 'rgba(243,243,240,0.78)', maxWidth: '58ch', marginTop: '28px' }}>
             {post.excerpt}
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginTop: '36px', flexWrap: 'wrap' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(246,240,230,0.7)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(243,243,240,0.7)' }}>
               <User size={12} strokeWidth={1.5} /> {post.author}
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(246,240,230,0.7)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(243,243,240,0.7)' }}>
               <Calendar size={12} strokeWidth={1.5} /> {post.date}
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(246,240,230,0.7)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '7px', fontFamily: MONO, fontSize: '10px', letterSpacing: '0.18em', color: 'rgba(243,243,240,0.7)' }}>
               <Clock size={12} strokeWidth={1.5} /> {post.readTime}
             </span>
           </div>

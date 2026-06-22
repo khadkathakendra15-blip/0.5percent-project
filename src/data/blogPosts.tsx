@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 
 const C = {
-  ink: '#1A130C', ink2: '#241A10', inkSoft: '#52473E', inkFaint: '#A89A86',
-  cream: '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
-  saffron: '#BE1538', terra: '#BE1538', lineS: 'rgba(26,19,12,0.08)',
+  ink: '#F3F3F0', ink2: '#F3F3F0', inkSoft: '#9498A4', inkFaint: '#5C606C',
+  cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
+  saffron: '#C9FF3D', terra: '#C9FF3D', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 export type BlogPost = {
   slug: string;
@@ -30,7 +30,7 @@ function SectionHeading({ kicker, title }: { kicker: string; title: string }) {
       <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra, marginBottom: '14px' }}>
         {kicker}
       </div>
-      <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(32px,4vw,52px)', lineHeight: 1.05, letterSpacing: '-0.015em', color: C.ink, margin: 0 }}>
+      <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(32px,4vw,52px)', lineHeight: 1.05, letterSpacing: '-0.015em', color: C.ink, margin: 0 }}>
         {title}
       </h2>
     </div>
@@ -225,11 +225,11 @@ function NepalTourismHubBody() {
           <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: C.terra, marginBottom: '18px' }}>
             Future vision
           </div>
-          <h2 style={{ fontFamily: SERIF, fontWeight: 300, fontSize: 'clamp(34px,4.4vw,60px)', lineHeight: 1.05, letterSpacing: '-0.015em', color: C.cream, margin: 0 }}>
+          <h2 style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 'clamp(34px,4.4vw,60px)', lineHeight: 1.05, letterSpacing: '-0.015em', color: C.cream, margin: 0 }}>
             A place people come <em style={{ fontStyle: 'italic', color: '#f4a8b3' }}>not just to travel</em>,<br />
             but to live, build and become.
           </h2>
-          <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, color: 'rgba(246,240,230,0.7)', maxWidth: '60ch', margin: '28px auto 0' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '17px', lineHeight: 1.85, fontWeight: 400, color: 'rgba(243,243,240,0.7)', maxWidth: '60ch', margin: '28px auto 0' }}>
             Nepal has the potential to become a destination where people arrive not only as
             tourists, but as participants in something larger:
           </p>
@@ -238,14 +238,14 @@ function NepalTourismHubBody() {
               <span key={i} style={{
                 fontFamily: SERIF, fontStyle: 'italic', fontSize: '22px', fontWeight: 400,
                 color: C.cream,
-                padding: '10px 22px', border: `1px solid rgba(246,240,230,0.18)`,
-                borderRadius: '100px', background: 'rgba(246,240,230,0.04)',
+                padding: '10px 22px', border: `1px solid rgba(243,243,240,0.18)`,
+                borderRadius: '100px', background: 'rgba(243,243,240,0.04)',
               }}>
                 {a}
               </span>
             ))}
           </div>
-          <p style={{ fontFamily: MUKTA, fontSize: '15.5px', lineHeight: 1.85, fontWeight: 300, color: 'rgba(246,240,230,0.6)', maxWidth: '60ch', margin: '52px auto 0' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '15.5px', lineHeight: 1.85, fontWeight: 400, color: 'rgba(243,243,240,0.6)', maxWidth: '60ch', margin: '52px auto 0' }}>
             A dedicated <strong style={{ color: C.cream, fontWeight: 500 }}>Tourism Investment Summit</strong> and a
             data-driven tourism strategy can help position Nepal as a leading global tourism hub for the future.
           </p>
@@ -300,7 +300,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Project 0.5%',
     date: 'June 2026',
     readTime: '14 min read',
-    cover: 'url("/Himalayas Landscape.png") center/cover no-repeat, #0C1A32',
+    cover: 'url("/Himalayas Landscape.png") center/cover no-repeat, #0A0B0F',
     render: NepalTourismHubBody,
   },
 ];

@@ -31,13 +31,13 @@ import {
 } from 'lucide-react';
 
 /* ─── design tokens (hero) ───────────────────────────────────────────────── */
-const SERIF  = "'Cormorant Garamond', Georgia, serif";
-const BEBAS  = "'Bebas Neue', sans-serif";
-const MUKTA  = "'Mukta', system-ui, sans-serif";
+const SERIF  = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS  = "'Bricolage Grotesque', sans-serif";
+const MUKTA  = "'Space Grotesk', system-ui, sans-serif";
 
 /* ── Campaign Hero — full-screen video, dark fade, project text ──────────── */
 const CampaignHero = () => (
-  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#0C1A32' }}>
+  <section style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: '#0A0B0F' }}>
 
     {/* Video — full bleed */}
     <video
@@ -83,7 +83,7 @@ const CampaignHero = () => (
           color: '#fff',
           textShadow: '0 2px 24px rgba(0,0,0,0.55)',
         }}>
-          0.5<span style={{ color: '#BE1538' }}>%</span>
+          0.5<span style={{ color: '#C9FF3D' }}>%</span>
         </div>
         <div style={{
           fontFamily: BEBAS,
@@ -113,7 +113,7 @@ const CampaignHero = () => (
       >
         {['Tourism', 'Spirituality', 'Culture', 'Media'].map((tag, i) => (
           <span key={tag} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#BE1538', display: 'inline-block' }} />}
+            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#C9FF3D', display: 'inline-block' }} />}
             {tag}
           </span>
         ))}
@@ -127,7 +127,7 @@ const CampaignHero = () => (
         style={{
           fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
           fontSize: 'clamp(18px, 2.2vw, 30px)', lineHeight: 1.3,
-          color: '#BE1538',
+          color: '#C9FF3D',
           marginBottom: '36px',
           textShadow: '0 2px 12px rgba(0,0,0,0.45)',
         }}

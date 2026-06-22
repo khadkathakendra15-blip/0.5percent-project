@@ -21,22 +21,22 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:         '#1A130C',
-  inkSoft:     '#52473E',
-  inkFaint:    '#A89A86',
-  cream:       '#F6F0E6',
-  paper:       '#FDFAF4',
-  saffron:     '#BE1538',
-  saffronBright: '#BE1538',
-  terra:       '#BE1538',
-  line:        'rgba(26,19,12,0.14)',
-  lineS:       'rgba(26,19,12,0.08)',
+  ink:         '#F3F3F0',
+  inkSoft:     '#9498A4',
+  inkFaint:    '#5C606C',
+  cream:       '#0E0F14',
+  paper:       '#0A0B0F',
+  saffron:     '#C9FF3D',
+  saffronBright: '#C9FF3D',
+  terra:       '#C9FF3D',
+  line:        'rgba(255,255,255,0.14)',
+  lineS:       'rgba(255,255,255,0.08)',
 };
 
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 const ITEMS = [
   {
@@ -164,7 +164,7 @@ function LedgerCard({ item, col }: { item: typeof ITEMS[0]; col: number }) {
       {/* description */}
       <p style={{
         fontSize: '14.5px', lineHeight: 1.75, color: C.inkSoft,
-        fontWeight: 300, fontFamily: MUKTA, maxWidth: '32ch',
+        fontWeight: 400, fontFamily: MUKTA, maxWidth: '32ch',
       }}>
         {item.desc}
       </p>
@@ -223,7 +223,7 @@ export function CampaignApproachSection() {
               Campaign approach
             </div>
             <h2 style={{
-              fontFamily: SERIF, fontWeight: 300,
+              fontFamily: SERIF, fontWeight: 700,
               fontSize: 'clamp(40px, 4.6vw, 68px)',
               lineHeight: 1.0, letterSpacing: '-0.015em', color: C.ink,
             }}>
@@ -235,7 +235,7 @@ export function CampaignApproachSection() {
           <div ref={rRight} style={{ paddingBottom: '6px' }}>
             <p style={{
               fontSize: '16px', lineHeight: 1.85, color: C.inkSoft,
-              fontWeight: 300, fontFamily: MUKTA, maxWidth: '46ch',
+              fontWeight: 400, fontFamily: MUKTA, maxWidth: '46ch',
             }}>
               The 0.5% Campaign leverages modern storytelling and digital platforms
               to share Nepal's wonders with billions of potential travellers worldwide.

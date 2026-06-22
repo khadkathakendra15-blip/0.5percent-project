@@ -45,27 +45,27 @@
 
 :root {
   --radius: 0.375rem;
-  /* ── 0.5% Vision: Heritage Luxury — Warm Parchment + Deep Navy + Sacred Gold + Crimson ── */
-  /* parchment #FDFAF4 */ --background:          oklch(0.992 0.007 78);
-  /* warm ink  #140F0A */ --foreground:          oklch(0.135 0.020 54);
-  /* parchment #FDFAF4 */ --card:                oklch(0.992 0.007 78);
-  /* warm ink  #140F0A */ --card-foreground:     oklch(0.135 0.020 54);
-  /* parchment #FDFAF4 */ --popover:             oklch(0.992 0.007 78);
-  /* warm ink  #140F0A */ --popover-foreground:  oklch(0.135 0.020 54);
-  /* crimson   #BE1538 */ --primary:             oklch(0.438 0.195 19);
-  /* parchment #FDFAF4 */ --primary-foreground:  oklch(0.992 0.007 78);
-  /* warm sand #E8DECC */ --secondary:           oklch(0.912 0.022 76);
-  /* warm ink  #140F0A */ --secondary-foreground:oklch(0.135 0.020 54);
-  /* warm sand #E8DECC */ --muted:               oklch(0.912 0.022 76);
-  /* inkSoft   #52473E */ --muted-foreground:    oklch(0.396 0.028 58);
-  /* ivory     #F6F0E6 */ --accent:              oklch(0.965 0.016 78);
-  /* warm ink  #140F0A */ --accent-foreground:   oklch(0.135 0.020 54);
-  /* crimson   #BE1538 */ --destructive:         oklch(0.438 0.195 19);
-  /* warm line           */ --border:            oklch(0.905 0.018 78);
-  /* warm line           */ --input:             oklch(0.905 0.018 78);
-  /* sacred gold #B8892A */ --ring:              oklch(0.616 0.110 66);
-  /* navy #0C1A32 */       --brand:              oklch(0.215 0.068 248);
-  --brand-foreground: oklch(0.992 0.007 78);
+  /* ── 0.5% Campaign: Neon Lime on Black ───────────────────────── */
+  /* base   #0A0B0F */ --background:          oklch(0.143 0.008 270);
+  /* ivory  #F3F3F0 */ --foreground:          oklch(0.958 0.003 106);
+  /* card   #15171E */ --card:                oklch(0.198 0.009 270);
+  /* ivory  #F3F3F0 */ --card-foreground:     oklch(0.958 0.003 106);
+  /* card   #15171E */ --popover:             oklch(0.198 0.009 270);
+  /* ivory  #F3F3F0 */ --popover-foreground:  oklch(0.958 0.003 106);
+  /* lime   #C9FF3D */ --primary:             oklch(0.915 0.215 124);
+  /* base   #0A0B0F */ --primary-foreground:  oklch(0.143 0.008 270);
+  /* alt    #0E0F14 */ --secondary:           oklch(0.165 0.008 270);
+  /* ivory  #F3F3F0 */ --secondary-foreground:oklch(0.958 0.003 106);
+  /* alt    #0E0F14 */ --muted:               oklch(0.165 0.008 270);
+  /* muted  #9498A4 */ --muted-foreground:    oklch(0.660 0.012 268);
+  /* card   #15171E */ --accent:              oklch(0.198 0.009 270);
+  /* ivory  #F3F3F0 */ --accent-foreground:   oklch(0.958 0.003 106);
+  /* lime   #C9FF3D */ --destructive:         oklch(0.915 0.215 124);
+  /* hairline          */ --border:           oklch(1 0 0 / 8%);
+  /* hairline          */ --input:            oklch(1 0 0 / 12%);
+  /* lime   #C9FF3D */ --ring:                oklch(0.915 0.215 124);
+  /* lime   #C9FF3D */ --brand:               oklch(0.915 0.215 124);
+  --brand-foreground: oklch(0.143 0.008 270);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -345,12 +345,12 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Mukta', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -433,10 +433,10 @@ body { overflow-x: hidden; }
   }
   .vfy-stat-strip > *:first-child {
     padding-left: 0 !important;
-    border-right: 1px solid rgba(10,26,46,0.08) !important;
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
   }
   .vfy-stat-strip > *:nth-child(2) {
-    border-right: 1px solid rgba(10,26,46,0.08) !important;
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
   }
   .vfy-stat-strip > *:last-child {
     padding-right: 0 !important;
@@ -597,7 +597,7 @@ body { overflow-x: hidden; }
   }
   .vfy-newsletter-row input {
     border-radius: 2px !important;
-    border-right: 1px solid rgba(10,26,46,0.08) !important;
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
     border-bottom: none !important;
   }
   .vfy-newsletter-row button {
@@ -795,11 +795,11 @@ body { overflow-x: hidden; }
   }
   /* Left-column items (odd): ensure border-right exists */
   .campaign-item:nth-child(2n-1) article {
-    border-right: 1px solid rgba(10,26,46,0.14) !important;
+    border-right: 1px solid rgba(255,255,255,0.14) !important;
   }
   /* Row 2+ items (3rd onward): add top border */
   .campaign-item:nth-child(n+3) {
-    border-top: 1px solid rgba(10,26,46,0.14) !important;
+    border-top: 1px solid rgba(255,255,255,0.14) !important;
   }
   /* Tighten card padding on narrow screens */
   .campaign-item article { padding: 22px 14px 20px !important; }
@@ -871,15 +871,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Branded text selection — heritage crimson */
+/* Branded text selection — neon lime */
 ::selection {
-  background: rgba(190, 21, 56, 0.20);
-  color: #1A130C;
+  background: #C9FF3D;
+  color: #0A0B0F;
 }
 
-/* Keyboard focus rings — sacred gold, visible only for keyboard users */
+/* Keyboard focus rings — neon lime, visible only for keyboard users */
 :focus-visible {
-  outline: 2px solid #B8892A;
+  outline: 2px solid #C9FF3D;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -887,21 +887,21 @@ body {
   outline: none;
 }
 
-/* Warm parchment scrollbar with gold hover */
+/* Dark scrollbar with lime hover */
 ::-webkit-scrollbar {
   width: 11px;
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #F0E8D8;
+  background: #0A0B0F;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9B89A;
+  background: #23262F;
   border-radius: 6px;
-  border: 2px solid #F0E8D8;
+  border: 2px solid #0A0B0F;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8892A;
+  background: #C9FF3D;
 }
 
 /* Images never overflow their container */

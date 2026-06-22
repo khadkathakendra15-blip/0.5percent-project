@@ -21,22 +21,22 @@ function useReveal(delay = 0, dir: 'up' | 'left' | 'right' = 'up') {
 }
 
 const C = {
-  ink:      '#1A130C',
-  inkSoft:  '#52473E',
-  inkFaint: '#A89A86',
-  cream:    '#F6F0E6',
-  cream2:   '#E8DECC',
-  paper:    '#FDFAF4',
-  saffron:  '#BE1538',
-  saffronB: '#BE1538',
-  terra:    '#BE1538',
-  line:     'rgba(26,19,12,0.13)',
+  ink:      '#F3F3F0',
+  inkSoft:  '#9498A4',
+  inkFaint: '#5C606C',
+  cream:    '#0E0F14',
+  cream2:   '#15171E',
+  paper:    '#0A0B0F',
+  saffron:  '#C9FF3D',
+  saffronB: '#C9FF3D',
+  terra:    '#C9FF3D',
+  line:     'rgba(255,255,255,0.13)',
 };
 
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const BEBAS = "'Bebas Neue', sans-serif";
-const MUKTA = "'Mukta', sans-serif";
-const MONO  = "'JetBrains Mono', monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS = "'Bricolage Grotesque', sans-serif";
+const MUKTA = "'Space Grotesk', sans-serif";
+const MONO  = "'Space Mono', monospace";
 
 const PANELS = [
   { id: 1, label: 'Himalayas',   src: '/Himalayas Landscape.png' },
@@ -62,7 +62,7 @@ function Panel({ item, isActive, onEnter }: {
         width: isActive ? '360px' : '58px',
         transition: 'width .7s cubic-bezier(.2,.6,.2,1)',
         cursor: 'pointer',
-        background: '#0C1A32',
+        background: '#0A0B0F',
       }}
     >
       <img
@@ -139,7 +139,7 @@ export function HalfPercentVisionSection() {
             </div>
 
             <h2 style={{
-              fontFamily: SERIF, fontWeight: 300,
+              fontFamily: SERIF, fontWeight: 700,
               fontSize: 'clamp(38px, 4.2vw, 64px)',
               lineHeight: 1.0, letterSpacing: '-0.015em', color: C.ink,
               marginBottom: '28px',
@@ -148,7 +148,7 @@ export function HalfPercentVisionSection() {
               <em style={{ fontStyle: 'italic', color: C.terra }}>remarkable</em> facets.
             </h2>
 
-            <p style={{ fontSize: '16px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 300, fontFamily: MUKTA, marginBottom: '32px', maxWidth: '38ch' }}>
+            <p style={{ fontSize: '16px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 400, fontFamily: MUKTA, marginBottom: '32px', maxWidth: '38ch' }}>
               From Himalayan peaks to ancient temples, from spiritual retreats to adrenaline trails
               Nepal offers the world a depth no single journey can exhaust.
             </p>

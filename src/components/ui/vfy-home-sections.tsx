@@ -3,27 +3,27 @@ import { useNavigate } from 'react-router-dom';
 
 /* ─── design tokens ─────────────────────────────────────────────────────── */
 const C = {
-  ink:         '#1A130C',
-  ink2:        '#241A10',
-  inkSoft:     '#52473E',
-  inkFaint:    '#A89A86',
-  cream:       '#F6F0E6',
-  cream2:      '#E8DECC',
-  paper:       '#FDFAF4',
-  saffron:     '#BE1538',
-  saffronBright: '#C9A227',   // sacred gold — accents on dark/light
-  terra:       '#BE1538',     // heritage crimson — emphasis & action
-  gold:        '#B8892A',     // deep gold — fine rules & labels
-  goldBright:  '#C9A227',
-  navy:        '#0C1A32',     // deep navy — dark sections
-  line:        'rgba(26,19,12,0.14)',
-  lineS:       'rgba(26,19,12,0.08)',
+  ink:         '#F3F3F0',
+  ink2:        '#F3F3F0',
+  inkSoft:     '#9498A4',
+  inkFaint:    '#5C606C',
+  cream:       '#0E0F14',
+  cream2:      '#15171E',
+  paper:       '#0A0B0F',
+  saffron:     '#C9FF3D',
+  saffronBright: '#C9FF3D',   // sacred gold — accents on dark/light
+  terra:       '#C9FF3D',     // heritage crimson — emphasis & action
+  gold:        '#C9FF3D',     // deep gold — fine rules & labels
+  goldBright:  '#C9FF3D',
+  navy:        '#0A0B0F',     // deep navy — dark sections
+  line:        'rgba(255,255,255,0.14)',
+  lineS:       'rgba(255,255,255,0.08)',
 };
 
-const SERIF  = "'Cormorant Garamond', Georgia, serif";
-const BEBAS  = "'Bebas Neue', sans-serif";
-const MUKTA  = "'Mukta', system-ui, sans-serif";
-const MONO   = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF  = "'Bricolage Grotesque', Georgia, serif";
+const BEBAS  = "'Bricolage Grotesque', sans-serif";
+const MUKTA  = "'Space Grotesk', system-ui, sans-serif";
+const MONO   = "'Space Mono', ui-monospace, monospace";
 
 /* ─── image paths ───────────────────────────────────────────────────────── */
 const IMG = {
@@ -188,7 +188,7 @@ function Eyebrow({ children, light = false, center = false }: { children: React.
 function Display({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
     <h2 style={{
-      fontFamily: SERIF, fontWeight: 300,
+      fontFamily: SERIF, fontWeight: 700,
       fontSize: 'clamp(44px, 6vw, 88px)',
       lineHeight: 1, letterSpacing: '-0.015em',
       color: light ? C.cream : C.ink,
@@ -207,19 +207,19 @@ export function MarqueeStrip() {
   const items = [...words, ...words];
   return (
     <div aria-hidden="true" style={{
-      background: '#0C1A32', overflow: 'hidden',
-      borderTop: '1px solid rgba(255,255,255,0.06)',
+      background: '#C9FF3D', overflow: 'hidden',
+      borderTop: '1px solid #0A0B0F', borderBottom: '1px solid #0A0B0F',
     }}>
       <div className="vfy-marquee-track" style={{
-        display: 'flex', gap: '60px', padding: '24px 0',
+        display: 'flex', gap: '34px', padding: '22px 0',
         width: 'max-content', whiteSpace: 'nowrap',
-        fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
-        fontSize: '26px', color: C.cream,
+        fontFamily: SERIF, fontWeight: 700, letterSpacing: '-0.01em',
+        fontSize: '21px', color: '#0A0B0F',
       }}>
         {items.map((w, i) => (
-          <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: '60px' }}>
+          <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: '34px' }}>
             {w}
-            <span style={{ color: C.saffronBright, fontStyle: 'normal', fontSize: '18px' }}>✦</span>
+            <span style={{ fontSize: '13px' }}>✦</span>
           </span>
         ))}
       </div>
@@ -251,12 +251,12 @@ export function VisionSection() {
 
           {/* right */}
           <div ref={r2} style={{ paddingTop: '18px' }}>
-            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '24px', fontWeight: 300, fontFamily: MUKTA }}>
+            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '24px', fontWeight: 400, fontFamily: MUKTA }}>
               Nepal is one of the world's most beautiful and spiritually significant countries — from the Himalayas to ancient heritage, from the birthplace of{' '}
               <strong style={{ color: C.ink, fontWeight: 500 }}>Buddha</strong>{' '}
               to a rich tapestry of cultures. And yet, Nepal remains underrepresented in global tourism.
             </p>
-            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '36px', fontWeight: 300, fontFamily: MUKTA }}>
+            <p style={{ fontSize: '19px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '36px', fontWeight: 400, fontFamily: MUKTA }}>
               VFY Talks exists to change that. Through honest media, cinematic storytelling and cross-cultural conversation, we share Nepal's voice with the world — and invite the world to listen.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -344,7 +344,7 @@ function PremiseSection() {
           <div ref={r1}>
             <Eyebrow>The premise</Eyebrow>
             <div className="vfy-premise-num" style={{
-              fontFamily: SERIF, fontWeight: 300,
+              fontFamily: SERIF, fontWeight: 700,
               fontSize: 'clamp(180px, 28vw, 440px)',
               lineHeight: 0.78, color: C.terra,
               letterSpacing: '-0.03em', display: 'inline-block',
@@ -358,14 +358,14 @@ function PremiseSection() {
           {/* right copy */}
           <div ref={r2}>
             <h3 style={{
-              fontFamily: SERIF, fontWeight: 300,
+              fontFamily: SERIF, fontWeight: 700,
               fontSize: 'clamp(32px, 3.4vw, 46px)', lineHeight: 1.08,
               letterSpacing: '-0.01em', marginBottom: '24px', color: C.ink,
             }}>
               It doesn't take the world. It takes{' '}
               <em style={{ fontStyle: 'italic', color: C.terra }}>half of one percent</em>.
             </h3>
-            <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 300, fontFamily: MUKTA }}>
+            <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 400, fontFamily: MUKTA }}>
               If only 0.5% of travellers from India and China visit Nepal each year, the country's economy, employment and global identity transform. A small percentage — with a profound, generational ripple.
             </p>
           </div>
@@ -439,7 +439,7 @@ function ThreePillarsSection() {
               <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>destination</em>.
             </Display>
           </div>
-          <p ref={rDesc} style={{ fontSize: '17px', color: C.inkSoft, maxWidth: '48ch', lineHeight: 1.85, fontFamily: MUKTA, fontWeight: 300 }}>
+          <p ref={rDesc} style={{ fontSize: '17px', color: C.inkSoft, maxWidth: '48ch', lineHeight: 1.85, fontFamily: MUKTA, fontWeight: 400 }}>
             Nepal's gift to the world is not a single thing. It is a layered, living inheritance — held in its peaks, its prayers, and its people.
           </p>
         </div>
@@ -458,7 +458,7 @@ function ThreePillarsSection() {
 function PillarCard({ img, num, title, sub, delay }: { img: string; num: string; title: string; sub: string; delay: number }) {
   const ref = useReveal(delay);
   return (
-    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', aspectRatio: '3/4.2', background: '#1A130C', cursor: 'pointer', transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease' }}
+    <div ref={ref} style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', aspectRatio: '3/4.2', background: '#F3F3F0', cursor: 'pointer', transition: 'transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease' }}
       onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1.06)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-8px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 24px 60px rgba(0,0,0,0.35)'; }}
       onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLElement).style.transform = 'none'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}
       className="vfy-pillar-card"
@@ -468,7 +468,7 @@ function PillarCard({ img, num, title, sub, delay }: { img: string; num: string;
       <div style={{ position: 'absolute', left: '28px', right: '28px', bottom: '28px', color: '#fff', zIndex: 2 }}>
         <div style={{ fontFamily: BEBAS, fontSize: '14px', letterSpacing: '0.3em', color: C.saffronBright }}>{num}</div>
         <h3 style={{ fontFamily: SERIF, fontWeight: 400, fontSize: '42px', lineHeight: 1, marginTop: '6px' }}>{title}</h3>
-        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginTop: '10px', lineHeight: 1.6, fontWeight: 300, fontFamily: MUKTA }}>{sub}</div>
+        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginTop: '10px', lineHeight: 1.6, fontWeight: 400, fontFamily: MUKTA }}>{sub}</div>
       </div>
     </div>
   );
@@ -506,7 +506,7 @@ function ActivitiesSection() {
             </Display>
           </div>
           <div ref={rDesc}>
-            <p style={{ maxWidth: '42ch', color: C.inkSoft, fontSize: '17px', lineHeight: 1.85, fontWeight: 300, fontFamily: MUKTA, borderLeft: `2px solid ${C.terra}`, paddingLeft: '24px' }}>
+            <p style={{ maxWidth: '42ch', color: C.inkSoft, fontSize: '17px', lineHeight: 1.85, fontWeight: 400, fontFamily: MUKTA, borderLeft: `2px solid ${C.terra}`, paddingLeft: '24px' }}>
               The 0.5% Campaign moves through podcasts, films, expeditions, conversations and culture — a mosaic of voices, all pointed toward Nepal.
             </p>
           </div>
@@ -534,7 +534,7 @@ function ActivitiesSection() {
                 overflow: 'hidden',
                 borderRadius: '6px',
                 background: C.ink,
-                boxShadow: '0 8px 40px rgba(26,19,12,0.16)',
+                boxShadow: '0 8px 40px rgba(255,255,255,0.16)',
               }}>
                 <iframe
                   src={src}
@@ -599,10 +599,10 @@ export function FounderSection() {
             </blockquote>
 
             <div>
-              <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '18px', fontWeight: 300, fontFamily: MUKTA }}>
+              <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, marginBottom: '18px', fontWeight: 400, fontFamily: MUKTA }}>
                 Dashrath Sunar is the visionary behind VFY Talks and the 0.5% Campaign — a movement dedicated to transforming Nepal's global tourism identity through powerful storytelling, media and cross-cultural conversations.
               </p>
-              <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 300, fontFamily: MUKTA }}>
+              <p style={{ fontSize: '17px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 400, fontFamily: MUKTA }}>
                 A media entrepreneur, traveller and storyteller.
               </p>
             </div>
@@ -658,7 +658,7 @@ function LogoBadge({ src, alt }: LogoItem) {
       width: '72px', height: '72px', borderRadius: '12px', flexShrink: 0,
       background: '#fff', border: `1px solid ${C.lineS}`,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      overflow: 'hidden', boxShadow: '0 1px 6px rgba(26,19,12,0.06)',
+      overflow: 'hidden', boxShadow: '0 1px 6px rgba(255,255,255,0.06)',
     }}>
       <img
         src={src} alt={alt} loading="lazy"
@@ -667,7 +667,7 @@ function LogoBadge({ src, alt }: LogoItem) {
           (e.currentTarget as HTMLImageElement).style.display = 'none';
           const p = e.currentTarget.parentElement!;
           p.style.background = C.cream2;
-          p.innerHTML = `<span style="font-family:'Bebas Neue',sans-serif;font-size:10px;color:${C.inkFaint};letter-spacing:.08em;text-align:center;padding:4px">${alt.slice(0, 5).toUpperCase()}</span>`;
+          p.innerHTML = `<span style="font-family:'Bricolage Grotesque',sans-serif;font-size:10px;color:${C.inkFaint};letter-spacing:.08em;text-align:center;padding:4px">${alt.slice(0, 5).toUpperCase()}</span>`;
         }}
       />
     </div>
@@ -688,7 +688,7 @@ function PartnersGridSection() {
             Partners &amp;{' '}
             <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>Supporters</em>.
           </Display>
-          <p style={{ marginTop: '18px', color: C.inkSoft, fontSize: '16px', fontFamily: MUKTA, fontWeight: 300, maxWidth: '52ch' }}>
+          <p style={{ marginTop: '18px', color: C.inkSoft, fontSize: '16px', fontFamily: MUKTA, fontWeight: 400, maxWidth: '52ch' }}>
             Airlines, embassies, hotels, government bodies and media organisations carrying Nepal's story to the world.
           </p>
         </div>
@@ -770,7 +770,7 @@ function CTASection() {
       {/* Subtle red glow top-right */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: `radial-gradient(55% 70% at 85% 10%, rgba(190,21,56,0.06), transparent 60%),
+        background: `radial-gradient(55% 70% at 85% 10%, rgba(201,255,61,0.06), transparent 60%),
                      radial-gradient(45% 60% at 15% 90%, rgba(12,26,50,0.05), transparent 60%)`,
       }} />
       {/* Decorative large number */}
@@ -778,7 +778,7 @@ function CTASection() {
         position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)',
         fontFamily: SERIF, fontWeight: 700,
         fontSize: 'clamp(200px, 28vw, 400px)', lineHeight: 1,
-        color: `rgba(190,21,56,0.04)`, letterSpacing: '-0.04em',
+        color: `rgba(201,255,61,0.04)`, letterSpacing: '-0.04em',
         userSelect: 'none', pointerEvents: 'none',
       }}>0.5</div>
       <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '140px 40px', maxWidth: '1320px', margin: '0 auto' }}>
@@ -786,7 +786,7 @@ function CTASection() {
           <Eyebrow center>Join the movement</Eyebrow>
         </div>
         <h2 ref={r2} style={{
-          fontFamily: SERIF, fontWeight: 300,
+          fontFamily: SERIF, fontWeight: 700,
           fontSize: 'clamp(44px, 6.4vw, 108px)', lineHeight: 0.98,
           letterSpacing: '-0.015em', color: C.ink, textAlign: 'center',
         }}>
@@ -794,7 +794,7 @@ function CTASection() {
           to the{' '}
           <em style={{ fontStyle: 'italic', color: C.terra, fontWeight: 400 }}>world</em>.
         </h2>
-        <p ref={r3} style={{ maxWidth: '54ch', margin: '30px auto 0', fontSize: '18px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 300, fontFamily: MUKTA }}>
+        <p ref={r3} style={{ maxWidth: '54ch', margin: '30px auto 0', fontSize: '18px', lineHeight: 1.85, color: C.inkSoft, fontWeight: 400, fontFamily: MUKTA }}>
           Partner with us. Tell a story. Walk the trail. Help carry Nepal's voice into the global conversation it deserves.
         </p>
         <div ref={r4} style={{ display: 'flex', gap: '14px', justifyContent: 'center', marginTop: '48px', flexWrap: 'wrap' }}>
@@ -804,12 +804,12 @@ function CTASection() {
               display: 'inline-flex', alignItems: 'center', gap: '10px',
               padding: '16px 36px', borderRadius: '100px',
               fontSize: '12.5px', letterSpacing: '0.22em', textTransform: 'uppercase',
-              fontWeight: 600, fontFamily: MUKTA,
-              background: C.terra, color: '#fff',
+              fontWeight: 700, fontFamily: MONO,
+              background: C.terra, color: '#0A0B0F',
               transition: 'transform .2s, background .2s',
               textDecoration: 'none',
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = C.ink; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#D8FF6B'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = C.terra; (e.currentTarget as HTMLElement).style.transform = 'none'; }}
           >
             Become a partner
@@ -852,12 +852,12 @@ const FOOTER_NAV = [
 export function SiteFooter() {
   const navigate = useNavigate();
   return (
-    <footer style={{ background: '#0C1A32', color: 'rgba(246,240,230,0.65)' }}>
+    <footer style={{ background: '#0A0B0F', color: 'rgba(243,243,240,0.65)' }}>
       {/* upper */}
       <div className="vfy-footer-upper" style={{
         maxWidth: '1320px', margin: '0 auto', padding: '64px 40px 48px',
         display: 'flex', justifyContent: 'space-between', gap: '48px', flexWrap: 'wrap',
-        borderBottom: '1px solid rgba(246,240,230,0.08)',
+        borderBottom: '1px solid rgba(243,243,240,0.08)',
       }}>
         {/* brand block */}
         <div style={{ maxWidth: '380px' }}>
@@ -865,10 +865,10 @@ export function SiteFooter() {
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: '18px', display: 'block' }}>
             <img src="/o.5 logo.png" alt="0.5% Campaign" style={{ height: '44px', width: 'auto', display: 'block', objectFit: 'contain' }} />
           </button>
-          <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(246,240,230,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
+          <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(243,243,240,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
             If just 0.5% of travelers from India and China choose Nepal — everything changes.
           </p>
-          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.75, color: 'rgba(246,240,230,0.42)', margin: 0 }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 400, lineHeight: 1.75, color: 'rgba(243,243,240,0.42)', margin: 0 }}>
             A national tourism movement for Nepal's future. Travel with purpose.
           </p>
         </div>
@@ -883,11 +883,11 @@ export function SiteFooter() {
               <button key={l.to} onClick={() => navigate(l.to)}
                 style={{
                   background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left',
-                  fontFamily: MUKTA, fontSize: '14px', fontWeight: 300, letterSpacing: '0.02em',
-                  color: 'rgba(246,240,230,0.62)', transition: 'color .2s',
+                  fontFamily: MUKTA, fontSize: '14px', fontWeight: 400, letterSpacing: '0.02em',
+                  color: 'rgba(243,243,240,0.62)', transition: 'color .2s',
                 }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = C.cream; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(246,240,230,0.62)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(243,243,240,0.62)'; }}
               >
                 {l.label}
               </button>
@@ -900,13 +900,13 @@ export function SiteFooter() {
           <div style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.26em', textTransform: 'uppercase', color: C.saffronBright, marginBottom: '20px' }}>
             The Movement
           </div>
-          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 300, lineHeight: 1.8, color: 'rgba(246,240,230,0.42)', margin: '0 0 22px' }}>
+          <p style={{ fontFamily: MUKTA, fontSize: '13px', fontWeight: 400, lineHeight: 1.8, color: 'rgba(243,243,240,0.42)', margin: '0 0 22px' }}>
             14.2 million potential visitors. $4.2 billion in projected revenue. 820,000 new jobs.
           </p>
           <button onClick={() => navigate('/booking')}
             style={{
               fontFamily: MONO, fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              background: '#BE1538', color: C.cream, border: 'none', borderRadius: '2px',
+              background: '#C9FF3D', color: C.cream, border: 'none', borderRadius: '2px',
               padding: '12px 26px', cursor: 'pointer', transition: 'opacity .2s',
             }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.85'; }}
@@ -922,10 +922,10 @@ export function SiteFooter() {
         maxWidth: '1320px', margin: '0 auto', padding: '22px 40px',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '14px', flexWrap: 'wrap',
       }}>
-        <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(246,240,230,0.30)' }}>
+        <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(243,243,240,0.30)' }}>
           © 2026 The 0.5% Campaign · Nepal
         </span>
-        <span style={{ fontFamily: SERIF, fontSize: '13px', fontStyle: 'italic', color: 'rgba(246,240,230,0.30)' }}>
+        <span style={{ fontFamily: SERIF, fontSize: '13px', fontStyle: 'italic', color: 'rgba(243,243,240,0.30)' }}>
           From the peaks that touch the sky to the temples that touch the soul.
         </span>
       </div>

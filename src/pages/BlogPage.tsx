@@ -5,13 +5,13 @@ import { Clock, User, ArrowRight, BookOpen } from 'lucide-react';
 import { BLOG_POSTS, type BlogPost } from '@/data/blogPosts';
 
 const C = {
-  ink: '#1A130C', inkSoft: '#52473E', inkFaint: '#A89A86',
-  cream: '#F6F0E6', cream2: '#E8DECC', paper: '#FDFAF4',
-  saffron: '#BE1538', terra: '#BE1538', lineS: 'rgba(26,19,12,0.08)',
+  ink: '#F3F3F0', inkSoft: '#9498A4', inkFaint: '#5C606C',
+  cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
+  saffron: '#C9FF3D', terra: '#C9FF3D', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Cormorant Garamond', Georgia, serif";
-const MUKTA = "'Mukta', system-ui, sans-serif";
-const MONO  = "'JetBrains Mono', ui-monospace, monospace";
+const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const MUKTA = "'Space Grotesk', system-ui, sans-serif";
+const MONO  = "'Space Mono', ui-monospace, monospace";
 
 function ArticleCard({ post, large = false }: { post: BlogPost; large?: boolean }) {
   const [hov, setHov] = useState(false);
@@ -25,7 +25,7 @@ function ArticleCard({ post, large = false }: { post: BlogPost; large?: boolean 
         border: `1px solid ${C.lineS}`, textDecoration: 'none', color: 'inherit',
         transition: 'transform .3s ease, box-shadow .3s ease',
         transform: hov ? 'translateY(-5px)' : 'none',
-        boxShadow: hov ? '0 18px 44px rgba(26,19,12,0.14)' : '0 2px 8px rgba(26,19,12,0.05)',
+        boxShadow: hov ? '0 18px 44px rgba(255,255,255,0.14)' : '0 2px 8px rgba(255,255,255,0.05)',
         display: 'flex', flexDirection: large ? 'row' : 'column',
         background: C.paper,
       }}
@@ -46,7 +46,7 @@ function ArticleCard({ post, large = false }: { post: BlogPost; large?: boolean 
         </span>
         {large && (
           <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
-            <BookOpen size={22} color="rgba(246,240,230,0.55)" strokeWidth={1.5} />
+            <BookOpen size={22} color="rgba(243,243,240,0.55)" strokeWidth={1.5} />
           </div>
         )}
       </div>
