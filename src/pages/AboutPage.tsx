@@ -36,7 +36,7 @@ const otherTeam = [
   {
     role:  'Social Media Algorithm Specialist',
     name:  'Thakendra Khadka',
-    photo: '/Thakendra Khadka.PNG',
+    photo: '/Thakendra Khadka.jpeg',
     bio:   "Drives Nepal's digital presence with precision strategy, creative content and social media expertise.",
   },
   {
