@@ -862,8 +862,15 @@ export function SiteFooter() {
         {/* brand block */}
         <div style={{ maxWidth: '380px' }}>
           <button onClick={() => navigate('/')}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: '18px', display: 'block' }}>
-            <img src="/o.5 logo.png" alt="0.5% Campaign" style={{ height: '44px', width: 'auto', display: 'block', objectFit: 'contain' }} />
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{
+              width: '28px', height: '28px', borderRadius: '50%', background: '#C9FF3D',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: SERIF, fontWeight: 800, fontSize: '12px', color: '#0A0B0F',
+            }}>½</span>
+            <span style={{ fontFamily: SERIF, fontWeight: 700, fontSize: '16px', color: '#F3F3F0' }}>
+              0.5<span style={{ color: '#C9FF3D' }}>%</span> Campaign
+            </span>
           </button>
           <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(243,243,240,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
             If just 0.5% of travelers from India and China choose Nepal — everything changes.
