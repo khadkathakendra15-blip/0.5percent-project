@@ -271,7 +271,7 @@ const B = {
   lineS:   'rgba(255,255,255,0.08)', lineW: 'rgba(234,238,255,0.08)',
 }
 const F = {
-  serif: "'Bricolage Grotesque', Georgia, serif",
+  serif: "'Bricolage Grotesque', system-ui, sans-serif",
   bebas: "'Bricolage Grotesque', sans-serif",
   mukta: "'Space Grotesk', system-ui, sans-serif",
   mono:  "'Space Mono', ui-monospace, monospace",

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const SERIF = "'Bricolage Grotesque', system-ui, sans-serif";
 const MONO  = "'Space Mono', ui-monospace, monospace";
 const MUKTA = "'Space Grotesk', system-ui, sans-serif";
 

@@ -33,7 +33,7 @@ const C = {
   line:     'rgba(255,255,255,0.13)',
 };
 
-const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const SERIF = "'Bricolage Grotesque', system-ui, sans-serif";
 const BEBAS = "'Bricolage Grotesque', sans-serif";
 const MUKTA = "'Space Grotesk', sans-serif";
 const MONO  = "'Space Mono', monospace";
@@ -103,7 +103,7 @@ function Panel({ item, isActive, onEnter }: {
           width: '28px', height: '28px', borderRadius: '50%',
           background: C.terra, display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
-          <span style={{ fontFamily: MONO, fontSize: '10px', color: '#fff', letterSpacing: '0.05em' }}>
+          <span style={{ fontFamily: MONO, fontSize: '10px', color: '#0A0B0F', fontWeight: 700, letterSpacing: '0.05em' }}>
             0{item.id}
           </span>
         </div>

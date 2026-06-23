@@ -22,11 +22,11 @@ const W = {
   muted:   '#9498A4',
   faint:   '#5C606C',
 
-  // user bubble — saffron bg, white text
+  // user bubble — saffron bg, dark text for contrast
   userBg:  '#FFC000',
-  userTxt: '#ffffff',
+  userTxt: '#0A0B0F',
 
-  serif: "'Bricolage Grotesque', Georgia, serif",
+  serif: "'Bricolage Grotesque', system-ui, sans-serif",
   sans:  "'Space Grotesk', system-ui, sans-serif",
   mono:  "'Space Mono', ui-monospace, monospace",
 };
@@ -181,7 +181,7 @@ function BubbleRow({ msg, onOption }: { msg: Msg; onOption:(v:string)=>void }) {
                 : p
             )}
           </div>
-          <div style={{ fontFamily:W.mono, fontSize:'8px', color: isAI ? W.faint : 'rgba(255,255,255,0.65)', marginTop:'5px', letterSpacing:'0.03em' }}>
+          <div style={{ fontFamily:W.mono, fontSize:'8px', color: isAI ? W.faint : 'rgba(10,11,15,0.55)', marginTop:'5px', letterSpacing:'0.03em' }}>
             {new Date(msg.ts).toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' })}
           </div>
         </div>
@@ -307,7 +307,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
             width:'32px', height:'32px', display:'flex', alignItems:'center', justifyContent:'center',
             cursor: input.trim() ? 'pointer' : 'default', transition:'all 0.18s', flexShrink:0,
           }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={input.trim() ? '#ffffff' : W.faint} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={input.trim() ? '#0A0B0F' : W.faint} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
             </svg>
           </button>
@@ -323,8 +323,8 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
     <button onClick={onClick} style={{
       position:'fixed', bottom:'24px', right:'24px', zIndex:9999,
       width:'54px', height:'54px', borderRadius:'50%',
-      background: open ? W.gold : '#F3F3F0',
-      border:`1.5px solid ${open ? W.gold : 'rgba(255,255,255,0.25)'}`,
+      background: open ? W.gold : W.card,
+      border:`1.5px solid ${open ? W.gold : 'rgba(255,255,255,0.18)'}`,
       cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center',
       boxShadow: open ? `0 0 0 4px rgba(12,26,50,0.15), 0 8px 24px rgba(255,255,255,0.25)` : '0 6px 20px rgba(255,255,255,0.25)',
       transition:'all 0.25s cubic-bezier(0.34,1.56,0.64,1)',
@@ -334,7 +334,7 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
     onMouseLeave={e => { if (!open) { (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.25)'; } }}
     >
       {open ? (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0B0F" strokeWidth="2" strokeLinecap="round">
           <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       ) : (

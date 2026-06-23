@@ -5,7 +5,7 @@ const C = {
   cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
   saffron: '#FFC000', terra: '#FFC000', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const SERIF = "'Bricolage Grotesque', system-ui, sans-serif";
 const MUKTA = "'Space Grotesk', system-ui, sans-serif";
 const MONO  = "'Space Mono', ui-monospace, monospace";
 
@@ -269,7 +269,7 @@ function NepalTourismHubBody() {
             <a href="/booking" style={{
               padding: '14px 32px', borderRadius: '100px',
               fontFamily: MUKTA, fontSize: '12px', letterSpacing: '0.22em', textTransform: 'uppercase',
-              fontWeight: 600, background: C.terra, color: '#fff', textDecoration: 'none',
+              fontWeight: 700, background: C.terra, color: '#0A0B0F', textDecoration: 'none',
             }}>
               Plan your Nepal trip
             </a>

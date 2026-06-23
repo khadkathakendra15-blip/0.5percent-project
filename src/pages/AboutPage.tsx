@@ -16,7 +16,7 @@ const C = {
   lineSoft: 'rgba(255,255,255,0.06)',
 };
 
-const serif = "'Bricolage Grotesque', Georgia, serif";
+const serif = "'Bricolage Grotesque', system-ui, sans-serif";
 const sans  = "'Space Grotesk', system-ui, sans-serif";
 
 // ─── Partner logos ────────────────────────────────────────────────────────────

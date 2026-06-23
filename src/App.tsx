@@ -31,7 +31,7 @@ import {
 } from 'lucide-react';
 
 /* ─── design tokens (hero) ───────────────────────────────────────────────── */
-const SERIF  = "'Bricolage Grotesque', Georgia, serif";
+const SERIF  = "'Bricolage Grotesque', system-ui, sans-serif";
 const BEBAS  = "'Bricolage Grotesque', sans-serif";
 const MUKTA  = "'Space Grotesk', system-ui, sans-serif";
 

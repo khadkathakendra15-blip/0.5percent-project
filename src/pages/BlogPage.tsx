@@ -9,7 +9,7 @@ const C = {
   cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
   saffron: '#FFC000', terra: '#FFC000', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const SERIF = "'Bricolage Grotesque', system-ui, sans-serif";
 const MUKTA = "'Space Grotesk', system-ui, sans-serif";
 const MONO  = "'Space Mono', ui-monospace, monospace";
 
@@ -40,7 +40,7 @@ function ArticleCard({ post, large = false }: { post: BlogPost; large?: boolean 
       }}>
         <span style={{
           fontFamily: MONO, fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase',
-          background: C.terra, color: '#fff', padding: '4px 10px', borderRadius: '2px',
+          background: C.terra, color: '#0A0B0F', fontWeight: 700, padding: '4px 10px', borderRadius: '2px',
         }}>
           {post.category}
         </span>

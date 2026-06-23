@@ -8,7 +8,7 @@ const C = {
   cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
   terra: '#FFC000', lineS: 'rgba(255,255,255,0.08)',
 };
-const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const SERIF = "'Bricolage Grotesque', system-ui, sans-serif";
 const MUKTA = "'Space Grotesk', system-ui, sans-serif";
 const MONO  = "'Space Mono', ui-monospace, monospace";
 
@@ -76,7 +76,7 @@ export default function BlogPostPage() {
           </Link>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
-            <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', background: C.terra, color: '#fff', padding: '5px 12px', borderRadius: '2px' }}>
+            <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', background: C.terra, color: '#0A0B0F', fontWeight: 700, padding: '5px 12px', borderRadius: '2px' }}>
               {post.category}
             </span>
             <span style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(243,243,240,0.6)' }}>

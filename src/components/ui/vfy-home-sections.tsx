@@ -20,7 +20,7 @@ const C = {
   lineS:       'rgba(255,255,255,0.08)',
 };
 
-const SERIF  = "'Bricolage Grotesque', Georgia, serif";
+const SERIF  = "'Bricolage Grotesque', system-ui, sans-serif";
 const BEBAS  = "'Bricolage Grotesque', sans-serif";
 const MUKTA  = "'Space Grotesk', system-ui, sans-serif";
 const MONO   = "'Space Mono', ui-monospace, monospace";
@@ -809,7 +809,7 @@ function CTASection() {
               transition: 'transform .2s, background .2s',
               textDecoration: 'none',
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#D8FF6B'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#FFD24D'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = C.terra; (e.currentTarget as HTMLElement).style.transform = 'none'; }}
           >
             Become a partner

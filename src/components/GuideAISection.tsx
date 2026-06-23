@@ -18,7 +18,7 @@ const G = {
   textFaint:  '#9498A4',
   ink:        '#F3F3F0',
   cream:      '#0E0F14',
-  serif:  "'Bricolage Grotesque', Georgia, serif",
+  serif:  "'Bricolage Grotesque', system-ui, sans-serif",
   sans:   "'Space Grotesk', system-ui, sans-serif",
   mono:   "'Space Mono', ui-monospace, monospace",
   bebas:  "'Bricolage Grotesque', sans-serif",

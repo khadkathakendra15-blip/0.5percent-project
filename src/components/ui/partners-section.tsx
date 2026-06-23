@@ -28,7 +28,7 @@ const repeat = (arr: Partner[], times = 4): Partner[] =>
 const BADGE_SIZE = 72;
 const GAP        = 20;
 
-const SERIF_F = "'Bricolage Grotesque', Georgia, serif";
+const SERIF_F = "'Bricolage Grotesque', system-ui, sans-serif";
 const MUKTA_F = "'Space Grotesk', system-ui, sans-serif";
 
 // ─── Logo badge (all inline styles — no Tailwind) ─────────────────────────────

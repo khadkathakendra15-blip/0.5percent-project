@@ -12,7 +12,7 @@ const C = {
   line:     'rgba(255,255,255,0.08)',
   lineM:    'rgba(255,255,255,0.13)',
 };
-const SERIF = "'Bricolage Grotesque', Georgia, serif";
+const SERIF = "'Bricolage Grotesque', system-ui, sans-serif";
 const BEBAS = "'Bricolage Grotesque', sans-serif";
 const MUKTA = "'Space Grotesk', system-ui, sans-serif";
 const MONO  = "'Space Mono', ui-monospace, monospace";

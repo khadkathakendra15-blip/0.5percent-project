@@ -19,7 +19,7 @@ const VFY = {
   faint:      '#9498A4',
   border:     'rgba(255,255,255,0.10)',
   borderH:    'rgba(255,255,255,0.26)',
-  serif:  "'Bricolage Grotesque', Georgia, serif",
+  serif:  "'Bricolage Grotesque', system-ui, sans-serif",
   sans:   "'Space Grotesk', system-ui, sans-serif",
   mono:   "'Space Mono', ui-monospace, monospace",
   bebas:  "'Bricolage Grotesque', sans-serif",

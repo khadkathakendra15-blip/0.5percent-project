@@ -156,7 +156,7 @@ function CountryCard({ country, animated, cardDelay }: {
       onMouseLeave={() => setHov(false)}
       style={{
         display: 'flex', flexDirection: 'column',
-        background: hov && !country.highlight ? '#fff' : country.bg,
+        background: hov && !country.highlight ? C.cream2 : country.bg,
         position: 'relative',
         transition: 'background .3s',
         height: '100%',
@@ -172,7 +172,7 @@ function CountryCard({ country, animated, cardDelay }: {
           fontFamily: MONO, fontSize: '9px', letterSpacing: '0.28em',
           textTransform: 'uppercase', fontWeight: 600,
           padding: '5px 10px', borderRadius: '100px',
-          background: country.color, color: '#fff',
+          background: country.color, color: '#0A0B0F',
         }}>
           {country.badge}
         </div>
@@ -315,27 +315,27 @@ export function CountryComparisonSection() {
         <div ref={rInsight} style={{
           marginTop: '24px',
           display: 'grid', gridTemplateColumns: '1fr auto', gap: '32px', alignItems: 'center',
-          background: C.ink, color: C.cream,
+          background: C.saffron, color: '#0A0B0F',
           padding: '24px 32px', borderRadius: '4px',
         }}>
           <div>
-            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.saffron, marginBottom: '8px' }}>
+            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(10,11,15,0.6)', marginBottom: '8px' }}>
               Key insight
             </div>
             <h3 style={{
               fontFamily: SERIF, fontWeight: 700,
-              fontSize: 'clamp(18px, 2vw, 26px)', lineHeight: 1.25, color: C.cream,
+              fontSize: 'clamp(18px, 2vw, 26px)', lineHeight: 1.25, color: '#0A0B0F',
             }}>
               Cambodia (17M people) gets{' '}
-              <em style={{ fontStyle: 'italic', color: C.saffronB }}>6× more tourists</em>
+              <em style={{ fontStyle: 'italic', textDecoration: 'underline', textUnderlineOffset: '3px' }}>6× more tourists</em>
               {' '}than Nepal (30M people). The 0.5% Campaign changes this.
             </h3>
           </div>
           <div style={{ textAlign: 'center', flexShrink: 0 }}>
-            <div style={{ fontFamily: BEBAS, fontSize: 'clamp(56px, 7vw, 96px)', lineHeight: 0.85, letterSpacing: '0.02em', color: C.saffronB }}>
+            <div style={{ fontFamily: BEBAS, fontSize: 'clamp(56px, 7vw, 96px)', lineHeight: 0.85, letterSpacing: '0.02em', color: '#0A0B0F' }}>
               0.5%
             </div>
-            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(243,243,240,0.45)', marginTop: '6px' }}>
+            <div style={{ fontFamily: MONO, fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(10,11,15,0.55)', marginTop: '6px' }}>
               Can close this gap
             </div>
           </div>
