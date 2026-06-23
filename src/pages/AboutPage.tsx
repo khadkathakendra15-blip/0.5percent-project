@@ -43,6 +43,7 @@ const otherTeam = [
     role:  'Tourism Entrepreneur',
     name:  'Rohit Karki',
     photo: '/Rohit Karki.jpg',
+    objectPosition: 'center 30%',
     bio:   "Connects Nepal's tourism potential with global opportunities — one journey and partnership at a time.",
   },
 ];
@@ -266,7 +267,7 @@ export default function AboutPage() {
                     <img
                       src={m.photo}
                       alt={m.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: (m as { objectPosition?: string }).objectPosition || 'top', display: 'block' }}
                     />
                   </div>
                 ) : (
