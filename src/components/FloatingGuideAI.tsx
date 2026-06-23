@@ -12,9 +12,9 @@ const W = {
   border:  'rgba(255,255,255,0.10)',
   borderH: 'rgba(12,26,50,0.40)',        // saffron focus ring
 
-  // accent (saffron #C9FF3D replaces gold)
-  gold:    '#C9FF3D',
-  goldD:   '#C9FF3D',
+  // accent (saffron #FFC000 replaces gold)
+  gold:    '#FFC000',
+  goldD:   '#FFC000',
   goldF:   'rgba(12,26,50,0.10)',
 
   // text (ink palette)
@@ -23,7 +23,7 @@ const W = {
   faint:   '#5C606C',
 
   // user bubble — saffron bg, white text
-  userBg:  '#C9FF3D',
+  userBg:  '#FFC000',
   userTxt: '#ffffff',
 
   serif: "'Bricolage Grotesque', Georgia, serif",
@@ -270,7 +270,7 @@ function ChatWindow({ onClose }: { onClose:()=>void }) {
           <div>
             <div style={{ fontFamily:W.sans, fontSize:'14px', fontWeight:600, color:W.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:W.mono, fontSize:'8px', letterSpacing:'0.08em', color:W.gold, display:'flex', alignItems:'center', gap:'4px', marginTop:'2px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#C9FF3D', display:'inline-block', flexShrink:0 }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#FFC000', display:'inline-block', flexShrink:0 }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -342,7 +342,7 @@ function FabButton({ open, onClick, hasUnread }: { open:boolean; onClick:()=>voi
       )}
       {/* Unread dot */}
       {hasUnread && !open && (
-        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#C9FF3D', border:'2px solid #F3F3F0' }} />
+        <span style={{ position:'absolute', top:'4px', right:'4px', width:'10px', height:'10px', borderRadius:'50%', background:'#FFC000', border:'2px solid #F3F3F0' }} />
       )}
     </button>
   );

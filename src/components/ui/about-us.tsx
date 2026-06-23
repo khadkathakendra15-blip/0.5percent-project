@@ -9,7 +9,7 @@ export function FloatingAboutButton() {
       onClick={() => navigate('/about')}
       className="vfy-fab fixed right-0 top-1/2 -translate-y-1/2 z-50 py-5 px-2.5 rounded-l-xl shadow-xl cursor-pointer"
       style={{
-        background: 'linear-gradient(180deg, #C9FF3D 0%, #C9FF3D 100%)',
+        background: 'linear-gradient(180deg, #FFC000 0%, #FFC000 100%)',
         boxShadow: '-4px 0 20px rgba(12,26,50,0.30)',
         writingMode: 'vertical-rl',
       }}

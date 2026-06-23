@@ -10,11 +10,11 @@ const C = {
   cream:       '#0E0F14',
   cream2:      '#15171E',
   paper:       '#0A0B0F',
-  saffron:     '#C9FF3D',
-  saffronBright: '#C9FF3D',   // sacred gold — accents on dark/light
-  terra:       '#C9FF3D',     // heritage crimson — emphasis & action
-  gold:        '#C9FF3D',     // deep gold — fine rules & labels
-  goldBright:  '#C9FF3D',
+  saffron:     '#FFC000',
+  saffronBright: '#FFC000',   // sacred gold — accents on dark/light
+  terra:       '#FFC000',     // heritage crimson — emphasis & action
+  gold:        '#FFC000',     // deep gold — fine rules & labels
+  goldBright:  '#FFC000',
   navy:        '#0A0B0F',     // deep navy — dark sections
   line:        'rgba(255,255,255,0.14)',
   lineS:       'rgba(255,255,255,0.08)',
@@ -207,7 +207,7 @@ export function MarqueeStrip() {
   const items = [...words, ...words];
   return (
     <div aria-hidden="true" style={{
-      background: '#C9FF3D', overflow: 'hidden',
+      background: '#FFC000', overflow: 'hidden',
       borderTop: '1px solid #0A0B0F', borderBottom: '1px solid #0A0B0F',
     }}>
       <div className="vfy-marquee-track" style={{
@@ -770,7 +770,7 @@ function CTASection() {
       {/* Subtle red glow top-right */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: `radial-gradient(55% 70% at 85% 10%, rgba(201,255,61,0.06), transparent 60%),
+        background: `radial-gradient(55% 70% at 85% 10%, rgba(255,192,0,0.06), transparent 60%),
                      radial-gradient(45% 60% at 15% 90%, rgba(12,26,50,0.05), transparent 60%)`,
       }} />
       {/* Decorative large number */}
@@ -778,7 +778,7 @@ function CTASection() {
         position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)',
         fontFamily: SERIF, fontWeight: 700,
         fontSize: 'clamp(200px, 28vw, 400px)', lineHeight: 1,
-        color: `rgba(201,255,61,0.04)`, letterSpacing: '-0.04em',
+        color: `rgba(255,192,0,0.04)`, letterSpacing: '-0.04em',
         userSelect: 'none', pointerEvents: 'none',
       }}>0.5</div>
       <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '140px 40px', maxWidth: '1320px', margin: '0 auto' }}>
@@ -864,12 +864,12 @@ export function SiteFooter() {
           <button onClick={() => navigate('/')}
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{
-              width: '28px', height: '28px', borderRadius: '50%', background: '#C9FF3D',
+              width: '28px', height: '28px', borderRadius: '50%', background: '#FFC000',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: SERIF, fontWeight: 800, fontSize: '12px', color: '#0A0B0F',
             }}>½</span>
             <span style={{ fontFamily: SERIF, fontWeight: 700, fontSize: '16px', color: '#F3F3F0' }}>
-              0.5<span style={{ color: '#C9FF3D' }}>%</span> Campaign
+              0.5<span style={{ color: '#FFC000' }}>%</span> Campaign
             </span>
           </button>
           <p style={{ fontFamily: SERIF, fontSize: '19px', fontStyle: 'italic', fontWeight: 400, color: 'rgba(243,243,240,0.85)', lineHeight: 1.45, margin: '0 0 14px' }}>
@@ -913,7 +913,7 @@ export function SiteFooter() {
           <button onClick={() => navigate('/booking')}
             style={{
               fontFamily: MONO, fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase',
-              background: '#C9FF3D', color: C.cream, border: 'none', borderRadius: '2px',
+              background: '#FFC000', color: C.cream, border: 'none', borderRadius: '2px',
               padding: '12px 26px', cursor: 'pointer', transition: 'opacity .2s',
             }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.85'; }}
@@ -948,7 +948,7 @@ export function SiteFooter() {
             href="https://thakendra.cloud"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: '#C9FF3D', textDecoration: 'none', fontWeight: 700, transition: 'opacity .2s' }}
+            style={{ color: '#FFC000', textDecoration: 'none', fontWeight: 700, transition: 'opacity .2s' }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.7'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
           >

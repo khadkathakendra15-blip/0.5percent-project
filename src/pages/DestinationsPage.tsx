@@ -267,7 +267,7 @@ const BEST_REASONS = [
 const B = {
   ink:     '#F3F3F0', ink2: '#0A0B0F', inkSoft: '#9498A4', inkFaint: '#5C606C',
   cream:   '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
-  saffron: '#C9FF3D', terra: '#C9FF3D', blue: '#C9FF3D',
+  saffron: '#FFC000', terra: '#FFC000', blue: '#FFC000',
   lineS:   'rgba(255,255,255,0.08)', lineW: 'rgba(234,238,255,0.08)',
 }
 const F = {

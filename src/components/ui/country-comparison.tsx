@@ -12,7 +12,7 @@ const countries = [
     revenueLabel: '$800M',
     gdp: 7,
     gdpLabel: '7%',
-    color: '#C9FF3D',
+    color: '#FFC000',
     glow: 'rgba(245,158,11,0.35)',
     highlight: true,
     note: '0.5% target → 14.2M visitors',
@@ -27,7 +27,7 @@ const countries = [
     revenueLabel: '$350M',
     gdp: 12.5,
     gdpLabel: '12.5%',
-    color: '#C9FF3D',
+    color: '#FFC000',
     glow: 'rgba(139,92,246,0.2)',
     highlight: false,
   },
@@ -41,7 +41,7 @@ const countries = [
     revenueLabel: '$3.6B',
     gdp: 12,
     gdpLabel: '12%',
-    color: '#C9FF3D',
+    color: '#FFC000',
     glow: 'rgba(6,182,212,0.2)',
     highlight: false,
   },
@@ -55,7 +55,7 @@ const countries = [
     revenueLabel: '$1B',
     gdp: 9,
     gdpLabel: '9%',
-    color: '#C9FF3D',
+    color: '#FFC000',
     glow: 'rgba(16,185,129,0.2)',
     highlight: false,
   },
@@ -260,7 +260,7 @@ export function CountryComparison() {
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '0.04em' }}
           >
             Small Nations.{' '}
-            <span style={{ background: 'linear-gradient(90deg, #C9FF3D, #C9FF3D)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <span style={{ background: 'linear-gradient(90deg, #FFC000, #FFC000)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Massive Results.
             </span>
           </motion.h2>
@@ -292,24 +292,24 @@ export function CountryComparison() {
           style={{
             background: '#f8f7f5',
             border: '1px solid rgba(28,25,23,0.10)',
-            borderLeft: '3px solid #C9FF3D',
+            borderLeft: '3px solid #FFC000',
             borderRadius: '4px',
             padding: '32px 40px',
           }}
         >
           <div className="text-center md:text-left">
-            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#C9FF3D', marginBottom: '10px', fontFamily: "'Space Grotesk', sans-serif" }}>
+            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#FFC000', marginBottom: '10px', fontFamily: "'Space Grotesk', sans-serif" }}>
               Key Insight
             </p>
             <h3 style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: 'clamp(20px, 2.2vw, 30px)', letterSpacing: '0.04em', color: '#1c1917', lineHeight: 1.2, fontWeight: 900 }}>
               Cambodia (17M people) gets{' '}
-              <span style={{ color: '#C9FF3D' }}>6× more tourists</span>{' '}
+              <span style={{ color: '#FFC000' }}>6× more tourists</span>{' '}
               than Nepal (30M people).{' '}
-              <span style={{ color: '#C9FF3D' }}>The 0.5% Campaign changes this.</span>
+              <span style={{ color: '#FFC000' }}>The 0.5% Campaign changes this.</span>
             </h3>
           </div>
           <div className="flex-shrink-0 text-center" style={{ borderLeft: '1px solid rgba(28,25,23,0.10)', paddingLeft: '40px' }}>
-            <div style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: '64px', lineHeight: 1, color: '#C9FF3D', letterSpacing: '0.02em' }}>0.5%</div>
+            <div style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: '64px', lineHeight: 1, color: '#FFC000', letterSpacing: '0.02em' }}>0.5%</div>
             <p style={{ fontSize: '10px', color: '#57534e', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', marginTop: '6px', fontFamily: "'Space Grotesk', sans-serif" }}>
               Can close this gap
             </p>

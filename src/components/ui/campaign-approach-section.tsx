@@ -26,9 +26,9 @@ const C = {
   inkFaint:    '#5C606C',
   cream:       '#0E0F14',
   paper:       '#0A0B0F',
-  saffron:     '#C9FF3D',
-  saffronBright: '#C9FF3D',
-  terra:       '#C9FF3D',
+  saffron:     '#FFC000',
+  saffronBright: '#FFC000',
+  terra:       '#FFC000',
   line:        'rgba(255,255,255,0.14)',
   lineS:       'rgba(255,255,255,0.08)',
 };

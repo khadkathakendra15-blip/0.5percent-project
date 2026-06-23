@@ -10,8 +10,8 @@ const C = {
   ink:      '#F3F3F0',
   inkSoft:  '#9498A4',
   inkFaint: '#5C606C',
-  terra:    '#C9FF3D',
-  saffron:  '#C9FF3D',
+  terra:    '#FFC000',
+  saffron:  '#FFC000',
   line:     'rgba(255,255,255,0.10)',
   lineSoft: 'rgba(255,255,255,0.06)',
 };

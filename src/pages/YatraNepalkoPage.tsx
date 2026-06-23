@@ -7,8 +7,8 @@ const C = {
   cream:    '#0E0F14',
   cream2:   '#15171E',
   paper:    '#0A0B0F',
-  saffron:  '#C9FF3D',
-  terra:    '#C9FF3D',
+  saffron:  '#FFC000',
+  terra:    '#FFC000',
   line:     'rgba(255,255,255,0.08)',
   lineM:    'rgba(255,255,255,0.13)',
 };

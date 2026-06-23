@@ -29,13 +29,13 @@ interface Province {
 }
 
 const provinces: Province[] = [
-  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#C9FF3D", darkColor: "#15171E", photo: P.koshi },
-  { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#C9FF3D", darkColor: "#15171E", photo: P.madhesh },
-  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#C9FF3D", darkColor: "#15171E", photo: P.bagmati },
-  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#C9FF3D", darkColor: "#15171E", photo: P.gandaki },
-  { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#C9FF3D", darkColor: "#15171E", photo: P.lumbini },
-  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#C9FF3D", darkColor: "#15171E", photo: P.karnali },
-  { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#C9FF3D", darkColor: "#15171E", photo: P.sudurpashchim },
+  { id: 0, name: "Koshi",         nameNepali: "कोशी प्रदेश",       headquarters: "Biratnagar", color: "#FFC000", darkColor: "#15171E", photo: P.koshi },
+  { id: 1, name: "Madhesh",       nameNepali: "मधेश प्रदेश",        headquarters: "Janakpur",   color: "#FFC000", darkColor: "#15171E", photo: P.madhesh },
+  { id: 2, name: "Bagmati",       nameNepali: "बागमती प्रदेश",       headquarters: "Hetauda",    color: "#FFC000", darkColor: "#15171E", photo: P.bagmati },
+  { id: 3, name: "Gandaki",       nameNepali: "गण्डकी प्रदेश",       headquarters: "Pokhara",    color: "#FFC000", darkColor: "#15171E", photo: P.gandaki },
+  { id: 4, name: "Lumbini",       nameNepali: "लुम्बिनी प्रदेश",     headquarters: "Butwal",     color: "#FFC000", darkColor: "#15171E", photo: P.lumbini },
+  { id: 5, name: "Karnali",       nameNepali: "कर्णाली प्रदेश",       headquarters: "Surkhet",    color: "#FFC000", darkColor: "#15171E", photo: P.karnali },
+  { id: 6, name: "Sudurpashchim", nameNepali: "सुदूरपश्चिम प्रदेश",  headquarters: "Dhangadhi",  color: "#FFC000", darkColor: "#15171E", photo: P.sudurpashchim },
 ];
 
 export function ProvincePartnership({ defaultSelected = 0 }: { defaultSelected?: number }) {

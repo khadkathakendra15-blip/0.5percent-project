@@ -83,7 +83,7 @@ const CampaignHero = () => (
           color: '#fff',
           textShadow: '0 2px 24px rgba(0,0,0,0.55)',
         }}>
-          0.5<span style={{ color: '#C9FF3D' }}>%</span>
+          0.5<span style={{ color: '#FFC000' }}>%</span>
         </div>
         <div style={{
           fontFamily: BEBAS,
@@ -113,7 +113,7 @@ const CampaignHero = () => (
       >
         {['Tourism', 'Spirituality', 'Culture', 'Media'].map((tag, i) => (
           <span key={tag} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#C9FF3D', display: 'inline-block' }} />}
+            {i > 0 && <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#FFC000', display: 'inline-block' }} />}
             {tag}
           </span>
         ))}
@@ -127,7 +127,7 @@ const CampaignHero = () => (
         style={{
           fontFamily: SERIF, fontStyle: 'italic', fontWeight: 400,
           fontSize: 'clamp(18px, 2.2vw, 30px)', lineHeight: 1.3,
-          color: '#C9FF3D',
+          color: '#FFC000',
           marginBottom: '36px',
           textShadow: '0 2px 12px rgba(0,0,0,0.45)',
         }}

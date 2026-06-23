@@ -7,13 +7,13 @@ const VFY = {
   cream:      '#0E0F14',
   card:       '#15171E',
   ink:        '#F3F3F0',
-  gold:       '#C9FF3D',
+  gold:       '#FFC000',
   goldFaint:  'rgba(138,78,18,0.09)',
   goldBorder: 'rgba(138,78,18,0.22)',
-  saffron:    '#C9FF3D',
+  saffron:    '#FFC000',
   saffronF:   'rgba(12,26,50,0.08)',
-  terra:      '#C9FF3D',
-  orange:     '#C9FF3D',
+  terra:      '#FFC000',
+  orange:     '#FFC000',
   text:       '#F3F3F0',
   muted:      '#F3F3F0',
   faint:      '#9498A4',
@@ -92,9 +92,9 @@ const DESTINATIONS = [
 const WIZARD_STEPS = [
   { id:'interest', question:'What calls you to Nepal?', sub:'Choose the experience that speaks to your soul.',
     options:[
-      { value:'adventure', label:'Adventure & Trekking', icon:'⛰', accent:'#C9FF3D' },
-      { value:'spiritual',  label:'Spiritual Journey',   icon:'🪷', accent:'#C9FF3D' },
-      { value:'culture',    label:'Cultural Immersion',  icon:'🎭', accent:'#C9FF3D' },
+      { value:'adventure', label:'Adventure & Trekking', icon:'⛰', accent:'#FFC000' },
+      { value:'spiritual',  label:'Spiritual Journey',   icon:'🪷', accent:'#FFC000' },
+      { value:'culture',    label:'Cultural Immersion',  icon:'🎭', accent:'#FFC000' },
       { value:'nature',     label:'Nature & Wildlife',   icon:'🌿', accent:'#F3F3F0' },
     ] },
   { id:'duration', question:'How long will your journey be?', sub:'Longer stays allow deeper exploration.',
@@ -387,7 +387,7 @@ function MiniChatWidget({ onOpen }: { onOpen: ()=>void }) {
           <div>
             <div style={{ fontFamily:VFY.serif, fontSize:'15px', fontWeight:500, color:VFY.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', color:VFY.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#C9FF3D', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#FFC000', display:'inline-block' }}/>
               Online · Nepal expert
             </div>
           </div>
@@ -870,7 +870,7 @@ function ChatInterface({ onNavigate }: { onNavigate: (p:string)=>void }) {
             <div>
               <div style={{ fontFamily:VFY.serif, fontSize:'16px', fontWeight:500, color:VFY.text, lineHeight:1.1 }}>Guide AI</div>
               <div style={{ fontFamily:VFY.mono, fontSize:'8px', letterSpacing:'0.08em', color:VFY.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-                <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#C9FF3D', display:'inline-block' }}/>
+                <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#FFC000', display:'inline-block' }}/>
                 Online · Nepal expert
               </div>
             </div>

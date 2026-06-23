@@ -52,7 +52,7 @@
   /* ivory  #F3F3F0 */ --card-foreground:     oklch(0.958 0.003 106);
   /* card   #15171E */ --popover:             oklch(0.198 0.009 270);
   /* ivory  #F3F3F0 */ --popover-foreground:  oklch(0.958 0.003 106);
-  /* lime   #C9FF3D */ --primary:             oklch(0.915 0.215 124);
+  /* lime   #FFC000 */ --primary:             #FFC000;
   /* base   #0A0B0F */ --primary-foreground:  oklch(0.143 0.008 270);
   /* alt    #0E0F14 */ --secondary:           oklch(0.165 0.008 270);
   /* ivory  #F3F3F0 */ --secondary-foreground:oklch(0.958 0.003 106);
@@ -60,11 +60,11 @@
   /* muted  #9498A4 */ --muted-foreground:    oklch(0.660 0.012 268);
   /* card   #15171E */ --accent:              oklch(0.198 0.009 270);
   /* ivory  #F3F3F0 */ --accent-foreground:   oklch(0.958 0.003 106);
-  /* lime   #C9FF3D */ --destructive:         oklch(0.915 0.215 124);
+  /* lime   #FFC000 */ --destructive:         #FFC000;
   /* hairline          */ --border:           oklch(1 0 0 / 8%);
   /* hairline          */ --input:            oklch(1 0 0 / 12%);
-  /* lime   #C9FF3D */ --ring:                oklch(0.915 0.215 124);
-  /* lime   #C9FF3D */ --brand:               oklch(0.915 0.215 124);
+  /* lime   #FFC000 */ --ring:                #FFC000;
+  /* lime   #FFC000 */ --brand:               #FFC000;
   --brand-foreground: oklch(0.143 0.008 270);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -873,13 +873,13 @@ body {
 
 /* Branded text selection — neon lime */
 ::selection {
-  background: #C9FF3D;
+  background: #FFC000;
   color: #0A0B0F;
 }
 
 /* Keyboard focus rings — neon lime, visible only for keyboard users */
 :focus-visible {
-  outline: 2px solid #C9FF3D;
+  outline: 2px solid #FFC000;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -901,7 +901,7 @@ body {
   border: 2px solid #0A0B0F;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9FF3D;
+  background: #FFC000;
 }
 
 /* Images never overflow their container */

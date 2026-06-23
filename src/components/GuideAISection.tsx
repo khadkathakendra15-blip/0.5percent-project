@@ -11,7 +11,7 @@ const G = {
   card:       '#15171E',
   border:     'rgba(255,255,255,0.10)',
   borderHover:'rgba(255,255,255,0.26)',
-  gold:       '#C9FF3D',
+  gold:       '#FFC000',
   goldFaint:  'rgba(138,78,18,0.09)',
   text:       '#F3F3F0',
   textMuted:  '#F3F3F0',
@@ -274,7 +274,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           <div>
             <div style={{ fontFamily:G.serif, fontSize:'15px', fontWeight:500, color:G.text, lineHeight:1.1 }}>Guide AI</div>
             <div style={{ fontFamily:G.mono, fontSize:'8px', letterSpacing:'0.08em', color:G.gold, display:'flex', alignItems:'center', gap:'4px' }}>
-              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#C9FF3D', display:'inline-block' }}/>
+              <span style={{ width:'5px', height:'5px', borderRadius:'50%', background:'#FFC000', display:'inline-block' }}/>
               Online · Nepal travel expert
             </div>
           </div>
@@ -303,7 +303,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           onFocus={e => (e.currentTarget as HTMLDivElement).style.borderColor = G.borderHover}
           onBlur={e => (e.currentTarget as HTMLDivElement).style.borderColor = G.border}
         >
-          <button onClick={handleVoice} disabled={listening} style={{ background:'none', border:'none', cursor:'pointer', color: listening ? '#C9FF3D' : G.textFaint, padding:'3px', display:'flex', flexShrink:0 }}>
+          <button onClick={handleVoice} disabled={listening} style={{ background:'none', border:'none', cursor:'pointer', color: listening ? '#FFC000' : G.textFaint, padding:'3px', display:'flex', flexShrink:0 }}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
               <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
@@ -327,7 +327,7 @@ function ChatWidget({ onFullPageClick: _onFullPageClick }: { onFullPageClick: ()
           </button>
         </div>
         {listening && (
-          <div style={{ fontFamily:G.mono, fontSize:'9px', color:'#C9FF3D', textAlign:'center', marginTop:'5px', letterSpacing:'0.08em' }}>🎙 Listening…</div>
+          <div style={{ fontFamily:G.mono, fontSize:'9px', color:'#FFC000', textAlign:'center', marginTop:'5px', letterSpacing:'0.08em' }}>🎙 Listening…</div>
         )}
       </div>
     </div>
@@ -344,7 +344,7 @@ export function GuideAISection() {
           50%       { opacity: 1;    transform: scale(1); }
         }
         .guide-ai-dest-chip:hover {
-          border-color: #C9FF3D !important;
+          border-color: #FFC000 !important;
           background: rgba(138,78,18,0.08) !important;
           transform: translateY(-2px);
         }

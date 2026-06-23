@@ -4,8 +4,8 @@ import { Menu, X } from 'lucide-react';
 
 const INK     = '#0A0B0F';
 const CREAM   = '#F3F3F0';
-const TERRA   = '#C9FF3D';
-const GOLD    = '#C9FF3D';
+const TERRA   = '#FFC000';
+const GOLD    = '#FFC000';
 const MUKTA   = "'Space Grotesk', system-ui, sans-serif";
 const MONO    = "'Space Mono', ui-monospace, monospace";
 
@@ -51,12 +51,12 @@ export function NavBar() {
           {/* Logo — lime ½ badge + wordmark (matches reference) */}
           <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{
-              width: '30px', height: '30px', borderRadius: '50%', background: '#C9FF3D',
+              width: '30px', height: '30px', borderRadius: '50%', background: '#FFC000',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 800, fontSize: '13px', color: '#0A0B0F',
             }}>½</span>
             <span style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700, fontSize: '17px', letterSpacing: '-0.01em', color: '#F3F3F0' }}>
-              0.5<span style={{ color: '#C9FF3D' }}>%</span>{' '}
+              0.5<span style={{ color: '#FFC000' }}>%</span>{' '}
               <span style={{ fontWeight: 500, opacity: 0.65 }}>Campaign</span>
             </span>
           </Link>

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 const C = {
   ink: '#F3F3F0', ink2: '#F3F3F0', inkSoft: '#9498A4', inkFaint: '#5C606C',
   cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
-  saffron: '#C9FF3D', terra: '#C9FF3D', lineS: 'rgba(255,255,255,0.08)',
+  saffron: '#FFC000', terra: '#FFC000', lineS: 'rgba(255,255,255,0.08)',
 };
 const SERIF = "'Bricolage Grotesque', Georgia, serif";
 const MUKTA = "'Space Grotesk', system-ui, sans-serif";

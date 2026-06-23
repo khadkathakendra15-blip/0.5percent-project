@@ -10,8 +10,8 @@ const C = {
   cream:    '#0E0F14',
   cream2:   '#15171E',
   paper:    '#0A0B0F',
-  saffron:  '#C9FF3D',
-  terra:    '#C9FF3D',
+  saffron:  '#FFC000',
+  terra:    '#FFC000',
   lineS:    'rgba(255,255,255,0.08)',
 };
 const SERIF = "'Bricolage Grotesque', Georgia, serif";
@@ -84,7 +84,7 @@ const annotationPlugin: Plugin<'line'> = {
 
     // vertical dashed lines + pill labels
     const vLines = [
-      { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#C9FF3D' },
+      { year:'2015', lineColor:'rgba(255,120,0,0.50)',  label:'Earthquake  −32%',  labelColor:'#FFC000' },
       { year:'2025', lineColor:'rgba(255,0,0,0.38)',    label:'2025 unrest  −26%', labelColor:C.terra   },
       { year:'2026', lineColor:'rgba(12,26,50,0.50)', label:'New era  +41%',      labelColor:C.saffron },
     ];

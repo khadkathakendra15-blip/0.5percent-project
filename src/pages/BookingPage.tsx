@@ -5,7 +5,7 @@ import { CheckCircle, Calendar, FileText, Users, Bed, DollarSign, ChevronDown, C
 const C = {
   ink: '#F3F3F0', ink2: '#F3F3F0', inkSoft: '#9498A4', inkFaint: '#5C606C',
   cream: '#0E0F14', cream2: '#15171E', paper: '#0A0B0F',
-  saffron: '#C9FF3D', terra: '#C9FF3D', lineS: 'rgba(255,255,255,0.08)',
+  saffron: '#FFC000', terra: '#FFC000', lineS: 'rgba(255,255,255,0.08)',
 };
 const SERIF = "'Bricolage Grotesque', Georgia, serif";
 const BEBAS = "'Bricolage Grotesque', sans-serif";
@@ -18,7 +18,7 @@ const SEASONS = [
     months: 'Mar – May',
     rating: 5,
     gradient: 'linear-gradient(145deg,#1A0814 0%,#8C1E3D 50%,#1F0510 100%)',
-    icon: <Star size={20} color="#C9FF3D" strokeWidth={1.5} fill="#C9FF3D" />,
+    icon: <Star size={20} color="#FFC000" strokeWidth={1.5} fill="#FFC000" />,
     desc: 'Peak trekking season. Rhododendrons bloom, skies are clear, and most high passes are open. The busiest — and most rewarding — time to visit.',
     best: ['Everest BC','Annapurna Circuit','Langtang','All treks'],
   },
@@ -26,7 +26,7 @@ const SEASONS = [
     name: 'Monsoon',
     months: 'Jun – Aug',
     rating: 2,
-    gradient: 'linear-gradient(145deg,#1a3a5c 0%,#C9FF3D 50%,#0d2240 100%)',
+    gradient: 'linear-gradient(145deg,#1a3a5c 0%,#FFC000 50%,#0d2240 100%)',
     icon: null,
     desc: 'Heavy rainfall across most of Nepal. Roads wash out. Best for rain-shadow areas: Mustang, Dolpo. Wildlife activity peaks in Chitwan.',
     best: ['Upper Mustang','Chitwan','Rafting'],
@@ -36,7 +36,7 @@ const SEASONS = [
     months: 'Sep – Nov',
     rating: 5,
     gradient: 'linear-gradient(145deg,#2E0810 0%,#7A1830 50%,#200810 100%)',
-    icon: <Star size={20} color="#C9FF3D" strokeWidth={1.5} fill="#C9FF3D" />,
+    icon: <Star size={20} color="#FFC000" strokeWidth={1.5} fill="#FFC000" />,
     desc: 'Arguably the best season. Crystal-clear skies after monsoon, stable weather, spectacular mountain views. All major treks in perfect condition.',
     best: ['All treks','Climbing','Festivals (Dashain, Tihar)'],
   },
@@ -44,7 +44,7 @@ const SEASONS = [
     name: 'Winter',
     months: 'Dec – Feb',
     rating: 3,
-    gradient: 'linear-gradient(145deg,#0A0B0F 0%,#15171E 40%,#C9FF3D 100%)',
+    gradient: 'linear-gradient(145deg,#0A0B0F 0%,#15171E 40%,#FFC000 100%)',
     icon: null,
     desc: 'Cold at altitude, but Kathmandu and Pokhara are pleasant. Low-altitude treks (Poon Hill, Ghorepani) are excellent. Fewer crowds, lower prices.',
     best: ['Poon Hill','Kathmandu','Lumbini','Chitwan'],

@@ -8,9 +8,9 @@ const C = {
   cream:    '#0E0F14',
   cream2:   '#15171E',
   paper:    '#0A0B0F',
-  saffron:  '#C9FF3D',
-  saffronB: '#C9FF3D',
-  terra:    '#C9FF3D',
+  saffron:  '#FFC000',
+  saffronB: '#FFC000',
+  terra:    '#FFC000',
   line:     'rgba(255,255,255,0.13)',
   lineS:    'rgba(255,255,255,0.07)',
 };
@@ -40,7 +40,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${Math.round(v)}K`,
     revenueFmt:  (v: number) => `$${Math.round(v)}M`,
     gdpFmt:      (v: number) => `${v.toFixed(1)}%`,
-    color: '#C9FF3D', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#FFC000', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'KH', name: 'Cambodia', pop: '17M',
@@ -50,7 +50,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(1)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#C9FF3D', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#FFC000', bg: C.paper, highlight: false, note: '', badge: '',
   },
   {
     code: 'LA', name: 'Laos', pop: '8M',
@@ -60,7 +60,7 @@ const COUNTRIES = [
     touristsFmt: (v: number) => `${v.toFixed(0)}M`,
     revenueFmt:  (v: number) => `$${v.toFixed(0)}B`,
     gdpFmt:      (v: number) => `${v.toFixed(0)}%`,
-    color: '#C9FF3D', bg: C.paper, highlight: false, note: '', badge: '',
+    color: '#FFC000', bg: C.paper, highlight: false, note: '', badge: '',
   },
 ];
 
