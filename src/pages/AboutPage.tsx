@@ -18,6 +18,7 @@ const C = {
 
 const serif = "'Bricolage Grotesque', system-ui, sans-serif";
 const sans  = "'Space Grotesk', system-ui, sans-serif";
+const mono  = "'Space Mono', ui-monospace, monospace";
 
 // ─── Partner logos ────────────────────────────────────────────────────────────
 const partners = [
@@ -187,25 +188,6 @@ export default function AboutPage() {
         <div style={{ height: '1px', background: C.lineSoft }} />
       </div>
 
-      {/* ── 0.5% Moment ── */}
-      <section style={{ textAlign: 'center', padding: '140px 40px 130px', maxWidth: 1180, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-        <Reveal><Kicker center>The premise</Kicker></Reveal>
-        <Reveal delay={0.08}>
-          <div className="about-0pt5" style={{ fontFamily: serif, fontWeight: 700, fontSize: 'clamp(140px, 26vw, 360px)', lineHeight: 0.82, color: C.terra, letterSpacing: '-0.02em', display: 'inline-block' }}>
-            0.5<span style={{ fontSize: '0.42em', verticalAlign: 'super', fontWeight: 400, color: C.saffron }}>%</span>
-          </div>
-        </Reveal>
-        <Reveal delay={0.16}>
-          <p style={{ margin: '36px auto 0', maxWidth: '48ch', fontSize: 19, lineHeight: 1.8, color: C.inkSoft, fontWeight: 400 }}>
-            That's all it takes. Mobilising just <strong style={{ color: C.ink, fontWeight: 500 }}>half of one percent</strong> of travellers from
-            neighbouring nations would transform Nepal's place on the world's map — a quiet number
-            with a profound ripple.
-          </p>
-        </Reveal>
-      </section>
-
-      <div style={{ height: 1, background: C.line, maxWidth: 1180, margin: '0 auto' }} />
-
       {/* ── Team ── */}
       <section style={{ padding: '130px 40px', maxWidth: 1180, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <Reveal>
@@ -222,63 +204,78 @@ export default function AboutPage() {
 
         {/* Featured founder */}
         <Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: '0.92fr 1.08fr', gap: 64, alignItems: 'center', background: C.paper, border: `1px solid ${C.lineSoft}`, borderRadius: 4, padding: 44 }}>
+          <article
+            className="about-founder"
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,192,0,0.40)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 24px 60px rgba(0,0,0,0.45)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = C.lineSoft; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}
+            style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 56, alignItems: 'center', background: C.paper2, border: `1px solid ${C.lineSoft}`, borderRadius: 6, padding: 44, transition: 'border-color .4s ease, box-shadow .4s ease' }}
+          >
             {/* Portrait */}
-            <div className="about-founder-portrait" style={{ height: 520, borderRadius: 3, overflow: 'hidden' }}>
+            <div className="about-founder-portrait" style={{ position: 'relative', height: 520, borderRadius: 4, overflow: 'hidden', background: C.paper }}>
               <img
                 src="/Dashrat Sunar - founder.jpeg"
                 alt="Dashrath Sunar"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
               />
+              <div style={{ position: 'absolute', top: 16, left: 16, fontFamily: mono, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: C.terra, background: 'rgba(10,11,15,0.62)', backdropFilter: 'blur(4px)', padding: '6px 11px', borderRadius: 2 }}>
+                Founder &amp; CEO
+              </div>
             </div>
             {/* Meta */}
             <div>
-              <div style={{ fontSize: 12, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.terra, fontWeight: 600 }}>Founder</div>
-              <h3 style={{ fontFamily: serif, fontWeight: 400, fontSize: 'clamp(40px, 4.4vw, 60px)', lineHeight: 1, margin: '14px 0 0', letterSpacing: '-0.01em' }}>
+              <div style={{ fontFamily: mono, fontSize: 11, letterSpacing: '0.28em', textTransform: 'uppercase', color: C.terra, fontWeight: 700 }}>Founder</div>
+              <h3 style={{ fontFamily: serif, fontWeight: 700, fontSize: 'clamp(38px, 4.4vw, 58px)', lineHeight: 1, margin: '14px 0 0', letterSpacing: '-0.02em', color: C.ink }}>
                 Dashrath Sunar
               </h3>
-              <p style={{ fontSize: 17.5, lineHeight: 1.85, color: C.inkSoft, margin: '26px 0 0', fontWeight: 400 }}>
+              <p style={{ fontSize: 17, lineHeight: 1.85, color: C.inkSoft, margin: '24px 0 0', fontWeight: 400 }}>
                 Dashrath Sunar is the visionary behind VFY Talks and the 0.5% Campaign — a movement
                 dedicated to transforming Nepal's global tourism identity through powerful storytelling,
                 media and cross-cultural conversations.
               </p>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 30 }}>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 28 }}>
                 {['Media Entrepreneur', 'Traveller', 'Storyteller'].map(tag => (
-                  <span key={tag} style={{ fontSize: 12.5, letterSpacing: '0.06em', color: C.ink, padding: '8px 16px', borderRadius: 100, background: C.cream, border: `1px solid ${C.line}`, display: 'inline-flex', alignItems: 'center', gap: 8, fontWeight: 400 }}>
+                  <span key={tag} style={{ fontFamily: mono, fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: C.ink, padding: '8px 15px', borderRadius: 100, background: C.cream, border: `1px solid ${C.line}`, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ width: 5, height: 5, borderRadius: '50%', background: C.saffron, flexShrink: 0 }} />
                     {tag}
                   </span>
                 ))}
               </div>
-              <blockquote style={{ margin: '34px 0 0', paddingLeft: 24, borderLeft: `2px solid ${C.terra}`, fontFamily: serif, fontStyle: 'italic', fontWeight: 400, fontSize: 24, lineHeight: 1.4, color: C.ink }}>
+              <blockquote style={{ margin: '32px 0 0', paddingLeft: 24, borderLeft: `2px solid ${C.terra}`, fontFamily: serif, fontStyle: 'italic', fontWeight: 500, fontSize: 23, lineHeight: 1.4, color: C.ink }}>
                 "Nepal doesn't need to be discovered — it needs to be heard."
               </blockquote>
             </div>
-          </div>
+          </article>
         </Reveal>
 
         {/* Other team */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 40, marginTop: 60, maxWidth: 800 }}>
+        <div className="about-team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 28, marginTop: 28 }}>
           {otherTeam.map((m, i) => (
             <Reveal key={m.role} delay={i * 0.08}>
-              <div>
-                {m.photo ? (
-                  <div style={{ height: 340, borderRadius: 3, overflow: 'hidden', background: C.paper2 }}>
+              <article
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,192,0,0.40)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 22px 50px rgba(0,0,0,0.45)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'none'; (e.currentTarget as HTMLElement).style.borderColor = C.lineSoft; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}
+                style={{ display: 'flex', flexDirection: 'column', height: '100%', background: C.paper2, border: `1px solid ${C.lineSoft}`, borderRadius: 6, overflow: 'hidden', transition: 'transform .4s cubic-bezier(.2,.6,.2,1), border-color .4s ease, box-shadow .4s ease' }}
+              >
+                <div style={{ position: 'relative', height: 360, overflow: 'hidden', background: C.paper }}>
+                  {m.photo ? (
                     <img
                       src={m.photo}
                       alt={m.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: (m as { objectPosition?: string }).objectPosition || 'top', display: 'block' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: (m as { objectPosition?: string }).objectPosition || 'center top', display: 'block' }}
                     />
+                  ) : (
+                    <PhPortrait height={360} label="Portrait" />
+                  )}
+                  <div style={{ position: 'absolute', top: 16, left: 16, fontFamily: mono, fontSize: 10.5, letterSpacing: '0.2em', color: C.terra, background: 'rgba(10,11,15,0.62)', backdropFilter: 'blur(4px)', padding: '5px 10px', borderRadius: 2 }}>
+                    0{i + 1}
                   </div>
-                ) : (
-                  <PhPortrait height={340} label="Portrait" />
-                )}
-                <div style={{ marginTop: 22 }}>
-                  <div style={{ fontSize: 11.5, letterSpacing: '0.26em', textTransform: 'uppercase', color: C.terra, fontWeight: 600 }}>{m.role}</div>
-                  <h4 style={{ fontFamily: serif, fontWeight: 500, fontSize: 28, lineHeight: 1.05, margin: '9px 0 0' }}>{m.name}</h4>
-                  <p style={{ fontSize: 15, color: C.inkSoft, margin: '12px 0 0', fontWeight: 400, lineHeight: 1.7 }}>{m.bio}</p>
                 </div>
-              </div>
+                <div style={{ padding: '26px 28px 30px', flex: 1 }}>
+                  <div style={{ fontFamily: mono, fontSize: 10.5, letterSpacing: '0.22em', textTransform: 'uppercase', color: C.terra, fontWeight: 700 }}>{m.role}</div>
+                  <h4 style={{ fontFamily: serif, fontWeight: 600, fontSize: 27, lineHeight: 1.05, margin: '11px 0 0', color: C.ink, letterSpacing: '-0.01em' }}>{m.name}</h4>
+                  <p style={{ fontSize: 14.5, color: C.inkSoft, margin: '12px 0 0', fontWeight: 400, lineHeight: 1.7 }}>{m.bio}</p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
