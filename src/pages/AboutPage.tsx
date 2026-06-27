@@ -38,14 +38,14 @@ const otherTeam = [
     role:  'Social Media Algorithm Specialist',
     name:  'Thakendra Khadka',
     photo: '/Thakendra Khadka.jpeg',
-    objectPosition: 'center 30%',
+    objectPosition: 'center 40%',
     bio:   "Drives Nepal's digital presence with precision strategy, creative content and social media expertise.",
   },
   {
     role:  'Tourism Entrepreneur',
     name:  'Rohit Karki',
     photo: '/Rohit Karki.jpg',
-    objectPosition: 'center 38%',
+    objectPosition: 'center 50%',
     bio:   "Connects Nepal's tourism potential with global opportunities — one journey and partnership at a time.",
   },
 ];
@@ -216,7 +216,7 @@ export default function AboutPage() {
               <img
                 src="/Dashrat Sunar - founder.jpeg"
                 alt="Dashrath Sunar"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 22%', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }}
               />
               <div style={{ position: 'absolute', top: 16, left: 16, fontFamily: mono, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: C.terra, background: 'rgba(10,11,15,0.62)', backdropFilter: 'blur(4px)', padding: '6px 11px', borderRadius: 2 }}>
                 Founder &amp; CEO
