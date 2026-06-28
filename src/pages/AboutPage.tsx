@@ -216,7 +216,7 @@ export default function AboutPage() {
               <img
                 src="/Dashrat Sunar - founder.jpeg"
                 alt="Dashrath Sunar"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
               />
               <div style={{ position: 'absolute', top: 16, left: 16, fontFamily: mono, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: C.terra, background: 'rgba(10,11,15,0.62)', backdropFilter: 'blur(4px)', padding: '6px 11px', borderRadius: 2 }}>
                 Founder &amp; CEO
