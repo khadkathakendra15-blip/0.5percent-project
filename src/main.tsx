@@ -13,6 +13,7 @@ const BlogPostPage     = lazy(() => import('./pages/BlogPostPage'));
 const BookingPage      = lazy(() => import('./pages/BookingPage'));
 const AiGuidePage      = lazy(() => import('./pages/AiGuidePage'));
 const YatraNepalkoPage = lazy(() => import('./pages/YatraNepalkoPage'));
+const EmbassyPage      = lazy(() => import('./pages/EmbassyPage'));
 
 const PAGE_TITLES: Record<string, string> = {
   '/':             '0.5% Vision — Nepal',
@@ -22,6 +23,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/booking':      'Plan Your Trip — 0.5% Vision',
   '/ai-guide':     'Guide AI — 0.5% Vision',
   '/yatra':        'Yatra Nepalko — 0.5% Vision',
+  '/embassies':    'Embassies — 0.5% Vision',
 };
 
 function RouteEffects() {
@@ -72,6 +74,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/booking"      element={<BookingPage />}      />
           <Route path="/ai-guide"     element={<AiGuidePage />}      />
           <Route path="/yatra"        element={<YatraNepalkoPage />} />
+          <Route path="/embassies"    element={<EmbassyPage />}       />
         </Routes>
       </Suspense>
       <SiteFooter />

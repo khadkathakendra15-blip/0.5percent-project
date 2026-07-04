@@ -13,6 +13,7 @@ const LINKS = [
   { label: 'Destinations', to: '/destinations' },
   { label: 'Stories',      to: '/blog'          },
   { label: 'Yatra Nepalko', to: '/yatra'          },
+  { label: 'Embassies',    to: '/embassies'     },
   { label: 'AI Guide',     to: '/ai-guide'      },
   { label: 'Plan Trip',    to: '/booking'        },
   { label: 'About',        to: '/about'          },
